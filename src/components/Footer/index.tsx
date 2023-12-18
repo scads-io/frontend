@@ -3,30 +3,30 @@ import React from 'react'
 const socialIcons = [
   {
     id: "i1",
-    icon: "/images/home/logo-x.webp",
+    icon: "/images/footer/x.webp",
     redirect: "https://twitter.com/Scads_io",
   },
   {
     id: "i2",
-    icon: "/images/home/telegram_logo.svg",
+    icon: "/images/footer/telegram.svg",
     redirect: "https://t.me/scads_io",
   },
   {
     id: "i3",
-    icon: "/images/home/instagram_logo.svg",
+    icon: "/images/footer/instagram.svg",
   },
   {
     id: "i4",
-    icon: "/images/home/discord_logo.svg",
+    icon: "/images/footer/discord.svg",
   },
   {
     id: "i5",
-    icon: "/images/home/github_logo.svg",
+    icon: "/images/footer/github.svg",
     redirect: "https://github.com/scads-io",
   },
   {
     id: "i6",
-    icon: "/images/home/logo-medium.svg",
+    icon: "/images/footer/medium.svg",
   },
 ];
 
