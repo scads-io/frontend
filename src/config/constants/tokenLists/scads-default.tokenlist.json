@@ -1,0 +1,94 @@
+{
+  "name": "ScadsSwap Default List",
+  "timestamp": "2021-05-06T00:00:00Z",
+  "version": {
+    "major": 3,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://svgshare.com/i/zPD.svg",
+  "keywords": ["scads", "default"],
+  "tokens": [
+    {
+      "name": "ScadsSwap Token",
+      "symbol": "Scads",
+      "address": "0x6D036B813C63c2c2D84De16369F2b532a37A5E97",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/zPD.svg"
+    },
+    {
+      "name": "ScadsSwap Token",
+      "symbol": "TWINE",
+      "address": "0xa86C718a38515699773a1FEB9c3A891A2BE982A1",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/zPk.svg"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0x55d398326f99059fF775485246999027B3197955",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/rtf.svg"
+    },
+    {
+      "name": "USDC Token",
+      "symbol": "USDC",
+      "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/rtf.svg"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0xb06D957d777e3dC7f3794e732DB45092AC8C5cF0",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/rtf.svg"
+    },
+    {
+      "name": "USDC Token",
+      "symbol": "USDC",
+      "address": "0x497303D3573B20B75724D7C3f1B39B19E72a0f53",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/rtf.svg"
+    },
+    {
+      "name": "BTCB Token",
+      "symbol": "BTCB",
+      "address": "0xf486789B0B704470EFc2d5Bc295C3eCbc80882f3",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/rtg.svg"
+    },
+    {
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "address": "0xd26ddc719E157f67b7f194Bccddb6023328239DE",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/rtV.svg"
+    },
+    {
+      "name": "ScadsSwap Token",
+      "symbol": "Scads",
+      "address": "0x8Ab5A56AfB69B31ACFbb2AC29bd2B131e2601f9F",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/zPD.svg"
+    },
+    {
+      "name": "ScadsSwap Token",
+      "symbol": "TWINE",
+      "address": "0x9f0a003821201D096Bd625a973275Cb50Bf5e6f2",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": "https://svgshare.com/i/zPk.svg"
+    }
+  ]
+}
