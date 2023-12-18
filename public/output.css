@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.6 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -119,8 +119,10 @@ strong {
 }
 
 /*
-1. Use the user's configured `mono` font family by default.
-2. Correct the odd `em` font sizing in all browsers.
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
 */
 
 code,
@@ -129,8 +131,12 @@ samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
-  font-size: 1em;
+  font-feature-settings: normal;
   /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
 }
 
 /*
@@ -1017,10 +1023,6 @@ video {
   width: 265px;
 }
 
-.w-\[293px\] {
-  width: 293px;
-}
-
 .w-\[300px\] {
   width: 300px;
 }
@@ -1149,10 +1151,6 @@ video {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.flex-shrink {
-  flex-shrink: 1;
 }
 
 .grow {
@@ -2394,10 +2392,6 @@ code {
     max-width: none;
   }
 
-  .md\:max-w-\[65\%\] {
-    max-width: 65%;
-  }
-
   .md\:translate-x-0 {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2517,10 +2511,6 @@ code {
 
   .md\:ps-0 {
     padding-inline-start: 0px;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-start {
