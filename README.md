@@ -1,4 +1,4 @@
-<img src="public/images/logo.webp" alt="Scads" height="100px">
+<img src="public/logo.webp" alt="Scads" height="100px">
 
 # Scads Frontend
 
