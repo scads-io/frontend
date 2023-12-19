@@ -23,17 +23,6 @@ export const RowBetween = styled(Row)`
   justify-content: space-between;
 `
 
-export const RowEnd = styled(Row)`
-  justify-content: space-between;
-  align-items: center;
-  justify-content: flex-end;
-`
-
-export const RowFlat = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`
-
 export const AutoRow = styled(Row)<{ gap?: string; justify?: string }>`
   flex-wrap: wrap;
   margin: ${({ gap }) => gap && `-${gap}`};

@@ -13,19 +13,15 @@ const socialIcons = [
   },
   {
     id: "i3",
-    icon: "/images/footer/instagram.svg",
-  },
-  {
-    id: "i4",
     icon: "/images/footer/discord.svg",
   },
   {
-    id: "i5",
+    id: "i4",
     icon: "/images/footer/github.svg",
     redirect: "https://github.com/scads-io",
   },
   {
-    id: "i6",
+    id: "i5",
     icon: "/images/footer/medium.svg",
   },
 ];
@@ -58,17 +54,11 @@ const Footer = (props) => {
         ))}
       </div>
       <p
-        className={`font-['Poppins'] text-lg text-center flex gap-1 items-center ${
+        className={`font-['Poppins'] text-lg text-center ${
           theme.isDark && "text-[#B6B6B6]"
         }`}
       >
-        {`SCADS © Copyright ${year}. All rights reserved.`}{" "}
-        <img
-          src="/images/home/trademark-icon.svg"
-          className={`${theme.isDark && "invert contrast-50"}`}
-          width={10}
-          alt=""
-        />
+        {`SCADS © Copyright ${year}. All rights reserved.`}{" ™"}
       </p>
     </div>
   )

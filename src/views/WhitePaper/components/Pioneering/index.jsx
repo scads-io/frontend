@@ -58,13 +58,13 @@ const Pioneering = ({ value }) => {
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
             } container mx-auto flex flex-col items-center mt-40 font-['Poppins'] overflow-hidden pb-20`}
     >
-        <h1 className="text-[40px] font-bold text-center">
+        <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] font-bold text-center">
             {t(executiveText1.header_1)}
         </h1>
-        <h1 className="text-3xl font-bold text-center lg:text-start mt-3">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center lg:text-start mt-3">
             {t(executiveText1.header_2)}
         </h1>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(executiveText1.title)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -109,7 +109,7 @@ const Pioneering = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(executiveText1.Conclusion)}</span>
             <span className="font-bold">{t(executiveText1.small_text_6_1)}</span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(executiveText2.title)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">

@@ -8,7 +8,6 @@ declare module 'styled-components' {
 }
 
 const GlobalStyle = createGlobalStyle`
-  
 `
 
 export default GlobalStyle

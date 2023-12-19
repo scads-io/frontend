@@ -178,7 +178,7 @@ const Roadmap = ({ value }) => {
           theme.isDark ? "text-[#B6B6B6]" : "text-black"
         }`}
       >
-        <h1 className="font-bold text-[40px] text-center">SCADS</h1>
+        <h1 className="font-bold text-[26px] lg:text-4xl 2xl:text-5xl text-center">SCADS</h1>
         <p className="text-center">{t("Less is more")}</p>
         <ol
           className={`border-s mt-16 flex flex-col items-start md:translate-x-1/2 md:mx-auto max-w-[240px] md:max-w-[450px] md:[&>*:nth-child(even)]:-translate-x-[108%] ${

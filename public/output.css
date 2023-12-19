@@ -975,6 +975,11 @@ video {
   height: 100vh;
 }
 
+.h-max {
+  height: -webkit-max-content;
+  height: max-content;
+}
+
 .max-h-screen {
   max-height: 100vh;
 }
@@ -1854,6 +1859,14 @@ video {
   line-height: 1rem;
 }
 
+.text-\[18px\] {
+  font-size: 18px;
+}
+
+.text-\[24px\] {
+  font-size: 24px;
+}
+
 .font-black {
   font-weight: 900;
 }
@@ -2614,6 +2627,15 @@ code {
     height: 85vh;
   }
 
+  .lg\:h-auto {
+    height: auto;
+  }
+
+  .lg\:h-max {
+    height: -webkit-max-content;
+    height: max-content;
+  }
+
   .lg\:w-10\/12 {
     width: 83.333333%;
   }
@@ -2848,6 +2870,15 @@ code {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-\[18px\] {
+    font-size: 18px;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:font-normal {

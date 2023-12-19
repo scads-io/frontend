@@ -159,10 +159,10 @@ const Market = ({ value }) => {
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
             } container mx-auto flex flex-col items-center font-['Poppins'] overflow-hidden pb-20`}
     >
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
             {t(Text1.header)}
         </h1>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_1)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -225,7 +225,7 @@ const Market = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
             <span className="font-bold">{t(Text1.text_2_3)}</span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_3)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -298,7 +298,7 @@ const Market = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
             <span className="font-bold">{t(Text1.text_3_3)}</span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_4)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -306,7 +306,7 @@ const Market = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(Text1.title_4_2)}</span>
             <span>{t(Text1.text_4)}</span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_5)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -323,7 +323,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_5_3)}</span>
             </span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_6)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -340,7 +340,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_6_3)}</span>
             </span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_7)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -357,7 +357,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_7_3)}</span>
             </span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_8)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -370,7 +370,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_8_2)}</span>
             </span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_9)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -385,10 +385,10 @@ const Market = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
             <span className="font-bold">{t(Text1.text_9_3)}</span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_10)}
         </h1>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_10_1)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -401,7 +401,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_10_1_2)}</span>
             </span>
         </p>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_10_2)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -414,7 +414,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_10_2_2)}</span>
             </span>
         </p>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_10_3)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -427,7 +427,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_10_3_2)}</span>
             </span>
         </p>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_10_4)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -440,7 +440,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_10_4_2)}</span>
             </span>
         </p>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_10_5)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -453,7 +453,7 @@ const Market = ({ value }) => {
                 <span>{" "}{t(Text1.text_10_5_2)}</span>
             </span>
         </p>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_10_6)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">

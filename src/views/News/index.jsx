@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion/dist/framer-motion"
 import { useTranslation } from 'contexts/Localization'
 import Card from "components/NewCard"
+import Footer from 'components/Footer'
 
 const news = [
   {
@@ -12,13 +13,13 @@ const news = [
   },
   {
     id: 1,
-    img: '/images/home/news_5.webp',
+    img: '/images/news/news_1.webp',
     title: "World Debt Clocks",
     link: "https://www.usdebtclock.org/world-debt-clock.html",
   },
   {
     id: 2,
-    img: '/images/home/news_4.webp',
+    img: '/images/news/news_2.webp',
     title: "Why Bank Bail-Ins Are the New Bailouts",
     link: "https://www.investopedia.com/articles/markets-economy/090716/why-bank-bailins-will-be-new-bailouts.asp",
   },
@@ -34,15 +35,15 @@ const News = ({ value }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col items-center gap-20 font-['Poppins'] relative overflow-hidden bg-gradient-to-b from-transparent to-[#FF006820] md:h-screen"
+      className="flex flex-col items-center gap-20 font-['Poppins'] relative bg-gradient-to-b from-transparent to-[#FF006820]"
     >
       <div
         className={` ${
           theme.isDark ? "text-[#B6B6B6]" : "text-black"
         } flex flex-col items-center mt-40`}
       >
-        <h1 className="text-[40px] font-bold"> {t("The News")}</h1>
-        <p className="text-xl text-center lg:text-start">
+        <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] font-bold"> {t("The News")}</h1>
+        <p className="text-xl max-w-[350px] lg:max-w-none 2xl:max-w-[700px] text-center lg:text-start">
           {t("news_header_text")}
         </p>
       </div>
@@ -72,6 +73,7 @@ const News = ({ value }) => {
           </Card>
         ))}
       </div>
+      <Footer theme={theme} className="mt-24" />
     </motion.main>
   );
 };

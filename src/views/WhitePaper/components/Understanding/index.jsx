@@ -72,10 +72,10 @@ const Technology = ({ value }) => {
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
             } container mx-auto flex flex-col items-center font-['Poppins'] overflow-hidden pb-20`}
     >
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
             {t(Text1.header)}
         </h1>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_1)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -130,10 +130,10 @@ const Technology = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
             <span className="font-bold">{t(Text1.text_1_5)}</span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_2)}
         </h1>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_2_1)}
         </h1>
         <span className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -148,7 +148,7 @@ const Technology = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(Text1.title_2_1_5)}</span>
             <span>{t(Text1.text_2_1_5)}</span><br />
         </span>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_2_2)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -163,7 +163,7 @@ const Technology = ({ value }) => {
             <span className="text-center font-bold text-xl">{t(Text1.title_2_2_5)}</span>
             <span>{t(Text1.text_2_2_5)}</span>
         </p>
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_2_3)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">

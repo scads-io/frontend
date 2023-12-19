@@ -24,7 +24,7 @@ const HowTo = ({ value }) => {
         <h1
           className={`${
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
-          } font-bold text-center text-[40px]`}
+          } font-bold text-center text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px]`}
         >
           {t("How To")}
         </h1>

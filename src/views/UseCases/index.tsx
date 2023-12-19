@@ -345,8 +345,8 @@ const UseCases = ({ value }) => {
           theme.isDark ? "text-[#B6B6B6]" : "text-black"
           } container mx-auto flex flex-col mt-40 items-center font-['Poppins'] overflow-hidden pb-20`}
       >
-        <h1 className="text-[40px] text-center font-bold">{t("SCADS AND TWINES USE CASES")}</h1>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] text-center font-bold">{t("SCADS AND TWINES USE CASES")}</h1>
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
           {t(Text1.title_1)}
         </h1>
         <div className="mt-[21px]">
@@ -362,7 +362,7 @@ const UseCases = ({ value }) => {
             <span>{t(Text1.text_1_4)}</span>
           </p>
         </div>
-        <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+        <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
           {t(Text1.title_2)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -397,7 +397,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_3)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -450,7 +450,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_4)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -492,7 +492,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_5)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -543,7 +543,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_6)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -587,7 +587,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_7)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -642,7 +642,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_8)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -702,7 +702,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_9)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -762,7 +762,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_10)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -838,7 +838,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_11)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -899,7 +899,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_12)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
@@ -1005,7 +1005,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_13)}
           </h1>
            <div className="mt-2">
@@ -1091,7 +1091,7 @@ const UseCases = ({ value }) => {
           viewport={{ once: true }}
           variants={whitePaperVariants}
           className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
+          <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title_14)}
           </h1>
           <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">

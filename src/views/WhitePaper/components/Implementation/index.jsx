@@ -58,7 +58,7 @@ const Implementation  = ({ value }) => {
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
             } container mx-auto flex flex-col items-center font-['Poppins'] overflow-hidden pb-20`}
     >
-        <h1 className="text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
             {t(Text1.header)}
         </h1>
         <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
