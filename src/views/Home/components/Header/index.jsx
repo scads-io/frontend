@@ -88,9 +88,9 @@ const Header = ({ value }) => {
             />
           ) : (
             <img
-              src="/images/home/header_img_dark.webp"
+              src="/images/home/header_img_dark.svg"
               fetchpriority="high"
-              className="px-20 hidden lg:block"
+              className="hidden lg:block"
               alt="header dark mode"
             />
           )}

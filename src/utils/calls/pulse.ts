@@ -7,7 +7,7 @@ const options = {
 
 export const circulatePulse = async (pulseContract, stableCoinAddress) => {
   const gasPrice = getGasPrice()
-  const tx = await pulseContract.circulate(stableCoinAddress, { gasPrice })
+  const tx = await pulseContract.circulate(stableCoinAddress, { ...options, gasPrice })
   const receipt = await tx.wait()
   return receipt.status
 }

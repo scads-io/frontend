@@ -10,7 +10,7 @@ export const caratBuy = async (caratContract, amount) => {
   const gasPrice = getGasPrice()
 
   const value = amount
-  const tx = await caratContract.caratMint(value, { gasPrice })
+  const tx = await caratContract.caratMint(value, { ...options, gasPrice })
   const receipt = await tx.wait()
   return receipt.status
 }
@@ -18,28 +18,28 @@ export const caratBuy = async (caratContract, amount) => {
 export const caratRedeem = async (caratContract, amount) => {
   const gasPrice = getGasPrice()
   const value = new BigNumber(amount).toString()
-  const tx = await caratContract.claim(value, { gasPrice })
+  const tx = await caratContract.claim(value, { ...options, gasPrice })
   const receipt = await tx.wait()
   return receipt.status
 }
 
 export const caratClaim = async (caratContract) => {
   const gasPrice = getGasPrice()
-  const tx = await caratContract.claimRewardCarat({ gasPrice })
+  const tx = await caratContract.claimRewardCarat({ ...options, gasPrice })
   const receipt = await tx.wait()
   return receipt.status
 }
 
 export const addAutoCompoundAddress = async (caratContract) => {
   const gasPrice = getGasPrice()
-  const tx = await caratContract.addAutoCompoundAddress({ gasPrice })
+  const tx = await caratContract.addAutoCompoundAddress({ ...options, gasPrice })
   const receipt = await tx.wait()
   return receipt.status
 }
 
 export const removeAutoCompoundAddress = async (caratContract) => {
   const gasPrice = getGasPrice()
-  const tx = await caratContract.removeAutoCompoundAddress({ gasPrice })
+  const tx = await caratContract.removeAutoCompoundAddress({ ...options, gasPrice })
   const receipt = await tx.wait()
   return receipt.status
 }

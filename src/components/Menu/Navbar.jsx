@@ -47,18 +47,18 @@ function MobileModal({ theme, isOpen, onClose }) {
         theme={theme}
        >
         <div
-          className={`modal-content flex flex-col justify-center items-center ${theme ? 'text-white' : 'text-black'}`}
+          className={`modal-content flex flex-col justify-center gap-4 ${theme ? 'text-white' : 'text-black'}`}
         >
-          <p className="text-[13px] font-medium break-words">
+          <p className="text-xs font-medium break-words">
             Scads: 0x6D036B813C63c2c2D84De16369F2b532a37A5E97
           </p>
-          <p className="text-[13px] font-medium break-words mt-4">
+          <p className="text-xs font-medium break-words">
             Twine: 0xa86C718a38515699773a1FEB9c3A891A2BE982A1
           </p>
-          <p className="text-[13px] font-medium break-words mt-4">
+          <p className="text-xs font-medium break-words">
             USDT: 0x55d398326f99059ff775485246999027b3197955
           </p>
-          <p className="text-[13px] font-medium break-words mt-4">
+          <p className="text-xs font-medium break-words">
             USDC: 0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d
           </p>
         </div>
@@ -81,7 +81,7 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
         theme={isDark}
        >
         <div
-          className={`modal-documents-content flex flex-col justify-center items-center ${isDark ? 'text-white' : 'text-black'}`}
+          className={`modal-documents-content flex flex-col justify-center gap-4 items-center ${isDark ? 'text-white' : 'text-black'}`}
         >
           <Link
           to="/roadmap"
@@ -96,7 +96,7 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
         </Link>
         <Link
           to="/usecases"
-          className="text-xl font-medium mt-4"
+          className="text-xl font-medium"
           onClick={() => {
             setIsOpen(false)
             onClose()
@@ -107,7 +107,7 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
         </Link>
         <Link
           to="/whitepaper"
-          className="text-xl font-medium mt-4"
+          className="text-xl font-medium"
           onClick={() => {
             setIsOpen(false)
             onClose()
@@ -118,7 +118,7 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
         </Link>
         <Link
           to="/gitbook"
-          className="text-xl font-medium mt-4"
+          className="text-xl font-medium"
           onClick={() => {
             setIsOpen(false)
             onClose()
@@ -156,18 +156,18 @@ function DesktopPopup({ theme, isOpen, onClose }) {
         theme={theme}
       >
         <div
-          className={`popup-content flex flex-col justify-center ${theme ? 'text-white' : 'text-black'}`}
+          className={`popup-content flex flex-col justify-center gap-4 ${theme ? 'text-white' : 'text-black'}`}
         >
-          <p className="text-[15px] font-medium">
+          <p className="text-sm font-medium">
             Scads: 0x6D036B813C63c2c2D84De16369F2b532a37A5E97
           </p>
-          <p className="text-[15px] font-medium mt-4">
+          <p className="text-sm font-medium">
             Twine: 0xa86C718a38515699773a1FEB9c3A891A2BE982A1
           </p>
-          <p className="text-[15px] font-medium mt-4">
+          <p className="text-sm font-medium">
             USDT: 0x55d398326f99059ff775485246999027b3197955
           </p>
-          <p className="text-[15px] font-medium mt-4">
+          <p className="text-sm font-medium">
             USDC: 0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d
           </p>
         </div>
@@ -201,7 +201,7 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
         theme={isDark}
       >
         <div
-          className={`popup-document-content flex flex-col justify-center items-center ${isDark ? 'text-white' : 'text-black'}`}
+          className={`popup-document-content flex flex-col justify-center gap-4 items-center ${isDark ? 'text-white' : 'text-black'}`}
         >
           <Link
             to="/roadmap"
@@ -216,7 +216,7 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
           </Link>
           <Link
             to="/usecases"
-            className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200 mt-4"
+            className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
             onClick={() => {
               setOnScreen(false)
               onClose()
@@ -227,7 +227,7 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
           </Link>
           <Link
             to="/whitepaper"
-            className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200 mt-4"
+            className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
             onClick={() => {
               setOnScreen(false)
               onClose()
@@ -238,7 +238,7 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
           </Link>
           <Link
             to="/gitbook"
-            className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200 mt-4"
+            className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
             onClick={() => {
               setOnScreen(false)
               onClose()
@@ -387,8 +387,8 @@ const Navbar = ({ value }) => {
         >
           <Link to="/">
             <img
-              src={isDark ? '/images/home/logo_dark.svg' : '/images/home/logo_light.svg'}
-              className='max-w-[240px]'
+              src={isDark ? '/images/home/logo_dark.webp' : '/images/home/logo_light.webp'}
+              className='max-w-[240px] max-h-[55px]'
               alt="logo"
             />
           </Link>
@@ -465,8 +465,8 @@ const Navbar = ({ value }) => {
           <h3>
             <Link to="/">
               <img
-                src={isDark ? '/images/home/logo_dark.svg' : '/images/home/logo_light.svg'}
-                className="max-w-[180px]"
+                src={isDark ? '/images/home/logo_dark.webp' : '/images/home/logo_light.webp'}
+                className="max-w-[180px] max-h-[55px]"
                 alt="logo"
               />
             </Link>
@@ -488,7 +488,7 @@ const Navbar = ({ value }) => {
                 overflow: "hidden",
               }}
               transition={{ duration: 0.3 }}
-              className="w-11/12 py-6"
+              className="mobileNavBar w-11/12 py-6"
             >
               <motion.div
                 initial={{
@@ -524,7 +524,7 @@ const Navbar = ({ value }) => {
                         >
                           {t(item.text)}
                         </div> : 
-                        <Link to={item.path} className="text-xl font-medium" onClick={() => setIsOpen(false)}>
+                        <Link to={item.path} className="text-xl font-medium hover:text-[#B52761] transition-all duration-200" onClick={() => setIsOpen(false)}>
                           {t(item.text)}
                         </Link>
                       }

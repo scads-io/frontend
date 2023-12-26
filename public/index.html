@@ -28,8 +28,9 @@
       function checkInvestAndBodyOverflow() {
         var investElement = document.querySelector('.invest');
         var walletElement = document.querySelector('.connectWallet');
+        var mobileNavBarElement = document.querySelector('.mobileNavBar');
 
-        if (investElement || walletElement) {
+        if (investElement || walletElement || mobileNavBarElement) {
           document.body.style.overflow = 'hidden';
         } else {
           document.body.style.overflow = 'visible';

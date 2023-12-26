@@ -14,7 +14,7 @@ export const scadsMint = async (scadsContract, amount, token) => {
 
 export const scadsSell = async (scadsContract, amount, token) => {
   const gasPrice = getGasPrice()
-  const tx = await scadsContract.scadsSell(amount, token, { gasPrice })
+  const tx = await scadsContract.scadsSell(amount, token, { ...options, gasPrice })
   const receipt = await tx.wait()
   return receipt.status
 }

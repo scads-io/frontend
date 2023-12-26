@@ -105,7 +105,7 @@ const TabsLayout = ({ value }) => {
         }`}
       >
         <TabList
-          className={`flex flex-row md:flex-col flex-wrap justify-center gap-4 ps-3 pr-3 py-4 lg:ps-0 md:pr-20 lg:py-0 ${isMobile ? "text-[13px]" : "text-[16px]"}`}
+          className="flex flex-row md:flex-col flex-wrap justify-center gap-4 ps-3 pr-3 py-4 lg:ps-0 md:pr-20 lg:py-0 w-sm:text-xs"
         >
           {tokenomics.map((thumb) => (
             <Tab

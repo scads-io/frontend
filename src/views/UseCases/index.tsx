@@ -352,8 +352,8 @@ const UseCases = ({ value }) => {
         <div className="mt-[21px]">
           <img
             src='/images/usecases/1.webp'
-            className="w-44 border-4 border-purple-600 mr-3 mb-3 float-left"
             alt="usecases"
+            className="w-44 border-4 border-purple-600 mr-3 mb-3 float-left rounded-3xl"
           />
           <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
             <span>{t(Text1.text_1_1)}</span><br /><br />
@@ -459,8 +459,8 @@ const UseCases = ({ value }) => {
           <div className="mt-2">
             <img
               src='/images/usecases/2.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -502,8 +502,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/3.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -553,8 +553,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/4.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -596,8 +596,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/5.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -652,8 +652,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/6.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -712,8 +712,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/7.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -772,8 +772,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/8.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -848,8 +848,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/9.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -909,8 +909,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/10.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
               <span>
@@ -1011,8 +1011,8 @@ const UseCases = ({ value }) => {
            <div className="mt-2">
             <img
               src='/images/usecases/11.webp'
-              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right"
               alt="usecases"
+              className="w-44 border-4 border-purple-600 ml-3 mb-3 float-right rounded-3xl"
             />
             <p className="font-['Poppins'] text-base lg:text-lg max-w-[328px] md:max-w-[600px] lg:max-w-[1000px]">
             <span>{t(Text1.text_13)}</span><br /><br />

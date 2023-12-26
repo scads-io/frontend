@@ -11,10 +11,7 @@ module.exports = {
         "pos-100": "100% 100%",
       },
       screens: {
-        'h6': { 'raw': '(min-height: 600px)' },
-        'h8': { 'raw': '(min-height: 800px)' },
-        'h10': { 'raw': '(min-height: 1024px)' },
-        'w1': { 'raw': '(max-width: 500px)' },
+        'w-sm': { 'raw': '(max-width: 300px)' },
       }
     },
   },
