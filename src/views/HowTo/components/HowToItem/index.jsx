@@ -36,7 +36,7 @@ const HowToItem = ({ step, value }) => {
       )}
       {textSm && (
         <ul>
-          {textSm.split("\n").map((line, index) => {
+          {textSm.split("\n").map((line) => {
             const uniqueKey = uuidv4();
             return (
               <li key={uniqueKey} className="text-xs">

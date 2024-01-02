@@ -2419,10 +2419,6 @@ code {
     flex-wrap: wrap;
   }
 
-  .md\:items-start {
-    align-items: flex-start;
-  }
-
   .md\:items-end {
     align-items: flex-end;
   }

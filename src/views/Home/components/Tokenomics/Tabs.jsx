@@ -1,6 +1,5 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
-import { useMatchBreakpoints } from '@scads/uikit'
 import { useTranslation } from 'contexts/Localization'
 import Card from "components/NewCard"
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion"
@@ -89,7 +88,6 @@ const tokenomics = [
 const TabsLayout = ({ value }) => {
   const { theme } = value
   const { t } = useTranslation()
-  const { isMobile } = useMatchBreakpoints()
 
   const activeClasses =
     "text-pink-700 relative before:absolute before:inline-block lg:before:w-2 before:h-2 before:bg-pink-700 before:rounded-full before:content-[''] before:-left-4 before:top-1/2 before:-translate-y-1/2";

@@ -118,7 +118,7 @@ export const TWINECardVariants = {
   },
   exit: {
     opacity: 0,
-    x: 300, // Set your exit properties here
+    x: 300,
     duration: 1,
   },
 };
@@ -134,7 +134,7 @@ export const scadsCardVariants = {
   },
   exit: {
     opacity: 0,
-    x: -300, // Set your exit properties here
+    x: -300,
     duration: 1,
   },
 };

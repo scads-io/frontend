@@ -43,9 +43,9 @@ const StatsTooltip = () => {
       {statTooltip.map((item) => (
         <li
           key={item.id}
-          className="flex flex-col items-center md:items-start xl:items-center md:gap-2"
+          className="flex flex-col items-center lg:items-start xl:items-center md:gap-2"
         >
-          <span className="font-semibold xl:text-center max-w-[320px] lg:max-w-[140px] xl:max-w-[200px]">
+          <span className="font-semibold text-center md:text-start xl:text-center max-w-[320px] lg:max-w-[140px] xl:max-w-[200px]">
             {t(item.title)}
           </span>
           <p className="text-center md:text-start xl:text-center max-w-[320px] lg:max-w-[140px] xl:max-w-[200px]">
