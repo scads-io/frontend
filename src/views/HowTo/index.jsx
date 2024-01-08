@@ -19,7 +19,7 @@ const HowTo = ({ value }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6 }}
-        className="container mx-auto flex flex-col items-center gap-20 mt-40 font-['Poppins'] overflow-hidden pb-20"
+        className="container mx-auto flex flex-col items-center gap-20 mt-40 overflow-hidden pb-20"
       >
         <h1
           className={`${

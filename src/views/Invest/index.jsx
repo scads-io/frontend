@@ -66,10 +66,10 @@ const Invest = ({ value }) => {
             theme={theme.isDark}
             className={`overflow-x-hidden lg:h-[85vh] xl:h-[80vh] lg:w-10/12 lg:backdrop-blur-3xl !bg-opacity-60 ${
               theme.isDark && "!bg-[#2B2B37]"
-            }  relative`}
+            } relative`}
           >
             <div
-              className={`flex justify-center xl:items-center h-full font-['Poppins'] relative z-10 ${
+              className={`flex justify-center xl:items-center h-full relative z-10 ${
                 theme.isDark ? "text-white" : "text-black"
               }`}
             >

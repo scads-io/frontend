@@ -70,7 +70,7 @@ const tokenomics = [
   },
   {
     id: 9,
-    text: "Every system requires operational costs, which in this case, include decentralized anonymous servers. These servers serve critical functions such as acting as data nodes, providing redundancy, managing system flow, ensuring security, and preventing congestion. To sustain these essential services, a tax of 1.77 % per transaction has been established. This tax contributes to the continuous and smooth operation of the system, enabling it to meet its objectives effectively. AS for exchanges . The minimum order is 100k  SCADS.",
+    text: "Every system requires operational costs, which in this case, include decentralized anonymous servers. These servers serve critical functions such as acting as data nodes, providing redundancy, managing system flow, ensuring security, and preventing congestion. To sustain these essential services, a tax of 1.77% per transaction has been established. This tax contributes to the continuous and smooth operation of the system, enabling it to meet its objectives effectively. AS for exchanges. The minimum order is 100k SCADS.",
     thumb: "SEIGNORAGE",
   },
   {
@@ -95,7 +95,7 @@ const TabsLayout = ({ value }) => {
   return (
     <Card
       theme={theme.isDark}
-      className="flex justify-center items-center py-10 font-['Poppins'] rounded-[60px] mt-10 max-w-[350px] sm:max-w-none backdrop-blur-3xl"
+      className="flex justify-center items-center py-10 rounded-[60px] mt-10 max-w-[350px] sm:max-w-none backdrop-blur-3xl"
     >
       <Tabs
         className={`flex flex-col md:flex-row items-center justify-center ${

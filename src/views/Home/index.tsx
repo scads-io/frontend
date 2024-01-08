@@ -23,7 +23,7 @@ const Home = ({ value }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      >
+    >
       <PageMeta />
       <Header value={value} />
       <div className="py-10 relative bg-gradient-to-b from-transparent to-[#FF006820]">
@@ -31,25 +31,29 @@ const Home = ({ value }) => {
           src={theme.isDark ? "/images/home/cube_large.webp" : "/images/home/triangle.webp"}
           className="absolute md:right-10 lg:right-0 2xl:right-16 top-[8%] md:top-1/4 2xl:top-[14%] max-w-[100px] md:max-w-none"
           width={200}
-          alt=""
+          alt="background"
+          loading="lazy"
         />
         <img
           src={theme.isDark ? "/images/home/cube_large.webp" : "/images/home/donut.webp"}
           className="absolute hidden md:block left-4 xl:left-0 2xl:left-28 top-[70%]"
           width={160}
-          alt=""
+          alt="background"
+          loading="lazy"
         />
         <img
           src={theme.isDark ? "/images/home/cube_small_one.webp" : "/images/home/cube_light.webp"}
           className="absolute left-0 md:left-1/4 top-[38%]"
           width={90}
-          alt=""
+          alt="background"
+          loading="lazy"
         />
         <img
           src={theme.isDark ? "/images/home/cube_small_two.webp" : "/images/home/rectangle_light.webp"}
           className="absolute right-1/3 top-[87%] hidden md:block"
           width={90}
-          alt=""
+          alt="background"
+          loading="lazy"
         />
         <LivePrices value={value} />
         <Treasury value={value} />

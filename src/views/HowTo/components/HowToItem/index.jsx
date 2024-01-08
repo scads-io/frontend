@@ -11,7 +11,7 @@ const HowToItem = ({ step, value }) => {
 
   const stepClassName = `${
     theme.isDark ? "text-[#B6B6B6]" : "text-black"
-  } flex flex-col justify-center items-center py-4 px-8 font-['Poppins'] max-w-[340px] lg:max-w-[300px] xl:max-w-[379px]
+  } flex flex-col justify-center items-center py-4 px-8 max-w-[340px] lg:max-w-[300px] xl:max-w-[379px]
   ${id === "2" ? "md:mt-16 pb-10" : "mt-6"} 
   ${id === "5" && "md:mt-[80px] lg:max-w-[360px]"} 
   ${id === "8" && "md:mt-16"}
@@ -48,13 +48,13 @@ const HowToItem = ({ step, value }) => {
       )}
       {id === "5" && (
         <>
-          <h2 className="font-bold text-xl mt-12">Step 6</h2>
+          <h2 className="font-bold text-xl mt-12">{t("Step 6")}</h2>
           <p className="max-w-[351px] py-6">{t(howToItemsData[9].text)}</p>
         </>
       )}
       {id === "10" && (
         <>
-          <h2 className="font-bold text-xl">Step 11</h2>
+          <h2 className="font-bold text-xl">{t("Step 11")}</h2>
           <p className="max-w-[351px] py-6">{t(howToItemsData[10].text)}</p>
         </>
       )}

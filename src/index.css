@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&subset=cyrillic&display=swap&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
   margin: 0;
@@ -37,4 +37,8 @@ code {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.image-shadow {
+  filter: drop-shadow(0px 0px 20px #9333ea);
 }

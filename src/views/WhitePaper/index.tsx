@@ -1,6 +1,6 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
-import Page, { PageMeta } from 'components/Layout/Page'
+import { PageMeta } from 'components/Layout/Page'
 import ScrollToTopButton  from 'components/ScrollToTopButton'
 import Footer from 'components/Footer'
 import Pioneering from './components/Pioneering'
@@ -23,7 +23,7 @@ const WhitePaper = ({ value }) => {
   const { theme } = value;
 
   return (
-    <Page>
+    <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
       <PageMeta />
       <Pioneering value={value} />
       <Introduction value={value} />
@@ -41,7 +41,7 @@ const WhitePaper = ({ value }) => {
       <Contact value={value} />
       <Footer theme={theme} className="mt-24" />
       {createPortal(<ScrollToTopButton />, document.body)}
-    </Page>
+    </div>
   )
 }
 

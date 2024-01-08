@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Footer from 'components/Footer'
-import Page from 'components/Layout/Page'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledNotFound = styled.div`
@@ -18,12 +17,12 @@ const NotFound = ({ value }) => {
   const { t } = useTranslation()
 
   return (
-    <Page>
+    <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
       <StyledNotFound>
         <h1 className="text-[80px] font-black bg-gradient-to-r  from-[#655780] via-[#BF205D] to-[#BF205D] text-transparent bg-clip-text">
           {404}
         </h1>
-        <h1 className={`text-[26px] 2xl:text-5xl font-black max-w-[329px] lg:max-w-[350px] 2xl:max-w-[600px] mb-6 ${
+        <h1 className={`text-[26px] text-center 2xl:text-5xl font-black max-w-[329px] lg:max-w-[350px] 2xl:max-w-[600px] mb-6 ${
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
           }`}>
           {t('Oops, page not found.')}
@@ -36,7 +35,7 @@ const NotFound = ({ value }) => {
         </button>
       </StyledNotFound>
       <Footer theme={theme} className="mt-0" />
-    </Page>
+    </div>
   )
 }
 

@@ -14,12 +14,10 @@ import TransactionRow from './TransactionRow'
 
 const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
-  font-family: 'Poppins';
 `
 
 const StyledText = styled(Text)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
-  font-family: 'Poppins';
 `
 
 const WalletTransactions: React.FC = () => {
@@ -40,9 +38,9 @@ const WalletTransactions: React.FC = () => {
     <Box minHeight='120px'>
       <Flex alignItems='center' justifyContent='space-between' mb='24px'>
         <div
-          className={`${theme.isDark ? "text-white" : "text-black"} font-['Poppins']`}
+          className={`${theme.isDark ? "text-white" : "text-black"}`}
           >
-          <h1 className="text-2 font-semibold">RECENT TRANSACTIONS</h1>
+          <h1 className="text-2 font-semibold">{t('RECENT TRANSACTIONS')}</h1>
         </div>
         {sortedTransactions.length > 0 && (
           <StyledButton scale='sm' onClick={handleClearAll} variant='text' px='0'>

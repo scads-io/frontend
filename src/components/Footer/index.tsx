@@ -49,12 +49,13 @@ const Footer = (props) => {
               className={`${theme.isDark && "invert"}`}
               alt="social icon"
               width={28}
+              loading="lazy"
             />
           </a>
         ))}
       </div>
       <p
-        className={`font-['Poppins'] text-lg text-center ${
+        className={`text-lg text-center ${
           theme.isDark && "text-[#B6B6B6]"
         }`}
       >

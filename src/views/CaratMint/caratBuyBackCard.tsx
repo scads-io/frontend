@@ -17,7 +17,6 @@ import useCaratMint from './hooks/useCaratMint'
 const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
   background-color:  ${({ theme }) => theme.isDark ? "rgba(255,255,255,0.08)" : "#E9EAEB"};
-  font-family: 'Poppins';
 `
 
 export default function CaratBuyBackCard() {
@@ -85,7 +84,7 @@ export default function CaratBuyBackCard() {
   return (
     <div className="w-full">
       <div
-        className={`flex flex-col md:flex-row justify-between px-5 w-full border rounded-3xl font-['Poppins'] max-w-[330px] md:max-w-none md:w-full relative ${
+        className={`flex flex-col md:flex-row justify-between px-5 w-full border rounded-3xl max-w-[330px] md:max-w-none md:w-full relative ${
           theme.isDark ? "border-white" : "border-black"
         }`}
       >

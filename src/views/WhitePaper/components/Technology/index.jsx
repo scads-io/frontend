@@ -24,7 +24,7 @@ const Text1 = {
     text_3_3_2: "Users can accumulate TWINE by simply holding SCADS in their wallets, eliminating the need for active engagement in staking or lending activities.",
     text_title_3_4: "4. Exclusive Access to SCADS Minting:",
     text_3_4_1: "TWINE holds exclusive privileges, becoming the only token capable of minting SCADS when specific market conditions are met.",
-    text_3_4_2: "This feature adds scarcity to TWINE, making it a highly sought-afer asset within the SCADS ecosystem.",
+    text_3_4_2: "This feature adds scarcity to TWINE, making it a highly sought-after asset within the SCADS ecosystem.",
     text_title_3_5: "5. Alignment with Community Growth:",
     text_3_5_1: "The growth of TWINE is intricately linked to the expansion of the SCADS community.",
     text_3_5_2: "As the user network grows and more SCADS is minted, TWINE holders experience increased value, creating a symbiotic relationship between the token and community growth.",
@@ -120,7 +120,7 @@ const Technology = ({ value }) => {
         variants={whitePaperVariants}
         className={` ${
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
-            } container mx-auto flex flex-col items-center font-['Poppins'] overflow-hidden pb-20`}
+            } container mx-auto flex flex-col items-center overflow-hidden pb-20`}
     >
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
             {t(Text1.header)}
@@ -134,7 +134,7 @@ const Technology = ({ value }) => {
             className="px-3 rounded-[30px]"
             alt="scads"
         />
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span>{t(Text1.text_1_1)}</span><br />
             <span>{t(Text1.text_1_2)}</span><br />
             <span>{t(Text1.text_1_3)}</span>
@@ -148,7 +148,7 @@ const Technology = ({ value }) => {
             className="px-3 rounded-[30px]"
             alt="twine"
         />
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span>{t(Text1.text_2)}</span><br />
             <span className="text-center font-bold text-xl">{t(Text1.title_key)}</span><br />
             <span className="text-center font-bold text-xl">{t(Text1.text_title_3_1)}</span>
@@ -198,7 +198,7 @@ const Technology = ({ value }) => {
             className="px-3 rounded-[30px]"
             alt="poh"
         />
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span>
                 <span className="font-bold">{t(Text1.title_4_header)}</span>
                 <span>{" "}{t(Text1.text_4)}</span>
@@ -279,7 +279,7 @@ const Technology = ({ value }) => {
             className="px-3 rounded-[30px]"
             alt="pulse"
         />
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span>
                 <span className="font-bold">{t(Text1.title_5_header)}</span>
                 <span>{" "}{t(Text1.text_5)}</span>
@@ -330,14 +330,14 @@ const Technology = ({ value }) => {
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_6)}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span className="text-center font-bold text-xl">{t(Text1.text_6)}</span>
             <span>{t(Text1.text_6_1)}</span>
         </p>
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_7)}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span className="text-center font-bold text-xl">{t(Text1.text_7)}</span>
             <span>{t(Text1.text_7_1)}</span>
             <span>{t(Text1.text_7_2)}</span>
@@ -345,7 +345,7 @@ const Technology = ({ value }) => {
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_8)}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span className="text-center font-bold text-xl">{t(Text1.title_8_1)}</span>
             <span>{t(Text1.text_8_1_1)}</span>
             <span>{t(Text1.text_8_1_2)}</span><br />
@@ -358,7 +358,7 @@ const Technology = ({ value }) => {
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text1.title_9)}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span className="text-center font-bold text-xl">{t(Text1.title_9_1)}</span>
             <span>{t(Text1.text_9_1)}</span><br />
             <span className="text-center font-bold text-xl">{t(Text1.title_9_2)}</span>

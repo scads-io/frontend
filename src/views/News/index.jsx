@@ -30,51 +30,53 @@ const News = ({ value }) => {
   const { t } = useTranslation()
 
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6 }}
-      className="flex flex-col items-center gap-20 font-['Poppins'] relative bg-gradient-to-b from-transparent to-[#FF006820]"
-    >
-      <div
-        className={` ${
-          theme.isDark ? "text-[#B6B6B6]" : "text-black"
-        } flex flex-col items-center mt-40`}
+    <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col items-center gap-20 "
       >
-        <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] font-bold"> {t("The News")}</h1>
-        <p className="text-xl max-w-[350px] lg:max-w-none 2xl:max-w-[700px] text-center lg:text-start">
-          {t("news_header_text")}
-        </p>
-      </div>
-      <div className="flex flex-wrap justify-center items-center gap-8">
-        {news.map((item) => (
-          <Card
-            theme={theme.isDark}
-            className="flex flex-col items-center lg:items-start w-[330px] h-[290px] md:w-[360px] md:h-[290px]"
-            key={item.id}
-          >
-            <img
-              src={item.img}
-              className="w-[300px] md:w-full h-[200px] md:h-[200px] py-2 rounded-3xl object-cover"
-              alt=""
-            />
-            <h1 className="text-lg font-['Poppins'] text-center lg:text-start">
-              {item.title}
-            </h1>
-            <a
-              href={item.link}
-              className="mt-auto pb-3 md:ms-auto text-base underline underline-offset-4"
-              target="_blank"
-              rel="noreferrer"
+        <div
+          className={` ${
+            theme.isDark ? "text-[#B6B6B6]" : "text-black"
+          } flex flex-col items-center mt-40`}
+        >
+          <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] font-bold"> {t("The News")}</h1>
+          <p className="text-xl max-w-[350px] lg:max-w-none 2xl:max-w-[700px] text-center">
+            {t("news_header_text")}
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center items-center gap-8">
+          {news.map((item) => (
+            <Card
+              theme={theme.isDark}
+              className="flex flex-col items-center lg:items-start w-[330px] h-[290px] md:w-[360px] md:h-[290px]"
+              key={item.id}
             >
-              {t("View")}
-            </a>
-          </Card>
-        ))}
-      </div>
+              <img
+                src={item.img}
+                className="w-[300px] md:w-full h-[200px] md:h-[200px] py-2 rounded-3xl object-cover"
+                alt=""
+              />
+              <h1 className="text-lg text-center lg:text-start">
+                {item.title}
+              </h1>
+              <a
+                href={item.link}
+                className="mt-auto pb-3 md:ms-auto text-base underline underline-offset-4"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("View")}
+              </a>
+            </Card>
+          ))}
+        </div>
+      </motion.main>
       <Footer theme={theme} className="mt-24" />
-    </motion.main>
+    </div>
   );
 };
 

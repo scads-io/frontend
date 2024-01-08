@@ -56,7 +56,7 @@ const Pioneering = ({ value }) => {
         transition={{ duration: 0.6 }}
         className={` ${
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
-            } container mx-auto flex flex-col items-center mt-40 font-['Poppins'] overflow-hidden pb-20`}
+            } container mx-auto flex flex-col items-center mt-40 overflow-hidden pb-20`}
     >
         <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] font-bold text-center">
             {t(executiveText1.header_1)}
@@ -67,7 +67,7 @@ const Pioneering = ({ value }) => {
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(executiveText1.title)}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span className="text-center font-bold text-xl">{t(executiveText1.small_title_1)}</span>
             <span>{t(executiveText1.small_text_1)}</span><br />
             <span className="text-center font-bold text-xl">{t(executiveText1.small_title_2)}</span>
@@ -112,7 +112,7 @@ const Pioneering = ({ value }) => {
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(executiveText2.title)}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span className="text-center font-bold text-xl">{t(executiveText2.small_title_1)}</span>
             <span>{t(executiveText2.small_text_1)}</span><br />
             <span className="text-center font-bold text-xl">{t(executiveText2.small_title_2)}</span>

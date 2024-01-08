@@ -72,16 +72,18 @@ const Wallets = ({ value }) => {
         <img
           src={theme.isDark.isDark ? "/images/home/wallets_img_dark.webp" : "/images/home/wallets_image_light.webp"}
           className="absolute z-0 top-0 w-auto lg:-left-10 xl:left-10 2xl:left-44 h-[700px] hidden md:block"
-          alt=""
+          alt="background"
+          loading="lazy"
         />
       </motion.div>
       <img
         src="/images/home/wallets_img_mobile.webp"
         className="absolute top-6 ms-2 md:hidden"
-        alt=""
+        alt="background"
+        loading="lazy"
       />
       <div className="flex flex-col justify-center items-start gap-2 lg:gap-8 md:max-w-[700px] lg:max-w-[1100px] mx-auto mt-10">
-        <h1 className="relative z-10 text-[#B52761] text-2xl lg:text-[40px] font-bold font-['Poppins'] ms-10">
+        <h1 className="relative z-10 text-[#B52761] text-2xl lg:text-[40px] font-bold ms-10">
           {t("Wallets")}
         </h1>
         <motion.div
@@ -98,13 +100,13 @@ const Wallets = ({ value }) => {
                   whileInView="onscreen"
                   viewport={{ once: true, amount: 0.8 }}
                   variants={opacityVariants}
-                  className="flex flex-col gap-5 font-['Poppins'] ps-6 pe-20 md:ps-0 md:pe-0 "
+                  className="flex flex-col gap-5 ps-6 pe-20 md:ps-0 md:pe-0 "
                   key={item.id}
                 >
                   <h1
                     className={`${
                       theme.isDark ? "text-white" : "text-[#B52761]"
-                    } font-bold text-xl lg:text-2xl`}
+                    } font-bold text-xl`}
                   >
                     {t(item.title)}
                   </h1>

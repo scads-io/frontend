@@ -88,7 +88,7 @@ export default function CurrencySearchModal({
         <ModalTitle>
           {config[modalView].onBack && <ModalBackButton onBack={config[modalView].onBack} />}
           <div
-            className={`${theme.isDark ? "text-white" : "text-black"} font-['Poppins']`}
+            className={`${theme.isDark ? "text-white" : "text-black"}`}
             >
             <h1 className="text-center text-2xl font-semibold">{config[modalView].title}</h1>
           </div>

@@ -53,6 +53,7 @@ const AccordionItem = ({ header, ...rest }) => (
           className={`transition-transform duration-500 ease-out ${
             isEnter && "rotate-180"
           }`}
+          loading="lazy"
         />
       </>
     )}
@@ -83,21 +84,25 @@ const ContentAccordion = ({ value }) => {
         src={theme.isDark ? "/images/home/second_sphere_dark.svg" : "/images/home/rectangle_large.svg"}
         className="absolute left-0 top-0 max-w-[160px] md:max-w-none"
         alt="rectangle"
+        loading="lazy"
       />
       <img
         src="/images/home/hexagon.svg"
         className="absolute top-[40%] md:top-0 left-4 -translate-x-1/2 md:translate-x-0 md:left-[17%] lg:left-1/2 2xl:left-[20%] translate-y-3/4 max-w-[180px] md:max-w-none"
         alt="hex"
+        loading="lazy"
       />
       <img
         src={theme.isDark ? "/images/home/sphere_dark.svg" : "/images/home/second_cube.svg"}
         className="absolute -right-24 md:right-[23%] 2xl:right-1/4 top-6"
         alt="cube"
+        loading="lazy"
       />
       <img
         src={theme.isDark ? "/images/home/cube_large.webp" : "/images/home/cube_light.webp"}
         className="absolute -right-24 -rotate-45 translate-y-[200%] hidden md:block"
         alt="cube"
+        loading="lazy"
       />
       <motion.div
         initial="offscreen"
@@ -117,12 +122,12 @@ const ContentAccordion = ({ value }) => {
             {accordionContent.map((item) => (
               <AccordionItem
                 header={item.header}
-                className={`max-w-[320px] lg:max-w-[691px] flex flex-col font-['Poppins'] text-base text-black ${
+                className={`max-w-[320px] lg:max-w-[691px] flex flex-col text-base text-black ${
                   theme.isDark && "invert"
                 }`}
                 key={item.id}
               >
-                <p className="pt-8 pb-6">{item.p1}</p>
+                <p className="pt-8 pb-6">{t(item.p1)}</p>
                 <ol className="flex flex-col gap-6">
                   <li>{t(item.ol_1)}</li>
                   <li>{t(item.ol_2)}</li>

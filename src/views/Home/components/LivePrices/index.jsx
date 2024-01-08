@@ -71,7 +71,7 @@ const LivePrices = ({ value }) => {
           >
             <div className="flex flex-col items-center lg:flex-row justify-center gap-8 lg:gap-8 xl:gap-16 2xl:gap-28 py-6 px-7 lg:py-0 lg:px-0 w-[326px] md:w-full rounded-[30px]">
               <div
-                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 font-['Poppins'] lg:text-center relative z-10"
+                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 lg:text-center relative z-10"
                 key={0}
               >
                 <div
@@ -79,7 +79,7 @@ const LivePrices = ({ value }) => {
                     isMobile ? 'justify-end' : 'justify-center'
                   } flex items-center gap-1 min-w-[135px] md:min-w-[200px] lg:min-w-[110px]`}
                 >
-                  <h1 className="font-bold font-['Montserrat'] text-center text-xl md:text-[32px]">
+                  <h1 className="font-bold text-center text-xl md:text-[32px]">
                     {rewardSpeed.toFixed(7)}
                   </h1>
                 </div>
@@ -91,7 +91,7 @@ const LivePrices = ({ value }) => {
                 </div>
               </div>
               <div
-                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 font-['Poppins'] lg:text-center relative z-10"
+                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 lg:text-center relative z-10"
                 key={1}
               >
                 <div
@@ -104,8 +104,9 @@ const LivePrices = ({ value }) => {
                     alt="symbol"
                     width={isMobile ? 10 : 14}
                     className={`${theme.isDark ? 'contrast-50' : 'invert'}`}
+                    loading="lazy"
                   />
-                  <h1 className="font-bold font-['Montserrat'] text-center text-xl md:text-[32px]">
+                  <h1 className="font-bold text-center text-xl md:text-[32px]">
                     {parseFloat(scadsAmountOfPulse).toFixed(2)}
                   </h1>
                 </div>
@@ -117,7 +118,7 @@ const LivePrices = ({ value }) => {
                 </div>
               </div>
               <div
-                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 font-['Poppins'] lg:text-center relative z-10"
+                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 lg:text-center relative z-10"
                 key={2}
               >
                 <div
@@ -125,7 +126,7 @@ const LivePrices = ({ value }) => {
                     isMobile ? 'justify-end' : 'justify-center'
                   } flex items-center gap-1 min-w-[135px] md:min-w-[200px] lg:min-w-[110px]`}
                 >
-                  <h1 className="font-bold font-['Montserrat'] text-center text-xl md:text-[32px]">
+                  <h1 className="font-bold text-center text-xl md:text-[32px]">
                     {timeLeft.hours.toString().padStart(2, '0')}:{timeLeft.minutes.toString().padStart(2, '0')}:
                     {timeLeft.seconds.toString().padStart(2, '0')}
                   </h1>
@@ -138,7 +139,7 @@ const LivePrices = ({ value }) => {
                 </div>
               </div>
               <div
-                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 font-['Poppins'] lg:text-center relative z-10"
+                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 lg:text-center relative z-10"
                 key={3}
               >
                 <div
@@ -151,8 +152,9 @@ const LivePrices = ({ value }) => {
                     alt="symbol"
                     className={`${theme.isDark ? 'invert contrast-[.4]' : ''}`}
                     width={isMobile ? 8 : 12}
+                    loading="lazy"
                   />
-                  <h1 className="font-bold font-['Montserrat'] text-center text-xl md:text-[32px]">
+                  <h1 className="font-bold text-xl md:text-[32px]">
                     {parseFloat(totalCarat).toFixed(2)}
                   </h1>
                 </div>
@@ -164,7 +166,7 @@ const LivePrices = ({ value }) => {
                 </div>
               </div>
               <div
-                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 font-['Poppins'] lg:text-center relative z-10"
+                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 lg:text-center relative z-10"
                 key={4}
               >
                 <div
@@ -177,8 +179,9 @@ const LivePrices = ({ value }) => {
                     alt="symbol"
                     width={isMobile ? 10 : 14}
                     className={`${theme.isDark ? 'contrast-50' : 'invert'}`}
+                    loading="lazy"
                   />
-                  <h1 className="font-bold font-['Montserrat'] text-center text-xl md:text-[32px]">
+                  <h1 className="font-bold text-center text-xl md:text-[32px]">
                     {caratPrice.toFixed(2).toString()}
                   </h1>
                 </div>
@@ -190,7 +193,7 @@ const LivePrices = ({ value }) => {
                 </div>
               </div>
               <div
-                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 font-['Poppins'] lg:text-center relative z-10"
+                className="flex flex-row-reverse items-center lg:flex-col gap-10 md:gap-56 lg:gap-4 lg:text-center relative z-10"
                 key={5}
               >
                 <div
@@ -203,8 +206,9 @@ const LivePrices = ({ value }) => {
                     alt="symbol"
                     width={isMobile ? 10 : 14}
                     className={`${theme.isDark ? 'contrast-50' : 'invert'}`}
+                    loading="lazy"
                   />
-                  <h1 className="font-bold font-['Montserrat'] text-center text-xl md:text-[32px]">
+                  <h1 className="font-bold text-center text-xl md:text-[32px]">
                     {heldScadsAmount.toFixed(2).toString()}
                   </h1>
                 </div>
@@ -219,10 +223,10 @@ const LivePrices = ({ value }) => {
             <div className="flex justify-center mt-6">
               <button
                 type="button"
-                className={`py-1 px-4 bg-none border-2 border-[#B52761] transition-all duration-300 hover:border-[#655780] rounded-[30px] font-['Poppins'] text-[#B52761] hover:text-[#655780] text-xs font-bold`}
+                className="py-1 px-4 bg-none border-2 border-[#B52761] transition-all duration-300 hover:border-[#655780] rounded-[30px] text-[#B52761] hover:text-[#655780] text-xs font-bold"
                 onClick={showInfoClickHandler}
               >
-                {!showInfo ? 'Info' : 'Hide'}
+                {!showInfo ? t('Info') : t('Hide')}
               </button>
             </div>
             {/* Tooltip */}

@@ -35,18 +35,15 @@ const StyledFlexImg= styled(Flex)`
 
 const StyledText = styled(Text)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
-  font-family: 'Poppins';
 `
 
 const StyledLinkExternal = styled(LinkExternal)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
-  font-family: 'Poppins';
 `
 
 const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
   background-color:  ${({ theme }) => theme.isDark ? "rgba(255,255,255,0.08)" : "#E9EAEB"};
-  font-family: 'Poppins';
 `
 
 const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) => {
@@ -65,9 +62,9 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) 
   return (
     <>
       <div
-        className={`${theme.isDark ? "text-white" : "text-black"} font-['Poppins']`}
+        className={`${theme.isDark ? "text-white" : "text-black"}`}
         >
-        <h1 className="text-2 font-semibold">YOUR ADDRESS</h1>
+        <h1 className="text-2 font-semibold mb-2">{t('YOUR ADDRESS')}</h1>
       </div>
       <CopyAddress account={account} mb='24px' />
       {hasLowBnbBalance && (

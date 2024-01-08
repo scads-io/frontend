@@ -1,10 +1,12 @@
 import React from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
 import {
     opacityVariants,
     tokenomicsCardVariants,
   } from 'components/variants'
+import ScrollToTopButton  from 'components/ScrollToTopButton'
 import Footer from 'components/Footer'
 
 const storyContent = [
@@ -41,13 +43,13 @@ const storyContent = [
   {
     id: "st6",
     paragraph:
-      "People in Digitalia were excited. They started holding SCADS to earn TWINE. They found that TWINE was a great way to save for the future. Unlike their savings in the bank, which gave litle growth, TWINES grew steadily, ofering them a sense of security for their future needs. “What about our daily spending? Can we use SCADS everywhere?” asked the people. “Yes,” said the creators. “You can use SCADS in many places. You can buy groceries, pay for services, and even send money to your friends and family without any hassle.”",
+      "People in Digitalia were excited. They started holding SCADS to earn TWINE. They found that TWINE was a great way to save for the future. Unlike their savings in the bank, which gave litle growth, TWINES grew steadily, offering them a sense of security for their future needs. “What about our daily spending? Can we use SCADS everywhere?” asked the people. “Yes,” said the creators. “You can use SCADS in many places. You can buy groceries, pay for services, and even send money to your friends and family without any hassle.”",
     img: "/images/home/old people.webp",
   },
   {
     id: "st7",
     paragraph:
-      "As time went by, Digitalia transformed. The unstable days of Fiat were gone. People felt more secure and confident in their financial dealings. SCADS and TWINE didn’t just change how they spent or saved money; it changed their lives, ofering stability and growth in an uncertain world",
+      "As time went by, Digitalia transformed. The unstable days of Fiat were gone. People felt more secure and confident in their financial dealings. SCADS and TWINE didn’t just change how they spent or saved money; it changed their lives, offering stability and growth in an uncertain world",
     img: "/images/home/polygomous_family.webp",
   },
   {
@@ -65,50 +67,53 @@ const Story = ({ value }) => {
   const { t } = useTranslation()
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`flex flex-col items-center gap-y-8 mt-28 lg:mt-44 pb-20 font-['Poppins'] ${
-        theme.isDark ? "text-[#B6B6B6]" : "text-black"
-      }`}
-    >
-      <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] text-center lg:text-star font-bold">
-        {t("The Tale of SCADS and TWINE")}
-      </h1>
-      {storyContent.map((story) => {
-        isReverse = !isReverse;
-        return (
-          <div
-            key={story.id}
-            className={`flex flex-col items-center justify-center gap-8 ${
-              isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
-            }`}
-          >
-            <motion.img
-              src={story.img}
-              alt="story"
-              className="max-w-[300px] md:max-w-[400px] rounded-3xl"
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.8 }}
-              variants={tokenomicsCardVariants}
-            />
-            <motion.p
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.8 }}
-              variants={opacityVariants}
-              className="max-w-[340px] md:max-w-[600px]"
+    <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        className={`flex flex-col items-center gap-y-8 mt-28 lg:mt-44 pb-20 ${
+          theme.isDark ? "text-[#B6B6B6]" : "text-black"
+        }`}
+      >
+        <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] text-center lg:text-star font-bold">
+          {t("The Tale of SCADS and TWINE")}
+        </h1>
+        {storyContent.map((story) => {
+          isReverse = !isReverse;
+          return (
+            <div
+              key={story.id}
+              className={`flex flex-col items-center justify-center gap-8 ${
+                isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
+              }`}
             >
-              {t(story.paragraph)}
-            </motion.p>
-          </div>
-        );
-      })}
+              <motion.img
+                src={story.img}
+                alt="story"
+                className="image-shadow max-w-[300px] md:max-w-[400px] rounded-3xl"
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.8 }}
+                variants={tokenomicsCardVariants}
+              />
+              <motion.p
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.8 }}
+                variants={opacityVariants}
+                className="max-w-[340px] md:max-w-[600px]"
+              >
+                {t(story.paragraph)}
+              </motion.p>
+            </div>
+          );
+        })}
+      </motion.div>
       <Footer theme={theme} className="mt-24" />
-    </motion.div>
+      {createPortal(<ScrollToTopButton />, document.body)}
+    </div>
   );
 };
 

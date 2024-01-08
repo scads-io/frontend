@@ -19,7 +19,6 @@ import useCaratMint from './hooks/useCaratMint'
 const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
   background-color:  ${({ theme }) => theme.isDark ? "rgba(255,255,255,0.08)" : "#E9EAEB"};
-  font-family: 'Poppins';
 `
 
 export default function CaratClaimCard() {
@@ -74,7 +73,7 @@ export default function CaratClaimCard() {
   }
   return (
     <div
-        className={`flex flex-col items-center mx-auto font-['Poppins'] w-full ${
+        className={`flex flex-col items-center mx-auto w-full ${
           theme.isDark ? "text-white" : "text-black"
         } relative`}
       >

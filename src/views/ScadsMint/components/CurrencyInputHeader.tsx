@@ -20,7 +20,7 @@ const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, theme }) => {
       <div
         className={`flex gap-2 mt-8 lg:mt-3 xl:mt-5 ${
           theme ? "text-white" : "text-black"
-        } `}
+        }`}
       >
         <div className="flex flex-col items-center gap-1">
           <ul className="list-disc">

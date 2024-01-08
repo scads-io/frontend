@@ -3,6 +3,7 @@ import { Router, Route, Switch } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion/dist/framer-motion"
 import axios from 'axios'
 import "./index.css"
+import { useTranslation } from 'contexts/Localization'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'
 import useUserAgent from 'hooks/useUserAgent'
@@ -43,6 +44,7 @@ BigNumber.config({
 const App: React.FC = () => {
   const { theme } = useTheme()
   const [onScreen, setOnScreen] = useState(false)
+  const { currentLanguage } = useTranslation()
 
   usePollBlockNumber()
   useEagerConnect()
@@ -60,7 +62,13 @@ const App: React.FC = () => {
       document.body.classList.remove("bg-[#00000B]");
       document.body.classList.add("bg-[#e8ecff]");
     }
-  }, [theme]);
+
+    if (currentLanguage.code === 'en') {
+      document.body.style.fontFamily = "'Poppins', sans-serif";
+    } else {
+      document.body.style.fontFamily = "'Montserrat', sans-serif";
+    }
+  }, [theme, currentLanguage]);
 
   useEffect(() => {
     const fetchVisitCount = async () => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { languageList } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion"
 import Card from 'components/NewCard'
@@ -133,6 +134,41 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
   )
 }
 
+function MobileLangModal({ theme, isOpen, onClose }) {
+  const { setLanguage } = useTranslation()
+  if (!isOpen) return null
+
+  return (
+    <div
+      className='fixed top-0 right-0 bottom-0 left-0 flex flex-col justify-center items-center z-50'
+    >
+      <Card
+        className="modal w-auto min-w-[320px] max-w-full max-h-screen rounded-3xl p-4"
+        theme={theme}
+       >
+        <div
+          className={`mobile-lang-popup flex flex-col justify-center gap-4 ${theme ? 'text-white' : 'text-black'}`}
+        >
+          {languageList.map((lang) => (
+            <button
+              type='button'
+              className="text-lg lg:text-base font-['Montserrat'] font-medium hover:text-[#B52761] transition-all duration-200"
+              key={lang.locale}
+              onClick={() => {
+                setLanguage(lang)
+                onClose()
+              }}
+              style={{ cursor: 'pointer' }}
+            >
+              {lang.language}
+            </button>
+          ))}
+        </div>
+      </Card>
+    </div>
+  )
+}
+
 function DesktopPopup({ theme, isOpen, onClose }) {
   if (!isOpen) return null
 
@@ -183,7 +219,7 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
 
   const calculateTransform = () => {
     const buttonRect = document.getElementById('documents-button').getBoundingClientRect()
-    const translateX = buttonRect.left + buttonRect.width / 2 - 150 / 2
+    const translateX = buttonRect.left + buttonRect.width / 2 - 160 / 2
     const translateY = 125
 
     return `translate(${translateX}px, ${translateY}px)`
@@ -253,6 +289,52 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
   )
 }
 
+function DesktopLangPopup({ theme, isOpen, onClose }) {
+  const { setLanguage } = useTranslation()
+  if (!isOpen) return null
+
+  const calculateTransform = () => {
+    const buttonRect = document.getElementById('lang-button').getBoundingClientRect()
+    const translateX = buttonRect.left + buttonRect.width / 2 - 140 / 2
+    const translateY = 125
+
+    return `translate(${translateX}px, ${translateY}px)`
+  }
+
+  return (
+    <div
+      className="popup fixed z-50"
+      style={{
+        transform: calculateTransform(),
+      }}
+    >
+      <Card
+        className='p-4'
+        theme={theme}
+      >
+        <div
+          className={`lang-content flex flex-col justify-center gap-4 ${theme ? 'text-white' : 'text-black'}`}
+        >
+          {languageList.map((lang) => (
+            <button
+              type='button'
+              className="text-lg lg:text-base font-['Montserrat'] font-medium hover:text-[#B52761] transition-all duration-200"
+              key={lang.locale}
+              onClick={() => {
+                setLanguage(lang)
+                onClose()
+              }}
+              style={{ cursor: 'pointer' }}
+            >
+              {lang.language}
+            </button>
+          ))}
+        </div>
+      </Card>
+    </div>
+  )
+}
+
 const Navbar = ({ value }) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -309,6 +391,26 @@ const Navbar = ({ value }) => {
     setIsMobileDocumentsModalOpen(false)
   }
 
+  const [isLangSelectorOpen, setIsLangSelectorOpen] = useState(false)
+
+  const LangSelectorPopupOpen = () => {
+    setIsLangSelectorOpen(true)
+  }
+
+  const closeLangSelectorPopup = () => {
+    setIsLangSelectorOpen(false)
+  }
+
+  const [isMobliLangSelectorOpen, setIsMobileLangSelectorOpen] = useState(false)
+
+  const openMobileLangSelector = () => {
+    setIsMobileLangSelectorOpen(true)
+  }
+
+  const closeMobileLangSelector = () => {
+    setIsMobileLangSelectorOpen(false)
+  }
+
   useEffect(() => {
     function handleClickOutsidePopup(event) {
       const popupContent = document.querySelector('.popup-content')
@@ -362,18 +464,50 @@ const Navbar = ({ value }) => {
       document.removeEventListener('mousedown', handleClickOutsideMobileDocumentsModal)
     }
 
+    function handleClickOutsideLangSelectorPopup(event) {
+      const popupContent = document.querySelector('.lang-content')
+      if (popupContent && !popupContent.contains(event.target)) {
+        closeLangSelectorPopup()
+      }
+    }
+
+    if (isLangSelectorOpen) {
+      document.addEventListener('mousedown', handleClickOutsideLangSelectorPopup)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutsideLangSelectorPopup)
+    }
+
+    function handleClickOutsideMobileLangSelector(event) {
+      const modalContent = document.querySelector('.mobile-lang-popup')
+      if (modalContent && !modalContent.contains(event.target)) {
+        closeMobileLangSelector()
+      }
+    }
+
+    if (isMobliLangSelectorOpen) {
+      document.addEventListener('mousedown', handleClickOutsideMobileLangSelector)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutsideMobileLangSelector)
+    }
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutsidePopup)
       document.removeEventListener('mousedown', handleClickOutsideMobileModal)
       document.removeEventListener('mousedown', handleClickOutsidePopupDocuments)
       document.removeEventListener('mousedown', handleClickOutsideMobileDocumentsModal)
+      document.removeEventListener('mousedown', handleClickOutsideLangSelectorPopup)
+      document.removeEventListener('mousedown', handleClickOutsideMobileLangSelector)
     }
-  }, [isPopupOpen, isMobliModalOpen, isPopupDocumntsOpen, isMobliDocuentsModalOpen])
+  }, [isPopupOpen, isMobliModalOpen, isPopupDocumntsOpen, isMobliDocuentsModalOpen, isLangSelectorOpen, isMobliLangSelectorOpen])
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === 'Space') {
       setIsPopupOpen(!isPopupOpen)
       setIsPopupDocumntsOpen(!isPopupDocumntsOpen)
+      setIsLangSelectorOpen(!isLangSelectorOpen)
+      setIsMobileModalOpen(!isMobliModalOpen)
+      setIsMobileDocumentsModalOpen(!isMobliDocuentsModalOpen)
+      setIsMobileLangSelectorOpen(!isMobliLangSelectorOpen)
     }
   }
 
@@ -382,7 +516,7 @@ const Navbar = ({ value }) => {
       {/* DESKTOP NAVBAR */}
       <div className="container mx-auto flex justify-center">
         <Card
-          className={`hidden lg:flex justify-between rounded-2xl mt-6 items-center fixed top-0 z-20 font-['Poppins'] w-10/12 py-3 px-28 transition-all duration-300 backdrop-blur-lg ${textClass} ${bgClass}`}
+          className={`hidden lg:flex justify-between rounded-2xl mt-6 items-center fixed top-0 z-20 w-10/12 py-3 px-28 transition-all duration-300 backdrop-blur-lg ${textClass} ${bgClass}`}
           theme={isDark}
         >
           <Link to="/">
@@ -444,7 +578,17 @@ const Navbar = ({ value }) => {
               tabIndex={0}
               aria-label="Open wallets"
             >
-              <img src="/images/home/wallets.svg" className={`${isDark && 'invert'}`} alt="" />
+              <img src="/images/home/wallets.svg" className={`${isDark && 'invert'}`} alt="Wallets" />
+            </div>
+            <div
+              id="lang-button"
+              role="button"
+              onKeyDown={handleKeyDown}
+              onClick={LangSelectorPopupOpen}
+              tabIndex={0}
+              aria-label="Open LangSelector"
+            >
+              <img src="/images/home/globe.svg" className={`${isDark && 'invert'}`} alt="LangSelector"/>
             </div>
             <UserMenu />
           </div>
@@ -453,11 +597,12 @@ const Navbar = ({ value }) => {
 
       <DesktopPopup theme={isDark} isOpen={isPopupOpen} onClose={closePopup} />
       <DesktopPopupDocuments value={value} isOpen={isPopupDocumntsOpen} onClose={closeDocumentsPopup} />
+      <DesktopLangPopup theme={isDark} isOpen={isLangSelectorOpen} onClose={closeLangSelectorPopup} />
 
       {/* MOBILE NAVBAR */}
       <div className="container mx-auto flex flex-col items-center justify-center fixed top-0 left-1/2 -translate-x-1/2 z-50">
         <Card
-          className={`flex justify-between w-11/12 items-center font-['Montserrat'] lg:hidden px-2 py-3 mt-2 ${
+          className={`flex justify-between w-11/12 items-center lg:hidden px-2 py-3 mt-2 ${
             isDark && "bg-[#191919]"
           } ${isDark === false && "bg-[#E2E6E9]"}`}
           theme={isDark}
@@ -504,12 +649,12 @@ const Navbar = ({ value }) => {
               >
                 <Card
                   theme={isDark}
-                  className={`flex flex-col items-center justify-center w-full gap-10 py-10 backdrop-blur-[96px] ${
+                  className={`flex flex-col items-center justify-center w-full gap-7 py-10 backdrop-blur-[96px] ${
                     isDark ? "text-[#B6B6B6]" : "text-black"
                   }`}
                 >
                   <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} setIsOpen={setIsOpen} />
-                  <ul className="list-none uppercase flex flex-col items-center justify-center gap-10">
+                  <ul className="list-none uppercase flex flex-col items-center justify-center gap-7">
                   {navLinks.map((item, index) => (
                     <li key={item.id}>
                       {index === 1 ?
@@ -539,11 +684,19 @@ const Navbar = ({ value }) => {
                     tabIndex={0}
                     aria-label="Open wallets"
                   >
-                    <img src="/images/home/wallets.svg" className={`${isDark && 'invert'}`} alt="" />
+                    <img src="/images/home/wallets.svg" className={`${isDark && 'invert'}`} alt="Wallets" />
                   </div>
-                  <div>
-                    <UserMenu />
+                  <div
+                    id="lang-button"
+                    role="button"
+                    onKeyDown={handleKeyDown}
+                    onClick={openMobileLangSelector}
+                    tabIndex={0}
+                    aria-label="Open LangSelector"
+                  >
+                    <img src="/images/home/globe.svg" className={`${isDark && 'invert'}`} alt="LangSelector"/>
                   </div>
+                  <UserMenu />
                 </Card>
               </motion.div>
             </motion.div>
@@ -553,6 +706,7 @@ const Navbar = ({ value }) => {
 
       <MobileModal theme={isDark} isOpen={isMobliModalOpen} onClose={closeMobileModal} />
       <MobileDocumentsModal value={{isDark, setIsOpen}} isOpen={isMobliDocuentsModalOpen} onClose={closeMobileDocumentsModal} />
+      <MobileLangModal theme={isDark} isOpen={isMobliLangSelectorOpen} onClose={closeMobileLangSelector} />
     </>
   )
 }

@@ -119,7 +119,7 @@ export default function CurrencyInputPanel({
         </div>
         <div className={`mt-14 flex flex-row items-center ${ isMobile ? "" : "pr-10" }`}>
         <NumericalInput
-          className={`token-amount-input marker:bg-transparent text-[28px] focus:outline-none font-['Poppins'] font-medium text-right ${
+          className={`token-amount-input marker:bg-transparent text-[28px] focus:outline-none font-medium text-right ${
             theme ? "placeholder:text-white" : "placeholder:text-black"
           } ${ account && currency && showMaxButton ? "md:max-w-[75%]" : "" }`}
           value={value}
@@ -227,7 +227,7 @@ export function CurrencyInputPanelRight({
         </div>
         <div className='mt-14 flex flex-row items-center'>
         <NumericalInput
-          className={`token-amount-input marker:bg-transparent text-[28px] focus:outline-none font-['Poppins'] font-medium text-right ${
+          className={`token-amount-input marker:bg-transparent text-[28px] focus:outline-none font-medium text-right ${
             theme ? "placeholder:text-white" : "placeholder:text-black"
           } ${ account && currency && showMaxButton ? "md:max-w-[75%]" : "" }`}
           value={value}

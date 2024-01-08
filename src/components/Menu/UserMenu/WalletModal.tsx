@@ -47,7 +47,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ initialView = WalletView.WALL
       <UIKitModalHeader>
         <ModalTitle>
           <div
-            className={`${theme.isDark ? "text-white" : "text-black"} font-['Poppins']`}
+            className={`${theme.isDark ? "text-white" : "text-black"}`}
             >
             <h1 className="text-center text-2xl font-semibold">Your Wallet</h1>
           </div>
@@ -56,7 +56,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ initialView = WalletView.WALL
           <CloseIcon width='32px' />
         </IconButton>
       </UIKitModalHeader>
-      <div className={`${theme.isDark ? "text-white" : "text-black"} flex justify-center gap-10 lg:gap-10 `}>
+      <div className={`${theme.isDark ? "text-white" : "text-black"} flex justify-center gap-10 lg:gap-10`}>
         <button
           type='button'
           onClick={walletBtnClickHandler}

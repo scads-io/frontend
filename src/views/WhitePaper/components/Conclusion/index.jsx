@@ -14,7 +14,7 @@ const Text1 = {
     text_1_2_header: "TWINES:",
     text_1_2: "With its focus on predictable, linear asset growth, TWINE revolutionizes how individuals and businesses manage and grow their digital assets. It presents a unique solution for long-term investment strategies in the digital space.",
     title_2: "Enhancing Transaction Security and Efficiency:",
-    text_2: "The integration of SCADS and TWINSE ensures secure and efficient transactions within the blockchain ecosystem. Their combined operational capabilities can significantly reduce transaction costs and improve processing speed, contributing to a more efficient digital economy.",
+    text_2: "The integration of SCADS and TWINES ensures secure and efficient transactions within the blockchain ecosystem. Their combined operational capabilities can significantly reduce transaction costs and improve processing speed, contributing to a more efficient digital economy.",
     title_3: "Promoting Sustainable Blockchain Practices:",
     text_3: "The implementation of the Proof of Holding (POH) mechanism in SCADS introduces a more energy-efficient and environmentally sustainable alternative to traditional blockchain consensus models, aligning with global sustainability efforts.",
     title_4: "Expanding Blockchain Adoption:",
@@ -40,7 +40,7 @@ const Conclusion  = ({ value }) => {
         variants={whitePaperVariants}
         className={` ${
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
-            } container mx-auto flex flex-col items-center font-['Poppins'] overflow-hidden pb-20`}
+            } container mx-auto flex flex-col items-center overflow-hidden pb-20`}
     >
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
             {t(Text1.header)}
@@ -48,7 +48,7 @@ const Conclusion  = ({ value }) => {
         <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
             {t(Text1.title)}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
             <span className="font-bold">{t(Text1.text)}</span><br />
             <span className="text-center font-bold text-xl">{t(Text1.title_1)}</span>
             <span>

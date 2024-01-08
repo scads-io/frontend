@@ -13,7 +13,7 @@ const Disclaimer = ({ value }) => {
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
       variants={opacityVariants}
-      className={`flex flex-col items-center font-['Poppins'] text-center lg:text-start gap-8 mt-24 ${
+      className={`flex flex-col items-center text-center lg:text-start gap-8 mt-24 ${
         theme.isDark ? "text-[#B6B6B6]" : "text-black"
       }`}
     >

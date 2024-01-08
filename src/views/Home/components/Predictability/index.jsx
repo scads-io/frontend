@@ -60,11 +60,11 @@ const Predictability = ({ value }) => {
           viewport={{ once: true, amount: 0.8 }}
           variants={fromTop}
         >
-          <h1 className="font-['Poppins'] font-bold text-2xl text-center lg:text-[40px] max-w-[340px] md:max-w-[888px] leading-normal md:leading-tight">
+          <h1 className="font-bold text-2xl text-center lg:text-[40px] max-w-[340px] md:max-w-[888px] leading-normal md:leading-tight">
             {t(predictabilityText.title)}
           </h1>
         </motion.div>
-        <p className="font-['Poppins'] text-base lg:text-base mt-[51px] max-w-[328px] md:max-w-[600px] lg:max-w-[822px] flex flex-col gap-1">
+        <p className="text-base lg:text-base mt-[51px] max-w-[328px] md:max-w-[600px] lg:max-w-[822px] flex flex-col gap-1">
           <span>{t(predictabilityText.text_1)}</span> <br />
           <span>{t(predictabilityText.text_2)}</span> <br />
           <span>{t(predictabilityText.text_3)}</span> <br />

@@ -38,7 +38,6 @@ import useScadsMint from './hooks/useScadsMint'
 const StyledButton = styled(Button)`
   color: ${({ theme }) => (theme.isDark ? 'white' : 'black')};
   background-color: ${({ theme }) => (theme.isDark ? 'rgba(255,255,255,0.08)' : '#E9EAEB')};
-  font-family: 'Poppins';
 `
 
 export default function ScadsMint() {
@@ -256,12 +255,12 @@ export default function ScadsMint() {
       className="container mx-auto flex justify-center"
     >
       <div
-        className={`flex flex-col items-center mx-auto font-['Poppins'] lg:h-[420px] xl:h-5/6 ${
+        className={`flex flex-col items-center mx-auto lg:h-[420px] xl:h-5/6 ${
           theme.isDark ? "text-white" : "text-black"
         } relative`}
       >
         <div
-          className={`flex flex-col md:flex-row justify-between px-5 border rounded-3xl font-['Poppins'] max-w-[330px] md:max-w-none md:w-full relative ${
+          className={`flex flex-col md:flex-row justify-between px-5 border rounded-3xl max-w-[330px] md:max-w-none md:w-full relative ${
             theme.isDark ? "border-white" : "border-black"
           }`}
         >

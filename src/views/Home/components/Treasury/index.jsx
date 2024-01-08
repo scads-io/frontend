@@ -43,7 +43,7 @@ const Treasury = ({ value }) => {
       : usdcBalanceInTreasury?.toExact().toString()
 
   return (
-    <div className="container mx-auto flex flex-col items-center font-['Poppins'] mt-28 relative">
+    <div className="container mx-auto flex flex-col items-center mt-28 relative">
       <motion.img
         src="/images/home/dotted_line.svg"
         initial="offscreen"
@@ -104,7 +104,7 @@ const Treasury = ({ value }) => {
               <p
                 className={`${
                   theme.isDark ? "text-[#B6B6B6]" : "text-black"
-                } text-base lg:text-2xl text-medium font-['Montserrat']`}
+                } text-base lg:text-2xl text-medium font-bold`}
               >
                 ${lockedBalance.toFixed(2).toString()}
               </p>
@@ -138,11 +138,12 @@ const Treasury = ({ value }) => {
                 alt="symbol"
                 width={isMobile ? 10 : 14}
                 className={`${theme.isDark ? "contrast-50" : "invert"}`}
+                loading="lazy"
               />
               <p
                 className={`${
                   theme.isDark ? "text-[#B6B6B6]" : "text-black"
-                } text-base lg:text-2xl text-medium font-['Montserrat']`}
+                } text-base lg:text-2xl text-medium font-bold`}
               >
                 {scadsBalance}
               </p>
@@ -176,11 +177,12 @@ const Treasury = ({ value }) => {
                 alt="symbol"
                 className={`${theme.isDark ? "invert contrast-[.4]" : ""}`}
                 width={isMobile ? 8 : 12}
+                loading="lazy"
               />
               <p
                 className={`${
                   theme.isDark ? "text-[#B6B6B6]" : "text-black"
-                } text-base lg:text-2xl text-medium font-['Montserrat']`}
+                } text-base lg:text-2xl text-medium font-bold`}
               >
                 {twineBalance}
               </p>
@@ -212,7 +214,7 @@ const Treasury = ({ value }) => {
               <p
                 className={`${
                   theme.isDark ? "text-[#B6B6B6]" : "text-black"
-                } text-base lg:text-2xl text-medium font-['Montserrat']`}
+                } text-base lg:text-2xl text-medium font-bold`}
               >
                 ${usdtBalance}
               </p>
@@ -244,7 +246,7 @@ const Treasury = ({ value }) => {
               <p
                 className={`${
                   theme.isDark ? "text-[#B6B6B6]" : "text-black"
-                } text-base lg:text-2xl text-medium font-['Montserrat']`}
+                } text-base lg:text-2xl text-medium font-bold`}
               >
                 ${usdcBalance}
               </p>

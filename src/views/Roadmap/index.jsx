@@ -4,7 +4,6 @@ import { useMatchBreakpoints } from '@scads/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
 import Card from "components/NewCard"
-import Page from 'components/Layout/Page'
 import ScrollToTopButton  from 'components/ScrollToTopButton'
 import Footer from 'components/Footer'
 import {
@@ -172,9 +171,9 @@ const Roadmap = ({ value }) => {
   const { t } = useTranslation()
 
   return (
-    <Page>
+    <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]"> 
       <div
-        className={`flex flex-col md:items-center ms-8 sm:ms-0 mt-40 font-['Poppins'] overflow-hidden ${
+        className={`flex flex-col md:items-center ms-8 sm:ms-0 mt-40 overflow-hidden ${
           theme.isDark ? "text-[#B6B6B6]" : "text-black"
         }`}
       >
@@ -230,7 +229,7 @@ const Roadmap = ({ value }) => {
       </div>
       <Footer theme={theme} className="mt-24" />
       {createPortal(<ScrollToTopButton />, document.body)}
-    </Page>
+    </div>
   );
 };
 

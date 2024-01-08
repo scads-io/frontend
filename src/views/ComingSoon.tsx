@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Footer from 'components/Footer'
-import Page from 'components/Layout/Page'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledComingSoon = styled.div`
@@ -18,7 +17,7 @@ const ComingSoon = ({ value }) => {
   const { t } = useTranslation()
 
   return (
-    <Page>
+    <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
       <StyledComingSoon>
         <h1 className={`text-[26px] 2xl:text-5xl font-black max-w-[329px] lg:max-w-[350px] 2xl:max-w-[600px] mb-6 ${
             theme.isDark ? "text-[#B6B6B6]" : "text-black"
@@ -33,7 +32,7 @@ const ComingSoon = ({ value }) => {
         </button>
       </StyledComingSoon>
       <Footer theme={theme} className="mt-0" />
-    </Page>
+    </div>
   )
 }
 
