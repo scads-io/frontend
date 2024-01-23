@@ -2,7 +2,6 @@ import React, { lazy, useState, useEffect } from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion/dist/framer-motion"
 import axios from 'axios'
-import "./index.css"
 import { useTranslation } from 'contexts/Localization'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'
@@ -10,8 +9,7 @@ import useUserAgent from 'hooks/useUserAgent'
 import useScrollOnRouteChange from 'hooks/useScrollOnRouteChange'
 import { usePollBlockNumber } from 'state/block/hooks'
 import { useFetchProfile } from 'state/profile/hooks'
-import useTheme from 'hooks/useTheme'
-import GlobalStyle from './style/Global'
+import { useThemeManager } from 'state/user/hooks'
 import Menu from './components/Menu'
 import SuspenseWithChunkError from './components/SuspenseWithChunkError'
 import { ToastListener } from './contexts/ToastsContext'
@@ -42,7 +40,7 @@ BigNumber.config({
 })
 
 const App: React.FC = () => {
-  const { theme } = useTheme()
+  const [isDark] = useThemeManager()
   const [onScreen, setOnScreen] = useState(false)
   const { currentLanguage } = useTranslation()
 
@@ -55,79 +53,78 @@ const App: React.FC = () => {
   useSentryUser()
 
   useEffect(() => {
-    if (theme.isDark) {
-      document.body.classList.add("bg-[#00000B]");
-      document.body.classList.remove("bg-[#e8ecff]");
+    if (isDark) {
+      document.body.classList.add("bg-[#00000B]")
+      document.body.classList.remove("bg-[#e8ecff]")
     } else {
-      document.body.classList.remove("bg-[#00000B]");
-      document.body.classList.add("bg-[#e8ecff]");
+      document.body.classList.remove("bg-[#00000B]")
+      document.body.classList.add("bg-[#e8ecff]")
     }
 
     if (currentLanguage.code === 'en') {
-      document.body.style.fontFamily = "'Poppins', sans-serif";
+      document.body.style.fontFamily = "'Poppins', sans-serif"
     } else {
-      document.body.style.fontFamily = "'Montserrat', sans-serif";
+      document.body.style.fontFamily = "'Montserrat', sans-serif"
     }
-  }, [theme, currentLanguage]);
+  }, [isDark, currentLanguage])
 
   useEffect(() => {
     const fetchVisitCount = async () => {
       try {
-        await axios.post('https://scads.io:3001/api/visits');
+        await axios.post('https://scads.io:3001/api/visits')
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error:', error)
       }
-    };
-    fetchVisitCount();
-  }, []);
+    }
+    fetchVisitCount()
+  }, [])
   
   return (
     <div className="overflow-x-hidden">
       <Router history={history}>
-        <GlobalStyle />
         <Menu value={{ setOnScreen, onScreen }} />
-        <Invest value={{ onScreen, setOnScreen, theme }} />
+        <Invest value={{ onScreen, setOnScreen, theme: isDark }} />
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <AnimatePresence mode="wait">
             <Switch>
               <Route path='/' exact>
-                <Home value={{ theme, setOnScreen }}/>
+                <Home value={{ theme: isDark, setOnScreen }} />
               </Route>
 
               <Route path='/invest'>
-                <InvestMobile value={{ theme }} />
+                <InvestMobile value={{ theme: isDark }} />
               </Route>
 
               <Route path='/roadmap'>
-                <Roadmap value={{ theme }} />
+                <Roadmap value={{ theme: isDark }} />
               </Route>
 
               <Route path='/usecases'>
-                <UseCases value={{ theme }} />
+                <UseCases value={{ theme: isDark }} />
               </Route>
 
               <Route path='/whitepaper'>
-                <WhitePaper value={{ theme }} />
+                <WhitePaper value={{ theme: isDark }} />
               </Route>
 
               <Route path='/gitbook'>
-                <ComingSoon value={{ theme }} />
+                <ComingSoon value={{ theme: isDark }} />
               </Route>
 
               <Route path='/howto'>
-                <HowTo value={{ theme }} />
+                <HowTo value={{ theme: isDark }} />
               </Route>
 
               <Route path='/news'>
-                <News value={{ theme }} />
+                <News value={{ theme: isDark }} />
               </Route>
 
               <Route path='/story'>
-                <Story value={{ theme }} />
+                <Story value={{ theme: isDark }} />
               </Route>
 
               <Route>
-                <NotFound value={{ theme }} />
+                <NotFound value={{ theme: isDark }} />
               </Route> 
             </Switch>
           </AnimatePresence>

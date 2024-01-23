@@ -10,14 +10,13 @@ import {
   Flex,
   Box,
   Link,
-  Modal,
-  InjectedModalProps,
 } from '@scads/uikit'
 import { Spinner } from 'components/Spinner'
 import { registerToken } from 'utils/wallet'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
+import { Modal, InjectedModalProps } from 'components/Modal'
 import { RowFixed } from '../Layout/Row'
 import { AutoColumn, ColumnCenter } from '../Layout/Column'
 import { getBscScanLink } from '../../utils'
@@ -172,7 +171,7 @@ const TransactionConfirmationModal: React.FC<InjectedModalProps & ConfirmationMo
   if (!chainId) return null
 
   return (
-    <Modal title={title} headerBackground='backgroundAlt' onDismiss={handleDismiss}>
+    <Modal title={title} onDismiss={handleDismiss}>
       {attemptingTxn ? (
         <ConfirmationPendingContent pendingText={pendingText} />
       ) : hash ? (

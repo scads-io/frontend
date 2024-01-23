@@ -9,7 +9,7 @@ const Menu = ({ value }) => {
   const { onScreen, setOnScreen } = value
 
   return (
-    <Navbar value={{ isDark, toggleTheme, setOnScreen, onScreen }} {...value} />
+    <Navbar value={{ theme: isDark, toggleTheme, setOnScreen, onScreen }} {...value} />
   )
 }
 

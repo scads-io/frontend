@@ -5,6 +5,7 @@ import { motion } from "framer-motion/dist/framer-motion"
 import { howToCardVariants } from "components/variants"
 import ScrollToTopButton  from 'components/ScrollToTopButton'
 import Footer from 'components/Footer'
+import { PageMeta } from "components/Layout/PageMeta"
 import HowToItem from "./components/HowToItem"
 import { howToItemsData } from "./data"
 
@@ -14,6 +15,7 @@ const HowTo = ({ value }) => {
 
   return (
     <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
+      <PageMeta />
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -23,7 +25,7 @@ const HowTo = ({ value }) => {
       >
         <h1
           className={`${
-            theme.isDark ? "text-[#B6B6B6]" : "text-black"
+            theme ? "text-[#B6B6B6]" : "text-black"
           } font-bold text-center text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px]`}
         >
           {t("How To")}
@@ -44,9 +46,9 @@ const HowTo = ({ value }) => {
         </div>
       </motion.main>
       <Footer theme={theme} className="mt-24" />
-      {createPortal(<ScrollToTopButton />, document.body)}
+      {createPortal(<ScrollToTopButton theme={theme} />, document.body)}
     </div>
-  );
-};
+  )
+}
 
-export default HowTo;
+export default HowTo

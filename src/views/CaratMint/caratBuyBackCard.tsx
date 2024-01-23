@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import useTheme from 'hooks/useTheme'
 import { JSBI, TokenAmount } from '@scads/sdk'
 import { Button, Flex } from '@scads/uikit'
 import { utils } from 'ethers'
@@ -19,8 +18,7 @@ const StyledButton = styled(Button)`
   background-color:  ${({ theme }) => theme.isDark ? "rgba(255,255,255,0.08)" : "#E9EAEB"};
 `
 
-export default function CaratBuyBackCard() {
-  const { theme} = useTheme()
+export default function CaratBuyBackCard({ theme }) {
   const { t } = useTranslation()
   const allowCaratSell = useCaratSellPermission()
   const { account } = useActiveWeb3React()
@@ -85,30 +83,30 @@ export default function CaratBuyBackCard() {
     <div className="w-full">
       <div
         className={`flex flex-col md:flex-row justify-between px-5 w-full border rounded-3xl max-w-[330px] md:max-w-none md:w-full relative ${
-          theme.isDark ? "border-white" : "border-black"
+          theme ? "border-white" : "border-black"
         }`}
       >
         <CurrencyInputPanel
-          theme={theme.isDark}
+          theme={theme}
           label={t('From (estimated)')}
           value={amountInput === '0.0' ? utils.formatEther(redeemCaratAmount?.toExact()) : amountInput}
-          showMaxButton={!false}
+          showMaxButton
           currency={tokens.carat}
           onUserInput={handleAmountInput}
           onMax={() => handleMaxInput()}
           onCurrencySelect={() => console.log('input currency select')}
           otherCurrency={tokens.cake}
-          disableCurrencySelect={!false}
+          disableCurrencySelect
           onlyInteger={false}
-          id="swap-currency-input"
+          showArrow={false}
         />
         <div
           className={`w-full h-[1px] md:w-[1px] md:h-full border ${
-            theme.isDark ? "border-white" : "border-black"
+            theme ? "border-white" : "border-black"
           } absolute left-0 top-1/2 md:top-0 md:left-1/2 z-0`} 
         />
         <CurrencyInputPanelRight
-          theme={theme.isDark}
+          theme={theme}
           value={amountOutput === '0.0' ? utils.formatEther(redeemScadsAmount?.toExact()) : amountOutput}
           onUserInput={handleAmountOutput}
           label={t('To')}
@@ -116,8 +114,8 @@ export default function CaratBuyBackCard() {
           currency={tokens.cake}
           onCurrencySelect={() => console.log('output currency select')}
           otherCurrency={tokens.carat}
-          disableCurrencySelect={!false}
-          id="swap-currency-output"
+          disableCurrencySelect
+          showArrow={false}
         />
       </div>
       <Flex

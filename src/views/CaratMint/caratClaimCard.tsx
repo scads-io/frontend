@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import useTheme from 'hooks/useTheme'
 import { Button, Flex, Toggle } from '@scads/uikit'
 import { utils } from 'ethers'
 import { useTranslation } from 'contexts/Localization'
@@ -21,8 +20,7 @@ const StyledButton = styled(Button)`
   background-color:  ${({ theme }) => theme.isDark ? "rgba(255,255,255,0.08)" : "#E9EAEB"};
 `
 
-export default function CaratClaimCard() {
-  const { theme } = useTheme()
+export default function CaratClaimCard({ theme }) {
   const { t } = useTranslation()
   const userMintedCaratAmount = useUserMintedCaratAmount()
   const claimedTWINE = userMintedCaratAmount ? parseFloat(utils.formatEther(userMintedCaratAmount.toString())) !== 0 ? parseFloat(utils.formatEther(userMintedCaratAmount.toString())).toFixed(3).toString() : 0 : 0
@@ -71,14 +69,20 @@ export default function CaratClaimCard() {
       console.log(e)
     }
   }
+  
   return (
     <div
         className={`flex flex-col items-center mx-auto w-full ${
-          theme.isDark ? "text-white" : "text-black"
+          theme ? "text-white" : "text-black"
         } relative`}
       >
         <div className="mt-4 flex items-center">
-          <Toggle id="Auto-compound" checked={autoCompound} onChange={() => startAutoCompounding()} scale="sm" />
+          <Toggle
+            id="Auto-compound"
+            checked={autoCompound}
+            onChange={() => startAutoCompounding()}
+            scale="sm"
+          />
           <p>
             &nbsp;
             {t('Auto-compound')}
@@ -87,17 +91,23 @@ export default function CaratClaimCard() {
         <p className="mt-4">{t("SCADS Owned:")} <span className='font-bold'>&nbsp;{scadsOwned}</span> Scads</p>
         <div className="flex flex-col items-center gap-3 w-full mt-4 text-xs md:text-base">
           <div className="flex justify-between w-full md:w-3/4">
-            <p>{t("Time Invested")}</p>
+            <p>
+              {t("Time Invested")}
+            </p>
             <span>&nbsp;{remainTime.days && remainTime.days >= 0 ? remainTime.days : 0} {t('Days')}{' '}
                 {remainTime.hours && remainTime.hours >= 0 ? remainTime.hours : 0} {t('Hours')}{' '}
                 {remainTime.minutes && remainTime.minutes >= 0 ? remainTime.minutes : 0} {t('Minutes')}</span>
           </div>
           <div className="flex justify-between w-full md:w-3/4">
-            <p>{t("TWINE Minted:")}</p>
+            <p>
+              {t("TWINE Minted:")}
+            </p>
             <span>&nbsp;{latestRewardAmount}</span>
           </div>
           <div className="flex justify-between w-full md:w-3/4">
-            <p>{t("TWINE Claimed:")}</p>
+            <p>
+              {t("TWINE Claimed:")}
+            </p>
             <span>&nbsp;{claimedTWINE}</span>
           </div>
         </div>

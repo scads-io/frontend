@@ -4,7 +4,7 @@
   "Usdt Balance": "Usdt Баланс",
   "Usdc Balance": "Usdc Баланс",
   "Transaction receipt": "Квитанция об оплате транзакции",
-  "Oops, page not found.": "Увы, страница не найдена.",
+  "Oops, page not found": "Увы, страница не найдена",
   "Back Home": "Вернуться на главную",
   "Home": "Главная",
   "Provider Error": "Ошибка провайдера",
@@ -182,7 +182,7 @@
   "Info": "Информация",
   "Hide": "Скрыть",
   "news_header_text": "Здесь вы можете увидеть все актуальные новости, связанные с финансами и криптовалютами.",
-  "How To": "Как сделать",
+  "How To": "Как",
   "Whitepaper": "Белая бумага",
   "Use Cases": "Примеры использования",
   "Roadmap": "Дорожная карта",
@@ -1322,6 +1322,7 @@
   "Continue investing in R&D to further innovate and enhance the SCADS ecosystem.": "Продолжайте инвестировать в исследования и разработки для дальнейшего внедрения инноваций и улучшения экосистемы SCADS.",
   "Ongoing and Future Initiatives:": "Текущие и будущие инициативы:",
   "Join the Innovation: We invite you to become a part of a groundbreaking journey with SCADS and TWINE. Your investment will not just be in a technology but in a vision that redefines digital asset management and transactional stability.": "Присоединяйтесь к инновациям: Мы приглашаем вас стать частью новаторского путешествия вместе с SCADS и TWINE. Ваши инвестиции будут направлены не просто на технологию, а на видение, которое переосмыслит управление цифровыми активами и стабильность транзакций.",
-  "EXECUTIVE SUMMARY": "КРАТКОЕ СОДЕРЖАНИЕ"
-
+  "EXECUTIVE SUMMARY": "КРАТКОЕ СОДЕРЖАНИЕ",
+  "Total": "Общий",
+  "Increase": "Увеличение"
 }

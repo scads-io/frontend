@@ -3,7 +3,7 @@ import { useTranslation } from 'contexts/Localization'
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion"
 import { useMatchBreakpoints } from '@scads/uikit'
 import { investPageVariants, opacityVariants } from "components/variants"
-import Card from "components/NewCard"
+import { NewCard } from "components/Card"
 import ScadsMint from "views/ScadsMint"
 import CaratMint from "views/CaratMint"
 
@@ -13,12 +13,12 @@ const Invest = ({ value }) => {
   const { t } = useTranslation()
 
   const scadsBtnClickHandler = () => {
-    setIsActive(false);
-  };
+    setIsActive(false)
+  }
 
   const twineBtnClickHandler = () => {
-    setIsActive(true);
-  };
+    setIsActive(true)
+  }
 
   const { theme, onScreen, setOnScreen } = value
   const { isMobile } = useMatchBreakpoints()
@@ -26,20 +26,21 @@ const Invest = ({ value }) => {
   let toggle = {}
 
   if (!isMobile) {
-    toggle = investPageVariants;
+    toggle = investPageVariants
   }
 
   useEffect(() => {
     if (onScreen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = 'visible'
     }
-  }, [onScreen]);
+  }, [onScreen])
 
   const closeCard = () => {
-    setOnScreen(false);
-  };
+    setOnScreen(false)
+  }
+  
   return (
     <AnimatePresence mode="wait">
       {onScreen && (
@@ -62,15 +63,15 @@ const Invest = ({ value }) => {
               role="presentation"
               onClick={closeCard} />
           </motion.div>
-          <Card
-            theme={theme.isDark}
+          <NewCard
+            theme={theme}
             className={`overflow-x-hidden lg:h-[85vh] xl:h-[80vh] lg:w-10/12 lg:backdrop-blur-3xl !bg-opacity-60 ${
-              theme.isDark && "!bg-[#2B2B37]"
+              theme && "!bg-[#2B2B37]"
             } relative`}
           >
             <div
               className={`flex justify-center xl:items-center h-full relative z-10 ${
-                theme.isDark ? "text-white" : "text-black"
+                theme ? "text-white" : "text-black"
               }`}
             >
               <button
@@ -79,7 +80,7 @@ const Invest = ({ value }) => {
                 onClick={closeCard}
               >
                 <img
-                  src={theme.isDark ? "/images/home/cross_light.svg" : "/images/home/cross_dark.svg"}
+                  src={theme ? "/images/home/cross_light.svg" : "/images/home/cross_dark.svg"}
                   className="max-w-[50px]"
                   alt="cross"
                 />
@@ -94,7 +95,7 @@ const Invest = ({ value }) => {
                         active
                           ? "opacity-50"
                           : `border rounded-3xl w-[60px] h-[32px] ${
-                              theme.isDark ? "border-white" : "border-black"
+                              theme ? "border-white" : "border-black"
                             } opacity-100 text-sm`
                       }
                     >
@@ -106,7 +107,7 @@ const Invest = ({ value }) => {
                       className={
                         active
                           ? `border rounded-3xl w-[60px] h-[32px] ${
-                              theme.isDark ? "border-white" : "border-black"
+                              theme ? "border-white" : "border-black"
                             } opacity-100`
                           : "opacity-50"
                       }
@@ -116,7 +117,7 @@ const Invest = ({ value }) => {
                   </div>
                   <div
                     className={`flex gap-2 ${
-                      theme.isDark ? "text-white" : "text-black"
+                      theme ? "text-white" : "text-black"
                     } `}
                   >
                     <div className="flex flex-col items-center gap-1">
@@ -135,19 +136,25 @@ const Invest = ({ value }) => {
                 </div>
                 <div className="mt-11 lg:mt-4 xl:mt-8 h-[60vh]">
                   <AnimatePresence mode="wait">
-                    {!active && <ScadsMint value={value} key="scads" />}
-                    {active && (
-                      <CaratMint value={value} key="TWINE" />
-                    )}
+                    {active ? 
+                      <CaratMint
+                        theme={theme}
+                        key="TWINE"
+                      /> : 
+                      <ScadsMint
+                        theme={theme}
+                        key="Scads"
+                      />
+                    }
                   </AnimatePresence>
                 </div>
               </div>
             </div>
-          </Card>
+          </NewCard>
         </motion.main>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default Invest;
+export default Invest

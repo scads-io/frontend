@@ -13,7 +13,7 @@ const predictabilityText = {
     "Enter SCADS – a groundbreaking PROOF OF HOLD (POH) stablecoin that is poised to redefine the digital currency landscape. Unlike traditional stablecoins, SCADS steers clear of direct pegging to the USD, instead utilizing it as a reference point for user convenience. It embodies decentralization, self-sustainability, and freedom from obligations. Users' funds find secure refuge in their own wallets, while the algorithm operates perpetually debt-free.",
   text_4:
     "The ingenious PROOF OF HOLDING mechanism empowers users to effortlessly generate passive income by simply holding SCADS in their personal wallet. No staking or involvement in liquidity pools is required. This results in a genuinely risk-free solution with guaranteed growth. Furthermore, SCADS operates autonomously, free from owners, relying entirely on a meticulously crafted automated algorithm.",
-};
+}
 
 const Predictability = ({ value }) => {
   const { theme } = value
@@ -22,7 +22,7 @@ const Predictability = ({ value }) => {
   return (
     <div
       className={`container mx-auto flex flex-col justify-center items-center mt-16 lg:mt-32 lg:scroll-mt-28 xl:scroll-mt-36 2xl:scroll-mt-44 ${
-        theme.isDark && "text-[#B6B6B6]"
+        theme && "text-[#B6B6B6]"
       }`}
       id="textSection"
     >
@@ -72,7 +72,7 @@ const Predictability = ({ value }) => {
         </p>
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
 export default Predictability

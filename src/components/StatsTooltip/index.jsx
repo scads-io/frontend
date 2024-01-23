@@ -33,28 +33,28 @@ const statTooltip = [
     title: "Total SCADS",
     text: "total of SCADS in all wallets and inside the system.",
   },
-];
+]
 
 const StatsTooltip = () => {
   const { t } = useTranslation()
 
   const tooltip = (
-    <ul className="flex flex-col lg:flex-row gap-6 2xl:gap-10">
+    <ul className="flex flex-col lg:flex-row gap-8 lg:gap-8 xl:gap-12 2xl:gap-24">
       {statTooltip.map((item) => (
         <li
           key={item.id}
-          className="flex flex-col items-center lg:items-start xl:items-center md:gap-2"
+          className="flex flex-col items-center md:gap-2"
         >
-          <span className="font-semibold text-center md:text-start xl:text-center max-w-[320px] lg:max-w-[140px] xl:max-w-[200px]">
+          <span className="font-semibold text-center max-w-[320px] lg:max-w-[140px] xl:max-w-[200px]">
             {t(item.title)}
           </span>
-          <p className="text-center md:text-start xl:text-center max-w-[320px] lg:max-w-[140px] xl:max-w-[200px]">
+          <p className="text-center max-w-[320px] lg:max-w-[140px] xl:max-w-[200px]">
             {t(item.text)}
           </p>
         </li>
       ))}
     </ul>
-  );
+  )
 
   return (
     <motion.div
@@ -87,7 +87,7 @@ const StatsTooltip = () => {
         {tooltip}
       </motion.div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default StatsTooltip;
+export default StatsTooltip

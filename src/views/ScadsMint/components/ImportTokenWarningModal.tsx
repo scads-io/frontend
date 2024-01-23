@@ -1,6 +1,6 @@
 import React from 'react'
 import { Token } from '@scads/sdk'
-import { Modal, InjectedModalProps } from '@scads/uikit'
+import { Modal, InjectedModalProps } from 'components/Modal'
 import ImportToken from 'components/SearchModal/ImportToken'
 import { useTranslation } from 'contexts/Localization'
 

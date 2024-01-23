@@ -1,15 +1,14 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion/dist/framer-motion'
 import styled from 'styled-components'
-import useTheme from 'hooks/useTheme'
 import { CurrencyAmount, Token, Trade } from '@scads/sdk'
-import { Button, useModal, Flex } from '@scads/uikit'
+import { Button, Flex } from '@scads/uikit'
 import { utils, BigNumber } from 'ethers'
 import { useTranslation } from 'contexts/Localization'
 import SwapWarningTokens from 'config/constants/swapWarningTokens'
 import tokens from 'config/constants/tokens'
-// import AddressInputPanel from './components/AddressInputPanel'
 import useToast from 'hooks/useToast'
+import { useModal } from 'components/Modal'
 import Column from '../../components/Layout/Column'
 import CurrencyInputPanel, { CurrencyInputPanelRight } from '../../components/CurrencyInputPanel'
 import { AutoRow, RowBetween } from '../../components/Layout/Row'
@@ -40,9 +39,7 @@ const StyledButton = styled(Button)`
   background-color: ${({ theme }) => (theme.isDark ? 'rgba(255,255,255,0.08)' : '#E9EAEB')};
 `
 
-export default function ScadsMint() {
-  const { theme } = useTheme()
-
+export default function ScadsMint({ theme }) {
   const loadedUrlParams = useDefaultsFromURLSearch()
   const { t } = useTranslation()
   const { toastError } = useToast()
@@ -244,7 +241,7 @@ export default function ScadsMint() {
     [onCurrencySelection],
   )
 
-  const amountToDisplay = formattedAmounts[Field.INPUT] || '0.0';
+  const amountToDisplay = formattedAmounts[Field.INPUT] || '0.0'
 
   return (
     <motion.div
@@ -256,31 +253,31 @@ export default function ScadsMint() {
     >
       <div
         className={`flex flex-col items-center mx-auto lg:h-[420px] xl:h-5/6 ${
-          theme.isDark ? "text-white" : "text-black"
+          theme ? "text-white" : "text-black"
         } relative`}
       >
         <div
           className={`flex flex-col md:flex-row justify-between px-5 border rounded-3xl max-w-[330px] md:max-w-none md:w-full relative ${
-            theme.isDark ? "border-white" : "border-black"
+            theme ? "border-white" : "border-black"
           }`}
         >
           <CurrencyInputPanel
-            theme={theme.isDark}
+            theme={theme}
             label={t('From (estimated)')}
             value={formattedAmounts[Field.INPUT]}
-            showMaxButton={!false}
+            showMaxButton
             currency={currencies[Field.INPUT]}
             onUserInput={handleTypeInput}
             onMax={handleMaxInput}
             onCurrencySelect={handleInputSelect}
             otherCurrency={currencies[Field.OUTPUT]}
             disableCurrencySelect={false}
-            id="swap-currency-input"
             onlyInteger={false}
+            showArrow
           />
           <div
             className={`w-full h-[1px] md:w-[1px] md:h-full border ${
-              theme.isDark ? "border-white" : "border-black"
+              theme ? "border-white" : "border-black"
             } absolute left-0 top-1/2 md:top-0 md:left-1/2 z-0`}
           />
           <button 
@@ -299,7 +296,7 @@ export default function ScadsMint() {
             />
           </button>
           <CurrencyInputPanelRight
-            theme={theme.isDark}
+            theme={theme}
             value={formattedAmounts[Field.INPUT]}
             onUserInput={handleTypeOutput}
             label={t('To')}
@@ -308,14 +305,14 @@ export default function ScadsMint() {
             onCurrencySelect={handleOutputSelect}
             otherCurrency={currencies[Field.INPUT]}
             disableCurrencySelect={false}
-            id="swap-currency-output"
-            onlyInteger={!false}
+            onlyInteger
+            showArrow
           />
         </div>
         <p className="opacity-60 mt-3">1 USDT = 1 SCADS</p>
         <div
           className={`flex justify-between w-full border rounded-3xl px-6 py-2 mt-10 md:mt-28 ${
-            theme.isDark ? "border-white" : "border-black"
+            theme ? "border-white" : "border-black"
           }`}
         >
           <p>{t("You Recieve")}</p>

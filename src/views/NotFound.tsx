@@ -1,16 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Footer from 'components/Footer'
 import { useTranslation } from 'contexts/Localization'
-
-const StyledNotFound = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 64px);
-  justify-content: center;
-`
+import { PageMeta } from 'components/Layout/PageMeta'
 
 const NotFound = ({ value }) => {
   const { theme } = value
@@ -18,14 +10,18 @@ const NotFound = ({ value }) => {
 
   return (
     <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
-      <StyledNotFound>
+      <PageMeta />
+      <div
+        className="flex items-center flex-col justify-center"
+        style={{ height: "calc(100vh - 64px)" }}
+      >
         <h1 className="text-[80px] font-black bg-gradient-to-r  from-[#655780] via-[#BF205D] to-[#BF205D] text-transparent bg-clip-text">
           {404}
         </h1>
         <h1 className={`text-[26px] text-center 2xl:text-5xl font-black max-w-[329px] lg:max-w-[350px] 2xl:max-w-[600px] mb-6 ${
-            theme.isDark ? "text-[#B6B6B6]" : "text-black"
+            theme ? "text-[#B6B6B6]" : "text-black"
           }`}>
-          {t('Oops, page not found.')}
+          {t('Oops, page not found')}
         </h1>
         <button
           type='button'
@@ -33,7 +29,7 @@ const NotFound = ({ value }) => {
         >
           <Link to='/'>{t('Back Home')}</Link>
         </button>
-      </StyledNotFound>
+      </div>
       <Footer theme={theme} className="mt-0" />
     </div>
   )

@@ -1,16 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Footer from 'components/Footer'
+import { PageMeta } from 'components/Layout/PageMeta'
 import { useTranslation } from 'contexts/Localization'
-
-const StyledComingSoon = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 64px);
-  justify-content: center;
-`
 
 const ComingSoon = ({ value }) => {
   const { theme } = value
@@ -18,9 +10,13 @@ const ComingSoon = ({ value }) => {
 
   return (
     <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
-      <StyledComingSoon>
+      <PageMeta />
+      <div
+        className="flex items-center flex-col justify-center"
+        style={{ height: "calc(100vh - 64px)" }}
+      >
         <h1 className={`text-[26px] 2xl:text-5xl font-black max-w-[329px] lg:max-w-[350px] 2xl:max-w-[600px] mb-6 ${
-            theme.isDark ? "text-[#B6B6B6]" : "text-black"
+            theme ? "text-[#B6B6B6]" : "text-black"
           }`}>
           {t("Coming soon")}
         </h1>
@@ -30,7 +26,7 @@ const ComingSoon = ({ value }) => {
         >
           <Link to='/'>{t('Back Home')}</Link>
         </button>
-      </StyledComingSoon>
+      </div>
       <Footer theme={theme} className="mt-0" />
     </div>
   )

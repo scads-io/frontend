@@ -156,7 +156,7 @@ const Market = ({ value }) => {
         viewport={{ once: true }}
         variants={whitePaperVariants}
         className={` ${
-            theme.isDark ? "text-[#B6B6B6]" : "text-black"
+            theme ? "text-[#B6B6B6]" : "text-black"
             } container mx-auto flex flex-col items-center overflow-hidden pb-20`}
     >
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
@@ -469,8 +469,8 @@ const Market = ({ value }) => {
             <span className="font-bold">{t(Text1.text_10_7)}</span>
         </p>
     </motion.main>
-  );
-};
+  )
+}
 
 
 export default Market

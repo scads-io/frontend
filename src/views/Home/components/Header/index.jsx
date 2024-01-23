@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */ 
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
@@ -13,37 +12,37 @@ const headerText = {
     "Mint TWINE that grows in time.",
     "Brings stability and confidence to Crypto holders, traders, investors and institutional organizations.",
   ],
-};
+}
 
 const Header = ({ value }) => {
   const { theme, setOnScreen } = value
   const { t } = useTranslation()
 
   const handleClickScroll = () => {
-    const element = document.getElementById("textSection");
+    const element = document.getElementById("textSection")
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth" })
     }
-  };
+  }
 
   return (
-    <div className={`${theme.isDark === false && "bg-[E2E6E9]"} `}>
+    <div className={`${theme === false && "bg-[E2E6E9]"} `}>
       <div className="container mx-auto flex justify-center items-center pb-20 pt-32 2xl:h-screen lg:pb-0 relative overflow-hidden">
         <div
-          className={`flex flex-col justify-center items-center lg:items-start gap-8 lg:py-20 xl:mx-20 z-10 ${
-            theme.isDark ? "text-[#B6B6B6]" : "text-black"
+          className={`flex flex-col justify-center items-center lg:items-start gap-8 lg:py-20 xl:mx-20 z-10 lg:w-1/2 ${
+            theme ? "text-[#B6B6B6]" : "text-black"
           }`}
         >
-          <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl font-black max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] text-center lg:text-start">
+          <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl font-black max-w-[300px] lg:max-w-none text-center lg:text-start">
             {t(headerText.title)}
           </h1>
-          <h2 className="max-w-[300px] md:max-w-none font-semibold text-xl lg:max-w-[700px] 2xl:max-w-[700px] text-center lg:text-start">
+          <h2 className="max-w-[300px] md:max-w-none font-semibold text-xl lg:max-w-none text-center lg:text-start">
             {t(headerText.slogan)}
           </h2>
           <h3 className="text-xl font-semibold max-w-[350px] lg:max-w-none 2xl:max-w-[700px] text-center lg:text-start">
             {t(headerText.subTitle)}
           </h3>
-          <ul className="text-base font-light lg:font-normal text-center lg:text-start lg:text-base 2xl:text-lg flex flex-col list-none md:list-disc max-w-[330px] mx-auto lg:max-w-[700px] 2xl:max-w-[700px]">
+          <ul className="text-base font-light lg:font-normal text-center lg:text-start lg:text-base 2xl:text-lg flex flex-col list-none max-w-[330px] mx-auto lg:max-w-[700px] 2xl:max-w-[700px]">
             <li>{t(headerText.text[0])}</li>
             <li>{t(headerText.text[1])}</li>
             <li>{t(headerText.text[2])}</li>
@@ -78,26 +77,20 @@ const Header = ({ value }) => {
             </Link>
           </div>
         </div>
-        <div>
-          {theme.isDark === false ? (
-            <img
-              src="/images/home/header_cube_light.svg"
-              fetchpriority="high"
-              className="hidden lg:block"
-              alt="header light mode"
-            />
-          ) : (
-            <img
-              src="/images/home/header_img_dark.svg"
-              fetchpriority="high"
-              className="hidden lg:block"
-              alt="header dark mode"
-            />
-          )}
-        </div>
+        <link
+          rel="preload"
+          href={theme ? "/images/home/header_img_dark.svg" : "/images/home/header_cube_light.svg"}
+          as="image"
+        />
+        <img
+          src={theme ? "/images/home/header_img_dark.svg" : "/images/home/header_cube_light.svg"}
+          className="hidden lg:block lg:w-1/2"
+          loading="eager"
+          alt="header"
+        />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,5 +1,5 @@
 import React, { useMemo, ReactNode } from 'react'
-import { createRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client"
 import * as Sentry from '@sentry/react'
 import { Integrations } from '@sentry/tracing'
 import { isUserRejected } from 'utils/sentry'
@@ -8,7 +8,7 @@ import { BLOCKED_ADDRESSES } from './config/constants'
 import ListsUpdater from './state/lists/updater'
 import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
-import "./index.css";
+import "./index.css"
 import App from './App'
 import Providers from './Providers'
 
@@ -59,8 +59,8 @@ Sentry.init({
   ],
 })
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+const rootElement = document.getElementById("root")
+const root = createRoot(rootElement)
 
 root.render(
   <React.StrictMode>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Currency, Pair } from '@scads/sdk'
-import { Button, useModal, useMatchBreakpoints } from '@scads/uikit'
+import { Button, useMatchBreakpoints } from '@scads/uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useModal } from 'components/Modal'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
 import { CurrencyLogo, DoubleCurrencyLogo } from '../Logo'
@@ -25,12 +26,11 @@ interface CurrencyInputPanelProps {
   onCurrencySelect: (currency: Currency) => void
   currency?: Currency | null
   disableCurrencySelect?: boolean
-  hideBalance?: boolean
   pair?: Pair | null
   otherCurrency?: Currency | null
-  id: string
   showCommonBases?: boolean
   onlyInteger?: boolean
+  showArrow: boolean
 }
 
 export default function CurrencyInputPanel({
@@ -43,12 +43,11 @@ export default function CurrencyInputPanel({
   onCurrencySelect,
   currency,
   disableCurrencySelect = false,
-  hideBalance = false,
   pair = null, // used for double token logo
   otherCurrency,
-  id,
   showCommonBases,
   onlyInteger = false,
+  showArrow,
 }: CurrencyInputPanelProps) {
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
@@ -63,6 +62,7 @@ export default function CurrencyInputPanel({
       selectedCurrency={currency}
       otherSelectedCurrency={otherCurrency}
       showCommonBases={showCommonBases}
+      theme={theme}
     />,
   )
   return (
@@ -86,7 +86,7 @@ export default function CurrencyInputPanel({
             {pair ? (
               <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={16} margin />
             ) : currency ? (
-              <CurrencyLogo currency={currency} size="24px" style={{ marginRight: '8px' }} />
+              <CurrencyLogo currency={currency} size="24px" />
             ) : null}
             {pair ? (
               <p id="pair" className='font-bold'>
@@ -102,13 +102,15 @@ export default function CurrencyInputPanel({
                   : currency?.symbol) || t('Select a currency')}
               </p>
             )}
-            <img
-              src="/images/home/accrodion_arrow.svg"
-              width={16}
-              height={16}
-              alt="Dropdown Arrow"
-              className={`${theme && "invert"}`}
-            />
+            {showArrow &&
+              <img
+                src="/images/home/accrodion_arrow.svg"
+                width={16}
+                height={16}
+                alt="Dropdown Arrow"
+                className={`${theme && "invert"}`}
+              />
+            }
           </button>
           {account && (
             <p className="text-sm">
@@ -152,12 +154,11 @@ export function CurrencyInputPanelRight({
   onCurrencySelect,
   currency,
   disableCurrencySelect = false,
-  hideBalance = false,
   pair = null, // used for double token logo
   otherCurrency,
-  id,
   showCommonBases,
   onlyInteger = false,
+  showArrow,
 }: CurrencyInputPanelProps) {
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
@@ -171,6 +172,7 @@ export function CurrencyInputPanelRight({
       selectedCurrency={currency}
       otherSelectedCurrency={otherCurrency}
       showCommonBases={showCommonBases}
+      theme={theme}
     />,
   )
   return (
@@ -194,7 +196,7 @@ export function CurrencyInputPanelRight({
             {pair ? (
               <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={16} margin />
             ) : currency ? (
-              <CurrencyLogo currency={currency} size="24px" style={{ marginRight: '8px' }} />
+              <CurrencyLogo currency={currency} size="24px" />
             ) : null}
             {pair ? (
               <p id="pair" className='font-bold'>
@@ -210,13 +212,15 @@ export function CurrencyInputPanelRight({
                   : currency?.symbol) || t('Select a currency')}
               </p>
             )}
-            <img
-              src="/images/home/accrodion_arrow.svg"
-              width={16}
-              height={16}
-              alt="Dropdown Arrow"
-              className={`${theme && "invert"}`}
-            />
+            {showArrow &&
+              <img
+                src="/images/home/accrodion_arrow.svg"
+                width={16}
+                height={16}
+                alt="Dropdown Arrow"
+                className={`${theme && "invert"}`}
+              />
+            }
           </button>
           {account && (
             <p className="text-sm">

@@ -3,7 +3,7 @@ import React from 'react'
 const socialIcons = [
   {
     id: "i1",
-    icon: "/images/footer/x.webp",
+    icon: "/images/footer/x.svg",
     redirect: "https://twitter.com/Scads_io",
   },
   {
@@ -14,6 +14,7 @@ const socialIcons = [
   {
     id: "i3",
     icon: "/images/footer/discord.svg",
+    redirect: "https://discord.com",
   },
   {
     id: "i4",
@@ -23,8 +24,9 @@ const socialIcons = [
   {
     id: "i5",
     icon: "/images/footer/medium.svg",
+    redirect: "https://medium.com",
   },
-];
+]
 
 const Footer = (props) => {
   const { theme, className } = props
@@ -46,9 +48,10 @@ const Footer = (props) => {
           >
             <img
               src={item.icon}
-              className={`${theme.isDark && "invert"}`}
+              className={`image-hover transition-all duration-200 ${theme && "invert"}`}
               alt="social icon"
               width={28}
+              height={28}
               loading="lazy"
             />
           </a>
@@ -56,7 +59,7 @@ const Footer = (props) => {
       </div>
       <p
         className={`text-lg text-center ${
-          theme.isDark && "text-[#B6B6B6]"
+          theme && "text-[#B6B6B6]"
         }`}
       >
         {`SCADS © Copyright ${year}. All rights reserved.`}{" ™"}

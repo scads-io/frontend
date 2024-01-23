@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import { useTranslation } from 'contexts/Localization'
-import Card from "components/NewCard"
+import { NewCard } from "components/Card"
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion"
 
 const tokenomics = [
@@ -83,23 +83,20 @@ const tokenomics = [
     text: `SCADS introduces an innovative concept called Proof of Hold (POH) to ensure safety, security, and minimize investment risks. This approach involves users simply purchasing the stable coin and holding it. By doing so, they automatically mint TWINE, the linear token. To facilitate this process, the algorithm incorporates a mapping feature called 'isHolder' to monitor addresses that qualify as holders. The 'ProofOfHolding' function enables an address to include itself in this list, allowing for seamless participation in the Proof of Hold mechanism. This inventive approach provides a secure and risk-reduced investment experience for users.`,
     thumb: "Proof of Hold (POH)",
   },
-];
+]
 
 const TabsLayout = ({ value }) => {
   const { theme } = value
   const { t } = useTranslation()
 
-  const activeClasses =
-    "text-pink-700 relative before:absolute before:inline-block lg:before:w-2 before:h-2 before:bg-pink-700 before:rounded-full before:content-[''] before:-left-4 before:top-1/2 before:-translate-y-1/2";
-
   return (
-    <Card
-      theme={theme.isDark}
+    <NewCard
+      theme={theme}
       className="flex justify-center items-center py-10 rounded-[60px] mt-10 max-w-[350px] sm:max-w-none backdrop-blur-3xl"
     >
       <Tabs
         className={`flex flex-col md:flex-row items-center justify-center ${
-          theme.isDark ? "text-white" : "text-black"
+          theme ? "text-white" : "text-black"
         }`}
       >
         <TabList
@@ -108,9 +105,8 @@ const TabsLayout = ({ value }) => {
           {tokenomics.map((thumb) => (
             <Tab
               key={thumb.id}
-              className={`
-              hover:text-[#B52761] lg:hover:translate-x-2 cursor-pointer text-start transition duration-200 font-semibold focus:outline-none `}
-              selectedClassName={activeClasses}
+              className={`hover:text-[#B52761] lg:hover:translate-x-2 cursor-pointer text-start transition duration-200 font-semibold focus:outline-none `}
+              selectedClassName="text-pink-700 relative before:absolute before:inline-block lg:before:w-2 before:h-2 before:bg-pink-700 before:rounded-full before:content-[''] before:-left-4 before:top-1/2 before:-translate-y-1/2"
             >
               {t(thumb.thumb)}
             </Tab>
@@ -158,8 +154,8 @@ const TabsLayout = ({ value }) => {
           ))}
         </AnimatePresence>
       </Tabs>
-    </Card>
-  );
-};
+    </NewCard>
+  )
+}
 
-export default TabsLayout;
+export default TabsLayout

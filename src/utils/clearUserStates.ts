@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/react'
 import { Dispatch } from '@reduxjs/toolkit'
-import { connectorLocalStorageKey } from '@scads/uikit'
+import { connectorLocalStorageKey } from 'components/WalletModal/config'
 import { profileClear } from '../state/profile'
 import { connectorsByName } from './web3React'
 import { clearAllTransactions } from '../state/transactions/actions'

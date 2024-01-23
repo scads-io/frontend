@@ -2,7 +2,7 @@ import React from 'react'
 import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion"
 import { useMatchBreakpoints } from '@scads/uikit'
 import { useTranslation } from 'contexts/Localization'
-import Card from "components/NewCard"
+import { NewCard } from "components/Card"
 import { motion } from "framer-motion/dist/framer-motion"
 import { accordionCardVariants } from 'components/variants'
 
@@ -39,7 +39,7 @@ const accordionContent = [
     ol_4: "4. Reserve Allocation for SCADS Collateralization: - The remaining 20% of PULSE's profits are dedicated to the reserve, which is securely locked in a life wallet denominated in SCADS currency. This continuous collateralization process serves to reinforce the value and stability of SCADS.",
     p2: "Analysis: In summary, PULSE operates as an investment protocol within the ecosystem, actively reinvesting and generating profits to support growth. The allocation of profits into a sinking fund and reserve contributes to the system's longevity and the continuous collateralization of SCADS. This innovative mechanism plays a pivotal role in fortifying the ecosystem's stability and ensuring sustained value for its participants.",
   },
-];
+]
 
 const AccordionItem = ({ header, ...rest }) => (
   <Item
@@ -65,7 +65,7 @@ const AccordionItem = ({ header, ...rest }) => (
     }}
     panelProps={{ className: "p-4" }}
   />
-);
+)
 
 const ContentAccordion = ({ value }) => {
   const { isMobile } = useMatchBreakpoints()
@@ -81,7 +81,7 @@ const ContentAccordion = ({ value }) => {
   return (
     <div className="mt-24 bg-gradient-to-b from-[#FF006820] to-transparent relative">
       <img
-        src={theme.isDark ? "/images/home/second_sphere_dark.svg" : "/images/home/rectangle_large.svg"}
+        src={theme ? "/images/home/second_sphere_dark.svg" : "/images/home/rectangle_large.svg"}
         className="absolute left-0 top-0 max-w-[160px] md:max-w-none"
         alt="rectangle"
         loading="lazy"
@@ -93,13 +93,13 @@ const ContentAccordion = ({ value }) => {
         loading="lazy"
       />
       <img
-        src={theme.isDark ? "/images/home/sphere_dark.svg" : "/images/home/second_cube.svg"}
+        src={theme ? "/images/home/sphere_dark.svg" : "/images/home/second_cube.svg"}
         className="absolute -right-24 md:right-[23%] 2xl:right-1/4 top-6"
         alt="cube"
         loading="lazy"
       />
       <img
-        src={theme.isDark ? "/images/home/cube_large.webp" : "/images/home/cube_light.webp"}
+        src={theme ? "/images/home/cube_large.webp" : "/images/home/cube_light.webp"}
         className="absolute -right-24 -rotate-45 translate-y-[200%] hidden md:block"
         alt="cube"
         loading="lazy"
@@ -115,15 +115,15 @@ const ContentAccordion = ({ value }) => {
           transition
           transitionTimeout={500}
         >
-          <Card
+          <NewCard
             className="py-9 px-12 flex flex-col gap-20 lg:gap-16 w-[340px] lg:w-[790px]"
-            theme={theme.isDark}
+            theme={theme}
           >
             {accordionContent.map((item) => (
               <AccordionItem
                 header={item.header}
-                className={`max-w-[320px] lg:max-w-[691px] flex flex-col text-base text-black ${
-                  theme.isDark && "invert"
+                className={`max-w-[320px] lg:max-w-[860px] flex flex-col text-base text-black ${
+                  theme && "invert"
                 }`}
                 key={item.id}
               >
@@ -139,12 +139,12 @@ const ContentAccordion = ({ value }) => {
                 <p className="pt-6">{t(item.p2)}</p>
               </AccordionItem>
             ))}
-          </Card>
+          </NewCard>
         </Accordion>
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
 
-export default ContentAccordion;
+export default ContentAccordion

@@ -5,6 +5,7 @@ import { motion } from "framer-motion/dist/framer-motion"
 import ScrollToTopButton  from 'components/ScrollToTopButton'
 import Footer from 'components/Footer'
 import { whitePaperVariants } from 'components/variants'
+import { PageMeta } from 'components/Layout/PageMeta'
 
 const Text1 = {
   title_1: "EXECUTIVE SUMMARY",
@@ -335,13 +336,14 @@ const UseCases = ({ value }) => {
 
   return (
     <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
+      <PageMeta />
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6 }}
         className={` ${
-          theme.isDark ? "text-[#B6B6B6]" : "text-black"
+          theme ? "text-[#B6B6B6]" : "text-black"
           } container mx-auto flex flex-col mt-40 items-center overflow-hidden pb-20`}
       >
         <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] text-center font-bold">{t("SCADS AND TWINES USE CASES")}</h1>
@@ -1182,7 +1184,7 @@ const UseCases = ({ value }) => {
         </motion.div>
       </motion.main>
       <Footer theme={theme} className="mt-24" />
-      {createPortal(<ScrollToTopButton />, document.body)}
+      {createPortal(<ScrollToTopButton theme={theme} />, document.body)}
     </div>
   )
 }

@@ -9,7 +9,8 @@ import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
-import { ConnectorNames, connectorLocalStorageKey } from '@scads/uikit'
+import { ConnectorNames } from 'components/WalletModal/types'
+import { connectorLocalStorageKey } from 'components/WalletModal/config'
 import { connectorsByName } from 'utils/web3React'
 import { setupNetwork } from 'utils/wallet'
 import useToast from 'hooks/useToast'

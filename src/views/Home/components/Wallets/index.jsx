@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { useMatchBreakpoints } from '@scads/uikit'
 import { motion } from "framer-motion/dist/framer-motion"
-import Card from "components/NewCard"
+import { NewCard } from "components/Card"
 import {
   imgVariants,
   opacityVariants,
@@ -40,25 +40,25 @@ const wallets = [
     title: "LIQUIDITY WALLET",
     description: "Is a depository to supply liquidity to the market as makers and liquidity providers.",
   },
-];
+]
 
 const Wallets = ({ value }) => {
   const { isMobile } = useMatchBreakpoints()
   const { theme } = value
   const { t } = useTranslation()
 
-  let cardVariants = {};
+  let cardVariants = {}
 
   if (!isMobile) {
-    cardVariants = walletCardVariants;
+    cardVariants = walletCardVariants
   }
 
   const handleClickScroll = () => {
-    const element = document.getElementById("tokenomics");
+    const element = document.getElementById("tokenomics")
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth" })
     }
-  };
+  }
 
   return (
     <div className="container mx-auto flex flex-col relative mt-40">
@@ -70,7 +70,7 @@ const Wallets = ({ value }) => {
         className="relative top-0"
       >
         <img
-          src={theme.isDark.isDark ? "/images/home/wallets_img_dark.webp" : "/images/home/wallets_image_light.webp"}
+          src={theme ? "/images/home/wallets_img_dark.webp" : "/images/home/wallets_image_light.webp"}
           className="absolute z-0 top-0 w-auto lg:-left-10 xl:left-10 2xl:left-44 h-[700px] hidden md:block"
           alt="background"
           loading="lazy"
@@ -92,7 +92,7 @@ const Wallets = ({ value }) => {
           viewport={{ once: true, amount: 0.8 }}
           variants={cardVariants}
         >
-          <Card theme={theme.isDark}>
+          <NewCard theme={theme}>
             <div className="flex flex-col md:flex-row md:flex-wrap gap-x-[100px] md:gap-x-[40px] lg:gap-x-[100px] gap-y-[60px] max-w-[322px] sm:max-w-none lg:gap-y-20 justify-center items-center py-7 md:py-10 lg:py-7 h-full">
               {wallets.map((item) => (
                 <motion.div
@@ -105,14 +105,14 @@ const Wallets = ({ value }) => {
                 >
                   <h1
                     className={`${
-                      theme.isDark ? "text-white" : "text-[#B52761]"
+                      theme ? "text-white" : "text-[#B52761]"
                     } font-bold text-xl`}
                   >
                     {t(item.title)}
                   </h1>
                   <p
                     className={`${
-                      theme.isDark ? "text-[#B6B6B6]" : "text-black"
+                      theme ? "text-[#B6B6B6]" : "text-black"
                     } md:h-24 font-medium text-sm lg:text-base max-w-[243px] lg:max-w-[260px]`}
                   >
                     {t(item.description)}
@@ -129,12 +129,12 @@ const Wallets = ({ value }) => {
                 {t("More Info")}
               </button>
             </div>
-          </Card>
+          </NewCard>
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 
 export default Wallets

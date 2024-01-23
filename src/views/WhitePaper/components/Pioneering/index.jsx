@@ -55,7 +55,7 @@ const Pioneering = ({ value }) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6 }}
         className={` ${
-            theme.isDark ? "text-[#B6B6B6]" : "text-black"
+            theme ? "text-[#B6B6B6]" : "text-black"
             } container mx-auto flex flex-col items-center mt-40 overflow-hidden pb-20`}
     >
         <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] font-bold text-center">
@@ -155,8 +155,8 @@ const Pioneering = ({ value }) => {
             <span className="font-bold">{t(executiveText2.small_text_6_1)}</span>
         </p>
     </motion.main>
-  );
-};
+  )
+}
 
 
 export default Pioneering

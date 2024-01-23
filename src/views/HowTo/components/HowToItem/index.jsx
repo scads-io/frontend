@@ -1,7 +1,7 @@
 import React from "react"
 import { v4 as uuidv4 } from 'uuid'
 import { useTranslation } from 'contexts/Localization'
-import Card from "components/NewCard"
+import { NewCard } from "components/Card"
 import { howToItemsData } from "../../data"
 
 const HowToItem = ({ step, value }) => {
@@ -10,16 +10,16 @@ const HowToItem = ({ step, value }) => {
   const { t } = useTranslation()
 
   const stepClassName = `${
-    theme.isDark ? "text-[#B6B6B6]" : "text-black"
+    theme ? "text-[#B6B6B6]" : "text-black"
   } flex flex-col justify-center items-center py-4 px-8 max-w-[340px] lg:max-w-[300px] xl:max-w-[379px]
   ${id === "2" ? "md:mt-16 pb-10" : "mt-6"} 
   ${id === "5" && "md:mt-[80px] lg:max-w-[360px]"} 
   ${id === "8" && "md:mt-16"}
   ${id === "9" && "md:mt-[80px]"}
-  `;
+  `
 
   return (
-    <Card theme={theme.isDark} className={stepClassName}>
+    <NewCard theme={theme} className={stepClassName}>
       <h2 className="font-bold text-xl">{t(header)}</h2>
       <p className="max-w-[351px] py-6">{t(text)}</p>
       {imgTwo && <img src={imgTwo} className="pb-6" alt={`Step ${id} - 2`} />}
@@ -29,7 +29,7 @@ const HowToItem = ({ step, value }) => {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 font-semibold"
+          className="mt-6 font-semibold hover:text-[#B52761] transition-all duration-200"
         >
           {t("Learn More")}
         </a>
@@ -37,12 +37,12 @@ const HowToItem = ({ step, value }) => {
       {textSm && (
         <ul>
           {textSm.split("\n").map((line) => {
-            const uniqueKey = uuidv4();
+            const uniqueKey = uuidv4()
             return (
               <li key={uniqueKey} className="text-xs">
                 {line}
               </li>
-            );
+            )
           })}
         </ul>
       )}
@@ -58,8 +58,8 @@ const HowToItem = ({ step, value }) => {
           <p className="max-w-[351px] py-6">{t(howToItemsData[10].text)}</p>
         </>
       )}
-    </Card>
-  );
-};
+    </NewCard>
+  )
+}
 
-export default HowToItem;
+export default HowToItem

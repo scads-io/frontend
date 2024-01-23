@@ -1,13 +1,10 @@
 import React from 'react'
-import useTheme from 'hooks/useTheme'
 import { motion } from "framer-motion/dist/framer-motion"
 import CaratClaimCard from './caratClaimCard'
 import CaratBuyBackCard from './caratBuyBackCard'
 
 
-export default function CaratMint() {
-  const { theme } = useTheme()
-
+export default function CaratMint({ theme }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,11 +15,11 @@ export default function CaratMint() {
     >
       <div
         className={`flex flex-col items-center mx-auto lg:h-[420px] xl:h-5/6 ${
-          theme.isDark ? "text-white" : "text-black"
+          theme ? "text-white" : "text-black"
         } relative`}
       >
-        <CaratBuyBackCard />
-        <CaratClaimCard />
+        <CaratBuyBackCard theme={theme} />
+        <CaratClaimCard theme={theme} />
       </div>
     </motion.div>
   )

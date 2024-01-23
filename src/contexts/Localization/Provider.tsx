@@ -1,6 +1,5 @@
 import React, { createContext, useCallback, useEffect, useState } from 'react'
-import { Language } from '@scads/uikit'
-import { EN, languages } from 'config/localization/languages'
+import { EN, languages, Language } from 'config/localization/languages'
 import translations from 'config/localization/translations.json'
 import { ContextApi, ContextData, ProviderState } from './types'
 import { LS_KEY, fetchLocale, getLanguageCodeFromLS } from './helpers'

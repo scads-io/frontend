@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import { useMatchBreakpoints } from '@scads/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
-import Card from "components/NewCard"
+import { NewCard } from "components/Card"
 import ScrollToTopButton  from 'components/ScrollToTopButton'
 import Footer from 'components/Footer'
 import {
@@ -11,6 +11,7 @@ import {
   roadmapCardVariantsToLeft,
   roadmapCardVariantsToRight,
 } from 'components/variants'
+import { PageMeta } from "components/Layout/PageMeta"
 
 const roadmapContent = [
   {
@@ -163,7 +164,7 @@ const roadmapContent = [
     l1: "Launch date",
     right: true,
   },
-];
+]
 
 const Roadmap = ({ value }) => {
   const { theme } = value
@@ -172,16 +173,17 @@ const Roadmap = ({ value }) => {
 
   return (
     <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]"> 
+      <PageMeta />
       <div
         className={`flex flex-col md:items-center ms-8 sm:ms-0 mt-40 overflow-hidden ${
-          theme.isDark ? "text-[#B6B6B6]" : "text-black"
+          theme ? "text-[#B6B6B6]" : "text-black"
         }`}
       >
         <h1 className="font-bold text-[26px] lg:text-4xl 2xl:text-5xl text-center">SCADS</h1>
         <p className="text-center">{t("Less is more")}</p>
         <ol
           className={`border-s mt-16 flex flex-col items-start md:translate-x-1/2 md:mx-auto max-w-[240px] md:max-w-[450px] md:[&>*:nth-child(even)]:-translate-x-[108%] ${
-            theme.isDark ? "text-white border-white" : "text-black border-black"
+            theme ? "text-white border-white" : "text-black border-black"
           }`}
         >
           {roadmapContent.map((item) => (
@@ -205,8 +207,8 @@ const Roadmap = ({ value }) => {
                     : roadmapCardVariantsToLeft
                 }
               >
-                <Card
-                  theme={theme.isDark}
+                <NewCard
+                  theme={theme}
                   className="py-4 ps-3 md:py-3 w-full h-fit"
                 >
                   <time className="mb-1 text-lg font-bold leading-none">
@@ -221,16 +223,16 @@ const Roadmap = ({ value }) => {
                       <li className="mt-4 text-base font-normal">{t(item.l3)}</li>
                     }
                   </ul>
-                </Card>
+                </NewCard>
               </motion.div>
             </li>
           ))}
         </ol>
       </div>
       <Footer theme={theme} className="mt-24" />
-      {createPortal(<ScrollToTopButton />, document.body)}
+      {createPortal(<ScrollToTopButton theme={theme} />, document.body)}
     </div>
-  );
-};
+  )
+}
 
-export default Roadmap;
+export default Roadmap

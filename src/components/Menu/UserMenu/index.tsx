@@ -1,21 +1,26 @@
 import React from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { useModal, UserMenu as UIKitUserMenu } from '@scads/uikit'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import WalletModal, { WalletView } from './WalletModal'
+import { useModal } from "../../Modal"
+import WalletModal from './WalletModal'
+import Menu from './Menu'
 
-const UserMenu = () => {
+const UserMenu = ({ theme }) => {
   const { account } = useWeb3React()
-  const [onPresentWalletModal] = useModal(<WalletModal initialView={WalletView.WALLET_INFO} />)
-  const avatarSrc = null
+  const [onPresentWalletModal] = useModal(<WalletModal theme={theme} />)
 
   if (!account) {
     return <ConnectWalletButton scale='sm' />
   }
 
   return (
-    <div onClick={onPresentWalletModal} className="magicHelper" onKeyDown={onPresentWalletModal} role="presentation"> 
-      <UIKitUserMenu account={account} avatarSrc={avatarSrc} />
+    <div
+      onClick={onPresentWalletModal}
+      className="magicHelper"
+      onKeyDown={onPresentWalletModal}
+      role="presentation"
+    > 
+      <Menu account={account} />
     </div>
   )
 }

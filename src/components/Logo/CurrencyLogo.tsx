@@ -1,10 +1,10 @@
 import { Currency, ETHER, Token } from '@scads/sdk'
-import useTheme from 'hooks/useTheme'
 import { BinanceIcon } from '@scads/uikit'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import getCurrencyLogoURL from 'utils/getCurrencyLogoURL'
 import getTokenLogoURL from 'utils/getTokenLogoURL'
+import { useThemeManager } from 'state/user/hooks'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from './Logo'
@@ -29,7 +29,7 @@ export default function CurrencyLogo({
   size?: string
   style?: React.CSSProperties
 }) {
-  const { theme } = useTheme()
+  const [isDark] = useThemeManager()
   const uriLocations = useHttpLocations(currency instanceof WrappedTokenInfo ? currency.logoURI : undefined)
   const srcs: string[] = useMemo(() => {
     if (currency === ETHER) return []
@@ -48,14 +48,14 @@ export default function CurrencyLogo({
   }
 
   if (currency.symbol === 'Scads') {
-    const scadsLogoUri = theme.isDark ?  scadsDarkThemeLogo : scadsLightThemeLogo
-    const singleString: string[] = [scadsLogoUri, ''];
+    const scadsLogoUri = isDark ?  scadsDarkThemeLogo : scadsLightThemeLogo
+    const singleString: string[] = [scadsLogoUri, '']
     return <StyledLogo size={size} srcs={singleString} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
   }
 
   if (currency.symbol === 'TWINE') {
-    const twineLogoUri = theme.isDark ?  twineDarkThemeLogo : twineLightThemeLogo
-    const singleString: string[] = [twineLogoUri, ''];
+    const twineLogoUri = isDark ?  twineDarkThemeLogo : twineLightThemeLogo
+    const singleString: string[] = [twineLogoUri, '']
     return <StyledLogo size={size} srcs={singleString} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
   }
   

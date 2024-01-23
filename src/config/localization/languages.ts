@@ -1,4 +1,8 @@
-import { Language } from '@scads/uikit'
+export interface Language {
+  code: string
+  language: string
+  locale: string
+}
 
 export const EN: Language = { locale: 'en-US', language: 'English', code: 'en' }
 export const RU: Language = { locale: 'ru-RU', language: 'Русский', code: 'ru' }

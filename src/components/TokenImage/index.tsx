@@ -2,7 +2,6 @@ import React from 'react'
 import {
   TokenPairImage as UIKitTokenPairImage,
   TokenPairImageProps as UIKitTokenPairImageProps,
-  TokenImage as UIKitTokenImage,
   ImageProps,
 } from '@scads/uikit'
 import tokens from 'config/constants/tokens'

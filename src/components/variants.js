@@ -8,7 +8,7 @@ export const opacityVariants = {
       duration: 0.6,
     },
   },
-};
+}
 
 export const priceCardVariants = {
   offscreen: {
@@ -22,7 +22,8 @@ export const priceCardVariants = {
       duration: 1,
     },
   },
-};
+}
+
 export const tokenomicsCardVariants = {
   offscreen: {
     y: 100,
@@ -35,9 +36,9 @@ export const tokenomicsCardVariants = {
       duration: 1,
     },
   },
-};
+}
 
-export const treasuryCardVariants = (item) => ({
+export const treasuryCardVariants = {
   offscreen: {
     y: 200,
   },
@@ -46,10 +47,9 @@ export const treasuryCardVariants = (item) => ({
     transition: {
       type: "spring",
       bounce: 0.4,
-      duration: item.duration,
     },
   },
-});
+}
 
 export const walletCardVariants = {
   offscreen: {
@@ -63,7 +63,7 @@ export const walletCardVariants = {
       duration: 1,
     },
   },
-};
+}
 
 export const imgVariants = {
   offscreen: {
@@ -77,7 +77,7 @@ export const imgVariants = {
       duration: 1,
     },
   },
-};
+}
 
 export const investPageVariants = {
   offscreen: {
@@ -91,7 +91,7 @@ export const investPageVariants = {
       duration: 1,
     },
   },
-};
+}
 
 export const accordionCardVariants = {
   offscreen: {
@@ -105,7 +105,7 @@ export const accordionCardVariants = {
       duration: 1,
     },
   },
-};
+}
 
 export const TWINECardVariants = {
   enter: {
@@ -121,7 +121,7 @@ export const TWINECardVariants = {
     x: 300,
     duration: 1,
   },
-};
+}
 
 export const scadsCardVariants = {
   enter: {
@@ -137,7 +137,7 @@ export const scadsCardVariants = {
     x: -300,
     duration: 1,
   },
-};
+}
 
 export const howToCardVariants = (item) => ({
   offscreen: {
@@ -151,7 +151,7 @@ export const howToCardVariants = (item) => ({
       duration: item.duration,
     },
   },
-});
+})
 
 export const whitePaperVariants = {
   offscreen: {
@@ -165,7 +165,7 @@ export const whitePaperVariants = {
       duration: 0.6,
     },
   },
-};
+}
 
 export const roadmapCardVariantsToLeft = {
   offscreen: {
@@ -179,7 +179,8 @@ export const roadmapCardVariantsToLeft = {
       duration: 1,
     },
   },
-};
+}
+
 export const roadmapCardVariantsToRight = {
   offscreen: {
     x: -200,
@@ -192,7 +193,7 @@ export const roadmapCardVariantsToRight = {
       duration: 1,
     },
   },
-};
+}
 
 export const roadmapCardVariantsMobile = {
   offscreen: {
@@ -206,7 +207,7 @@ export const roadmapCardVariantsMobile = {
       duration: 1,
     },
   },
-};
+}
 
 export const fromTop = {
   offscreen: {
@@ -217,7 +218,7 @@ export const fromTop = {
     y: 0,
     opacity: 1,
   },
-};
+}
 
 export const fromBottom = {
   offscreen: {
@@ -228,4 +229,4 @@ export const fromBottom = {
     y: 0,
     opacity: 1,
   },
-};
+}

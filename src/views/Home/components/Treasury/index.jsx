@@ -2,14 +2,14 @@ import React from 'react'
 import { useMatchBreakpoints } from '@scads/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from 'framer-motion/dist/framer-motion'
-import NewCard from 'components/NewCard'
+import { NewCard } from 'components/Card'
 import tokens from 'config/constants/tokens'
 import { 
   treasuryCardVariants,
   opacityVariants,
   fromTop,
   fromBottom, } from 'components/variants'
-import { useDashInfo } from '../hooks/useDashInfo'
+import { useDashInfo } from '../../hooks/useDashInfo'
 
 const Treasury = ({ value }) => {
   const { theme } = value
@@ -73,21 +73,30 @@ const Treasury = ({ value }) => {
       >
         <div>
           <h1 className="md:text-[40px] text-[#B52761] font-bold">{t("Treasury")}</h1>
-          <span className={`text-2xl font-medium ${theme.isDark && "text-[#B6B6B6]"}`}>
+          <span className={`text-2xl font-medium ${theme && "text-[#B6B6B6]"}`}>
             {t("Balance")}
           </span>
         </div>
       </motion.div>
-      <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center gap-10 md:gap-8 w-[265px] md:w-3/4 lg:w-[240px] lg:h-[220px] xl:w-[240px] mx-auto mt-10">
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={{
+          onscreen: {
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+        className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center gap-10 md:gap-8 w-[265px] md:w-3/4 lg:w-[240px] lg:h-[220px] xl:w-[240px] mx-auto mt-10"
+      >
         <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={treasuryCardVariants(1)}
+          variants={treasuryCardVariants}
           key={0}
         >
           <NewCard
-            theme={theme.isDark}
+            theme={theme}
             className="flex flex-col items-center justify-center xl:justify-end py-5 lg:py-6 w-[265px] md:w-[170px] lg:w-[190px] xl:w-[220px] 2xl:w-[270px] md:h-full md:mt-0"
           >
             <span className="text-[#B52761] text-2xl font-semibold">
@@ -95,7 +104,7 @@ const Treasury = ({ value }) => {
             </span>
             <span
               className={`text-base md:text-lg ${
-                theme.isDark ? "text-[#B6B6B6]" : "text-[#424242]"
+                theme ? "text-[#B6B6B6]" : "text-[#424242]"
               }`}
             >
               {t("Balance")}
@@ -103,7 +112,7 @@ const Treasury = ({ value }) => {
             <div className="flex items-center justify-center gap-1 max-w-[165px] lg:max-w-[186px] md:h-[44px] pt-4">
               <p
                 className={`${
-                  theme.isDark ? "text-[#B6B6B6]" : "text-black"
+                  theme ? "text-[#B6B6B6]" : "text-black"
                 } text-base lg:text-2xl text-medium font-bold`}
               >
                 ${lockedBalance.toFixed(2).toString()}
@@ -112,14 +121,11 @@ const Treasury = ({ value }) => {
           </NewCard>
         </motion.div>
         <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={treasuryCardVariants(1)}
+          variants={treasuryCardVariants}
           key={1}
         >
           <NewCard
-            theme={theme.isDark}
+            theme={theme}
             className="flex flex-col items-center justify-center xl:justify-end py-5 lg:py-6 w-[265px] md:w-[170px] lg:w-[190px] xl:w-[220px] 2xl:w-[270px] md:h-full md:mt-0"
           >
             <span className="text-[#B52761] text-2xl font-semibold">
@@ -127,7 +133,7 @@ const Treasury = ({ value }) => {
             </span>
             <span
               className={`text-base md:text-lg ${
-                theme.isDark ? "text-[#B6B6B6]" : "text-[#424242]"
+                theme ? "text-[#B6B6B6]" : "text-[#424242]"
               }`}
             >
               {t("Balance")}
@@ -137,12 +143,12 @@ const Treasury = ({ value }) => {
                 src="/images/home/scads_symbol_lighttheme.svg"
                 alt="symbol"
                 width={isMobile ? 10 : 14}
-                className={`${theme.isDark ? "contrast-50" : "invert"}`}
+                className={`${theme ? "contrast-50" : "invert"}`}
                 loading="lazy"
               />
               <p
                 className={`${
-                  theme.isDark ? "text-[#B6B6B6]" : "text-black"
+                  theme ? "text-[#B6B6B6]" : "text-black"
                 } text-base lg:text-2xl text-medium font-bold`}
               >
                 {scadsBalance}
@@ -151,14 +157,11 @@ const Treasury = ({ value }) => {
           </NewCard>
         </motion.div>
         <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={treasuryCardVariants(1)}
+          variants={treasuryCardVariants}
           key={2}
         >
           <NewCard
-            theme={theme.isDark}
+            theme={theme}
             className="flex flex-col items-center justify-center xl:justify-end py-5 lg:py-6 w-[265px] md:w-[170px] lg:w-[190px] xl:w-[220px] 2xl:w-[270px] md:h-full md:mt-0"
           >
             <span className="text-[#B52761] text-2xl font-semibold">
@@ -166,22 +169,22 @@ const Treasury = ({ value }) => {
             </span>
             <span
               className={`text-base md:text-lg ${
-                theme.isDark ? "text-[#B6B6B6]" : "text-[#424242]"
+                theme ? "text-[#B6B6B6]" : "text-[#424242]"
               }`}
             >
               {t("Balance")}
             </span>
             <div className="flex items-center justify-center gap-1 max-w-[165px] lg:max-w-[186px] md:h-[44px] pt-4">
               <img
-                src="/images/home/twine_symbol_darktheme.png"
+                src="/images/home/twine_symbol_darktheme.webp"
                 alt="symbol"
-                className={`${theme.isDark ? "invert contrast-[.4]" : ""}`}
+                className={`${theme ? "invert contrast-[.4]" : ""}`}
                 width={isMobile ? 8 : 12}
                 loading="lazy"
               />
               <p
                 className={`${
-                  theme.isDark ? "text-[#B6B6B6]" : "text-black"
+                  theme ? "text-[#B6B6B6]" : "text-black"
                 } text-base lg:text-2xl text-medium font-bold`}
               >
                 {twineBalance}
@@ -190,14 +193,11 @@ const Treasury = ({ value }) => {
           </NewCard>
         </motion.div>
         <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={treasuryCardVariants(1)}
+          variants={treasuryCardVariants}
           key={3}
         >
           <NewCard
-            theme={theme.isDark}
+            theme={theme}
             className="flex flex-col items-center justify-center xl:justify-end py-5 lg:py-6 w-[265px] md:w-[170px] lg:w-[190px] xl:w-[220px] 2xl:w-[270px] md:h-full md:mt-0"
           >
             <span className="text-[#B52761] text-2xl font-semibold">
@@ -205,7 +205,7 @@ const Treasury = ({ value }) => {
             </span>
             <span
               className={`text-base md:text-lg ${
-                theme.isDark ? "text-[#B6B6B6]" : "text-[#424242]"
+                theme ? "text-[#B6B6B6]" : "text-[#424242]"
               }`}
             >
               {t("Balance")}
@@ -213,7 +213,7 @@ const Treasury = ({ value }) => {
             <div className="flex items-center justify-center gap-1 max-w-[165px] lg:max-w-[186px] md:h-[44px] pt-4">
               <p
                 className={`${
-                  theme.isDark ? "text-[#B6B6B6]" : "text-black"
+                  theme ? "text-[#B6B6B6]" : "text-black"
                 } text-base lg:text-2xl text-medium font-bold`}
               >
                 ${usdtBalance}
@@ -222,14 +222,11 @@ const Treasury = ({ value }) => {
           </NewCard>
         </motion.div>
         <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={treasuryCardVariants(1)}
+          variants={treasuryCardVariants}
           key={4}
         >
           <NewCard
-            theme={theme.isDark}
+            theme={theme}
             className="flex flex-col items-center justify-center xl:justify-end py-5 lg:py-6 w-[265px] md:w-[170px] lg:w-[190px] xl:w-[220px] 2xl:w-[270px] md:h-full md:mt-0"
           >
             <span className="text-[#B52761] text-2xl font-semibold">
@@ -237,7 +234,7 @@ const Treasury = ({ value }) => {
             </span>
             <span
               className={`text-base md:text-lg ${
-                theme.isDark ? "text-[#B6B6B6]" : "text-[#424242]"
+                theme ? "text-[#B6B6B6]" : "text-[#424242]"
               }`}
             >
               {t("Balance")}
@@ -245,7 +242,7 @@ const Treasury = ({ value }) => {
             <div className="flex items-center justify-center gap-1 max-w-[165px] lg:max-w-[186px] md:h-[44px] pt-4">
               <p
                 className={`${
-                  theme.isDark ? "text-[#B6B6B6]" : "text-black"
+                  theme ? "text-[#B6B6B6]" : "text-black"
                 } text-base lg:text-2xl text-medium font-bold`}
               >
                 ${usdcBalance}
@@ -253,9 +250,9 @@ const Treasury = ({ value }) => {
             </div>
           </NewCard>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
-  );
-};
+  )
+}
 
 export default Treasury

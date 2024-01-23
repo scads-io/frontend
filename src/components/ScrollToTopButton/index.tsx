@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { Button, ArrowUpIcon } from '@scads/uikit'
 import throttle from 'lodash/throttle'
+import { NewCard } from 'components/Card'
 
 const FixedContainer = styled.div`
   position: fixed;
@@ -9,19 +10,7 @@ const FixedContainer = styled.div`
   bottom: calc(110px + env(safe-area-inset-bottom));
 `
 
-const StyledButton = styled(Button)`
-  --tw-backdrop-blur: blur(30px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast)
-    var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity)
-    var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast)
-    var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity)
-    var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  --tw-bg-opacity: 0.1;
-  background: ${({ theme }) => (theme.isDark ? 'rgb(88 88 94 / var(--tw-bg-opacity))' : 'rgba(255,255,255,0.6)')};
-`
-
-const ScrollToTopButton = () => {
+const ScrollToTopButton = ({ theme }) => {
   const [visible, setVisible] = useState(false)
 
   const scrollToTop = useCallback(() => {
@@ -50,12 +39,18 @@ const ScrollToTopButton = () => {
 
   return (
     <FixedContainer style={{ display: visible ? 'inline' : 'none' }}>
-      <StyledButton
-        width={48}
-        height={48}
-        endIcon={<ArrowUpIcon color='white' style={{ marginLeft: 0 }} />}
-        onClick={scrollToTop}
-      />
+      <NewCard
+        className="lg:!px-0 !rounded-2xl"
+        theme={theme}
+      >
+        <Button
+          className='!bg-transparent'
+          width={48}
+          height={48}
+          endIcon={<ArrowUpIcon color='white' style={{ marginLeft: 0 }} />}
+          onClick={scrollToTop}
+        />
+      </NewCard>
     </FixedContainer>
   )
 }

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { connectorLocalStorageKey, ConnectorNames } from '@scads/uikit'
+import { ConnectorNames } from 'components/WalletModal/types'
+import { connectorLocalStorageKey } from 'components/WalletModal/config'
 import useAuth from 'hooks/useAuth'
 
 const _binanceChainListener = async () =>

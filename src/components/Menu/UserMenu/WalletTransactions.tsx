@@ -1,6 +1,4 @@
 import React from 'react'
-import useTheme from 'hooks/useTheme'
-
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { Box, Button, Flex, Text } from '@scads/uikit'
@@ -20,8 +18,11 @@ const StyledText = styled(Text)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
 `
 
-const WalletTransactions: React.FC = () => {
-  const { theme } = useTheme()
+interface WalletTransactionsProps {
+  theme: boolean
+}
+
+const WalletTransactions: React.FC<WalletTransactionsProps> = ({ theme }) => {
   const { chainId } = useActiveWeb3React()
   const dispatch = useDispatch<AppDispatch>()
   const { t } = useTranslation()
@@ -38,7 +39,7 @@ const WalletTransactions: React.FC = () => {
     <Box minHeight='120px'>
       <Flex alignItems='center' justifyContent='space-between' mb='24px'>
         <div
-          className={`${theme.isDark ? "text-white" : "text-black"}`}
+          className={`${theme ? "text-white" : "text-black"}`}
           >
           <h1 className="text-2 font-semibold">{t('RECENT TRANSACTIONS')}</h1>
         </div>

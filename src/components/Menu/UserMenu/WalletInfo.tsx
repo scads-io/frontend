@@ -1,17 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Button, Flex, InjectedModalProps, LinkExternal, Skeleton, Text, WarningIcon } from '@scads/uikit'
+import { Box, Button, Flex, LinkExternal, Text, WarningIcon } from '@scads/uikit'
 import { useWeb3React } from '@web3-react/core'
-import useTheme from 'hooks/useTheme'
 import useTokenBalance, { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
 import useAuth from 'hooks/useAuth'
 import { useTranslation } from 'contexts/Localization'
 import { getBscScanLink } from 'utils'
 import { getFullDisplayBalance, formatBigNumber } from 'utils/formatBalance'
 import tokens from 'config/constants/tokens'
+import { Skeleton } from 'components/Skeleton'
 import CopyAddress from './CopyAddress'
+import { InjectedModalProps } from "../../Modal"
 
 interface WalletInfoProps {
+  theme: boolean
   hasLowBnbBalance: boolean
   onDismiss: InjectedModalProps['onDismiss']
 }
@@ -24,13 +26,6 @@ const StyledFlex= styled(Flex)`
   margin-bottom: 24px;
   background: #FFB23719;
   border-color: #e68e00;
-`
-
-const StyledFlexImg= styled(Flex)`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 `
 
 const StyledText = styled(Text)`
@@ -46,8 +41,7 @@ const StyledButton = styled(Button)`
   background-color:  ${({ theme }) => theme.isDark ? "rgba(255,255,255,0.08)" : "#E9EAEB"};
 `
 
-const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) => {
-  const { theme } = useTheme()
+const WalletInfo: React.FC<WalletInfoProps> = ({ theme, hasLowBnbBalance, onDismiss }) => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const { balance, fetchStatus } = useGetBnbBalance()
@@ -62,18 +56,20 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) 
   return (
     <>
       <div
-        className={`${theme.isDark ? "text-white" : "text-black"}`}
-        >
-        <h1 className="text-2 font-semibold mb-2">{t('YOUR ADDRESS')}</h1>
+        className={`${theme ? "text-white" : "text-black"}`}
+      >
+        <h1 className="text-2 font-semibold mb-2">
+          {t('YOUR ADDRESS')}
+        </h1>
       </div>
       <CopyAddress account={account} mb='24px' />
       {hasLowBnbBalance && (
         <StyledFlex mb='24px'>
           <Box>
-            <StyledFlexImg>
-              <WarningIcon color={`${theme.isDark && "invert"}`} marginRight='5px' />
+            <Flex className="flex flex-row justify-center items-center">
+              <WarningIcon color={`${theme && "invert"}`} marginRight='5px' />
               <StyledText bold>{t('BNB Balance Low')}</StyledText>
-            </StyledFlexImg>
+            </Flex>
             <StyledText bold>{t('You need BNB for transaction fees.')}</StyledText>
           </Box>
         </StyledFlex>

@@ -6,31 +6,31 @@ import {
   opacityVariants,
   tokenomicsCardVariants,
 } from 'components/variants'
-import TabsLayout from "./Tabs";
+import TabsLayout from "./Tabs"
 
 const tokenomicsHeaderText = {
   title: "Tokenomics",
   text: "SCADS algorithm is simple in strategy, it can never go bankrupt, it never needs funding. Once it is launched it sustains itself indefinitely.",
-};
+}
 
 const Tokenomics = ({ value }) => {
   const { theme } = value
   const { isMobile } = useMatchBreakpoints()
   const { t } = useTranslation()
 
-  let fromBottom = {};
+  let fromBottom = {}
   if (!isMobile) {
-    fromBottom = tokenomicsCardVariants;
+    fromBottom = tokenomicsCardVariants
   }
 
   return (
     <>
       <div
         className={`${
-          theme.isDark
+          theme
             ? "md:bg-[url('../images/home/tokenomics_bg_dark.webp')]"
             : "md:bg-[url('../images/home/tokenomics_bg_light.webp')]"
-        } bg-center bg-cover bg-no-repeat mt-10 lg:mt-0 lg:py-48`}
+        } bg-center bg-cover bg-no-repeat mt-40 lg:pb-10`}
       >
         <div
           className="container mx-auto relative scroll-mt-32"
@@ -38,7 +38,7 @@ const Tokenomics = ({ value }) => {
         >
           <div
             className={`container mx-auto flex flex-col items-center text-center py-9 ${
-              theme.isDark ? "text-[#B6B6B6]" : "text-black"
+              theme ? "text-[#B6B6B6]" : "text-black"
             }`}
           >
             <motion.div
@@ -70,13 +70,16 @@ const Tokenomics = ({ value }) => {
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
         variants={opacityVariants}
-        className="flex justify-center w-[323px] lg:w-[672px] mx-auto"
+        className="flex justify-center w-[323px] md:w-[672px] mx-auto"
       >
-        {theme.isDark && <img src="images/home/proccess-dark.webp" alt="proccess" loading="lazy" />}
-        {theme.isDark === false && <img src="images/home/Proccess.webp" alt="proccess" loading="lazy" />}
+        <img 
+          src={`${theme ? "images/home/proccess-dark.webp" : "images/home/Proccess.webp"}`}
+          alt="proccess"
+          loading="lazy"
+        />
       </motion.div>
     </>
-  );
-};
+  )
+}
 
-export default Tokenomics;
+export default Tokenomics

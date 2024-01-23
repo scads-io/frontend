@@ -8,6 +8,7 @@ import { LightGreyCard } from 'components/Card'
 import QuestionHelper from 'components/QuestionHelper'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useThemeManager } from 'state/user/hooks'
 import { useCombinedActiveList } from '../../state/lists/hooks'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import { useIsUserAddedToken, useAllInactiveTokens } from '../../hooks/Tokens'
@@ -47,11 +48,7 @@ const MenuItem = styled(RowBetween)<{ disabled: boolean; selected: boolean }>`
   display: grid;
   grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);
   grid-gap: 8px;
-  cursor: ${({ disabled }) => !disabled && 'pointer'};
-  pointer-events: ${({ disabled }) => disabled && 'none'};
-  :hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.colors.tertiary};
-  }
+  cursor: pointer;
   opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
 `
 
@@ -68,6 +65,7 @@ function CurrencyRow({
   otherSelected: boolean
   style: CSSProperties
 }) {
+  const [isDark] = useThemeManager()
   const { account } = useActiveWeb3React()
   const key = currencyKey(currency)
   const selectedTokenList = useCombinedActiveList()
@@ -79,7 +77,9 @@ function CurrencyRow({
   return (
     <MenuItem
       style={style}
-      className={`token-item-${key}`}
+      className={`token-item-${key} ${
+        isDark ? "hover:bg-black" : "hover:bg-white"
+      } transition-all duration-200`}
       onClick={() => (isSelected ? null : onSelect())}
       disabled={isSelected}
       selected={otherSelected}
