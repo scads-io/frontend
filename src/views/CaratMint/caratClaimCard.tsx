@@ -66,7 +66,7 @@ export default function CaratClaimCard({ theme }) {
         await addCompoundAddress()
       }
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
   

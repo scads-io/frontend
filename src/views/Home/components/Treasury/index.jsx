@@ -1,7 +1,7 @@
 import React from 'react'
-import { useMatchBreakpoints } from '@scads/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from 'framer-motion/dist/framer-motion'
+import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import { NewCard } from 'components/Card'
 import tokens from 'config/constants/tokens'
 import { 

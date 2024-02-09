@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useMatchBreakpoints } from '@scads/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
+import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import { NewCard } from 'components/Card'
 import StatsTooltip from 'components/StatsTooltip'
 import { useCaratPrice } from 'hooks/useBUSDPrice'
@@ -27,7 +27,7 @@ const LivePrices = ({ value }) => {
   }
 
   const { caratPrice } = useCaratPrice()
-  const { nextPulsePartAmount, scadsAmountOfPulse } = usePulseInfo()
+  const { scadsAmountOfPulse } = usePulseInfo()
   const { heldScadsAmount, totalCarat, rewardSpeed } = useDashInfo()
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
 

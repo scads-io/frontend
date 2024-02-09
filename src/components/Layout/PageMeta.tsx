@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import { useLocation } from 'react-router'
 import { DEFAULT_META, getCustomMeta } from 'config/constants/meta'
 
-export const PageMeta: React.FC<{ symbol?: string }> = ({ symbol }) => {
+export const PageMeta: React.FC = () => {
   const { t } = useTranslation()
   const { pathname } = useLocation()
 

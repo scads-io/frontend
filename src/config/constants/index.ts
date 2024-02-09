@@ -46,21 +46,6 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.usdt],
 }
 
-// used to construct the list of all pairs we consider by default in the frontend
-export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  [ChainId.MAINNET]: [mainnetTokens.wbnb, mainnetTokens.dai, mainnetTokens.usdt, mainnetTokens.usdt],
-  [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.usdt],
-}
-
-export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
-  [ChainId.MAINNET]: [
-    [mainnetTokens.cake, mainnetTokens.wbnb],
-    [mainnetTokens.usdt, mainnetTokens.usdt],
-    [mainnetTokens.dai, mainnetTokens.usdt],
-  ],
-  [ChainId.TESTNET]: [[testnetTokens.cake, testnetTokens.usdt]],
-}
-
 export const NetworkContextName = 'NETWORK'
 
 // default allowed slippage, in bips

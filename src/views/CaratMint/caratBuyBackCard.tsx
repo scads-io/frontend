@@ -10,7 +10,7 @@ import CurrencyInputPanel, { CurrencyInputPanelRight } from '../../components/Cu
 import { ConnectWalletButtonInvest } from '../../components/ConnectWalletButton'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 import { Field } from '../../state/swap/actions'
-import { useCaratBuyBackInfo, useScadsBuyBackInfo, useCaratSellPermission } from '../../state/swap/hooks'
+import { useCaratBuyBackInfo, useScadsBuyBackInfo } from '../../state/swap/hooks'
 import useCaratMint from './hooks/useCaratMint'
 
 const StyledButton = styled(Button)`
@@ -20,7 +20,6 @@ const StyledButton = styled(Button)`
 
 export default function CaratBuyBackCard({ theme }) {
   const { t } = useTranslation()
-  const allowCaratSell = useCaratSellPermission()
   const { account } = useActiveWeb3React()
   // carat amount
   const [amountInput, setAmountInput] = useState<string>()
@@ -43,10 +42,7 @@ export default function CaratBuyBackCard({ theme }) {
     inputError: swapInputError,
   } = useCaratBuyBackInfo(parsedCaratTokenAmount, tokens.cake)
 
-  // const scadsAmountInCarat = useScadsAmountInCaratContract()
-
   const caratBalance = currencyBalances[Field.INPUT]?.toSignificant()
-  const scadsBalance = currencyBalances[Field.OUTPUT]?.toSignificant()
 
   const { redeemCaratAmount } = useScadsBuyBackInfo(parsedScadsTokenAmount, tokens.carat)
 
@@ -94,7 +90,7 @@ export default function CaratBuyBackCard({ theme }) {
           currency={tokens.carat}
           onUserInput={handleAmountInput}
           onMax={() => handleMaxInput()}
-          onCurrencySelect={() => console.log('input currency select')}
+          onCurrencySelect={() => console.error('input currency select')}
           otherCurrency={tokens.cake}
           disableCurrencySelect
           onlyInteger={false}
@@ -112,7 +108,7 @@ export default function CaratBuyBackCard({ theme }) {
           label={t('To')}
           showMaxButton={false}
           currency={tokens.cake}
-          onCurrencySelect={() => console.log('output currency select')}
+          onCurrencySelect={() => console.error('output currency select')}
           otherCurrency={tokens.carat}
           disableCurrencySelect
           showArrow={false}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
-import { useMatchBreakpoints } from '@scads/uikit'
+import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import {
   opacityVariants,
   tokenomicsCardVariants,
@@ -30,7 +30,7 @@ const Tokenomics = ({ value }) => {
           theme
             ? "md:bg-[url('../images/home/tokenomics_bg_dark.webp')]"
             : "md:bg-[url('../images/home/tokenomics_bg_light.webp')]"
-        } bg-center bg-cover bg-no-repeat mt-40 lg:pb-10`}
+        } bg-center bg-cover bg-no-repeat mt-40`}
       >
         <div
           className="container mx-auto relative scroll-mt-32"
@@ -70,7 +70,7 @@ const Tokenomics = ({ value }) => {
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
         variants={opacityVariants}
-        className="flex justify-center w-[323px] md:w-[672px] mx-auto"
+        className="flex justify-center w-[323px] md:w-[672px] mx-auto lg:pt-10"
       >
         <img 
           src={`${theme ? "images/home/proccess-dark.webp" : "images/home/Proccess.webp"}`}

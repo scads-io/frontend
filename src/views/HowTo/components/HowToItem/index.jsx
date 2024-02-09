@@ -1,5 +1,4 @@
 import React from "react"
-import { v4 as uuidv4 } from 'uuid'
 import { useTranslation } from 'contexts/Localization'
 import { NewCard } from "components/Card"
 import { howToItemsData } from "../../data"
@@ -11,11 +10,11 @@ const HowToItem = ({ step, value }) => {
 
   const stepClassName = `${
     theme ? "text-[#B6B6B6]" : "text-black"
-  } flex flex-col justify-center items-center py-4 px-8 max-w-[340px] lg:max-w-[300px] xl:max-w-[379px]
-  ${id === "2" ? "md:mt-16 pb-10" : "mt-6"} 
-  ${id === "5" && "md:mt-[80px] lg:max-w-[360px]"} 
-  ${id === "8" && "md:mt-16"}
-  ${id === "9" && "md:mt-[80px]"}
+    } flex flex-col justify-center items-center py-4 px-8 max-w-[340px] lg:max-w-[300px] xl:max-w-[379px]
+    ${id === "2" ? "md:mt-16 pb-10" : "mt-6"} 
+    ${id === "5" && "md:mt-[80px] lg:max-w-[360px]"} 
+    ${id === "8" && "md:mt-16"}
+    ${id === "9" && "md:mt-[80px]"}
   `
 
   return (
@@ -37,7 +36,7 @@ const HowToItem = ({ step, value }) => {
       {textSm && (
         <ul>
           {textSm.split("\n").map((line) => {
-            const uniqueKey = uuidv4()
+            const uniqueKey = crypto.randomUUID()
             return (
               <li key={uniqueKey} className="text-xs">
                 {line}

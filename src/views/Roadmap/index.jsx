@@ -1,6 +1,6 @@
 import React from "react"
 import { createPortal } from 'react-dom'
-import { useMatchBreakpoints } from '@scads/uikit'
+import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
 import { NewCard } from "components/Card"

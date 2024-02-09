@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { motion } from 'framer-motion/dist/framer-motion'
 import styled from 'styled-components'
 import { CurrencyAmount, Token, Trade } from '@scads/sdk'
@@ -16,19 +16,15 @@ import { SwapCallbackError } from './components/styleds'
 import ProgressSteps from './components/ProgressSteps'
 import { ConnectWalletButtonInvest } from '../../components/ConnectWalletButton'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
-import { useCurrency, useAllTokens } from '../../hooks/Tokens'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
 import { Field } from '../../state/swap/actions'
 import {
-  useDefaultsFromURLSearch,
   useDerivedSwapInfo,
   useSwapActionHandlers,
   useSwapState,
-  useScadsLatestSellDate,
   useCaratSellPermission,
 } from '../../state/swap/hooks'
-import { useExpertModeManager } from '../../state/user/hooks'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import CircleLoader from '../../components/Loader/CircleLoader'
 import SwapWarningModal from './components/SwapWarningModal'
@@ -40,43 +36,15 @@ const StyledButton = styled(Button)`
 `
 
 export default function ScadsMint({ theme }) {
-  const loadedUrlParams = useDefaultsFromURLSearch()
   const { t } = useTranslation()
   const { toastError } = useToast()
-  const latestSellDate = useScadsLatestSellDate()
   const allowCaratSell = useCaratSellPermission()
-
-  // token warning stuff
-  const [loadedInputCurrency, loadedOutputCurrency] = [
-    useCurrency(loadedUrlParams?.inputCurrencyId),
-    useCurrency(loadedUrlParams?.outputCurrencyId),
-  ]
-  const urlLoadedTokens: Token[] = useMemo(
-    () => [loadedInputCurrency, loadedOutputCurrency]?.filter((c): c is Token => c instanceof Token) ?? [],
-    [loadedInputCurrency, loadedOutputCurrency],
-  )
-
-  // dismiss warning if all imported tokens are in active lists
-  const defaultTokens = useAllTokens()
-  const importTokensNotInDefault =
-    urlLoadedTokens &&
-    urlLoadedTokens.filter((token: Token) => {
-      return !(token.address in defaultTokens)
-    })
 
   const { account } = useActiveWeb3React()
 
-  // for expert mode
-  const [isExpertMode] = useExpertModeManager()
-
   // swap state
-  const { independentField, typedValue, recipient } = useSwapState()
+  const { independentField, typedValue } = useSwapState()
   const { v2Trade, currencyBalances, parsedAmount, currencies, inputError: swapInputError } = useDerivedSwapInfo()
-  // Price data
-  const {
-    [Field.INPUT]: { currencyId: inputCurrencyId },
-    [Field.OUTPUT]: { currencyId: outputCurrencyId },
-  } = useSwapState()
 
   const {
     wrapType,
@@ -97,7 +65,7 @@ export default function ScadsMint({ theme }) {
         [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
       }
 
-  const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
+  const { onSwitchTokens, onCurrencySelection, onUserInput } = useSwapActionHandlers()
   const isValid = !swapInputError
   const dependentField: Field = independentField === Field.INPUT ? Field.OUTPUT : Field.INPUT
 
@@ -158,7 +126,7 @@ export default function ScadsMint({ theme }) {
       try {
         await scadsSell(formattedAmounts[Field.INPUT], OutputCoin.address)
       } catch (e) {
-        console.log(e)
+        console.error(e)
       }
     } else if (StableCoins.includes(InputCoin.address) && OutputCoin.address === tokens.cake.address) {
       if (allowCaratSell[0].gte(BigNumber.from(utils.parseEther('5500000')))) {
@@ -167,7 +135,7 @@ export default function ScadsMint({ theme }) {
         try {
           await scadsMint(formattedAmounts[Field.INPUT], InputCoin.address)
         } catch (e) {
-          console.log(e)
+          console.error(e)
         }
       }
     } else {
