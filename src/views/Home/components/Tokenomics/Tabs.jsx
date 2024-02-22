@@ -70,7 +70,7 @@ const tokenomics = [
   },
   {
     id: 9,
-    text: "Every system requires operational costs, which in this case, include decentralized anonymous servers. These servers serve critical functions such as acting as data nodes, providing redundancy, managing system flow, ensuring security, and preventing congestion. To sustain these essential services, a tax of 1.77% per transaction has been established. This tax contributes to the continuous and smooth operation of the system, enabling it to meet its objectives effectively. AS for exchanges. The minimum order is 100k SCADS.",
+    text: "Every system requires operational costs, which in this case, include decentralized anonymous servers. These servers serve critical functions such as acting as data nodes, providing redundancy, managing system flow, ensuring security, and preventing congestion. To sustain these essential services, a tax of 3% per transaction has been established. This tax contributes to the continuous and smooth operation of the system, enabling it to meet its objectives effectively. AS for exchanges. The minimum order is 100k SCADS.",
     thumb: "SEIGNORAGE",
   },
   {
