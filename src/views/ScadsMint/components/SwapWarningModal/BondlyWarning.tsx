@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@scads/uikit'
+import { Text } from '@scads-io/uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const BondlyWarning = () => {

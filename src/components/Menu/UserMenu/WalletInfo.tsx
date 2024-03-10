@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Button, Flex, LinkExternal, Text, WarningIcon } from '@scads/uikit'
+import { Box, Button, Flex, LinkExternal, Text, WarningIcon } from '@scads-io/uikit'
 import { useWeb3React } from '@web3-react/core'
 import useTokenBalance, { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
 import useAuth from 'hooks/useAuth'

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Flex, ChevronDownIcon } from '@scads/uikit'
+import { Flex, ChevronDownIcon } from '@scads-io/uikit'
 import { MenuProps } from "./types"
 import MenuIcon from "./MenuIcon"
 

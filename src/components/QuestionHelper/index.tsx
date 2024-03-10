@@ -1,5 +1,5 @@
 import React from 'react'
-import { HelpIcon, useTooltip, Box, BoxProps, Placement } from '@scads/uikit'
+import { HelpIcon, useTooltip, Box, BoxProps, Placement } from '@scads-io/uikit'
 import styled from 'styled-components'
 
 interface Props extends BoxProps {

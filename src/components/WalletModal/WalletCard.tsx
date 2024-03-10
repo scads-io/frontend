@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Button, ButtonProps, MoreHorizontal } from "@scads/uikit"
+import { Button, ButtonProps, MoreHorizontal } from "@scads-io/uikit"
 import { connectorLocalStorageKey, walletLocalStorageKey } from "./config"
 import { Login, Config, ConnectorNames } from "./types"
 

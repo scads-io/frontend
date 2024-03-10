@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, WarningIcon } from '@scads/uikit'
+import { Flex, WarningIcon } from '@scads-io/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { UserMenuItem } from './styles'
 

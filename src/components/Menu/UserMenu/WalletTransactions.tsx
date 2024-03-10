@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
-import { Box, Button, Flex, Text } from '@scads/uikit'
+import { Box, Button, Flex, Text } from '@scads-io/uikit'
 import { AppDispatch } from 'state'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'
 import { useTranslation } from 'contexts/Localization'

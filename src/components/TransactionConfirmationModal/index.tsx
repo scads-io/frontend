@@ -10,7 +10,7 @@ import {
   Flex,
   Box,
   Link,
-} from '@scads/uikit'
+} from '@scads-io/uikit'
 import { Spinner } from 'components/Spinner'
 import { registerToken } from 'utils/wallet'
 import { useTranslation } from 'contexts/Localization'

@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { SvgProps } from "@scads/uikit"
+import { SvgProps } from "@scads-io/uikit"
 
 export enum ConnectorNames {
   Injected = "injected",

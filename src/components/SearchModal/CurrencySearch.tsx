@@ -1,7 +1,7 @@
 import React, { KeyboardEvent, RefObject, useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Currency, ETHER, Token } from '@scads/sdk'
-import { Text, Input, Box } from '@scads/uikit'
+import { Text, Input, Box } from '@scads-io/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { FixedSizeList } from 'react-window'
 import useDebounce from 'hooks/useDebounce'

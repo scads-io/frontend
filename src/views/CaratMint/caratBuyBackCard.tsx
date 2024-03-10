@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { JSBI, TokenAmount } from '@scads/sdk'
-import { Button, Flex } from '@scads/uikit'
+import { Button, Flex } from '@scads-io/uikit'
 import { utils } from 'ethers'
 import { useTranslation } from 'contexts/Localization'
 import tokens from 'config/constants/tokens'

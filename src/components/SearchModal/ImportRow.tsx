@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 import { Token } from '@scads/sdk'
-import { Button, Text, CheckmarkCircleIcon } from '@scads/uikit'
+import { Button, Text, CheckmarkCircleIcon } from '@scads-io/uikit'
 import { AutoRow, RowFixed } from 'components/Layout/Row'
 import { AutoColumn } from 'components/Layout/Column'
 import CurrencyLogo from 'components/Logo/CurrencyLogo'

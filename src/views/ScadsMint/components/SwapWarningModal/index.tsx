@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { Message, Box, Heading } from '@scads/uikit'
+import { Message, Box, Heading } from '@scads-io/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { WrappedTokenInfo } from 'state/lists/hooks'
 import SwapWarningTokensConfig from 'config/constants/swapWarningTokens'

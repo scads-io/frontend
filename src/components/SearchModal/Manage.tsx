@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Token } from '@scads/sdk'
-import { ButtonMenu, ButtonMenuItem } from '@scads/uikit'
+import { ButtonMenu, ButtonMenuItem } from '@scads-io/uikit'
 import styled from 'styled-components'
 import { TokenList } from '@uniswap/token-lists'
 import { useTranslation } from 'contexts/Localization'

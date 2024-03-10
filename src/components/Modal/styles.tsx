@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Flex, Box, ArrowBackIcon, CloseIcon, IconButton } from "@scads/uikit"
+import { Flex, Box, ArrowBackIcon, CloseIcon, IconButton } from "@scads-io/uikit"
 import { ModalProps } from "./types"
 
 export const ModalHeader = styled.div`

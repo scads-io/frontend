@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { Grid, Box } from "@scads/uikit"
+import { Grid, Box } from "@scads-io/uikit"
 import { NewCard } from "components/Card"
 import { useThemeManager } from 'state/user/hooks'
 import { ModalBody, ModalCloseButton, ConnectModalContainer, ModalHeader, ModalTitle } from "../Modal"

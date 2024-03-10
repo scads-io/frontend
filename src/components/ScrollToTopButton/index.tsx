@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
-import { Button, ArrowUpIcon } from '@scads/uikit'
+import { Button, ArrowUpIcon } from '@scads-io/uikit'
 import throttle from 'lodash/throttle'
 import { NewCard } from 'components/Card'
 

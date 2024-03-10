@@ -1,4 +1,4 @@
-import { ErrorIcon, Text } from '@scads/uikit'
+import { ErrorIcon, Text } from '@scads-io/uikit'
 import { AutoColumn } from 'components/Layout/Column'
 import React from 'react'
 import styled, { css } from 'styled-components'

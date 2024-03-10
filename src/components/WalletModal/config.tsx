@@ -1,4 +1,4 @@
-import { MetamaskIcon, WalletConnect, TrustWallet, MathWallet, TokenPocket, BinanceChain, SafePal, Coin98 } from "@scads/uikit"
+import { MetamaskIcon, WalletConnect, TrustWallet, MathWallet, TokenPocket, BinanceChain, SafePal, Coin98 } from "@scads-io/uikit"
 
 import { Config, ConnectorNames } from "./types"
 

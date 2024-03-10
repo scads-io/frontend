@@ -1,4 +1,4 @@
-import { BoxProps } from "@scads/uikit"
+import { BoxProps } from "@scads-io/uikit"
 
 export interface ModalTheme {
   background: string

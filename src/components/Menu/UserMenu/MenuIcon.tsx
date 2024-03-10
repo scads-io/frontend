@@ -1,5 +1,5 @@
 import React from "react"
-import { WalletFilledIcon } from "@scads/uikit"
+import { WalletFilledIcon } from "@scads-io/uikit"
 
 const MenuIcon: React.FC = () => {
   return (

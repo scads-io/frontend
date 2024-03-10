@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChainId, Currency, currencyEquals, ETHER, Token } from '@scads/sdk'
-import { Text } from '@scads/uikit'
+import { Text } from '@scads-io/uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 

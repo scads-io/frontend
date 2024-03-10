@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {
   CloseIcon,
   IconButton,
-} from '@scads/uikit'
+} from '@scads-io/uikit'
 import { parseUnits } from 'ethers/lib/utils'
 import { useTranslation } from 'contexts/Localization'
 import { NewCard } from 'components/Card'

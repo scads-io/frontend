@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { Text,  CopyIcon }  from "@scads/uikit"
+import { Text,  CopyIcon }  from "@scads-io/uikit"
 
 interface Props {
   toCopy: string

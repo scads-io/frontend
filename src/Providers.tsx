@@ -1,5 +1,5 @@
 import React from 'react'
-import { light, dark } from '@scads/uikit'
+import { light, dark } from '@scads-io/uikit'
 import { Web3ReactProvider } from '@web3-react/core'
 import { HelmetProvider } from 'react-helmet-async'
 import { Provider } from 'react-redux'

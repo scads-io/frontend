@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react"
 import styled from "styled-components"
-import { Box, BoxProps } from "@scads/uikit"
+import { Box, BoxProps } from "@scads-io/uikit"
 
 const StyledOverlay = styled(Box)`
   position: fixed;

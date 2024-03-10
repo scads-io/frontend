@@ -1,5 +1,5 @@
 import { Currency, ETHER, Token } from '@scads/sdk'
-import { BinanceIcon } from '@scads/uikit'
+import { BinanceIcon } from '@scads-io/uikit'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import getCurrencyLogoURL from 'utils/getCurrencyLogoURL'

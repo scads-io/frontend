@@ -3,7 +3,7 @@ import {
   TokenPairImage as UIKitTokenPairImage,
   TokenPairImageProps as UIKitTokenPairImageProps,
   ImageProps,
-} from '@scads/uikit'
+} from '@scads-io/uikit'
 import tokens from 'config/constants/tokens'
 import { Token } from '@scads/sdk'
 

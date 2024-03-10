@@ -1,6 +1,6 @@
 import React, { Fragment, memo } from 'react'
 import { Trade } from '@scads/sdk'
-import { Text, Flex, ChevronRightIcon } from '@scads/uikit'
+import { Text, Flex, ChevronRightIcon } from '@scads-io/uikit'
 import { unwrappedToken } from 'utils/wrappedCurrency'
 
 export default memo(function SwapRoute({ trade }: { trade: Trade }) {
