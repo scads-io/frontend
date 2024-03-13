@@ -3,7 +3,7 @@ import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
 import { whitePaperVariants } from 'components/variants'
 
-const Text1 = {
+const data = {
     Conclusion: "Conclusion of Introduction:",
     header: "1. Introduction",
     title: "Purpose of the White Paper",
@@ -119,42 +119,42 @@ const Introduction = ({ value }) => {
             } container mx-auto flex flex-col items-center overflow-hidden pb-20`}
     >
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
-            {t(Text1.header)}
+            {t(data.header)}
         </h1>
         <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
-            {t(Text1.title)}
+            {t(data.title)}
         </h1>
         <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
-            <span className="text-center font-bold text-xl">{t(Text1.small_title_1)}</span>
-            <span>{t(Text1.small_text_1)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.small_title_2)}</span>
-            <span>{t(Text1.small_text_2)}</span>
+            <span className="text-center font-bold text-xl">{t(data.small_title_1)}</span>
+            <span>{t(data.small_text_1)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.small_title_2)}</span>
+            <span>{t(data.small_text_2)}</span>
             <span>
-                <span className="font-bold ml-6">{t(Text1.small_text_2_1_header)}</span>
-                <span>{" "}{t(Text1.small_text_2_1)}</span>
+                <span className="font-bold ml-6">{t(data.small_text_2_1_header)}</span>
+                <span>{" "}{t(data.small_text_2_1)}</span>
             </span>
             <span>
-                <span className="font-bold ml-6">{t(Text1.small_text_2_2_header)}</span>
-                <span>{" "}{t(Text1.small_text_2_2)}</span>
+                <span className="font-bold ml-6">{t(data.small_text_2_2_header)}</span>
+                <span>{" "}{t(data.small_text_2_2)}</span>
             </span>
             <span>
-                <span className="font-bold ml-6">{t(Text1.small_text_2_3_header)}</span>
-                <span>{" "}{t(Text1.small_text_2_3)}</span>
+                <span className="font-bold ml-6">{t(data.small_text_2_3_header)}</span>
+                <span>{" "}{t(data.small_text_2_3)}</span>
             </span>
             <span>
-                <span className="font-bold ml-6">{t(Text1.small_text_2_4_header)}</span>
-                <span>{" "}{t(Text1.small_text_2_4)}</span>
+                <span className="font-bold ml-6">{t(data.small_text_2_4_header)}</span>
+                <span>{" "}{t(data.small_text_2_4)}</span>
             </span>
             <span>
-                <span className="font-bold ml-6">{t(Text1.small_text_2_5_header)}</span>
-                <span>{" "}{t(Text1.small_text_2_5)}</span>
+                <span className="font-bold ml-6">{t(data.small_text_2_5_header)}</span>
+                <span>{" "}{t(data.small_text_2_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.small_title_3)}</span>
-            <span>{t(Text1.small_text_3)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.small_title_4)}</span>
-            <span>{t(Text1.small_text_4)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
-            <span className="font-bold">{t(Text1.small_text_5)}</span>
+            <span className="text-center font-bold text-xl">{t(data.small_title_3)}</span>
+            <span>{t(data.small_text_3)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.small_title_4)}</span>
+            <span>{t(data.small_text_4)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.Conclusion)}</span>
+            <span className="font-bold">{t(data.small_text_5)}</span>
         </p>
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
             {t(Text2.title)}

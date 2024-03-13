@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
 
-const executiveText1 = {
+const data = {
     Conclusion: "Conclusion:",
     header_1: "SCADS AND TWINE WHITE PAPER",
     header_2: "Pioneering the Future of Blockchain Technology", 
@@ -24,7 +24,7 @@ const executiveText1 = {
     small_text_6_1: "SCADS and TWINE represent a transformative era in blockchain technology, offering unparalleled solutions in digital transaction processing and asset management. Their unique emphasis on secure, sustainable, and linear asset growth positions them as leaders in the digital economy, ready to redefine the standards of blockchain applications.",
 }
 
-const executiveText2 = {
+const secondData = {
     Conclusion: "Conclusion:",
     title: "The key objectives, technological innovations, and market potential of the project.",
     small_title_1: "Pioneering Future Finance: SCADS and TWINE",
@@ -59,100 +59,100 @@ const Pioneering = ({ value }) => {
             } container mx-auto flex flex-col items-center mt-40 overflow-hidden pb-20`}
     >
         <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] font-bold text-center">
-            {t(executiveText1.header_1)}
+            {t(data.header_1)}
         </h1>
         <h1 className="text-[24px] lg:text-3xl font-bold text-center lg:text-start mt-3">
-            {t(executiveText1.header_2)}
+            {t(data.header_2)}
         </h1>
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
-            {t(executiveText1.title)}
+            {t(data.title)}
         </h1>
         <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
-            <span className="text-center font-bold text-xl">{t(executiveText1.small_title_1)}</span>
-            <span>{t(executiveText1.small_text_1)}</span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText1.small_title_2)}</span>
+            <span className="text-center font-bold text-xl">{t(data.small_title_1)}</span>
+            <span>{t(data.small_text_1)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.small_title_2)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_2_1)}</span>
+                <span>{" "}{t(data.small_text_2_1)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_2_2)}</span>
+                <span>{" "}{t(data.small_text_2_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText1.small_title_3)}</span>
+            <span className="text-center font-bold text-xl">{t(data.small_title_3)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_3_1)}</span>
+                <span>{" "}{t(data.small_text_3_1)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_3_2)}</span>
+                <span>{" "}{t(data.small_text_3_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText1.small_title_4)}</span>
+            <span className="text-center font-bold text-xl">{t(data.small_title_4)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_4_1)}</span>
+                <span>{" "}{t(data.small_text_4_1)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_4_2)}</span>
+                <span>{" "}{t(data.small_text_4_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText1.small_title_5)}</span>
+            <span className="text-center font-bold text-xl">{t(data.small_title_5)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_5_1)}</span>
+                <span>{" "}{t(data.small_text_5_1)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText1.small_text_5_2)}</span>
+                <span>{" "}{t(data.small_text_5_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText1.Conclusion)}</span>
-            <span className="font-bold">{t(executiveText1.small_text_6_1)}</span>
+            <span className="text-center font-bold text-xl">{t(data.Conclusion)}</span>
+            <span className="font-bold">{t(data.small_text_6_1)}</span>
         </p>
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-8">
-            {t(executiveText2.title)}
+            {t(secondData.title)}
         </h1>
         <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
-            <span className="text-center font-bold text-xl">{t(executiveText2.small_title_1)}</span>
-            <span>{t(executiveText2.small_text_1)}</span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText2.small_title_2)}</span>
+            <span className="text-center font-bold text-xl">{t(secondData.small_title_1)}</span>
+            <span>{t(secondData.small_text_1)}</span><br />
+            <span className="text-center font-bold text-xl">{t(secondData.small_title_2)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_2_1)}</span>
+                <span>{" "}{t(secondData.small_text_2_1)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText2.small_title_3)}</span>
+            <span className="text-center font-bold text-xl">{t(secondData.small_title_3)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_3_1)}</span>
+                <span>{" "}{t(secondData.small_text_3_1)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_3_2)}</span>
+                <span>{" "}{t(secondData.small_text_3_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText2.small_title_4)}</span>
+            <span className="text-center font-bold text-xl">{t(secondData.small_title_4)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_4_1)}</span>
+                <span>{" "}{t(secondData.small_text_4_1)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_4_2)}</span>
+                <span>{" "}{t(secondData.small_text_4_2)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_4_3)}</span>
+                <span>{" "}{t(secondData.small_text_4_3)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText2.small_title_5)}</span>
+            <span className="text-center font-bold text-xl">{t(secondData.small_title_5)}</span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_5_1)}</span>
+                <span>{" "}{t(secondData.small_text_5_1)}</span>
             </span>
             <span>
                 <span className="ml-6">&bull;</span>
-                <span>{" "}{t(executiveText2.small_text_5_2)}</span>
+                <span>{" "}{t(secondData.small_text_5_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(executiveText2.Conclusion)}</span>
-            <span className="font-bold">{t(executiveText2.small_text_6_1)}</span>
+            <span className="text-center font-bold text-xl">{t(secondData.Conclusion)}</span>
+            <span className="font-bold">{t(secondData.small_text_6_1)}</span>
         </p>
     </motion.main>
   )

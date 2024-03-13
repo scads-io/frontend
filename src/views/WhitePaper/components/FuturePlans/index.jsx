@@ -3,7 +3,7 @@ import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
 import { whitePaperVariants } from 'components/variants'
 
-const Text1 = {
+const data = {
     Conclusion: "Conclusion:",
     header: "10. Future and Expansion Plans:",
     title: "Future Developments and Technological Roadmap",
@@ -126,337 +126,337 @@ const FuturePlans  = ({ value }) => {
             } container mx-auto flex flex-col items-center overflow-hidden pb-20`}
     >
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
-            {t(Text1.header)}
+            {t(data.header)}
         </h1>
         <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
-            {t(Text1.title)}
+            {t(data.title)}
         </h1>
         <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
-            {t(Text1.title_1)}
+            {t(data.title_1)}
         </h1>
         <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_1)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_1_1)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_1)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_1_1_1)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_1_1)}</span>
+                <span>{" "}{t(data.text_1_1_1_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_1_2)}</span>
+                <span>{" "}{t(data.text_1_1_1_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_1_2)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_1_2)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_2_1)}</span>
+                <span>{" "}{t(data.text_1_1_2_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_2_2)}</span>
+                <span>{" "}{t(data.text_1_1_2_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_1_3)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_1_3)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_3_1)}</span>
+                <span>{" "}{t(data.text_1_1_3_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_3_2)}</span>
+                <span>{" "}{t(data.text_1_1_3_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_1_4)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_1_4)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_4_1)}</span>
+                <span>{" "}{t(data.text_1_1_4_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_1_4_2)}</span>
+                <span>{" "}{t(data.text_1_1_4_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_2)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_2_1)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_2)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_1_2_1)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_2_1_1)}</span>
+                <span>{" "}{t(data.text_1_2_1_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_2_1_2)}</span>
+                <span>{" "}{t(data.text_1_2_1_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_2_2)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_2_2)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_2_2_1)}</span>
+                <span>{" "}{t(data.text_1_2_2_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_2_2_2)}</span>
+                <span>{" "}{t(data.text_1_2_2_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_2_3)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_2_3)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_2_3_1)}</span>
+                <span>{" "}{t(data.text_1_2_3_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_2_3_2)}</span>
+                <span>{" "}{t(data.text_1_2_3_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1_3)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_1_3)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_1)}</span>
+                <span>{" "}{t(data.text_1_3_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_2)}</span>
+                <span>{" "}{t(data.text_1_3_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_3)}</span>
+                <span>{" "}{t(data.text_1_3_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_4)}</span>
+                <span>{" "}{t(data.text_1_3_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_5)}</span>
+                <span>{" "}{t(data.text_1_3_5)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_6)}</span>
+                <span>{" "}{t(data.text_1_3_6)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_7)}</span>
+                <span>{" "}{t(data.text_1_3_7)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_8)}</span>
+                <span>{" "}{t(data.text_1_3_8)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_1_3_9)}</span>
+                <span>{" "}{t(data.text_1_3_9)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
-            <span className="font-bold">{t(Text1.text_1_3_10)}</span>
+            <span className="text-center font-bold text-xl">{t(data.Conclusion)}</span>
+            <span className="font-bold">{t(data.text_1_3_10)}</span>
         </p>
         <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
-            {t(Text1.title_2)}
+            {t(data.title_2)}
         </h1>
         <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
-            <span className="text-center font-bold text-xl">{t(Text1.title_2_1)}</span>
-            <span className="font-bold">{t(Text1.text_2)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_2_2)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_2_1)}</span>
+            <span className="font-bold">{t(data.text_2)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_2_2)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_2_1)}</span>
+                <span>{" "}{t(data.text_2_2_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_2_2)}</span>
+                <span>{" "}{t(data.text_2_2_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_2_3)}</span>
+                <span>{" "}{t(data.text_2_2_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_2_4)}</span>
+                <span>{" "}{t(data.text_2_2_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_2_5)}</span>
+                <span>{" "}{t(data.text_2_2_5)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_2_6)}</span>
+                <span>{" "}{t(data.text_2_2_6)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_2_3)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_2_3)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_3_1)}</span>
+                <span>{" "}{t(data.text_2_3_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_3_2)}</span>
+                <span>{" "}{t(data.text_2_3_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_3_3)}</span>
+                <span>{" "}{t(data.text_2_3_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_3_4)}</span>
+                <span>{" "}{t(data.text_2_3_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_3_5)}</span>
+                <span>{" "}{t(data.text_2_3_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_2_4)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_2_4)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_4_1)}</span>
+                <span>{" "}{t(data.text_2_4_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_4_2)}</span>
+                <span>{" "}{t(data.text_2_4_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_4_3)}</span>
+                <span>{" "}{t(data.text_2_4_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_4_4)}</span>
+                <span>{" "}{t(data.text_2_4_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_4_5)}</span>
+                <span>{" "}{t(data.text_2_4_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_2_5)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_2_5)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_5_1)}</span>
+                <span>{" "}{t(data.text_2_5_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_5_2)}</span>
+                <span>{" "}{t(data.text_2_5_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_5_3)}</span>
+                <span>{" "}{t(data.text_2_5_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_5_4)}</span>
+                <span>{" "}{t(data.text_2_5_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_5_5)}</span>
+                <span>{" "}{t(data.text_2_5_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_2_6)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_2_6)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_6_1)}</span>
+                <span>{" "}{t(data.text_2_6_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_6_2)}</span>
+                <span>{" "}{t(data.text_2_6_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_6_3)}</span>
+                <span>{" "}{t(data.text_2_6_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_6_4)}</span>
+                <span>{" "}{t(data.text_2_6_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2_6_5)}</span>
+                <span>{" "}{t(data.text_2_6_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
-            <span className="font-bold">{t(Text1.text_2_7)}</span>
+            <span className="text-center font-bold text-xl">{t(data.Conclusion)}</span>
+            <span className="font-bold">{t(data.text_2_7)}</span>
         </p>
         <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
-            {t(Text1.title_3)}
+            {t(data.title_3)}
         </h1>
         <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_1)}</span>
-            <span className="font-bold">{t(Text1.text_3)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_2)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_3)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_3_1)}</span>
+            <span className="font-bold">{t(data.text_3)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_3_2)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_3_3)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_3_1)}</span>
+                <span>{" "}{t(data.text_3_3_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_3_2)}</span>
+                <span>{" "}{t(data.text_3_3_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_3_3)}</span>
+                <span>{" "}{t(data.text_3_3_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_3_4)}</span>
+                <span>{" "}{t(data.text_3_3_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_3_5)}</span>
+                <span>{" "}{t(data.text_3_3_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_4)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_3_4)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_4_1)}</span>
+                <span>{" "}{t(data.text_3_4_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_4_2)}</span>
+                <span>{" "}{t(data.text_3_4_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_4_3)}</span>
+                <span>{" "}{t(data.text_3_4_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_4_4)}</span>
+                <span>{" "}{t(data.text_3_4_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_4_5)}</span>
+                <span>{" "}{t(data.text_3_4_5)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_4_6)}</span>
+                <span>{" "}{t(data.text_3_4_6)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_5)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_6)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_3_5)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_3_6)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_6_1)}</span>
+                <span>{" "}{t(data.text_3_6_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_6_2)}</span>
+                <span>{" "}{t(data.text_3_6_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_6_3)}</span>
+                <span>{" "}{t(data.text_3_6_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_6_4)}</span>
+                <span>{" "}{t(data.text_3_6_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_6_5)}</span>
+                <span>{" "}{t(data.text_3_6_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_7)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3_8)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_3_7)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_3_8)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_8_1)}</span>
+                <span>{" "}{t(data.text_3_8_1)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_8_2)}</span>
+                <span>{" "}{t(data.text_3_8_2)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_8_3)}</span>
+                <span>{" "}{t(data.text_3_8_3)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_8_4)}</span>
+                <span>{" "}{t(data.text_3_8_4)}</span>
             </span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3_8_5)}</span>
+                <span>{" "}{t(data.text_3_8_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
-            <span className="font-bold">{t(Text1.text_3_9)}</span>
+            <span className="text-center font-bold text-xl">{t(data.Conclusion)}</span>
+            <span className="font-bold">{t(data.text_3_9)}</span>
         </p>
     </motion.main>
   )

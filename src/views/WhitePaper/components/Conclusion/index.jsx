@@ -3,7 +3,7 @@ import { useTranslation } from 'contexts/Localization'
 import { motion } from "framer-motion/dist/framer-motion"
 import { whitePaperVariants } from 'components/variants'
 
-const Text1 = {
+const data = {
     Conclusion: "Conclusion:",
     header: "11. Conclusion",
     title: "Summarizing the Potential and Impact of SCADS and TWINE",
@@ -43,54 +43,54 @@ const Conclusion  = ({ value }) => {
             } container mx-auto flex flex-col items-center overflow-hidden pb-20`}
     >
         <h1 className="text-[24px] lg:text-3xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px]">
-            {t(Text1.header)}
+            {t(data.header)}
         </h1>
         <h1 className="text-[18px] lg:text-2xl font-bold text-center max-w-[340px] md:max-w-[640px] lg:max-w-[800px] leading-normal md:leading-tight mt-4">
-            {t(Text1.title)}
+            {t(data.title)}
         </h1>
         <p className="text-base lg:text-lg mt-[21px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
-            <span className="font-bold">{t(Text1.text)}</span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_1)}</span>
+            <span className="font-bold">{t(data.text)}</span><br />
+            <span className="text-center font-bold text-xl">{t(data.title_1)}</span>
             <span>
-                <span className="font-bold ml-6">&bull;{" "}{t(Text1.text_1_1_header)}</span>
-                <span>{" "}{t(Text1.text_1_1)}</span>
+                <span className="font-bold ml-6">&bull;{" "}{t(data.text_1_1_header)}</span>
+                <span>{" "}{t(data.text_1_1)}</span>
             </span>
             <span>
-                <span className="font-bold ml-6">&bull;{" "}{t(Text1.text_1_2_header)}</span>
-                <span>{" "}{t(Text1.text_1_2)}</span>
+                <span className="font-bold ml-6">&bull;{" "}{t(data.text_1_2_header)}</span>
+                <span>{" "}{t(data.text_1_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_2)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_2)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_2)}</span>
+                <span>{" "}{t(data.text_2)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_3)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_3)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_3)}</span>
+                <span>{" "}{t(data.text_3)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_4)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_4)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_4)}</span>
+                <span>{" "}{t(data.text_4)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_5)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_5)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_5)}</span>
+                <span>{" "}{t(data.text_5)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_6)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_6)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_6)}</span>
+                <span>{" "}{t(data.text_6)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.title_7)}</span>
+            <span className="text-center font-bold text-xl">{t(data.title_7)}</span>
             <span>
                 <span className="font-bold ml-6">&bull;</span>
-                <span>{" "}{t(Text1.text_7)}</span>
+                <span>{" "}{t(data.text_7)}</span>
             </span><br />
-            <span className="text-center font-bold text-xl">{t(Text1.Conclusion)}</span>
-            <span className="font-bold">{t(Text1.text_8)}</span>
+            <span className="text-center font-bold text-xl">{t(data.Conclusion)}</span>
+            <span className="font-bold">{t(data.text_8)}</span>
         </p>
     </motion.main>
   )
