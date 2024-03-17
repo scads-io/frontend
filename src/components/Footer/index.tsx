@@ -4,7 +4,7 @@ const socialIcons = [
   {
     id: "i1",
     icon: "/images/footer/x.svg",
-    redirect: "https://twitter.com/Scads_io",
+    redirect: "https://twitter.com/ScadsSwap",
   },
   {
     id: "i2",
@@ -62,7 +62,7 @@ const Footer = (props) => {
           theme && "text-[#B6B6B6]"
         }`}
       >
-        {`SCADS © Copyright ${year}. All rights reserved.`}{" ™"}
+        SCADS © Copyright {year}. All rights reserved. ™
       </p>
     </div>
   )

@@ -59,10 +59,7 @@ Sentry.init({
   ],
 })
 
-const rootElement = document.getElementById("root")
-const root = createRoot(rootElement)
-
-root.render(
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Blocklist>
       <Providers>
