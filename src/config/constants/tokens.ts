@@ -27,7 +27,7 @@ export const mainnetTokens = defineTokens({
     18,
     'Scads',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   carat: new Token(
     MAINNET,
@@ -35,7 +35,7 @@ export const mainnetTokens = defineTokens({
     18,
     'TWINE',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   bscdefi: new Token(
     MAINNET,
@@ -103,7 +103,7 @@ export const mainnetTokens = defineTokens({
   ),
   usdc: new Token(
     MAINNET,
-    '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+    '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
     18,
     'USDC',
     'Binance-Peg USD Coin',
@@ -123,7 +123,7 @@ export const mainnetTokens = defineTokens({
     18,
     'WBTC',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   weth: new Token(
     MAINNET,
@@ -131,7 +131,7 @@ export const mainnetTokens = defineTokens({
     18,
     'WETH',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   ethsnacks: new Token(
     MAINNET,
@@ -139,7 +139,7 @@ export const mainnetTokens = defineTokens({
     18,
     'ETHSNACKS',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   btcsnacks: new Token(
     MAINNET,
@@ -147,7 +147,7 @@ export const mainnetTokens = defineTokens({
     18,
     'BTCSNACKS',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
 } as const)
 
@@ -166,7 +166,7 @@ export const testnetTokens = defineTokens({
     18,
     'Scads',
     'Scads Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   usdt: new Token(TESTNET, '0xb06D957d777e3dC7f3794e732DB45092AC8C5cF0', 18, 'USDT', 'USDT Token', 'https://usdt.fi/'),
   usdc: new Token(TESTNET, '0x497303D3573B20B75724D7C3f1B39B19E72a0f53', 18, 'USDC', 'USDC Token', 'https://usdc.fi/'),
@@ -176,7 +176,7 @@ export const testnetTokens = defineTokens({
     18,
     'TWINE',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   ethsnacks: new Token(
     TESTNET,
@@ -184,7 +184,7 @@ export const testnetTokens = defineTokens({
     18,
     'ETHSNACKS',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   btcsnacks: new Token(
     TESTNET,
@@ -192,7 +192,7 @@ export const testnetTokens = defineTokens({
     18,
     'BTCSNACKS',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   syrup: new Token(
     TESTNET,
@@ -208,7 +208,7 @@ export const testnetTokens = defineTokens({
     18,
     'WBTC',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
   weth: new Token(
     TESTNET,
@@ -216,7 +216,7 @@ export const testnetTokens = defineTokens({
     18,
     'WETH',
     'ScadsSwap Token',
-    'https://scads.fi/',
+    'https://scads.io/',
   ),
 } as const)
 

@@ -3,21 +3,18 @@ import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@scads/s
 import { Text } from '@scads-io/uikit'
 import styled from 'styled-components'
 import { FixedSizeList } from 'react-window'
-import { wrappedCurrency } from 'utils/wrappedCurrency'
 import { LightGreyCard } from 'components/Card'
-import QuestionHelper from 'components/QuestionHelper'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useThemeManager } from 'state/user/hooks'
 import { useCombinedActiveList } from '../../state/lists/hooks'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
-import { useIsUserAddedToken, useAllInactiveTokens } from '../../hooks/Tokens'
+import { useIsUserAddedToken } from '../../hooks/Tokens'
 import Column from '../Layout/Column'
 import { RowFixed, RowBetween } from '../Layout/Row'
 import { CurrencyLogo } from '../Logo'
 import CircleLoader from '../Loader/CircleLoader'
 import { isTokenOnList } from '../../utils'
-import ImportRow from './ImportRow'
 
 function currencyKey(currency: Currency): string {
   return currency instanceof Token ? currency.address : currency === ETHER ? 'ETHER' : ''
@@ -106,8 +103,6 @@ export default function CurrencyList({
   otherCurrency,
   fixedListRef,
   showETH,
-  showImportView,
-  setImportToken,
   breakIndex,
 }: {
   height: number
@@ -117,8 +112,6 @@ export default function CurrencyList({
   otherCurrency?: Currency | null
   fixedListRef?: MutableRefObject<FixedSizeList | undefined>
   showETH: boolean
-  showImportView: () => void
-  setImportToken: (token: Token) => void
   breakIndex: number | undefined
 }) {
   const itemData: (Currency | undefined)[] = useMemo(() => {
@@ -129,13 +122,7 @@ export default function CurrencyList({
     return formatted
   }, [breakIndex, currencies, showETH])
 
-  const { chainId } = useActiveWeb3React()
-
   const { t } = useTranslation()
-
-  const inactiveTokens: {
-    [address: string]: Token
-  } = useAllInactiveTokens()
 
   const Row = useCallback(
     ({ data, index, style }) => {
@@ -144,31 +131,15 @@ export default function CurrencyList({
       const otherSelected = Boolean(otherCurrency && currencyEquals(otherCurrency, currency))
       const handleSelect = () => onCurrencySelect(currency)
 
-      const token = wrappedCurrency(currency, chainId)
-
-      const showImport = inactiveTokens && token && Object.keys(inactiveTokens).includes(token.address)
-
       if (index === breakIndex || !data) {
         return (
           <FixedContentRow style={style}>
             <LightGreyCard padding='8px 12px' borderRadius='8px'>
               <RowBetween>
                 <Text small>{t('Expanded results from inactive Token Lists')}</Text>
-                <QuestionHelper
-                  text={t(
-                    'Tokens from inactive lists. Import specific tokens below or click `Manage` to activate more lists.',
-                  )}
-                  ml='4px'
-                />
               </RowBetween>
             </LightGreyCard>
           </FixedContentRow>
-        )
-      }
-
-      if (showImport && token && !true) {
-        return (
-          <ImportRow style={style} token={token} showImportView={showImportView} setImportToken={setImportToken} dim />
         )
       }
       return (
@@ -182,13 +153,9 @@ export default function CurrencyList({
       )
     },
     [
-      chainId,
-      inactiveTokens,
       onCurrencySelect,
       otherCurrency,
       selectedCurrency,
-      setImportToken,
-      showImportView,
       breakIndex,
       t,
     ],

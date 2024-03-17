@@ -5,17 +5,13 @@ import { Text, Input, Box } from '@scads-io/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { FixedSizeList } from 'react-window'
 import useDebounce from 'hooks/useDebounce'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useAllTokens, useToken, useIsUserAddedToken, useFoundOnInactiveList } from '../../hooks/Tokens'
+import { useAllTokens, useFoundOnInactiveList } from '../../hooks/Tokens'
 import { isAddress } from '../../utils'
 import Column, { AutoColumn } from '../Layout/Column'
 import Row from '../Layout/Row'
-import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
 import { filterTokens, useSortedTokensByQuery } from './filtering'
 import useTokenComparator from './sorting'
-
-import ImportRow from './ImportRow'
 
 const StyledInput = styled(Input)`
   display: none;
@@ -32,21 +28,14 @@ interface CurrencySearchProps {
   selectedCurrency?: Currency | null
   onCurrencySelect: (currency: Currency) => void
   otherSelectedCurrency?: Currency | null
-  showCommonBases?: boolean
-  showImportView: () => void
-  setImportToken: (token: Token) => void
 }
 
 function CurrencySearch({
   selectedCurrency,
   onCurrencySelect,
   otherSelectedCurrency,
-  showCommonBases,
-  showImportView,
-  setImportToken,
 }: CurrencySearchProps) {
   const { t } = useTranslation()
-  const { chainId } = useActiveWeb3React()
 
   // refs for fixed size lists
   const fixedList = useRef<FixedSizeList>()
@@ -57,10 +46,6 @@ function CurrencySearch({
   const [invertSearchOrder] = useState<boolean>(false)
 
   const allTokens = useAllTokens()
-
-  // if they input an address, use it
-  const searchToken = useToken(debouncedQuery)
-  const searchTokenIsAdded = useIsUserAddedToken(searchToken)
 
   const showETH: boolean = useMemo(() => {
     const s = debouncedQuery.toLowerCase().trim()
@@ -139,15 +124,8 @@ function CurrencySearch({
               onKeyDown={handleEnter}
             />
           </Row>
-          {showCommonBases && (
-            <CommonBases chainId={chainId} onSelect={handleCurrencySelect} selectedCurrency={selectedCurrency} />
-          )}
         </AutoColumn>
-        {searchToken && !searchTokenIsAdded ? (
-          <Column style={{ padding: '20px 0', height: '100%' }}>
-            <ImportRow token={searchToken} showImportView={showImportView} setImportToken={setImportToken} />
-          </Column>
-        ) : filteredSortedTokens?.length > 0 || filteredInactiveTokens?.length > 0 ? (
+        {filteredSortedTokens?.length > 0 || filteredInactiveTokens?.length > 0 ? (
           <Box margin='24px -24px'>
             <CurrencyList
               height={390}
@@ -160,8 +138,6 @@ function CurrencySearch({
               otherCurrency={otherSelectedCurrency}
               selectedCurrency={selectedCurrency}
               fixedListRef={fixedList}
-              showImportView={showImportView}
-              setImportToken={setImportToken}
             />
           </Box>
         ) : (

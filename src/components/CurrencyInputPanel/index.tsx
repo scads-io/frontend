@@ -29,7 +29,6 @@ interface CurrencyInputPanelProps {
   disableCurrencySelect?: boolean
   pair?: Pair | null
   otherCurrency?: Currency | null
-  showCommonBases?: boolean
   onlyInteger?: boolean
   showArrow: boolean
 }
@@ -46,7 +45,6 @@ export default function CurrencyInputPanel({
   disableCurrencySelect = false,
   pair = null, // used for double token logo
   otherCurrency,
-  showCommonBases,
   onlyInteger = false,
   showArrow,
 }: CurrencyInputPanelProps) {
@@ -62,7 +60,6 @@ export default function CurrencyInputPanel({
       onCurrencySelect={onCurrencySelect}
       selectedCurrency={currency}
       otherSelectedCurrency={otherCurrency}
-      showCommonBases={showCommonBases}
       theme={theme}
     />,
   )
@@ -157,7 +154,6 @@ export function CurrencyInputPanelRight({
   disableCurrencySelect = false,
   pair = null, // used for double token logo
   otherCurrency,
-  showCommonBases,
   onlyInteger = false,
   showArrow,
 }: CurrencyInputPanelProps) {
@@ -172,7 +168,6 @@ export function CurrencyInputPanelRight({
       onCurrencySelect={onCurrencySelect}
       selectedCurrency={currency}
       otherSelectedCurrency={otherCurrency}
-      showCommonBases={showCommonBases}
       theme={theme}
     />,
   )
