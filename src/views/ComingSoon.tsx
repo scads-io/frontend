@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NextLinkFromReactRouter } from 'components/Menu/NextLink'
 import Footer from 'components/Footer'
 import { PageMeta } from 'components/Layout/PageMeta'
 import { useTranslation } from 'contexts/Localization'
@@ -24,7 +24,7 @@ const ComingSoon = ({ value }) => {
           type='button'
           className="bg-[#B52761] py-[14px] px-9 rounded-[30px] font-semibold text-white text-xl hover:bg-[#655780] transition-all duration-300 focus:ring-0 focus:outline-none"
         >
-          <Link to='/'>{t('Back Home')}</Link>
+          <NextLinkFromReactRouter to='/'>{t('Back Home')}</NextLinkFromReactRouter>
         </button>
       </div>
       <Footer theme={theme} className="mt-0" />

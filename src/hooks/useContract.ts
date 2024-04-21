@@ -14,7 +14,7 @@ import { getMulticallAddress } from 'utils/addressHelpers'
 // Imports below migrated from Exchange useContract.ts
 import { Contract } from '@ethersproject/contracts'
 import { ChainId, WETH } from '@scads/sdk'
-import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
+import IUniswapV2Pair from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import ENS_PUBLIC_RESOLVER_ABI from '../config/abi/ens-public-resolver.json'
 import ENS_ABI from '../config/abi/ens-registrar.json'
 import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
@@ -24,6 +24,8 @@ import PULSE_ABI from '../config/abi/pulseContract.json'
 import WETH_ABI from '../config/abi/weth.json'
 import multiCallAbi from '../config/abi/Multicall.json'
 import { getContract, getProviderOrSigner } from '../utils'
+
+const IUniswapV2PairABI = IUniswapV2Pair.abi
 
 /**
  * Helper hooks to get specific contracts (by ABI)

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import { NewCard } from 'components/Card'
 import StatsTooltip from 'components/StatsTooltip'

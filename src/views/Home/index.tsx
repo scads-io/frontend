@@ -1,6 +1,6 @@
 import React, { lazy } from 'react'
 import { createPortal } from 'react-dom'
-import { motion } from "framer-motion/dist/framer-motion"
+import { motion } from "framer-motion"
 import { PageMeta } from 'components/Layout/PageMeta'
 import ScrollToTopButton  from 'components/ScrollToTopButton'
 import SuspenseWithChunkError from 'components/SuspenseWithChunkError'

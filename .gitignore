@@ -38,3 +38,6 @@ debug.log*
 package-lock.json
 /yarn.lock
 public/output.css
+
+# Sentry
+.sentryclirc

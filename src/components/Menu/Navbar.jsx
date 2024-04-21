@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { NextLinkFromReactRouter } from 'components/Menu/NextLink'
 import { languageList } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import { NewCard } from 'components/Card'
@@ -81,7 +81,7 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
             theme ? 'text-white' : 'text-black'
           }`}
         >
-          <Link
+          <NextLinkFromReactRouter
             to="/roadmap"
             className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
             onClick={() => {
@@ -91,8 +91,8 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
             }
           >
             {t("Roadmap")}
-          </Link>
-          <Link
+          </NextLinkFromReactRouter>
+          <NextLinkFromReactRouter
             to="/usecases"
             className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
             onClick={() => {
@@ -102,8 +102,8 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
             }
           >
             {t("Use Cases")}
-          </Link>
-          <Link
+          </NextLinkFromReactRouter>
+          <NextLinkFromReactRouter
             to="/whitepaper"
             className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
             onClick={() => {
@@ -113,8 +113,8 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
             }
           >
             {t("Whitepaper")}
-          </Link>
-          <Link
+          </NextLinkFromReactRouter>
+          <NextLinkFromReactRouter
             to="/gitbook"
             className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
             onClick={() => {
@@ -124,7 +124,7 @@ function DesktopPopupDocuments({ value, isOpen, onClose }) {
             }
           >
             {t("Gitbook")}
-          </Link>
+          </NextLinkFromReactRouter>
         </div>
       </NewCard>
     </div>
@@ -276,13 +276,13 @@ const Navbar = ({ value }) => {
             theme ? "text-[#B6B6B6]" : "text-black"}`}
           theme={theme}
         >
-          <Link to="/">
+          <NextLinkFromReactRouter to="/">
             <img
               src={theme ? '/images/home/logo_dark.webp' : '/images/home/logo_light.webp'}
               className='max-w-[240px] max-h-[55px]'
               alt="logo"
             />
-          </Link>
+          </NextLinkFromReactRouter>
           <div className="flex items-center lg:gap-3 xl:gap-7">
             <ul className="list-none flex lg:gap-3 xl:gap-7">
               <li>
@@ -299,13 +299,13 @@ const Navbar = ({ value }) => {
                 </div>
               </li>
               <li>
-                <Link
+                <NextLinkFromReactRouter
                   to="/news"
                   className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
                   onClick={() => setOnScreen(false)}
                 >
                   {t("News")}
-                </Link>
+                </NextLinkFromReactRouter>
               </li>
               <li>
                 <button
@@ -317,13 +317,13 @@ const Navbar = ({ value }) => {
                 </button>
               </li>
               <li>
-                <Link
+                <NextLinkFromReactRouter
                   to="/howto"
                   className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
                   onClick={() => setOnScreen(false)}
                 >
                   {t("How To")}
-                </Link>
+                </NextLinkFromReactRouter>
               </li>
             </ul>
             <ThemeSwitcher

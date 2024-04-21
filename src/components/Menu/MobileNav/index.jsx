@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { NextLinkFromReactRouter } from 'components/Menu/NextLink'
 import { languageList } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { NewCard } from 'components/Card'
 import ThemeSwitcher from '../ThemeSwitcher/index'
 import Hamburger from './Hamburger'
@@ -88,7 +88,7 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
             theme ? 'text-white' : 'text-black'
           }`}
         >
-          <Link
+          <NextLinkFromReactRouter
             to="/roadmap"
             className="text-xl font-medium"
             onClick={() => {
@@ -97,8 +97,8 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
             }}
           >
             {t("Roadmap")}
-          </Link>
-          <Link
+          </NextLinkFromReactRouter>
+          <NextLinkFromReactRouter
             to="/usecases"
             className="text-xl font-medium"
             onClick={() => {
@@ -107,8 +107,8 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
             }}
           >
             {t("Use Cases")}
-          </Link>
-          <Link
+          </NextLinkFromReactRouter>
+          <NextLinkFromReactRouter
             to="/whitepaper"
             className="text-xl font-medium"
             onClick={() => {
@@ -117,8 +117,8 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
             }}
           >
             {t("Whitepaper")}
-          </Link>
-          <Link
+          </NextLinkFromReactRouter>
+          <NextLinkFromReactRouter
             to="/gitbook"
             className="text-xl font-medium"
             onClick={() => {
@@ -127,7 +127,7 @@ function MobileDocumentsModal({ value, isOpen, onClose }) {
             }}
           >
             {t("Gitbook")}
-          </Link>
+          </NextLinkFromReactRouter>
         </div>
       </NewCard>
     </div>
@@ -267,7 +267,7 @@ const MobileNav = ({ value }) => {
           theme={theme}
         >
           <h3>
-            <Link to="/">
+            <NextLinkFromReactRouter to="/">
               <link
                 rel="preload"
                 href={theme ? '/images/home/logo_dark.webp' : '/images/home/logo_light.webp'}
@@ -279,7 +279,7 @@ const MobileNav = ({ value }) => {
                 loading="eager"
                 alt="logo"
               />
-            </Link>
+            </NextLinkFromReactRouter>
           </h3>
           <Hamburger
             value={{ theme, setIsOpen, isOpen }}
@@ -340,13 +340,13 @@ const MobileNav = ({ value }) => {
                           >
                             {t(item.text)}
                           </div> : 
-                          <Link
+                          <NextLinkFromReactRouter
                             to={item.path}
                             className="text-xl font-medium hover:text-[#B52761] transition-all duration-200"
                             onClick={() => setIsOpen(false)}
                           >
                             {t(item.text)}
-                          </Link>
+                          </NextLinkFromReactRouter>
                         }
                       </li>
                     ))}

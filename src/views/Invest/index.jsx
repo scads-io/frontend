@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useTranslation } from 'contexts/Localization'
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import { investPageVariants, opacityVariants } from "components/variants"
 import { NewCard } from "components/Card"

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { motion } from "framer-motion/dist/framer-motion"
+import { motion } from "framer-motion"
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import {
   opacityVariants,
@@ -26,11 +26,7 @@ const Tokenomics = ({ value }) => {
   return (
     <>
       <div
-        className={`${
-          theme
-            ? "md:bg-[url('../images/home/tokenomics_bg_dark.webp')]"
-            : "md:bg-[url('../images/home/tokenomics_bg_light.webp')]"
-        } bg-center bg-cover bg-no-repeat mt-40`}
+        className={` bg-center bg-cover bg-no-repeat mt-40`}
       >
         <div
           className="container mx-auto relative scroll-mt-32"

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useTranslation } from 'contexts/Localization'
 import ScadsMint from "views/ScadsMint"
 import CaratMint from "views/CaratMint"
-import { AnimatePresence } from "framer-motion/dist/framer-motion"
+import { AnimatePresence } from "framer-motion"
 import { PageMeta } from "components/Layout/PageMeta"
 
 const InvestMobile = ({ value }) => {

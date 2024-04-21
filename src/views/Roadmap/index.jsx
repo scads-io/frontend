@@ -2,7 +2,7 @@ import React from "react"
 import { createPortal } from 'react-dom'
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import { useTranslation } from 'contexts/Localization'
-import { motion } from "framer-motion/dist/framer-motion"
+import { motion } from "framer-motion"
 import { NewCard } from "components/Card"
 import ScrollToTopButton  from 'components/ScrollToTopButton'
 import Footer from 'components/Footer'

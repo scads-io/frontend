@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NextLinkFromReactRouter } from 'components/Menu/NextLink'
 import { useTranslation } from 'contexts/Localization'
 
 const headerText = {
@@ -63,18 +63,18 @@ const Header = ({ value }) => {
             >
                {t("Read more")}
             </button>
-            <Link
+            <NextLinkFromReactRouter
               to="/story"
               className="text-center py-3 px-4 md:py-4 md:px-8 border-2 border-[#BF205D] transition-all duration-300 hover:border-[#655780] rounded-3xl md:rounded-[30px] text-[#BF205D] hover:text-[#655780] text-sm md:text-base 2xl:text-lg font-bold"
             >
                {t("Our story")}
-            </Link>
-            <Link
+            </NextLinkFromReactRouter>
+            <NextLinkFromReactRouter
               to="/invest"
               className="flex text-center items-center text-white text-sm md:text-base font-bold rounded-3xl md:rounded-[30px] py-3 px-4 md:py-4 md:px-8 bg-gradient-to-r from-[#655780] via-[#BF205D] to-[#C01F5C] bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-500 lg:hidden"
             >
               {t("Invest Now")}
-            </Link>
+            </NextLinkFromReactRouter>
           </div>
         </div>
         <link

@@ -3,7 +3,7 @@ import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion"
 import { useTranslation } from 'contexts/Localization'
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import { NewCard } from "components/Card"
-import { motion } from "framer-motion/dist/framer-motion"
+import { motion } from "framer-motion"
 import { accordionCardVariants } from 'components/variants'
 
 const accordionContent = [

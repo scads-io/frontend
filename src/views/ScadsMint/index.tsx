@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { motion } from 'framer-motion/dist/framer-motion'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { CurrencyAmount, Token, Trade } from '@scads/sdk'
 import { Button, Flex } from '@scads-io/uikit'

@@ -2,7 +2,7 @@ import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import { useTranslation } from 'contexts/Localization'
 import { NewCard } from "components/Card"
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 const tokenomics = [
   {

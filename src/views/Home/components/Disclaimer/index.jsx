@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { motion } from "framer-motion/dist/framer-motion"
+import { motion } from "framer-motion"
 import { opacityVariants } from 'components/variants'
 
 const Disclaimer = ({ value }) => {
