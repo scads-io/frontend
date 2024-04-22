@@ -19,9 +19,6 @@ const sentryWebpackPluginOptions = {
 
 /** @type {import('next').NextConfig} */
 const config = {
-  experimental: {
-    styledComponents: true,
-  },
   reactStrictMode: true,
   eslint: {
     // Warning: This allows production builds to successfully complete even if
