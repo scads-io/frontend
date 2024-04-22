@@ -48,7 +48,7 @@ function GlobalHooks() {
   return null
 }
 
-function MyApp(props: AppProps) {
+function MyApp(props) {
   const { pageProps } = props
   const store = useStore(pageProps.initialReduxState)
 

@@ -94,6 +94,6 @@ export default store
 
 export const persistor = persistStore(store)
 
-export function useStore(initialState) {
+export function useStore(initialState: any) {
   return useMemo(() => initializeStore(initialState), [initialState])
 }

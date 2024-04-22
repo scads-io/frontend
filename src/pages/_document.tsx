@@ -44,10 +44,10 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&subset=cyrillic&display=swap&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
           <link rel="shortcut icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/logo.png" />
+          <link rel="apple-touch-icon" href="/logo.webp" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
-        <body>
+        <body className='overflow-x-hidden bg-[#00000B]'>
           <noscript>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTAG}`}
