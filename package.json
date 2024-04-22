@@ -31,7 +31,7 @@
     "@reduxjs/toolkit": "^1.5.0",
     "@scads-io/uikit": "^0.4.1",
     "@scads/sdk": "^0.0.1",
-    "@sentry/nextjs": "^6.16.1",
+    "@sentry/nextjs": "^7.111.0",
     "@szhsin/react-accordion": "^1.2.3",
     "@types/multicodec": "^1.0.0",
     "@types/react": "17.0.38",
