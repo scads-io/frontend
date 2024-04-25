@@ -1,4 +1,4 @@
-import { MetamaskIcon, WalletConnect, TrustWallet, MathWallet, TokenPocket, BinanceChain, SafePal, Coin98 } from "@scads-io/uikit"
+import { MetamaskIcon, WalletConnect, TrustWallet, BinanceChain } from "@scads-io/uikit"
 
 import { Config, ConnectorNames } from "./types"
 
@@ -22,36 +22,11 @@ const connectors: Config[] = [
     priority: 3,
   },
   {
-    title: "MathWallet",
-    icon: MathWallet,
-    connectorId: ConnectorNames.Injected,
-    priority: 999,
-  },
-  {
-    title: "TokenPocket",
-    icon: TokenPocket,
-    connectorId: ConnectorNames.Injected,
-    priority: 999,
-  },
-
-  {
     title: "Binance Chain",
     icon: BinanceChain,
     connectorId: ConnectorNames.BSC,
-    priority: 999,
-  },
-  {
-    title: "SafePal",
-    icon: SafePal,
-    connectorId: ConnectorNames.Injected,
-    priority: 999,
-  },
-  {
-    title: "Coin98",
-    icon: Coin98,
-    connectorId: ConnectorNames.Injected,
-    priority: 999,
-  },
+    priority: 4,
+  }
 ]
 
 export default connectors

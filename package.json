@@ -25,7 +25,7 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@binance-chain/bsc-connector": "^1.0.0",
+    "@binance/w3w-web3-connector": "^1.2.0",
     "@ethersproject/experimental": "^5.5.0",
     "@next/bundle-analyzer": "^12.0.7",
     "@reduxjs/toolkit": "^1.5.0",

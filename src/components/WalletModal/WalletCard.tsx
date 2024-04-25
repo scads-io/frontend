@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Button, ButtonProps, MoreHorizontal } from "@scads-io/uikit"
+import { Button } from "@scads-io/uikit"
 import { connectorLocalStorageKey, walletLocalStorageKey } from "./config"
 import { Login, Config, ConnectorNames } from "./types"
 
@@ -27,19 +27,6 @@ const StyledP = styled.p`
   text-align: center;
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
 `
-
-interface MoreWalletCardProps extends ButtonProps {
-  t: (key: string) => string
-}
-
-export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({ t, ...props }) => {
-  return (
-    <WalletButton variant="tertiary" {...props}>
-      <MoreHorizontal width="40px" mb="8px" color="secondary" />
-      <StyledP>{t("More")}</StyledP>
-    </WalletButton>
-  )
-}
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const { title, icon: Icon } = walletConfig

@@ -1,7 +1,7 @@
 import { InjectedConnector } from '@web3-react/injected-connector'
+import { getWeb3Connector } from '@binance/w3w-web3-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { AbstractConnector } from '@web3-react/abstract-connector'
-import { BscConnector } from '@binance-chain/bsc-connector'
 import { ConnectorNames } from 'components/WalletModal/types'
 import { ethers } from 'ethers'
 import getNodeUrl from './getRpcUrl'
@@ -19,12 +19,18 @@ const walletconnect = new WalletConnectConnector({
   pollingInterval: POLLING_INTERVAL,
 })
 
-const bscConnector = new BscConnector({ supportedChainIds: [chainId] })
+const Connector = getWeb3Connector()
+const binanceConnector = new Connector({
+  supportedChainIds: [1, 56],
+  rpc:{
+    56: 'https://bsc-dataseed.binance.org/'
+  }
+})
 
 export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Injected]: injected,
   [ConnectorNames.WalletConnect]: walletconnect,
-  [ConnectorNames.BSC]: bscConnector,
+  [ConnectorNames.BSC]: binanceConnector,
 }
 
 export const getLibrary = (provider): ethers.providers.Web3Provider => {
