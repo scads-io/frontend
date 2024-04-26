@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NextLinkFromReactRouter } from 'components/Menu/NextLink'
+import { NextLinkFromReactRouter } from 'components/NextLink'
 import { languageList } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import { AnimatePresence, motion } from "framer-motion"

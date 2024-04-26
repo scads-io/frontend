@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextLinkFromReactRouter } from 'components/Menu/NextLink'
+import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from 'contexts/Localization'
 
 const headerText = {
