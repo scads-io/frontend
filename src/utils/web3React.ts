@@ -19,12 +19,10 @@ const walletconnect = new WalletConnectConnector({
   pollingInterval: POLLING_INTERVAL,
 })
 
-const Connector = getWeb3Connector()
-const binanceConnector = new Connector({
+const BscConnector = getWeb3Connector()
+const binanceConnector = new BscConnector({
   supportedChainIds: [1, 56],
-  rpc:{
-    56: 'https://bsc-dataseed.binance.org/'
-  }
+  rpc: { [chainId]: rpcUrl },
 })
 
 export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
