@@ -57,7 +57,7 @@
     "next": "^14.2.2",
     "postcss": "^8.4.38",
     "qs": "^6.9.4",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-error-overlay": "^6.0.11",
     "react-redux": "^7.2.4",
@@ -80,7 +80,6 @@
     "husky": "^7.0.0",
     "jest": "^27.4.5",
     "prettier": "^2.3.0",
-    "serve": "^12.0.0",
     "source-map-explorer": "^2.5.2",
     "tailwindcss": "^3.4.1",
     "ts-node": "^9.1.1"
