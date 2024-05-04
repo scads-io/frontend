@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextLinkFromReactRouter } from 'components/NextLink'
-import Footer from 'components/footer/footer'
+import Footer from 'components/Footer'
 import { useTranslation } from 'contexts/Localization'
 import { PageMeta } from 'components/Layout/PageMeta'
 

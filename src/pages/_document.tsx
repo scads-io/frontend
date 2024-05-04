@@ -33,7 +33,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" className="scroll-smooth">
+      <Html>
         <Head>
           {nodes.map((node) => (
             <link key={node} rel="preconnect" href={node} />
@@ -45,8 +45,9 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&subset=cyrillic&display=swap&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/logo.webp" />
+          <link rel="manifest" href="/manifest.json" />
         </Head>
-        <body className="overflow-x-hidden bg-dark-blue">
+        <body className='overflow-x-hidden bg-[#00000B]'>
           <noscript>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTAG}`}
