@@ -23,7 +23,10 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "downlevelIteration": true,
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@scads-io/wagmi": ["../packages/wagmi/src/index.ts"],
+    }
   },
   "exclude": [
     "node_modules",

@@ -2,8 +2,9 @@ import { FC } from "react"
 import { SvgProps } from "@scads-io/uikit"
 
 export enum ConnectorNames {
+  MetaMask = "metaMask",
   Injected = "injected",
-  WalletConnect = "walletconnect",
+  WalletConnect = "walletConnect",
   BSC = "bsc",
 }
 
@@ -14,4 +15,5 @@ export interface Config {
   icon: FC<SvgProps>
   connectorId: ConnectorNames
   priority: number
+  href?: string
 }

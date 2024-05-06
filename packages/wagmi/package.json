@@ -1,0 +1,9 @@
+{
+  "name": "@scads-io/wagmi",
+  "version": "1.0.0",
+  "description": "wagmi adaptor for scads",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "tsconfig": "*"
+  }
+}

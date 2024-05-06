@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useRef } from 'react'
 import { noop } from 'lodash'
-import { useWeb3React } from '@web3-react/core'
+import { useWeb3React } from '@scads-io/wagmi'
 import { ethers } from 'ethers'
 import useToast from 'hooks/useToast'
 import { useTranslation } from 'contexts/Localization'

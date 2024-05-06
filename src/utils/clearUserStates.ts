@@ -1,20 +1,18 @@
 import * as Sentry from '@sentry/react'
 import { Dispatch } from '@reduxjs/toolkit'
-import { connectorLocalStorageKey } from 'components/WalletModal/config'
-import { profileClear } from '../state/profile'
-import { connectorsByName } from './web3React'
-import { clearAllTransactions } from '../state/transactions/actions'
+import { resetUserState } from 'state/global/actions'
+import { PREDICTION_TOOLTIP_DISMISS_KEY } from 'config/constants'
+import { connectorLocalStorageKey } from 'components/WalletModal'
+import getLocalStorageItemKeys from './getLocalStorageItemKeys'
 
-export const clearUserStates = (dispatch: Dispatch<any>, chainId: number) => {
-  dispatch(profileClear())
+export const clearUserStates = (dispatch: Dispatch<any>, chainId: number, isDeactive = false) => {
+  dispatch(resetUserState({ chainId }))
   Sentry.configureScope((scope) => scope.setUser(null))
-  // This localStorage key is set by @web3-react/walletconnect-connector
-  if (window.localStorage.getItem('walletconnect')) {
-    connectorsByName.walletconnect.close()
-    connectorsByName.walletconnect.walletConnectProvider = null
+  // Only clear localStorage when user disconnect,switch address no need clear it.
+  if (isDeactive) {
+    window?.localStorage?.removeItem(connectorLocalStorageKey)
   }
-  window.localStorage.removeItem(connectorLocalStorageKey)
-  if (chainId) {
-    dispatch(clearAllTransactions({ chainId }))
-  }
+  const lsOrderKeys = getLocalStorageItemKeys('gorders_')
+  lsOrderKeys.forEach((lsOrderKey) => window?.localStorage?.removeItem(lsOrderKey))
+  window?.localStorage?.removeItem(PREDICTION_TOOLTIP_DISMISS_KEY)
 }
