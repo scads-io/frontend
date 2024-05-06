@@ -1,67 +1,52 @@
+import { useWeb3React } from '@scads-io/wagmi'
 import { useCallback } from 'react'
-import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
-import {
-  NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from '@web3-react/injected-connector'
-import {
-  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-  WalletConnectConnector,
-} from '@web3-react/walletconnect-connector'
-import { ConnectorNames } from 'components/WalletModal/types'
-import { connectorLocalStorageKey } from 'components/WalletModal/config'
-import { connectorsByName } from 'utils/web3React'
-import { setupNetwork } from 'utils/wallet'
-import useToast from 'hooks/useToast'
 import { useAppDispatch } from 'state'
+import { mutate } from 'swr'
+import { useConnect, useDisconnect, useNetwork, ConnectorNotFoundError, UserRejectedRequestError } from 'wagmi'
 import { useTranslation } from 'contexts/Localization'
+import { connectorLocalStorageKey, ConnectorNames } from 'components/WalletModal'
 import { clearUserStates } from '../utils/clearUserStates'
+import useToast from './useToast'
 
 const useAuth = () => {
   const { t } = useTranslation()
+  const web3React = useWeb3React()
+  const { chainId } = web3React
   const dispatch = useAppDispatch()
-  const { chainId, activate, deactivate } = useWeb3React()
+  const { connectAsync, connectors } = useConnect()
+  const { chain } = useNetwork()
+  const { disconnect } = useDisconnect()
   const { toastError } = useToast()
 
   const login = useCallback(
-    (connectorID: ConnectorNames) => {
-      const connector = connectorsByName[connectorID]
-      if (connector) {
-        activate(connector, async (error: Error) => {
-          if (error instanceof UnsupportedChainIdError) {
-            const hasSetup = await setupNetwork()
-            if (hasSetup) {
-              activate(connector)
-            }
-          } else {
-            window.localStorage.removeItem(connectorLocalStorageKey)
-            if (error instanceof NoEthereumProviderError) {
-              toastError(t('Provider Error'), t('No provider was found'))
-            } else if (
-              error instanceof UserRejectedRequestErrorInjected ||
-              error instanceof UserRejectedRequestErrorWalletConnect
-            ) {
-              if (connector instanceof WalletConnectConnector) {
-                const walletConnector = connector as WalletConnectConnector
-                walletConnector.walletConnectProvider = null
-              }
-              toastError(t('Authorization Error'), t('Please authorize to access your account'))
-            } else {
-              toastError(error.name, error.message)
-            }
-          }
-        })
-      } else {
-        toastError(t('Unable to find connector'), t('The connector config is wrong'))
+    async (connectorID: ConnectorNames) => {
+      const findConnector = connectors.find((c) => c.id === connectorID)
+      try {
+        await connectAsync({ connector: findConnector, chainId })
+      } catch (error) {
+        console.error(error)
+        window?.localStorage?.removeItem(connectorLocalStorageKey)
+        if (error instanceof ConnectorNotFoundError) {
+          toastError(
+            t('Provider Error')
+          )
+          return
+        }
+        if (error instanceof UserRejectedRequestError) {
+          return
+        }
+        if (error instanceof Error) {
+          toastError(error.message, t('Please authorize to access your account'))
+        }
       }
     },
-    [t, activate, toastError],
+    [connectors, connectAsync, chainId, toastError, t],
   )
 
   const logout = useCallback(() => {
-    deactivate()
-    clearUserStates(dispatch, chainId)
-  }, [deactivate, dispatch, chainId])
+    disconnect()
+    clearUserStates(dispatch, chain?.id)
+  }, [disconnect, dispatch, chain?.id])
 
   return { login, logout }
 }
