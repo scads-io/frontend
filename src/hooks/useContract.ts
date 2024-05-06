@@ -24,7 +24,7 @@ import CARAT_ABI from '../config/abi/caratContract.json'
 import PULSE_ABI from '../config/abi/pulseContract.json'
 import WETH_ABI from '../config/abi/weth.json'
 import multiCallAbi from '../config/abi/Multicall.json'
-import { getContract, getProviderOrSigner } from '../utils'
+import { getContract } from '../utils'
 
 const IUniswapV2PairABI = IUniswapV2Pair.abi
 

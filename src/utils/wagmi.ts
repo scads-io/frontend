@@ -1,61 +1,16 @@
-import { bsc, BscConnector, CHAINS } from '@scads-io/wagmi'
 import { configureChains, createClient } from 'wagmi'
-import memoize from 'lodash/memoize'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
-import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
+import { bsc, bscTestnet } from 'wagmi/chains'
+import { publicProvider } from 'wagmi/providers/public'
 
-const getNodeRealUrl = (networkName: string) => {
-  let host = null
-  switch (networkName) {
-    case 'homestead':
-      if (process.env.NEXT_PUBLIC_NODE_REAL_API_ETH) {
-        host = `eth-mainnet.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_ETH}`
-      }
-      break
-    case 'rinkeby':
-      if (process.env.NEXT_PUBLIC_NODE_REAL_API_RINKEBY) {
-        host = `eth-rinkeby.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_RINKEBY}`
-      }
-      break
-    case 'goerli':
-      if (process.env.NEXT_PUBLIC_NODE_REAL_API_GOERLI) {
-        host = `eth-goerli.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_GOERLI}`
-      }
-      break
-    default:
-      host = null
-  }
-
-  if (!host) {
-    return null
-  }
-
-  const url = `https://${host}`
-  return {
-    http: url,
-    webSocket: url.replace(/^http/i, 'wss').replace('.nodereal.io/v1', '.nodereal.io/ws/v1'),
-  }
-}
-
-export const { provider, chains } = configureChains(CHAINS, [
-  jsonRpcProvider({
-    rpc: (chain) => {
-      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === bsc.id) {
-        return { http: process.env.NEXT_PUBLIC_NODE_PRODUCTION }
-      }
-      if (chain.rpcUrls.nodeReal) {
-        return (
-          getNodeRealUrl(chain.network) || {
-            http: chain.rpcUrls.nodeReal,
-          }
-        )
-      }
-      return { http: chain.rpcUrls.default }
-    },
-  }),
-])
+const { chains, provider, webSocketProvider } = configureChains(
+  [bsc, bscTestnet],
+  [
+    publicProvider(),
+  ],
+)
 
 export const injectedConnector = new InjectedConnector({
   chains,
@@ -79,19 +34,13 @@ export const metaMaskConnector = new MetaMaskConnector({
   },
 })
 
-export const bscConnector = new BscConnector({ chains })
-
 export const client = createClient({
   autoConnect: false,
   provider,
+  webSocketProvider,
   connectors: [
     metaMaskConnector,
     injectedConnector,
     walletConnectConnector,
-    bscConnector,
   ],
 })
-
-const CHAIN_IDS = chains.map((c) => c.id)
-
-export const isChainSupported = memoize((chainId: number) => CHAIN_IDS.includes(chainId))

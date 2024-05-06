@@ -1,5 +1,5 @@
 import { Web3Provider } from '@ethersproject/providers'
-import { createContext, useContext } from 'react'
+import React, { createContext, useContext } from 'react'
 import useSWRImmutable from 'swr/immutable'
 import { useAccount, WagmiConfig, WagmiConfigProps, useNetwork } from 'wagmi'
 import { Provider, WebSocketProvider } from '@wagmi/core'
@@ -20,7 +20,7 @@ export const useWeb3LibraryContext = () => {
   return useContext(Web3LibraryContext)
 }
 
-const Web3LibraryProvider: React.FC<React.PropsWithChildren> = (props) => {
+const Web3LibraryProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const { connector } = useAccount()
   const { chain } = useNetwork()
   const { data: library } = useSWRImmutable(connector && ['web3-library', connector, chain], async () => {
