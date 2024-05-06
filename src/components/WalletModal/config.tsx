@@ -20,7 +20,6 @@ const connectors: Config[] = [
     icon: TrustWallet,
     connectorId: ConnectorNames.Injected,
     priority: 3,
-    href: "https://link.trustwallet.com/open_url?coin_id=20000714&url=https://pancakeswap.finance/",
   },
   {
     title: "Binance Chain",
@@ -33,5 +32,3 @@ const connectors: Config[] = [
 export default connectors
 export const connectorLocalStorageKey = "connectorIdv2"
 export const walletLocalStorageKey = "wallet"
-
-export const walletConnectConfig = connectors.find((c) => c.title === "WalletConnect");

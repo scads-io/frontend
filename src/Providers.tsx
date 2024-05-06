@@ -1,10 +1,10 @@
 import React from 'react'
 import { light, dark } from '@scads-io/uikit'
+import { Web3ReactProvider } from '@web3-react/core'
 import { Provider } from 'react-redux'
-import { WagmiProvider } from '@scads-io/wagmi'
-import { client } from 'utils/wagmi'
 import { ThemeProvider } from 'styled-components'
 import { useThemeManager } from 'state/user/hooks'
+import { getLibrary } from 'utils/web3React'
 import { LanguageProvider } from 'contexts/Localization'
 import { RefreshContextProvider } from 'contexts/RefreshContext'
 import { ToastsProvider } from 'contexts/ToastsContext'
@@ -18,7 +18,7 @@ const ThemeProviderWrapper = (props) => {
 
 const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
   return (
-    <WagmiProvider client={client}>
+    <Web3ReactProvider getLibrary={getLibrary}>
       <Provider store={store}>
         <ToastsProvider>
           <ThemeProviderWrapper>
@@ -30,7 +30,7 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
           </ThemeProviderWrapper>
         </ToastsProvider>
       </Provider>
-    </WagmiProvider>
+    </Web3ReactProvider>
   )
 }
 

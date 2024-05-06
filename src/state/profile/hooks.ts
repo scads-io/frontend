@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useWeb3React } from '@scads-io/wagmi'
+import { useWeb3React } from '@web3-react/core'
 import { useSelector } from 'react-redux'
 import { isAddress } from 'utils'
 import { useAppDispatch } from 'state'

@@ -14,5 +14,4 @@ export interface Config {
   icon: FC<SvgProps>
   connectorId: ConnectorNames
   priority: number
-  href?: string
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3React } from '@scads-io/wagmi'
+import { useWeb3React } from '@web3-react/core'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useModal } from "../../Modal"
 import WalletModal from './WalletModal'

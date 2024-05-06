@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useProviderOrSigner } from 'hooks/useProviderOrSigner'
 import {
   getBep20Contract,
   getCakeContract,
@@ -33,65 +32,61 @@ const IUniswapV2PairABI = IUniswapV2Pair.abi
  */
 
 export const useERC20 = (address: string, withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
-  return useMemo(() => getBep20Contract(address, providerOrSigner), [address, providerOrSigner])
+  const { library, account } = useActiveWeb3React()
+  return useMemo(
+    () => getBep20Contract(address, withSignerIfPossible ? getProviderOrSigner(library, account) : null),
+    [account, address, library, withSignerIfPossible],
+  )
 }
 
 /**
  * @see https://docs.openzeppelin.com/contracts/3.x/api/token/erc721
  */
-export const useERC721 = (address: string, withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
-  return useMemo(() => getErc721Contract(address, providerOrSigner), [address, providerOrSigner])
+export const useERC721 = (address: string) => {
+  const { library } = useActiveWeb3React()
+  return useMemo(() => getErc721Contract(address, library.getSigner()), [address, library])
 }
 
-export const useCake = (withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
-  return useMemo(() => getCakeContract(providerOrSigner), [providerOrSigner])
+export const useCake = () => {
+  const { library } = useActiveWeb3React()
+  return useMemo(() => getCakeContract(library.getSigner()), [library])
 }
 
-export const useProfile = (withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
-  return useMemo(() => getProfileContract(providerOrSigner), [providerOrSigner])
+export const useProfile = () => {
+  const { library } = useActiveWeb3React()
+  return useMemo(() => getProfileContract(library.getSigner()), [library])
 }
 
-export const useMasterchef = (withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
-  return useMemo(() => getMasterchefContract(providerOrSigner), [providerOrSigner])
+export const useMasterchef = () => {
+  const { library } = useActiveWeb3React()
+  return useMemo(() => getMasterchefContract(library.getSigner()), [library])
 }
 
-export const useScadsContract = (withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
-  return useMemo(() => getScadsContract(providerOrSigner), [providerOrSigner])
+export const useScadsContract = () => {
+  const { library } = useActiveWeb3React()
+  return useMemo(() => getScadsContract(library.getSigner()), [library])
 }
 
-export const useCaratContract = (withSignerIfPossible = true) => {
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
-  return useMemo(() => getCaratContract(providerOrSigner), [providerOrSigner])
+export const useCaratContract = () => {
+  const { library } = useActiveWeb3React()
+  return useMemo(() => getCaratContract(library.getSigner()), [library])
 }
 
 // Code below migrated from Exchange useContract.ts
 
 // returns null on errors
-export function useContract<T extends Contract = Contract>(
-  address: string | undefined,
-  ABI: any,
-  withSignerIfPossible = true,
-): T | null {
-  const { provider } = useActiveWeb3React()
-  const providerOrSigner = useProviderOrSigner(withSignerIfPossible) ?? provider
-
-  const canReturnContract = useMemo(() => address && ABI && providerOrSigner, [address, ABI, providerOrSigner])
+function useContract(address: string | undefined, ABI: any, withSignerIfPossible = true): Contract | null {
+  const { library, account } = useActiveWeb3React()
 
   return useMemo(() => {
-    if (!canReturnContract) return null
+    if (!address || !ABI || !library) return null
     try {
-      return getContract(address, ABI, providerOrSigner)
+      return getContract(address, ABI, withSignerIfPossible ? getProviderOrSigner(library, account) : null)
     } catch (error) {
       console.error('Failed to get contract', error)
       return null
     }
-  }, [address, ABI, providerOrSigner, canReturnContract]) as T
+  }, [address, ABI, library, withSignerIfPossible, account])
 }
 
 export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {

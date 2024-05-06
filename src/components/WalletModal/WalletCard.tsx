@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { isDesktop } from "react-device-detect";
 import { Button } from "@scads-io/uikit"
-import { connectorLocalStorageKey, walletLocalStorageKey, walletConnectConfig } from "./config"
-import { Login, Config } from "./types"
+import { connectorLocalStorageKey, walletLocalStorageKey } from "./config"
+import { Login, Config, ConnectorNames } from "./types"
 
 interface Props {
   walletConfig: Config
@@ -36,21 +35,18 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
     <WalletButton
       variant="tertiary"
       onClick={() => {
-        if (title === "Trust Wallet" && walletConnectConfig && isDesktop) {
-          login(walletConnectConfig.connectorId);
-          localStorage?.setItem(walletLocalStorageKey, walletConnectConfig.title);
-          localStorage?.setItem(connectorLocalStorageKey, walletConnectConfig.connectorId);
-          onDismiss();
-          return;
-        }
-        if (!window.ethereum && walletConfig.href) {
-          window.open(walletConfig.href, "_blank", "noopener noreferrer");
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+
+        // Since iOS does not support Trust Wallet we fall back to WalletConnect
+        if (walletConfig.title === "Trust Wallet" && isIOS) {
+          login(ConnectorNames.WalletConnect)
         } else {
-          login(walletConfig.connectorId);
-          localStorage?.setItem(walletLocalStorageKey, walletConfig.title);
-          localStorage?.setItem(connectorLocalStorageKey, walletConfig.connectorId);
-          onDismiss();
+          login(walletConfig.connectorId)
         }
+
+        localStorage.setItem(walletLocalStorageKey, walletConfig.title)
+        localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId)
+        onDismiss()
       }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}>
       <Icon color="secondary" width="40px" mb="8px" />

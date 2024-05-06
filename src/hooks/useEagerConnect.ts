@@ -1,25 +1,43 @@
-import { useClient, useConnect } from 'wagmi'
 import { useEffect } from 'react'
+import { ConnectorNames } from 'components/WalletModal/types'
+import { connectorLocalStorageKey } from 'components/WalletModal/config'
+import useAuth from 'hooks/useAuth'
 
-const SAFE_ID = 'safe'
+const _binanceChainListener = async () =>
+  new Promise<void>((resolve) =>
+    Object.defineProperty(window, 'BinanceChain', {
+      get() {
+        return this.bsc
+      },
+      set(bsc) {
+        this.bsc = bsc
+
+        resolve()
+      },
+    }),
+  )
 
 const useEagerConnect = () => {
-  const client = useClient()
-  const { connectAsync, connectors } = useConnect()
+  const { login } = useAuth()
+
   useEffect(() => {
-    const connectorInstance = connectors.find((c) => c.id === SAFE_ID && c.ready)
-    if (
-      connectorInstance &&
-      // @ts-ignore
-      !window.cy
-    ) {
-      connectAsync({ connector: connectorInstance }).catch(() => {
-        client.autoConnect()
-      })
-    } else {
-      client.autoConnect()
+    const connectorId = window.localStorage.getItem(connectorLocalStorageKey) as ConnectorNames
+
+    if (connectorId) {
+      const isConnectorBinanceChain = connectorId === ConnectorNames.BSC
+      const isBinanceChainDefined = Reflect.has(window, 'BinanceChain')
+
+      // Currently BSC extension doesn't always inject in time.
+      // We must check to see if it exists, and if not, wait for it before proceeding.
+      if (isConnectorBinanceChain && !isBinanceChainDefined) {
+        _binanceChainListener().then(() => login(connectorId))
+
+        return
+      }
+
+      login(connectorId)
     }
-  }, [client, connectAsync, connectors])
+  }, [login])
 }
 
 export default useEagerConnect
