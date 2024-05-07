@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import AddressDropdown from "./address-dropdown";
-import WalletModal from "../wallet/wallet-modal";
+import WalletModal from "../WalletModal/wallet-modal";
 import Socials from "../socials";
 import { motion } from "framer-motion";
 import LanguageDropdown from "./language-dropdown";

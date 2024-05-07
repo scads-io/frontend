@@ -6,7 +6,7 @@ import { Label } from "../ui/label";
 import FormInputs from "./form-inputs";
 import Taxes from "./taxes";
 import { useWalletModal } from "hooks/use-wallet-modal";
-import WalletModal from "../wallet/wallet-modal";
+import WalletModal from "../WalletModal/wallet-modal";
 import { Button } from "../ui/button";
 
 const TwineForm: React.FC<{ panel: string }> = ({ panel }) => {

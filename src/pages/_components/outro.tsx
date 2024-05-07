@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import SwapModal from "components/swap/swap-modal";
 import { SparklesCore } from "components/ui/sparkles";
 import { useTranslation } from "contexts/Localization";

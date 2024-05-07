@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./mobile-menu";
 import clsx from "clsx";
 import AddressDropdown from "./address-dropdown";
-import WalletModal from "../wallet/wallet-modal";
+import WalletModal from "../WalletModal/wallet-modal";
 import NavLinks from "./navlinks";
 import SwapModal from "../swap/swap-modal";
 import LanguageDropdown from "./language-dropdown";

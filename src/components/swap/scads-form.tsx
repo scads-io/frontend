@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useWalletModal } from "hooks/use-wallet-modal";
 import FormInputs from "./form-inputs";
 import Taxes from "./taxes";
-import WalletModal from "../wallet/wallet-modal";
+import WalletModal from "../WalletModal/wallet-modal";
 import { Button } from "../ui/button";
 
 const ScadsForm: React.FC<{ panel: string }> = ({ panel }) => {
