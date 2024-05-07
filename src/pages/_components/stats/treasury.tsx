@@ -1,5 +1,10 @@
 "use client";
 
+import React from "react";
+import { Info } from "lucide-react";
+import Image from "next/image";
+import { RU } from "config/localization/languages";
+import { cn } from "lib/utils";
 import {
   Tooltip,
   TooltipContent,
@@ -8,13 +13,38 @@ import {
 } from "components/ui/tooltip";
 import { treasuryItems } from "constants/content";
 import { useTranslation } from "contexts/Localization";
-import { RU } from "config/localization/languages";
-import { cn } from "lib/utils";
-import { Info } from "lucide-react";
-import Image from "next/image";
+import tokens from 'config/constants/tokens'
+import { useDashInfo } from 'hooks/useDashInfo'
 
 const Treasury = () => {
   const { t, currentLanguage } = useTranslation();
+
+  const { treasuryTokenBalances, lockedBalance } = useDashInfo()
+  const scadsBalanceInTreasury = treasuryTokenBalances[tokens.cake.address]
+  const caratBalanceInTreasury = treasuryTokenBalances[tokens.carat.address]
+  const usdtBalanceInTreasury = treasuryTokenBalances[tokens.usdt.address]
+  const usdcBalanceInTreasury = treasuryTokenBalances[tokens.usdc.address]
+
+  const scadsBalance =
+    scadsBalanceInTreasury?.toExact().toString() !== '0'
+      ? parseFloat(scadsBalanceInTreasury?.toExact()).toFixed(3).toString()
+      : scadsBalanceInTreasury?.toExact().toString()
+
+  const twineBalance = 
+    caratBalanceInTreasury?.toExact().toString() !== '0'
+      ? parseFloat(caratBalanceInTreasury?.toExact()).toFixed(3).toString()
+      : caratBalanceInTreasury?.toExact().toString()
+
+  const usdtBalance =
+    usdtBalanceInTreasury?.toExact().toString() !== '0'
+      ? parseFloat(usdtBalanceInTreasury?.toExact()).toFixed(3).toString()
+      : usdtBalanceInTreasury?.toExact().toString()
+
+  const usdcBalance =
+    usdcBalanceInTreasury?.toExact().toString() !== '0'
+      ? parseFloat(usdcBalanceInTreasury?.toExact()).toFixed(3).toString()
+      : usdcBalanceInTreasury?.toExact().toString()
+
 
   return (
     <section className="lg:rounded-t-0 relative flex flex-col items-center gap-y-8 rounded-b-3xl px-4 pb-10 md:px-8">
@@ -66,7 +96,11 @@ const Treasury = () => {
                   />
                 )}
                 <p className="text-white lg:text-sm xl:text-base">
-                  {item.amount}
+                  {item.id === "ti1" && lockedBalance.toFixed(2)}
+                  {item.id === "ti2" && scadsBalance}
+                  {item.id === "ti3" && twineBalance}
+                  {item.id === "ti4" && `$${usdtBalance}`}
+                  {item.id === "ti5" && `$${usdcBalance}`}
                 </p>
               </div>
             </div>

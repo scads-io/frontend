@@ -197,38 +197,32 @@ export const statItems = [
   {
     id: "s1",
     name: "Adaptive minting speed",
-    placeholder: "0.0000006",
     info: "Automatically adjusts based on",
     icon: <Gauge strokeWidth={1.5} />,
   },
   {
     id: "s2",
     name: "Funds in Pulse",
-    placeholder: "8079.49",
     icon: <HeartPulse strokeWidth={1.5} />,
   },
   {
     id: "s3",
     name: "Next Pulse",
-    placeholder: "05:26:15",
     icon: <Clock strokeWidth={1.5} />,
   },
   {
     id: "s4",
     name: "Minted TWINE",
-    placeholder: "1650851.99",
     icon: <Database strokeWidth={1.5} />,
   },
   {
     id: "s5",
     name: "TWINE price increase",
-    placeholder: "0.17",
     icon: <TrendingUp strokeWidth={1.5} />,
   },
   {
     id: "s6",
     name: "SCADS Held",
-    placeholder: "26513.82",
     info: "Total SCADS held in all wallets.",
     icon: <MdOutlineDataObject />,
   },
@@ -238,31 +232,26 @@ export const treasuryItems = [
   {
     id: "ti1",
     name: "Total balance",
-    amount: "$34781.63",
     info: "Total balance of funds in treasury.",
   },
   {
     id: "ti2",
     name: "SCADS balance",
-    amount: "536",
     info: "Total SCADS held in treasury. These SCADS were minted by user’s, then sold back to the algorithm, they remain in the treasury ready to be re-minted by user’s.",
   },
   {
     id: "ti3",
     name: "TWINE balance",
-    amount: "145017",
     info: "Total TWINE that is held in treasury as investment.",
   },
   {
     id: "ti4",
     name: "USDT balance",
-    amount: "$10304",
     info: "Total USDT balance in treasury.",
   },
   {
     id: "ti5",
     name: "USDC balance",
-    amount: "$0",
     info: "Total USDC balance held in treasury.",
   },
 ];
@@ -399,25 +388,6 @@ export const roadmapContent = [
     id: "r22",
     date: "March 2025",
     l1: "Payment system, users will be able to pay locally with scads pegged to value in local currency. (The pegging occurs only at the time of transaction.)",
-  },
-];
-
-export const wallets = [
-  {
-    name: "Metamask",
-    icon: "/images/metamask.svg",
-  },
-  {
-    name: "Trust wallet",
-    icon: "/images/trust.svg",
-  },
-  {
-    name: "Binance chain",
-    icon: "/images/binance.svg",
-  },
-  {
-    name: "WalletConnect",
-    icon: "/images/wallet-connect.svg",
   },
 ];
 

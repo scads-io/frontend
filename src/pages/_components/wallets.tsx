@@ -1,3 +1,4 @@
+import React from "react";
 import { HoverEffect } from "components/ui/card-hover-effect";
 import { cardItems } from "constants/content";
 import SectionHeader from "components/ui/section-header";

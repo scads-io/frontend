@@ -22,12 +22,12 @@ const connectors: Config[] = [
     priority: 3,
     href: "https://link.trustwallet.com/open_url?coin_id=20000714&url=https://scads.io/",
   },
-  {
+  /* {
     title: "Binance Chain",
     icon: BinanceChain,
     connectorId: ConnectorNames.BSC,
     priority: 4,
-  }
+  } */
 ]
 
 export default connectors

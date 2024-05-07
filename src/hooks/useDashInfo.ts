@@ -19,7 +19,7 @@ export function useDashInfo() {
   const usdtBalanceInTreasury = treasuryTokenBalances[tokens.usdt.address]
   const usdcBalanceInTreasury = treasuryTokenBalances[tokens.usdc.address]
 
-  const totalCaratAmount = totalSupplyCarat !== undefined ? utils.formatEther(totalSupplyCarat?.toString()) : 0
+  const totalCaratAmount = totalSupplyCarat !== undefined ? parseFloat(utils.formatEther(totalSupplyCarat?.toString())) : 0
 
   const totalScadsAmount =
     totalSupplyScads !== undefined ? parseFloat(utils.formatEther(totalSupplyScads?.toString())) : 0

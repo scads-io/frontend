@@ -1,5 +1,10 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
+import { useCaratPrice } from 'hooks/useBUSDPrice'
+import { usePulseInfo } from 'hooks/usePulseInfo'
+import { useDashInfo } from 'hooks/useDashInfo'
+
 import {
   Tooltip,
   TooltipContent,
@@ -14,6 +19,31 @@ import { Info } from "lucide-react";
 
 const GeneralStats = () => {
   const { t, currentLanguage } = useTranslation();
+  const { caratPrice } = useCaratPrice()
+  const { scadsAmountOfPulse } = usePulseInfo()
+  const { heldScadsAmount, totalCarat, rewardSpeed } = useDashInfo()
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft())
+    }, 1000)
+  })
+
+  function calculateTimeLeft() {
+    const nextPulseTime = new Date()
+    nextPulseTime.setUTCHours(1, 0, 0)
+    let difference = nextPulseTime.getTime() - new Date().getTime()
+    if (difference < 0) difference += 24 * 60 * 60 * 1000
+    if (difference < 0) difference += 24 * 60 * 60 * 1000
+    const remainTime = {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    }
+    return remainTime
+  }
 
   return (
     <div className="flex items-end justify-center">
@@ -68,7 +98,12 @@ const GeneralStats = () => {
                 )}
               </div>
               <p className="text-white lg:text-sm xl:text-base">
-                {item.placeholder}
+                {item.id === "s1" && rewardSpeed.toFixed(7)}
+                {item.id === "s2" && scadsAmountOfPulse.toFixed(2)}
+                {item.id === "s3" && `${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
+                {item.id === "s4" && totalCarat.toFixed(2)}
+                {item.id === "s5" && caratPrice.toFixed(2)}
+                {item.id === "s6" && heldScadsAmount.toFixed(2)}
               </p>
             </div>
           </div>

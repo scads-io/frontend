@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import SectionHeader from "components/ui/section-header";
 import { useTranslation } from "contexts/Localization";
 import { Separator } from "components/ui/separator";

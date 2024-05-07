@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import SwapModal from "components/swap/swap-modal";
 import { IoEllipse } from "react-icons/io5";
 import { motion } from "framer-motion";
