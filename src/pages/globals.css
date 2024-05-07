@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar {
+    @apply z-50 w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply z-50 rounded-full bg-white/10;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply z-50 rounded-full bg-white/20;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/40;
+  }
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: black;
+  background: #7a87ff;
+}
+
+::selection {
+  color: black;
+  background: #7a87ff;
+}
+
+.button-primary {
+  background: radial-gradient(
+      231.94% 231.94% at 50% 100%,
+      #8a6cff 0,
+      rgba(53, 41, 128, 0) 25.24%
+    ),
+    linear-gradient(180deg, rgba(243, 238, 255, 0), rgba(243, 238, 255, 0.04)),
+    rgba(147, 130, 255, 0.01);
+  box-shadow:
+    0 0 0 0 rgba(16, 0, 51, 0.4),
+    0 2px 5px 0 rgba(16, 0, 51, 0.39),
+    0 8px 8px 0 rgba(16, 0, 51, 0.34),
+    0 19px 11px 0 rgba(16, 0, 51, 0.2),
+    0 34px 14px 0 rgba(16, 0, 51, 0.06),
+    0 53px 15px 0 rgba(16, 0, 51, 0.01),
+    inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08),
+    inset 0 -8px 32px 0 #1e0d49;
+}
+
+.button-primary:hover {
+  background: radial-gradient(
+      231.94% 231.94% at 50% 100%,
+      #8a6cff 0,
+      rgba(53, 41, 128, 0) 25.24%
+    ),
+    linear-gradient(180deg, rgba(243, 238, 255, 0), rgba(243, 238, 255, 0.04)),
+    rgba(147, 130, 255, 0.6);
+}

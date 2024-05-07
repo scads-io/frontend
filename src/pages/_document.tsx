@@ -33,7 +33,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en" className="scroll-smooth">
         <Head>
           {nodes.map((node) => (
             <link key={node} rel="preconnect" href={node} />
@@ -47,7 +47,7 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/logo.webp" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
-        <body className='overflow-x-hidden bg-[#00000B]'>
+        <body className="overflow-x-hidden bg-dark-blue">
           <noscript>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTAG}`}

@@ -1,7 +1,9 @@
 import Script from 'next/script'
-import './index.css'
+import './globals.css'
 import BigNumber from 'bignumber.js'
 import axios from 'axios'
+import { useIsomorphicLayoutEffect } from 'react-use'
+import { Inter } from "next/font/google";
 import { ToastListener } from 'contexts/ToastsContext'
 import useEagerConnect from 'hooks/useEagerConnect'
 import { useAccountEventListener } from 'hooks/useAccountEventListener'
@@ -9,16 +11,19 @@ import useSentryUser from 'hooks/useSentryUser'
 import useUserAgent from 'hooks/useUserAgent'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { useStore, persistor } from 'state/index'
 import { usePollBlockNumber } from 'state/block/hooks'
 import { NextPage } from 'next'
 import { useFetchProfile } from 'state/profile/hooks'
+import MainNavigation from 'components/main-navigation/main-navigation'
+import Footer from 'components/footer/footer'
 import { Blocklist, Updaters } from '..'
 import ErrorBoundary from '../components/ErrorBoundary'
-import Menu from '../components/Menu'
 import Providers from '../Providers'
+
+const inter = Inter({ subsets: ["latin"] });
 
 // This config is required for number formatting
 BigNumber.config({
@@ -51,6 +56,10 @@ function GlobalHooks() {
 function MyApp(props) {
   const { pageProps } = props
   const store = useStore(pageProps.initialReduxState)
+
+  useIsomorphicLayoutEffect(() => {
+    document.body.style.setProperty('font-family', inter.style.fontFamily);
+  }, []);
 
   return (
     <>
@@ -100,15 +109,11 @@ type AppPropsWithLayout = AppProps & {
 }
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  // Use the layout defined at the page level, if available
-  const Layout = Component.Layout || Fragment
-  const [onScreen, setOnScreen] = useState(false)
   return (
     <ErrorBoundary>
-      <Menu value={{ setOnScreen, onScreen }}/>
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+      <MainNavigation />
+      <Component {...pageProps} />
+      <Footer />
       <ToastListener />
     </ErrorBoundary>
   )
