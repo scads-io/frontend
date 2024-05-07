@@ -25,7 +25,6 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@binance/w3w-web3-connector": "^1.2.0",
     "@ethersproject/experimental": "^5.5.0",
     "@next/bundle-analyzer": "^12.0.7",
     "@reduxjs/toolkit": "^1.5.0",
@@ -41,9 +40,6 @@
     "@uniswap/token-lists": "^1.0.0-beta.19",
     "@uniswap/v2-core": "^1.0.0",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
-    "@web3-react/core": "^6.1.9",
-    "@web3-react/injected-connector": "^6.0.7",
-    "@web3-react/walletconnect-connector": "6.2.4",
     "ajv": "^6.12.3",
     "autoprefixer": "^10.4.19",
     "axios": "^1.6.7",

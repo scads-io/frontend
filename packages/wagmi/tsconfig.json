@@ -1,6 +1,7 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
+    "jsx": "react",
     "target": "ES2015"
   }
 }

@@ -20,6 +20,7 @@ export const useWeb3LibraryContext = () => {
   return useContext(Web3LibraryContext)
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 const Web3LibraryProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const { connector } = useAccount()
   const { chain } = useNetwork()
