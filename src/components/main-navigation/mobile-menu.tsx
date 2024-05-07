@@ -16,7 +16,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ close }) => {
   const { t, currentLanguage } = useTranslation()
 
   return (
-    <div className="space-y-8 pb-8 text-white md:hidden">
+    <div className="pb-8 space-y-8 text-white md:hidden">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ close }) => {
           <LanguageDropdown />
         </div>
         <div className={cn('flex flex-col gap-y-4')}>
-          <Link href="/use-cases" onClick={close} className="whitespace-nowrap">
+          <Link href="/use-cases" onClick={close} className="">
             {t('Use cases')}
           </Link>
           <Link href="/whitepaper" onClick={close}>

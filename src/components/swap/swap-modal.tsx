@@ -5,11 +5,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "components/ui/dialog";
-import ScadsForm from "./scads-form";
-import TwineForm from "./twine-form";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { Button } from "../ui/button";
+} from 'components/ui/dialog'
+import ScadsForm from './scads-form'
+import TwineForm from './twine-form'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
+import { Button } from '../ui/button'
 
 const SwapModal = ({ navigation }: { navigation?: boolean }) => {
   return (
@@ -20,27 +20,19 @@ const SwapModal = ({ navigation }: { navigation?: boolean }) => {
             Invest
           </span>
         ) : (
-          <Button className="px-10">Invest</Button>
+          <Button className="px-10">Start</Button>
         )}
       </DialogTrigger>
       <DialogContent className="max-w-[360px] rounded-3xl border-none bg-dark-blue md:max-w-lg">
         <DialogHeader className="space-y-2">
-          <DialogTitle className="text-2xl font-semibold text-white">
-            Swap
-          </DialogTitle>
+          <DialogTitle className="text-2xl font-semibold text-white">Swap</DialogTitle>
           <DialogDescription>
             <Tabs defaultValue="scads">
               <TabsList className="flex w-fit justify-start gap-x-2 rounded-3xl border border-white/10 bg-white/[.02]">
-                <TabsTrigger
-                  value="scads"
-                  className="rounded-3xl px-4 py-1 text-sm text-white"
-                >
+                <TabsTrigger value="scads" className="px-4 py-1 text-sm text-white rounded-3xl">
                   Scads
                 </TabsTrigger>
-                <TabsTrigger
-                  value="twine"
-                  className="rounded-3xl px-4 py-1 text-sm text-white"
-                >
+                <TabsTrigger value="twine" className="px-4 py-1 text-sm text-white rounded-3xl">
                   Twine
                 </TabsTrigger>
               </TabsList>
@@ -55,7 +47,7 @@ const SwapModal = ({ navigation }: { navigation?: boolean }) => {
         </DialogHeader>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
-export default SwapModal;
+export default SwapModal

@@ -11,18 +11,21 @@ const TextBlock = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="relative mt-32 flex flex-col items-center gap-y-4 px-4 text-white md:px-0">
+    <section className="relative flex flex-col items-center px-4 mt-32 text-white gap-y-4 md:px-0">
       <SectionHeader title="Introducing Scads" y={-50} />
-      <div className="max-w-[340px] text-[#B4BCD0] md:max-w-[720px] lg:max-w-[1024px]">
+      <div className="max-w-[340px] text-[#B4BCD0] md:max-w-[720px] lg:max-w-[1024px] text-center md:text-start">
         <p className="z-10">
+          <span className="inline-flex items-center text-white gap-x-1">
+            {t('The evolution of Decentralized Finance (DeFi) from a nascent niche market to a formidable player')}
+          </span>{' '}
           {t(
-            'The evolution of Decentralized Finance (DeFi) from a nascent niche market to a formidable player in the financial industry has been remarkable over the past few years. While it was valued at around $170 billion USD as of May 2024, the estimate can only continue thanks to the increasing adoption and interest from investors. Still, all this growth was not without issues as the followed major challenges:',
+            'in the financial industry has been remarkable over the past few years. While it was valued at around $170 billion USD as of May 2024, the estimate can only continue thanks to the increasing adoption and interest from investors. Still, all this growth was not without issues as the followed major challenges:',
           )}
         </p>
         <Separator className="my-12 bg-white/10" />
         <ul className="flex flex-col justify-between gap-y-8 md:flex-row">
           <li className="max-w-[480px]">
-            <span className="inline-flex items-center gap-x-1 text-white">
+            <span className="inline-flex items-center text-white gap-x-1">
               <AiOutlineProject />
               {t('Product integrity:')}
             </span>{' '}
@@ -31,7 +34,7 @@ const TextBlock = () => {
             )}
           </li>
           <li className="max-w-[480px]">
-            <span className="inline-flex items-center gap-x-1 text-white">
+            <span className="inline-flex items-center text-white gap-x-1">
               <MdOutlineSecurity />
               {t('Platform security:')}
             </span>{' '}
@@ -47,11 +50,11 @@ const TextBlock = () => {
           )}
         </p>
         <Separator className="my-12 bg-white/10" />
-        <div className="relative mt-6 size-fit w-full rounded-xl bg-gradient-to-b from-white/15 to-dark-blue px-4 py-8">
-          <ul className="flex w-full flex-col justify-between gap-y-6 md:flex-row">
+        <div className="relative w-full px-4 py-8 mt-6 size-fit rounded-xl bg-gradient-to-b from-white/15 to-dark-blue">
+          <ul className="flex flex-col justify-between w-full gap-y-6 md:flex-row">
             <div className="space-y-6">
               <li className="max-w-[480px]">
-                <span className="inline-flex items-center gap-x-1 text-white">
+                <span className="inline-flex items-center text-white gap-x-1">
                   <RxCross1 />
                   {t('Non-pegged:')}
                 </span>{' '}
@@ -60,7 +63,7 @@ const TextBlock = () => {
                 )}
               </li>
               <li className="max-w-[480px]">
-                <span className="inline-flex items-center gap-x-1 text-white">
+                <span className="inline-flex items-center text-white gap-x-1">
                   <MdAutorenew />
                   {t('Autonomous:')}
                 </span>{' '}
@@ -71,7 +74,7 @@ const TextBlock = () => {
             </div>
             <div className="space-y-[52px]">
               <li className="max-w-[480px]">
-                <span className="inline-flex items-center gap-x-1 text-white">
+                <span className="inline-flex items-center text-white gap-x-1">
                   <AiOutlineSafety />
                   {t('Risk-free:')}
                 </span>{' '}
@@ -80,7 +83,7 @@ const TextBlock = () => {
                 )}
               </li>
               <li className="max-w-[480px]">
-                <span className="inline-flex items-center gap-x-1 text-white">
+                <span className="inline-flex items-center text-white gap-x-1">
                   <GiStrongbox />
                   {t('Reliable:')}
                 </span>{' '}

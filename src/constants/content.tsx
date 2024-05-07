@@ -757,3 +757,21 @@ export const accordionItems = [
     value: 'item-7',
   },
 ]
+
+export const taxItems = [
+  {
+    name: 'Gas',
+    value: '0.05%',
+    info: 'Blockchain transaction fee, refers to the charge users must pay for executing transactions and smart contracts on a blockchain network.',
+  },
+  {
+    name: 'Slippage',
+    value: "(DEX's)",
+    info: 'Difference between the expected price of a trade and the actual price at which the trade is executed.',
+  },
+  {
+    name: 'Seignorage',
+    value: '3%',
+    info: null,
+  },
+]

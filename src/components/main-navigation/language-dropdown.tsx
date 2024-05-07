@@ -36,7 +36,7 @@ const LanguageDropdown = () => {
             <DropdownMenuItem
               key={lang.locale}
               onClick={() => setLanguage(lang)}
-              className="transition-colors hover:text-[#B4BCD0]"
+              className="transition-colors hover:bg-white/20"
             >
               {lang.language}
             </DropdownMenuItem>

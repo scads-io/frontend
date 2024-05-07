@@ -12,7 +12,8 @@
   "USDT balance": "Баланс USDT",
   "USDC balance": "Баланс USDC",
   "Total balance of funds in treasury.": "Общий баланс средств в КАЗНЕ (Treasury)",
-  "The evolution of Decentralized Finance (DeFi) from a nascent niche market to a formidable player in the financial industry has been remarkable over the past few years. While it was valued at around $170 billion USD as of May 2024, the estimate can only continue thanks to the increasing adoption and interest from investors. Still, all this growth was not without issues as the followed major challenges:": "Рост и развитие децентрализованных финансов (DeFi): то, что началось как новый нишевый рынок всего лишь несколько лет назад, значительно выросло и стало крупным игроком в сфере финансов. Общая капитализация рынка DeFi выросла с нескольких миллионов долларов до более чем $170 млрд по состоянию на 3 мая 2024 года, и эта оценка может только увеличиваться благодаря растущему интересу со стороны инвесторов. Тем не менее, этот рост не прошел без проблем:",
+  "The evolution of Decentralized Finance (DeFi) from a nascent niche market to a formidable player": "Рост и развитие децентрализованных финансов (DeFi):",
+  "in the financial industry has been remarkable over the past few years. While it was valued at around $170 billion USD as of May 2024, the estimate can only continue thanks to the increasing adoption and interest from investors. Still, all this growth was not without issues as the followed major challenges:": "то, что началось как новый нишевый рынок всего лишь несколько лет назад, значительно выросло и стало крупным игроком в сфере финансов. Общая капитализация рынка DeFi выросла с нескольких миллионов долларов до более чем $170 млрд по состоянию на 3 мая 2024 года, и эта оценка может только увеличиваться благодаря растущему интересу со стороны инвесторов. Тем не менее, этот рост не прошел без проблем:",
   "A notable aspect within the DeFi space involves certain projects operating unsustainably, offering returns without adequate security, or failing to fulfill their promised outcomes.": "множество проектов DeFi не выполнили свои обещания, предлагая доходы, которые принципиально невозможно было обеспечить.",
   "Product integrity:": "Проблема благонадежности: ",
   "Technical issues represented another challenge due to the significant number of breaches happening that at times turned into financial loses.": "децентрализованная природа и разнообразие инструментов затрудняют регулирование, а юрисдикционные вопросы добавляют сложности.",
@@ -141,7 +142,7 @@
   "Tokenomics": "Токеномика",
   "Addresses": "Адреса",
   "Languages": "Языки",
-  "Use cases": "Примеры использования",
+  "Use cases": "Сценарии",
   "Whitepaper": "Белая Бумага",
   "FAQ": "ЧЗВ",
   "Wallet": "Кошелёк",
@@ -226,5 +227,8 @@
   "Scads secured wallet.": "Безопасный кошелек Scads",
   "LENDING based on user’s own collateral in SCADS for. (Lending does not incur interest only transactions fees.)": "КРЕДИТОВАНИЕ на основе залога пользователя в SCADS. (При кредитовании не взимаются проценты, только комиссии за транзакции.)",
   "March 2025": "Март 2025",
-  "Payment system, users will be able to pay locally with scads pegged to value in local currency. (The pegging occurs only at the time of transaction.)": "Платежная система SCADS; пользователи смогут оплачивать покупки в местной валюте, связанной с курсом SCADS. (Связывание происходит только в момент транзакции.)"
+  "Payment system, users will be able to pay locally with scads pegged to value in local currency. (The pegging occurs only at the time of transaction.)": "Платежная система SCADS; пользователи смогут оплачивать покупки в местной валюте, связанной с курсом SCADS. (Связывание происходит только в момент транзакции.)",
+  "Blockchain transaction fee, refers to the charge users must pay for executing transactions and smart contracts on a blockchain network.": "Комиссия за транзакцию в сети блокчейн.",
+  "Difference between the expected price of a trade and the actual price at which the trade is executed.": "Разница между ожидаемой ценой сделки и фактической ценой исполнения сделки на рынке.",
+  "Freewill defines the chain, Proof of Hold drives the protocol, SCADS & TWINE pioneer the technology.": "Встречайте новый стейблкоин, который так независим, что даже отказался от традиционных валют в пользу своей автономии!"
 }
