@@ -1,24 +1,17 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 import { useCaratPrice } from 'hooks/useBUSDPrice'
 import { usePulseInfo } from 'hooks/usePulseInfo'
 import { useDashInfo } from 'hooks/useDashInfo'
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "components/ui/tooltip";
-import { statItems } from "constants/content";
-import { useTranslation } from "contexts/Localization";
-import { EN } from "config/localization/languages";
-import { cn } from "lib/utils";
-import { Info } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip'
+import { statItems } from 'constants/content'
+import { useTranslation } from 'contexts/Localization'
+import { EN } from 'config/localization/languages'
+import { cn } from 'lib/utils'
+import { Info } from 'lucide-react'
 
 const GeneralStats = () => {
-  const { t, currentLanguage } = useTranslation();
+  const { t, currentLanguage } = useTranslation()
   const { caratPrice } = useCaratPrice()
   const { scadsAmountOfPulse } = usePulseInfo()
   const { heldScadsAmount, totalCarat, rewardSpeed } = useDashInfo()
@@ -53,16 +46,11 @@ const GeneralStats = () => {
             key={item.id}
             className="flex min-w-full items-center justify-between gap-x-10 md:min-w-[200px] md:justify-normal md:gap-x-3 lg:min-w-0"
           >
-            <div
-              className={cn(
-                "rounded-full bg-white/10 p-3 lg:p-2 xl:p-3",
-                currentLanguage !== EN && "xl:p-2",
-              )}
-            >
+            <div className={cn('rounded-full bg-white/10 p-3 lg:p-2 xl:p-3', currentLanguage !== EN && 'xl:p-2')}>
               <div
                 className={cn(
-                  "relative flex items-center justify-center text-[#B4BCD0] [&>*]:size-7 md:[&>*]:size-5 xl:[&>*]:size-6",
-                  currentLanguage !== EN && "xl:size-5",
+                  'relative flex items-center justify-center text-[#B4BCD0] [&>*]:size-7 md:[&>*]:size-5 xl:[&>*]:size-6',
+                  currentLanguage !== EN && 'xl:size-5',
                 )}
               >
                 {item.icon}
@@ -81,13 +69,9 @@ const GeneralStats = () => {
                       </TooltipTrigger>
                       <TooltipContent className="border-none bg-white/10 text-white backdrop-blur-xl">
                         <p className="max-w-sm">
-                          {item.info}{" "}
-                          {item.id === "s1" && (
-                            <a
-                              href="/tokenomics/#minting-speed"
-                              aria-label="minting speed"
-                              className="underline"
-                            >
+                          {item.info}{' '}
+                          {item.id === 's1' && (
+                            <a href="/tokenomics/#minting-speed" aria-label="minting speed" className="underline">
                               predetermined criteria
                             </a>
                           )}
@@ -98,19 +82,20 @@ const GeneralStats = () => {
                 )}
               </div>
               <p className="text-white lg:text-sm xl:text-base">
-                {item.id === "s1" && rewardSpeed.toFixed(7)}
-                {item.id === "s2" && scadsAmountOfPulse.toFixed(2)}
-                {item.id === "s3" && `${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
-                {item.id === "s4" && totalCarat.toFixed(2)}
-                {item.id === "s5" && caratPrice.toFixed(2)}
-                {item.id === "s6" && heldScadsAmount.toFixed(2)}
+                {item.id === 's1' && rewardSpeed.toFixed(7)}
+                {item.id === 's2' && scadsAmountOfPulse.toFixed(2)}
+                {item.id === 's3' &&
+                  `${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}`}
+                {item.id === 's4' && totalCarat.toFixed(2)}
+                {item.id === 's5' && caratPrice.toFixed(2)}
+                {item.id === 's6' && heldScadsAmount.toFixed(2)}
               </p>
             </div>
           </div>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default GeneralStats;
+export default GeneralStats

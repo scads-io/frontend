@@ -1,13 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
-import FaqAccordion from "./_components/faq-accordion";
-import SearchBar from "./_components/search-bar";
-import { useState } from "react";
-import { IoEllipse } from "react-icons/io5";
+import { motion } from 'framer-motion'
+import FaqAccordion from './_components/faq-accordion'
+import SearchBar from './_components/search-bar'
+import { useState } from 'react'
+import { IoEllipse } from 'react-icons/io5'
 
 const FaqPage = () => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('')
 
   return (
     <>
@@ -47,7 +45,7 @@ const FaqPage = () => {
         size={340}
       />
     </>
-  );
-};
+  )
+}
 
-export default FaqPage;
+export default FaqPage

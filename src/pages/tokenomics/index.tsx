@@ -1,8 +1,8 @@
-import { tokenomicsContent } from "constants/content";
-import SideNavigation from "./_components/side-navigation";
-import TokenomicsContent from "./_components/tokenomics-content";
-import CustomHero from "components/ui/custom-hero";
-import { IoEllipse } from "react-icons/io5";
+import { tokenomicsContent } from 'constants/content'
+import SideNavigation from './_components/side-navigation'
+import TokenomicsContent from './_components/tokenomics-content'
+import CustomHero from 'components/ui/custom-hero'
+import { IoEllipse } from 'react-icons/io5'
 
 const TokenomicsPage = () => {
   return (
@@ -35,7 +35,7 @@ const TokenomicsPage = () => {
         size={340}
       />
     </>
-  );
-};
+  )
+}
 
-export default TokenomicsPage;
+export default TokenomicsPage

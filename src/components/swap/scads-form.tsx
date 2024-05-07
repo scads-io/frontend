@@ -1,28 +1,26 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import { useWalletModal } from "hooks/use-wallet-modal";
-import FormInputs from "./form-inputs";
-import Taxes from "./taxes";
-import WalletModal from "../WalletModal/wallet-modal";
-import { Button } from "../ui/button";
+import React, { useState, useEffect } from 'react'
+import { useWalletModal } from 'hooks/use-wallet-modal'
+import FormInputs from './form-inputs'
+import Taxes from './taxes'
+import WalletModal from '../WalletModal/wallet-modal'
+import { Button } from '../ui/button'
 
 const ScadsForm: React.FC<{ panel: string }> = ({ panel }) => {
-  const [firstToken, setFirstToken] = useState("USDT");
-  const [secondToken, setSecondToken] = useState("SCADS");
-  const [receivalAmount, setRecivalAmount] = useState(0);
-  const [inputValue, setInputValue] = useState(0);
-  const walletModal = useWalletModal();
+  const [firstToken, setFirstToken] = useState('USDT')
+  const [secondToken, setSecondToken] = useState('SCADS')
+  const [receivalAmount, setRecivalAmount] = useState(0)
+  const [inputValue, setInputValue] = useState(0)
+  const walletModal = useWalletModal()
 
   const handleSwap = () => {
-    const tempToken = firstToken;
-    setFirstToken(secondToken);
-    setSecondToken(tempToken);
-  };
+    const tempToken = firstToken
+    setFirstToken(secondToken)
+    setSecondToken(tempToken)
+  }
 
   useEffect(() => {
-    setRecivalAmount(inputValue * 0.97);
-  }, [inputValue]);
+    setRecivalAmount(inputValue * 0.97)
+  }, [inputValue])
 
   return (
     <form className="mt-2 flex flex-col gap-y-6">
@@ -56,7 +54,7 @@ const ScadsForm: React.FC<{ panel: string }> = ({ panel }) => {
         <WalletModal />
       )}
     </form>
-  );
-};
+  )
+}
 
-export default ScadsForm;
+export default ScadsForm

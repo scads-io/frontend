@@ -1,24 +1,17 @@
-"use client";
-
-import { tokenomicsLinks } from "constants/content";
-import { useTranslation } from "contexts/Localization";
-import Link from "next/link";
+import { tokenomicsLinks } from 'constants/content'
+import { useTranslation } from 'contexts/Localization'
+import Link from 'next/link'
 
 const SideNavigation = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <aside className="sticky left-0 top-32 hidden h-fit flex-col gap-y-6 rounded-xl border border-white/10 bg-white/10 px-6 py-8 lg:flex xl:top-24 xl:px-8 2xl:top-32">
-      <p className="whitespace-nowrap text-white xl:text-lg">
-        {t("Table of contents")}
-      </p>
+      <p className="whitespace-nowrap text-white xl:text-lg">{t('Table of contents')}</p>
       <ul className="space-y-2 text-[#B4BCD0] xl:space-y-4">
         {tokenomicsLinks.map((link) => (
           <li key={link.name}>
-            <Link
-              href={link.path}
-              className="group flex items-center gap-x-2 whitespace-nowrap text-sm xl:text-base"
-            >
+            <Link href={link.path} className="group flex items-center gap-x-2 whitespace-nowrap text-sm xl:text-base">
               {t(link.name)}
               <svg
                 className="hidden lg:block"
@@ -48,7 +41,7 @@ const SideNavigation = () => {
         ))}
       </ul>
     </aside>
-  );
-};
+  )
+}
 
-export default SideNavigation;
+export default SideNavigation

@@ -1,21 +1,19 @@
-"use client";
-
-import Link from "next/link";
-import AddressDropdown from "./address-dropdown";
-import WalletModal from "../WalletModal/wallet-modal";
-import Socials from "../socials";
-import { motion } from "framer-motion";
-import LanguageDropdown from "./language-dropdown";
-import { useTranslation } from "contexts/Localization";
-import { cn } from "lib/utils";
-import { RU } from "config/localization/languages";
+import Link from 'next/link'
+import AddressDropdown from './address-dropdown'
+import WalletModal from '../WalletModal/wallet-modal'
+import Socials from '../socials'
+import { motion } from 'framer-motion'
+import LanguageDropdown from './language-dropdown'
+import { useTranslation } from 'contexts/Localization'
+import { cn } from 'lib/utils'
+import { RU } from 'config/localization/languages'
 
 interface MobileMenuProps {
-  close: () => void;
+  close: () => void
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ close }) => {
-  const { t, currentLanguage } = useTranslation();
+  const { t, currentLanguage } = useTranslation()
 
   return (
     <div className="space-y-8 pb-8 text-white md:hidden">
@@ -23,27 +21,24 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ close }) => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4 }}
-        className={cn(
-          "mt-24 flex justify-center gap-x-8 text-xl font-medium",
-          currentLanguage === RU && "text-base",
-        )}
+        className={cn('mt-24 flex justify-center gap-x-8 text-xl font-medium', currentLanguage === RU && 'text-base')}
       >
         <div className="flex flex-col items-start gap-y-4">
           <Link href="/tokenomics" onClick={close}>
-            {t("Tokenomics")}
+            {t('Tokenomics')}
           </Link>
           <AddressDropdown />
           <LanguageDropdown />
         </div>
-        <div className={cn("flex flex-col gap-y-4")}>
+        <div className={cn('flex flex-col gap-y-4')}>
           <Link href="/use-cases" onClick={close} className="whitespace-nowrap">
-            {t("Use cases")}
+            {t('Use cases')}
           </Link>
           <Link href="/whitepaper" onClick={close}>
-            {t("Whitepaper")}
+            {t('Whitepaper')}
           </Link>
           <Link href="/faq" onClick={close}>
-            {t("FAQ")}
+            {t('FAQ')}
           </Link>
         </div>
       </motion.div>
@@ -63,7 +58,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ close }) => {
         <Socials navigation />
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default MobileMenu;
+export default MobileMenu

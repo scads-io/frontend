@@ -1,33 +1,26 @@
-"use client";
-
-import { useTranslation } from "contexts/Localization";
-import { cn } from "lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
+import { useTranslation } from 'contexts/Localization'
+import { cn } from 'lib/utils'
+import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export const HoverEffect = ({
   items,
   className,
 }: {
   items: {
-    title: string;
-    description: string;
-    path: string;
-  }[];
-  className?: string;
+    title: string
+    description: string
+    path: string
+  }[]
+  className?: string
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3",
-        className,
-      )}
-    >
+    <div className={cn('grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3', className)}>
       {items.map((item, idx) => (
         <Link
           key={item?.title}
@@ -68,20 +61,14 @@ export const HoverEffect = ({
         </Link>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export const Card = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
+export const Card = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
     <div
       className={cn(
-        "relative z-20 h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-transparent bg-gradient-to-b from-transparent to-white/5 p-4 backdrop-blur-xl",
+        'relative z-20 h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-transparent bg-gradient-to-b from-transparent to-white/5 p-4 backdrop-blur-xl',
         className,
       )}
     >
@@ -89,41 +76,19 @@ export const Card = ({
         <div className="p-4">{children}</div>
       </div>
     </div>
-  );
-};
-export const CardTitle = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
+  )
+}
+export const CardTitle = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
     <h3
-      className={cn(
-        "mt-4 rounded-3xl bg-white/[0.02] py-2 text-center font-bold tracking-wide text-white",
-        className,
-      )}
+      className={cn('mt-4 rounded-3xl bg-white/[0.02] py-2 text-center font-bold tracking-wide text-white', className)}
     >
       {children}
     </h3>
-  );
-};
-export const CardDescription = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
+  )
+}
+export const CardDescription = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
-    <p
-      className={cn(
-        "mt-4 text-center text-sm leading-relaxed tracking-wide text-[#B4BCD0]",
-        className,
-      )}
-    >
-      {children}
-    </p>
-  );
-};
+    <p className={cn('mt-4 text-center text-sm leading-relaxed tracking-wide text-[#B4BCD0]', className)}>{children}</p>
+  )
+}

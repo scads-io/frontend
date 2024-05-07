@@ -1,8 +1,6 @@
-"use client";
-
-import React from "react";
-import toast from "react-hot-toast";
-import { Copy, ExternalLink } from "lucide-react";
+import React from 'react'
+import toast from 'react-hot-toast'
+import { Copy, ExternalLink } from 'lucide-react'
 import { orderBy } from 'lodash'
 import { parseUnits } from 'ethers/lib/utils'
 import { useWeb3React } from '@scads-io/wagmi'
@@ -14,10 +12,10 @@ import { useTranslation } from 'contexts/Localization'
 import { getBscScanLink } from 'utils'
 import { getFullDisplayBalance, formatBigNumber } from 'utils/formatBalance'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'
-import TransactionRow from "components/Menu/UserMenu/TransactionRow";
+import TransactionRow from 'components/Menu/UserMenu/TransactionRow'
 import { Skeleton } from 'components/Skeleton'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { Button } from "../ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
+import { Button } from '../ui/button'
 
 export const LOW_BNB_BALANCE = parseUnits('2', 'gwei')
 
@@ -32,36 +30,33 @@ const WalletDetails: React.FC = ({ onDismiss }) => {
   const sortedTransactions = orderBy(Object.values(allTransactions).filter(isTransactionRecent), 'addedTime', 'desc')
 
   const onCopy = (address: string) => {
-    navigator.clipboard.writeText(address);
-    toast.success("Address copied to clipboard.");
-  };
+    navigator.clipboard.writeText(address)
+    toast.success('Address copied to clipboard.')
+  }
 
   const handleLogout = () => {
     onDismiss()
     logout()
   }
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <Tabs defaultValue="wallet">
       <TabsList className="grid w-full grid-cols-2 gap-x-2 bg-transparent">
-        <TabsTrigger
-          value="wallet"
-          className="rounded-3xl border border-white/10 bg-white/[.02] text-base text-white"
-        >
-          {t("Wallet")}
+        <TabsTrigger value="wallet" className="rounded-3xl border border-white/10 bg-white/[.02] text-base text-white">
+          {t('Wallet')}
         </TabsTrigger>
         <TabsTrigger
           value="transactions"
           className="rounded-3xl border border-white/10 bg-white/[.02] text-base text-white"
         >
-          {t("Transactions")}
+          {t('Transactions')}
         </TabsTrigger>
       </TabsList>
       <TabsContent value="wallet" className="mt-8 space-y-8 pb-4 text-white">
         <div className="space-y-4">
-          <p className="font-semibold">{t("Your address")}</p>
+          <p className="font-semibold">{t('Your address')}</p>
           <div className="flex items-center justify-between rounded-3xl bg-indigo-600/10 px-4">
             <span>{t(account)}</span>
             <Button
@@ -76,24 +71,24 @@ const WalletDetails: React.FC = ({ onDismiss }) => {
         </div>
         {hasLowBnbBalance && (
           <div className="flex flex-row justify-center items-center">
-              <WarningIcon marginRight='5px' />
-              <span>{t('BNB Balance Low')}</span>
+            <WarningIcon marginRight="5px" />
+            <span>{t('BNB Balance Low')}</span>
             <span>{t('You need BNB for transaction fees.')}</span>
-        </div>
-      )}
+          </div>
+        )}
         <div className="space-y-2 text-sm">
           <p className="flex justify-between">
-            <span>{t("BNB Balance")}</span>
+            <span>{t('BNB Balance')}</span>
             {fetchStatus !== FetchStatus.SUCCESS ? (
-              <Skeleton height='22px' width='60px' />
+              <Skeleton height="22px" width="60px" />
             ) : (
               <span>{formatBigNumber(balance, 6)}</span>
             )}
           </p>
           <p className="flex justify-between">
-            <span>{t("SCADS Balance")}</span>
+            <span>{t('SCADS Balance')}</span>
             {cakeFetchStatus !== FetchStatus.SUCCESS ? (
-              <Skeleton height='22px' width='60px' />
+              <Skeleton height="22px" width="60px" />
             ) : (
               <span>{getFullDisplayBalance(cakeBalance, 18, 3)}</span>
             )}
@@ -105,16 +100,16 @@ const WalletDetails: React.FC = ({ onDismiss }) => {
           rel="noreferrer"
           className="flex justify-end gap-x-2"
         >
-          {t("View on BscScan")} <ExternalLink />
+          {t('View on BscScan')} <ExternalLink />
         </a>
       </TabsContent>
       <TabsContent value="transactions" className="space-y-4 py-4 text-white">
-        <p className="font-semibold">{t("Recent transactions")}</p>
+        <p className="font-semibold">{t('Recent transactions')}</p>
         {sortedTransactions.length > 0 ? (
           sortedTransactions.map((txn) => <TransactionRow key={txn.hash} txn={txn} />)
         ) : (
           <div className="flex h-48 items-center justify-center">
-            <p>{t("No recent transactions...")}</p>
+            <p>{t('No recent transactions...')}</p>
           </div>
         )}
       </TabsContent>
@@ -124,11 +119,11 @@ const WalletDetails: React.FC = ({ onDismiss }) => {
           variant="ghost"
           className="w-full rounded-3xl bg-white/10 text-base text-white hover:bg-white/20 hover:text-white"
         >
-          {t("Disconnect wallet")}
+          {t('Disconnect wallet')}
         </Button>
       </div>
     </Tabs>
-  );
-};
+  )
+}
 
-export default WalletDetails;
+export default WalletDetails

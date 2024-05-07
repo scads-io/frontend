@@ -1,19 +1,17 @@
-"use client";
-
-import React from "react";
-import SwapModal from "components/swap/swap-modal";
-import { SparklesCore } from "components/ui/sparkles";
-import { useTranslation } from "contexts/Localization";
-import Image from "next/image";
+import React from 'react'
+import SwapModal from 'components/swap/swap-modal'
+import { SparklesCore } from 'components/ui/sparkles'
+import { useTranslation } from 'contexts/Localization'
+import Image from 'next/image'
 
 const Outro = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <section className="mt-32 flex flex-col items-center">
       <Image src="/images/logo.svg" alt="logo" width={80} height={80} />
       <h2 className="mx-auto mt-8 bg-gradient-to-br from-white to-neutral-500 bg-clip-text py-4 text-center text-4xl font-medium tracking-tight text-transparent lg:text-7xl">
-        {t("The change is here")}
+        {t('The change is here')}
       </h2>
       <div className="relative h-8 w-[280px] md:w-[40rem]">
         <div className="absolute inset-x-20 left-1/2 top-0 h-[2px] w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent blur-sm" />
@@ -34,7 +32,7 @@ const Outro = () => {
         <SwapModal />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Outro;
+export default Outro

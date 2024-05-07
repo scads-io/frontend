@@ -1,50 +1,42 @@
-"use client";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/tabs'
+import { tutorialMobile } from 'constants/content'
+import { useTranslation } from 'contexts/Localization'
+import { AnimatePresence, motion } from 'framer-motion'
+import Image from 'next/image'
+import { useState } from 'react'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs";
-import { tutorialMobile } from "constants/content";
-import { useTranslation } from "contexts/Localization";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import { useState } from "react";
-
-type TabValue = "metamask" | "trust" | "binance";
+type TabValue = 'metamask' | 'trust' | 'binance'
 
 type Step = {
-  label: string;
+  label: string
   list: {
-    li1: string | null;
-    li2: string | null;
-    li3: string | null;
-    li4: string | null;
-    li5: string | null;
-    li6: string | null;
-  };
-};
+    li1: string | null
+    li2: string | null
+    li3: string | null
+    li4: string | null
+    li5: string | null
+    li6: string | null
+  }
+}
 
 const tabsItems = [
-  { label: "Metamask", value: "metamask", imgPath: "/images/metamask.svg" },
+  { label: 'Metamask', value: 'metamask', imgPath: '/images/metamask.svg' },
   {
-    label: "Binance chain",
-    value: "binance",
-    imgPath: "/images/binance.svg",
+    label: 'Trust wallet',
+    value: 'trust',
+    imgPath: '/images/trust.svg',
   },
-  {
-    label: "Trust wallet",
-    value: "trust",
-    imgPath: "/images/trust.svg",
-  },
-];
+]
 
 const MobileInfo = () => {
-  const [currentTab, setCurrentTab] = useState<TabValue>("metamask");
+  const [currentTab, setCurrentTab] = useState<TabValue>('metamask')
 
-  const { t } = useTranslation();
+  console.log(currentTab)
+
+  const { t } = useTranslation()
 
   return (
-    <Tabs
-      defaultValue="metamask"
-      className="relative z-20 flex max-h-96 flex-col items-center md:items-start"
-    >
+    <Tabs defaultValue="metamask" className="relative z-20 flex flex-col items-center max-h-96 md:items-start">
       <TabsList>
         {tabsItems.map((tab) => (
           <TabsTrigger
@@ -58,7 +50,7 @@ const MobileInfo = () => {
               {currentTab === tab.value && (
                 <motion.div
                   initial={{ width: 0, opacity: 0 }}
-                  animate={{ width: "auto", opacity: 1 }}
+                  animate={{ width: 'auto', opacity: 1 }}
                   exit={{
                     width: 0,
                     opacity: 0,
@@ -75,7 +67,7 @@ const MobileInfo = () => {
       <AnimatePresence mode="wait">
         <TabsContent
           value={currentTab}
-          className="z-20 mt-4 space-y-12 overflow-y-auto overflow-x-hidden overscroll-y-none"
+          className="z-20 mt-4 space-y-12 overflow-x-hidden overflow-y-auto overscroll-y-none"
         >
           {tutorialMobile[currentTab].map((step: Step, index) => (
             <motion.div
@@ -87,13 +79,9 @@ const MobileInfo = () => {
               className="w-11/12"
             >
               <div className="space-y-2">
-                <p className="text-xl font-medium text-white">
-                  {t(step.label)}
-                </p>
+                <p className="text-xl font-medium text-white">{t(step.label)}</p>
                 <ol className="space-y-1 text-[#B4BCD0]">
-                  {Object.values(step.list).map(
-                    (value, i) => value && <li key={i}>{t(value)}</li>,
-                  )}
+                  {Object.values(step.list).map((value, i) => value && <li key={i}>{t(value)}</li>)}
                 </ol>
               </div>
             </motion.div>
@@ -101,7 +89,7 @@ const MobileInfo = () => {
         </TabsContent>
       </AnimatePresence>
     </Tabs>
-  );
-};
+  )
+}
 
-export default MobileInfo;
+export default MobileInfo
