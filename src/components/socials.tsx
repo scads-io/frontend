@@ -1,3 +1,4 @@
+import React from "react";
 import { FaMediumM } from "react-icons/fa";
 import { FaXTwitter, FaTelegram, FaGithub, FaDiscord } from "react-icons/fa6";
 

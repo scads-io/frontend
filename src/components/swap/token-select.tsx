@@ -62,10 +62,10 @@ const TokenSelect: React.FC<TokenSelectProps> = ({
 
   const tokenIconClassNames =
     (selectedCurrency?.symbol === "USDT" && "w-5 h-5") ||
+    (selectedCurrency?.symbol === "USDC" && "w-5 h-5") ||
     (selectedCurrency?.symbol === "BNB" && "h-5 w-5") ||
     (selectedCurrency?.symbol === "Scads" && "h-5 w-3") ||
     (selectedCurrency?.symbol === "TWINE" && "h-5 w-3");
-
 
   return (
     <DropdownMenu>

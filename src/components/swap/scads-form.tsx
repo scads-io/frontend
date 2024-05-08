@@ -159,7 +159,7 @@ const ScadsForm: React.FC = () => {
     [onCurrencySelection],
   )
 
-  const amountToDisplay = formattedAmounts[Field.INPUT] || '0.0'
+  const amountToDisplay = parseFloat(formattedAmounts[Field.INPUT]) * 0.7 || '0.0'
 
   return (
     <form
@@ -217,59 +217,61 @@ const ScadsForm: React.FC = () => {
         </p>
       </div>
       <Taxes />
-      <div className='justify-center'
-        >
+      
           {!account ? (
             <WalletModal />
           ) : showApproveFlow ? (
-            <RowBetween>
-              <UiKitButton
-                variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
-                onClick={approveCallback}
-                disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
-                width="48%"
-              >
-                {approval === ApprovalState.PENDING ? (
-                  <AutoRow gap="6px" justify="center">
-                    {t('Enabling')} <CircleLoader stroke="white" />
-                  </AutoRow>
-                ) : approvalSubmitted && approval === ApprovalState.APPROVED ? (
-                  t('Enabled')
-                ) : (
-                  t('Enable %asset%', { asset: currencies[Field.INPUT]?.symbol ?? '' })
-                )}
-              </UiKitButton>
+            <div className='justify-center'>
+              <RowBetween>
+                <UiKitButton
+                  variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
+                  onClick={approveCallback}
+                  disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
+                  width="48%"
+                >
+                  {approval === ApprovalState.PENDING ? (
+                    <AutoRow gap="6px" justify="center">
+                      {t('Enabling')} <CircleLoader stroke="white" />
+                    </AutoRow>
+                  ) : approvalSubmitted && approval === ApprovalState.APPROVED ? (
+                    t('Enabled')
+                  ) : (
+                    t('Enable %asset%', { asset: currencies[Field.INPUT]?.symbol ?? '' })
+                  )}
+                </UiKitButton>
+                <UiKitButton
+                  variant="primary"
+                  onClick={() => {
+                    handleSwap()
+                  }}
+                  width="48%"
+                  id="swap-button"
+                  disabled={!isValid || approval !== ApprovalState.APPROVED}
+                >
+                  {t('Buy')}
+                </UiKitButton>
+              </RowBetween>
+            </div>
+          ) : (
+            <div className='justify-center'>
               <UiKitButton
                 variant="primary"
                 onClick={() => {
                   handleSwap()
                 }}
-                width="48%"
                 id="swap-button"
-                disabled={!isValid || approval !== ApprovalState.APPROVED}
+                width="100%"
+                disabled={!isValid}
               >
                 {t('Buy')}
               </UiKitButton>
-            </RowBetween>
-          ) : (
-            <UiKitButton
-              variant="primary"
-              onClick={() => {
-                handleSwap()
-              }}
-              id="swap-button"
-              width="100%"
-              disabled={!isValid}
-            >
-              {t('Buy')}
-            </UiKitButton>
+            </div>
           )}
           {showApproveFlow && (
             <div className="flex flex-col justify-start">
               <ProgressSteps steps={[approval === ApprovalState.APPROVED]} />
             </div>
           )}
-        </div>
     </form>
   )
 }
