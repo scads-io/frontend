@@ -1,3 +1,4 @@
+import { ChainId } from '@scads/sdk'
 import { useWeb3React } from '@scads-io/wagmi'
 import { useProvider } from 'wagmi'
 
@@ -7,7 +8,7 @@ import { useProvider } from 'wagmi'
  */
 const useActiveWeb3React = () => {
   const web3React = useWeb3React()
-  const chainId = 56
+  const chainId = ChainId.MAINNET
   const provider = useProvider({ chainId })
 
   return {
