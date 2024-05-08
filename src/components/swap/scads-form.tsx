@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import toast from 'react-hot-toast'
 import { AiOutlineSwap } from 'react-icons/ai'
 import { Token, Trade } from '@scads/sdk'
 import { utils, BigNumber } from 'ethers'
 import { cn } from 'lib/utils'
 import { useTranslation } from 'contexts/Localization'
 import tokens from 'config/constants/tokens'
-import useToast from 'hooks/useToast'
 import { AutoRow, RowBetween } from 'components/Layout/Row'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
@@ -23,7 +23,6 @@ import { Button } from 'components/ui/button'
 
 const ScadsForm: React.FC = () => {
   const { t } = useTranslation()
-  const { toastError } = useToast()
   const allowCaratSell = useCaratSellPermission()
 
   const { account } = useActiveWeb3React()
@@ -114,7 +113,7 @@ const ScadsForm: React.FC = () => {
       }
     } else if (StableCoins.includes(InputCoin.address) && OutputCoin.address === tokens.cake.address) {
       if (allowCaratSell[0].gte(BigNumber.from(utils.parseEther('5500000')))) {
-        toastError(t('Error'), t('TWINE amount more than 5.5M in market'))
+        toast.error('TWINE amount more than 5.5M in market')
       } else {
         try {
           await scadsMint(formattedAmounts[Field.INPUT], InputCoin.address)
@@ -123,7 +122,7 @@ const ScadsForm: React.FC = () => {
         }
       }
     } else {
-      toastError(t('Error'), t('Only SCADS or Stable Coins can be purchased!'))
+      toast.error('Only SCADS or Stable Coins can be purchased!')
     }
   }
 

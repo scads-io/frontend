@@ -1,8 +1,8 @@
 import { useEffect, useReducer, useRef } from 'react'
 import { noop } from 'lodash'
 import { useWeb3React } from '@scads-io/wagmi'
+import toast from 'react-hot-toast'
 import { ethers } from 'ethers'
-import useToast from 'hooks/useToast'
 import { useTranslation } from 'contexts/Localization'
 import { logError } from 'utils/sentry'
 
@@ -93,7 +93,6 @@ const useApproveConfirmTransaction = ({
   const { account } = useWeb3React()
   const [state, dispatch] = useReducer(reducer, initialState)
   const handlePreApprove = useRef(onRequiresApproval)
-  const { toastError } = useToast()
 
   // Check if approval is necessary, re-check if account changes
   useEffect(() => {
@@ -125,7 +124,7 @@ const useApproveConfirmTransaction = ({
       } catch (error) {
         dispatch({ type: 'approve_error' })
         logError(error)
-        toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
+        toast.error(t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       }
     },
     handleConfirm: async (params = {}) => {
@@ -140,7 +139,7 @@ const useApproveConfirmTransaction = ({
       } catch (error) {
         dispatch({ type: 'confirm_error' })
         logError(error)
-        toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
+        toast.error(t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       }
     },
   }

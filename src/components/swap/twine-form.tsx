@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { JSBI, TokenAmount } from '@scads/sdk'
+import toast from 'react-hot-toast'
 import { utils } from 'ethers'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useCaratMint from 'hooks/useCaratMint'
-import useToast from 'hooks/useToast'
 import tokens from 'config/constants/tokens'
 import { cn } from 'lib/utils'
 import { Separator } from 'components/ui/separator'
@@ -28,7 +28,6 @@ import Input from './input'
 const TwineForm: React.FC = () => {
   const { t } = useTranslation()
   const { account } = useActiveWeb3React()
-  const { toastError } = useToast()
 
   const [amountInput, setAmountInput] = useState<string>()
   // scads amount
@@ -69,7 +68,7 @@ const TwineForm: React.FC = () => {
    if (amountInput !== '0.0' && amountInput !== undefined) {
       const res = utils.parseEther(amountInput)
       await caratRedeem(res.toString()).catch((error) => { 
-        toastError('Transaction rejected')
+        toast.error('Transaction rejected')
       });
     }
   }
@@ -97,7 +96,7 @@ const TwineForm: React.FC = () => {
   const { caratClaim, addCompoundAddress, removeCompoundAddress } = useCaratMint()
   const handleClaim = async () => {
     await caratClaim().catch((error) => { 
-      toastError('Transaction rejected')
+      toast.error('Transaction rejected')
   });
   }
 
