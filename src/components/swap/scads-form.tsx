@@ -159,7 +159,7 @@ const ScadsForm: React.FC = () => {
 
   return (
     <form
-      className="flex flex-col mt-2 gap-y-6"
+      className="flex flex-col mt-2 gap-y-6 focus:border-none active:border-none focus:outline-none active:outline-none focus-visble:ring-0 focus-visible:outline-none focus-visible:border-none"
       onSubmit={(e) => {
         e.preventDefault()
       }}
