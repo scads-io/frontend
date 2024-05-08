@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { AiOutlineSwap } from "react-icons/ai";
+import { AiOutlineSwap } from 'react-icons/ai'
 import { Button as UiKitButton } from '@scads-io/uikit'
 import { Token, Trade } from '@scads/sdk'
 import { utils, BigNumber } from 'ethers'
@@ -13,18 +13,14 @@ import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
 import useWrapCallback, { WrapType } from 'hooks/useWrapCallback'
 import useScadsMint from 'hooks/useScadsMint'
 import { Field } from 'state/swap/actions'
-import {
-  useDerivedSwapInfo,
-  useSwapActionHandlers,
-  useSwapState,
-  useCaratSellPermission,
-} from 'state/swap/hooks'
+import { useDerivedSwapInfo, useSwapActionHandlers, useSwapState, useCaratSellPermission } from 'state/swap/hooks'
 import CircleLoader from 'components/Loader/CircleLoader'
 import ProgressSteps from './ProgressStep'
 import Taxes from './taxes'
 import WalletModal from '../WalletModal/wallet-modal'
 import Input from './input'
-import { Separator } from "../ui/separator";
+import { Separator } from '../ui/separator'
+import { Button } from 'components/ui/button'
 
 const ScadsForm: React.FC = () => {
   const { t } = useTranslation()
@@ -133,10 +129,10 @@ const ScadsForm: React.FC = () => {
   }
 
   const showApproveFlow =
-  !swapInputError &&
-  (approval === ApprovalState.NOT_APPROVED ||
-    approval === ApprovalState.PENDING ||
-    (approvalSubmitted && approval === ApprovalState.APPROVED))
+    !swapInputError &&
+    (approval === ApprovalState.NOT_APPROVED ||
+      approval === ApprovalState.PENDING ||
+      (approvalSubmitted && approval === ApprovalState.APPROVED))
 
   useEffect(() => {
     onCurrencySelection(Field.INPUT, tokens.usdt)
@@ -163,115 +159,110 @@ const ScadsForm: React.FC = () => {
 
   return (
     <form
-      className="mt-2 flex flex-col gap-y-6"
+      className="flex flex-col mt-2 gap-y-6"
       onSubmit={(e) => {
-        e.preventDefault();
+        e.preventDefault()
       }}
     >
-       <div className="relative flex h-full justify-between rounded-3xl border border-black border-white/10 bg-transparent px-4 lg:w-[460px]">
-      <Input
-        className={cn(
-          "items-start pb-1 pt-4 text-white placeholder:text-white",
-        )}
-        balanceClassName={cn("justify-start text-white")}
-        tokenClassName="text-white"
-        value={formattedAmounts[Field.INPUT]}
-        currency={currencies[Field.INPUT]}
-        onUserInput={handleTypeInput}
-        onCurrencySelect={handleInputSelect}
-        otherCurrency={currencies[Field.OUTPUT]}
-        disableCurrencySelect={false}
-      />
-      <Separator
-        orientation="vertical"
-        className="absolute left-1/2 -translate-x-1/2 bg-white/10"
-      />
-      <button
-        type="button"
-        aria-label="swap"
-        className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[#0c0e22] p-1 text-white transition hover:text-indigo-600"
-        onClick={() => {
-          setApprovalSubmitted(false)
-          onSwitchTokens()
-        }}
-      >
-        <AiOutlineSwap size={24} />
-      </button>
-      <Input
-        className="items-end pb-1 pt-4 text-end text-white placeholder:text-white"
-        balanceClassName="justify-end text-white"
-        tokenClassName="text-white"
-        value={formattedAmounts[Field.INPUT]}
-        onUserInput={handleTypeOutput}
-        currency={currencies[Field.OUTPUT]}
-        onCurrencySelect={handleOutputSelect}
-        otherCurrency={currencies[Field.INPUT]}
-        disableCurrencySelect={false}
-      />
-    </div>
-      <div className="flex w-full justify-between text-sm text-white">
+      <div className="relative flex h-full justify-between rounded-3xl border border-black border-white/10 bg-transparent px-4 lg:w-[460px]">
+        <Input
+          className={cn('items-start pb-1 pt-4 text-white placeholder:text-white')}
+          balanceClassName={cn('justify-start text-white')}
+          tokenClassName="text-white"
+          value={formattedAmounts[Field.INPUT]}
+          currency={currencies[Field.INPUT]}
+          onUserInput={handleTypeInput}
+          onCurrencySelect={handleInputSelect}
+          otherCurrency={currencies[Field.OUTPUT]}
+          disableCurrencySelect={false}
+        />
+        <Separator orientation="vertical" className="absolute -translate-x-1/2 left-1/2 bg-white/10" />
+        <button
+          type="button"
+          aria-label="swap"
+          className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[#0c0e22] p-1 text-white transition hover:text-indigo-600"
+          onClick={() => {
+            setApprovalSubmitted(false)
+            onSwitchTokens()
+          }}
+        >
+          <AiOutlineSwap size={24} />
+        </button>
+        <Input
+          className="items-end pt-4 pb-1 text-white text-end placeholder:text-white"
+          balanceClassName="justify-end text-white"
+          tokenClassName="text-white"
+          value={formattedAmounts[Field.INPUT]}
+          onUserInput={handleTypeOutput}
+          currency={currencies[Field.OUTPUT]}
+          onCurrencySelect={handleOutputSelect}
+          otherCurrency={currencies[Field.INPUT]}
+          disableCurrencySelect={false}
+        />
+      </div>
+      <div className="flex justify-between w-full text-sm text-white">
         <p className="text-[#B4BCD0]">1 SCADS = 1 USDT</p>
         <p>
           <span className="pr-1 text-[#B4BCD0]">You receive:</span>
-          {amountToDisplay} {" "} {currencies[Field.OUTPUT]?.symbol}
+          {amountToDisplay} {currencies[Field.OUTPUT]?.symbol}
         </p>
       </div>
       <Taxes />
-      
-          {!account ? (
-            <WalletModal />
-          ) : showApproveFlow ? (
-            <div className='justify-center'>
-              <RowBetween>
-                <UiKitButton
-                  variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
-                  onClick={approveCallback}
-                  disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
-                  width="48%"
-                >
-                  {approval === ApprovalState.PENDING ? (
-                    <AutoRow gap="6px" justify="center">
-                      {t('Enabling')} <CircleLoader stroke="white" />
-                    </AutoRow>
-                  ) : approvalSubmitted && approval === ApprovalState.APPROVED ? (
-                    t('Enabled')
-                  ) : (
-                    t('Enable %asset%', { asset: currencies[Field.INPUT]?.symbol ?? '' })
-                  )}
-                </UiKitButton>
-                <UiKitButton
-                  variant="primary"
-                  onClick={() => {
-                    handleSwap()
-                  }}
-                  width="48%"
-                  id="swap-button"
-                  disabled={!isValid || approval !== ApprovalState.APPROVED}
-                >
-                  {t('Buy')}
-                </UiKitButton>
-              </RowBetween>
-            </div>
-          ) : (
-            <div className='justify-center'>
-              <UiKitButton
-                variant="primary"
-                onClick={() => {
-                  handleSwap()
-                }}
-                id="swap-button"
-                width="100%"
-                disabled={!isValid}
-              >
-                {t('Buy')}
-              </UiKitButton>
-            </div>
-          )}
-          {showApproveFlow && (
-            <div className="flex flex-col justify-start">
-              <ProgressSteps steps={[approval === ApprovalState.APPROVED]} />
-            </div>
-          )}
+
+      {!account ? (
+        <WalletModal />
+      ) : showApproveFlow ? (
+        <div className="justify-center">
+          <RowBetween>
+            <UiKitButton
+              variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
+              onClick={approveCallback}
+              disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
+              width="48%"
+            >
+              {approval === ApprovalState.PENDING ? (
+                <AutoRow gap="6px" justify="center">
+                  {t('Enabling')} <CircleLoader stroke="white" />
+                </AutoRow>
+              ) : approvalSubmitted && approval === ApprovalState.APPROVED ? (
+                t('Enabled')
+              ) : (
+                t('Enable %asset%', { asset: currencies[Field.INPUT]?.symbol ?? '' })
+              )}
+            </UiKitButton>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                handleSwap()
+              }}
+              id="swap-button"
+              disabled={!isValid || approval !== ApprovalState.APPROVED}
+              className="rounded-3xl bg-white/20 text-base text-white hover:bg-white/40 hover:text-white w-[48%]"
+            >
+              {t('Buy')}
+            </Button>
+          </RowBetween>
+        </div>
+      ) : (
+        <div className="justify-center">
+          <Button
+            variant="ghost"
+            onClick={() => {
+              handleSwap()
+            }}
+            id="swap-button"
+            disabled={!isValid}
+            className="w-full text-base text-white rounded-3xl bg-white/20 hover:bg-white/40 hover:text-white"
+          >
+            {t('Swap')}
+          </Button>
+        </div>
+      )}
+      {showApproveFlow && (
+        <div className="flex flex-col justify-start">
+          <ProgressSteps steps={[approval === ApprovalState.APPROVED]} />
+        </div>
+      )}
     </form>
   )
 }
