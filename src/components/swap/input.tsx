@@ -59,19 +59,12 @@ const Input: React.FC<InputProps> = ({
             </div>
           </div>
         )}
-<<<<<<< HEAD
-        <div className={cn('flex gap-x-1 text-sm', balanceClassName)}>
-          <p className="opacity-70">Balance:</p>
-          <span>{balance ?? t('Loading')}</span>
-        </div>
-=======
         {account && (
-          <div className={cn("flex gap-x-1 text-sm", balanceClassName)}>
+          <div className={cn('flex gap-x-1 text-sm', balanceClassName)}>
             <p className="opacity-70">Balance:</p>
             <span>{balance ?? t('Loading')}</span>
           </div>
         )}
->>>>>>> 250da6ee2a07c56451807235951218d73a937aee
       </div>
       <NumericalInput
         type="number"
