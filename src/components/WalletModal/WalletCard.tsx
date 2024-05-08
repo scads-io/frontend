@@ -39,7 +39,6 @@ const WalletCard: React.FC<Props> = ({ walletConfig, login, onDismiss }) => {
          >
         <Icon
           width="48px"
-          heigh="48px"
           className="transition-transform group-hover:-translate-y-1 group-hover:scale-105"
         />
         <span className="text-white transition-opacity group-hover:opacity-70">

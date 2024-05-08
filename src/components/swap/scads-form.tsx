@@ -8,7 +8,6 @@ import { useTranslation } from 'contexts/Localization'
 import tokens from 'config/constants/tokens'
 import useToast from 'hooks/useToast'
 import { AutoRow, RowBetween } from 'components/Layout/Row'
-import ProgressSteps from 'views/ScadsMint/components/ProgressSteps'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
 import useWrapCallback, { WrapType } from 'hooks/useWrapCallback'
@@ -21,9 +20,9 @@ import {
   useCaratSellPermission,
 } from 'state/swap/hooks'
 import CircleLoader from 'components/Loader/CircleLoader'
+import ProgressSteps from './ProgressStep'
 import Taxes from './taxes'
 import WalletModal from '../WalletModal/wallet-modal'
-import { Button } from '../ui/button'
 import Input from './input'
 import { Separator } from "../ui/separator";
 

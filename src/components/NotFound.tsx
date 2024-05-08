@@ -1,6 +1,5 @@
 import React from 'react'
 import { NextLinkFromReactRouter } from 'components/NextLink'
-
 import { useTranslation } from 'contexts/Localization'
 import { PageMeta } from 'components/Layout/PageMeta'
 
