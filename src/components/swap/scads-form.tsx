@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { AiOutlineSwap } from 'react-icons/ai'
-import { Button as UiKitButton } from '@scads-io/uikit'
 import { Token, Trade } from '@scads/sdk'
 import { utils, BigNumber } from 'ethers'
 import { cn } from 'lib/utils'
@@ -214,11 +213,11 @@ const ScadsForm: React.FC = () => {
       ) : showApproveFlow ? (
         <div className="justify-center">
           <RowBetween>
-            <UiKitButton
-              variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
+            <Button
+              variant="ghost"
               onClick={approveCallback}
               disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
-              width="48%"
+              className="rounded-3xl bg-white/20 text-base text-white hover:bg-white/40 hover:text-white w-[48%]"
             >
               {approval === ApprovalState.PENDING ? (
                 <AutoRow gap="6px" justify="center">
@@ -229,7 +228,7 @@ const ScadsForm: React.FC = () => {
               ) : (
                 t('Enable %asset%', { asset: currencies[Field.INPUT]?.symbol ?? '' })
               )}
-            </UiKitButton>
+            </Button>
             <Button
               variant="ghost"
               onClick={() => {

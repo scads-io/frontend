@@ -65,10 +65,12 @@ const Input: React.FC<InputProps> = ({
             </div>
           </div>
         )}
-        <div className={cn("flex gap-x-1 text-sm", balanceClassName)}>
-          <p className="opacity-70">Balance:</p>
-          <span>{balance ?? t('Loading')}</span>
-        </div>
+        {account && (
+          <div className={cn("flex gap-x-1 text-sm", balanceClassName)}>
+            <p className="opacity-70">Balance:</p>
+            <span>{balance ?? t('Loading')}</span>
+          </div>
+        )}
       </div>
       <NumericalInput
         type="number"
@@ -78,7 +80,7 @@ const Input: React.FC<InputProps> = ({
         )}
         placeholder="0.0"
         value={value}
-        onUserInput={(val) => {
+        onUserInput={(val: any) => {
           onUserInput(val)
         }}
       />

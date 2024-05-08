@@ -5,8 +5,8 @@ import Image from 'next/image'
 import { cn } from 'lib/utils'
 import useDebounce from 'hooks/useDebounce'
 import { useAllTokens } from 'hooks/Tokens'
-import { filterTokens, useSortedTokensByQuery } from 'components/SearchModal/filtering'
-import useTokenComparator from 'components/SearchModal/sorting'
+import { filterTokens, useSortedTokensByQuery } from 'components/swap/filtering'
+import useTokenComparator from 'components/swap/sorting'
 import {
   DropdownMenu,
   DropdownMenuContent,
