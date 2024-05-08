@@ -16,7 +16,10 @@ const ThemeProviderWrapper = (props) => {
   return <ThemeProvider theme={isDark ? dark : light} {...props} />
 }
 
-const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
+const Providers: React.FC<React.PropsWithChildren<{ store: Store; children: React.ReactNode }>> = ({ 
+  children,
+  store
+}) => {
   return (
     <WagmiProvider client={client}>
       <Provider store={store}>

@@ -24,7 +24,6 @@ const Roadmap = () => {
                 date={item.date}
                 l1={item.l1}
                 l2={item.l2}
-                l3={item.l3}
               />
             ))}
           </ul>
