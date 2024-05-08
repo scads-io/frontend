@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { JSBI, TokenAmount } from '@scads/sdk'
-import { AiOutlineSwap } from "react-icons/ai";
 import { utils } from 'ethers'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import { useTranslation } from 'contexts/Localization'
@@ -11,7 +10,6 @@ import tokens from 'config/constants/tokens'
 import { cn } from 'lib/utils'
 import { Separator } from 'components/ui/separator'
 import { useCurrencyBalance } from 'state/wallet/hooks'
-import { Field } from 'state/swap/actions'
 import {
   useLatestBoughtData,
   useUserMintedCaratAmount,
@@ -138,6 +136,7 @@ const TwineForm: React.FC = () => {
         balanceClassName={cn("justify-start text-white")}
         tokenClassName="text-white"
         value={amountInput === '0.0' ? utils.formatEther(redeemCaratAmount?.toExact()) : amountInput}
+        onCurrencySelect={() => console.error('input currency select')}
         currency={tokens.carat}
         onUserInput={handleAmountInput}
         otherCurrency={tokens.cake}
@@ -153,6 +152,7 @@ const TwineForm: React.FC = () => {
         tokenClassName="text-white"
         value={amountOutput === '0.0' ? utils.formatEther(redeemScadsAmount?.toExact()) : amountOutput}
         onUserInput={handleAmountOutput}
+        onCurrencySelect={() => console.error('input currency select')}
         currency={tokens.cake}
         otherCurrency={tokens.carat}
         disableCurrencySelect

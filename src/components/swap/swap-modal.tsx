@@ -38,10 +38,10 @@ const SwapModal = ({ navigation }: { navigation?: boolean }) => {
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="scads">
-                <ScadsForm panel="scads" />
+                <ScadsForm />
               </TabsContent>
               <TabsContent value="twine">
-                <TwineForm panel="twine" />
+                <TwineForm />
               </TabsContent>
             </Tabs>
           </DialogDescription>
