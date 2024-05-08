@@ -1,6 +1,6 @@
-import Treasury from "./treasury";
-import GeneralStats from "./general-stats";
-import { Separator } from "components/ui/separator";
+import Treasury from './treasury'
+import GeneralStats from './general-stats'
+import { Separator } from 'components/ui/separator'
 
 const Stats = () => {
   return (
@@ -10,7 +10,7 @@ const Stats = () => {
       <Treasury />
       <div className="absolute h-[600px] w-full bg-indigo-600/80 blur-[300px] md:left-1/2 md:top-1/3 md:h-1/3 md:w-full md:-translate-x-1/2" />
     </div>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

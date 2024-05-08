@@ -38,7 +38,7 @@ const MainNavigation = () => {
 
   const navClasses = clsx(
     'fixed top-0 z-50 flex w-screen items-center justify-between transition-all text-white',
-    scrolled ? 'bg-white/[.02] backdrop-blur-lg' : 'bg-transparent',
+    scrolled ? 'bg-[#030014]/[.08] backdrop-blur-lg' : 'bg-transparent',
   )
 
   return (
