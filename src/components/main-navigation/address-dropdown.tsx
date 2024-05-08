@@ -28,7 +28,7 @@ const AddressDropdown = () => {
               <NotebookTabs className="transition-all focus:outline-none focus:ring-0 md:size-6 lg:hover:scale-110" />
             </TooltipTrigger>
             <TooltipContent className="text-sm text-white border-none bg-white/10 backdrop-blur-xl">
-              <p>Token addresses</p>
+              <p>{t('Token addresses')}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -41,13 +41,13 @@ const AddressDropdown = () => {
               key={item.address}
               className="flex flex-col items-start w-full text-sm md:flex-row md:items-center"
             >
-              <p className="text-white md:w-[12%]">{item.address}</p>
-              <div className="flex items-center rounded-3xl bg-indigo-600/10 px-4 py-2 md:w-[88%] md:justify-between">
-                <p className="text-xs text-[#B4BCD0] md:min-w-[332px]">{item.value}</p>
+              <p className="text-white w-[12%]">{item.address}</p>
+              <div className="flex items-center rounded-3xl bg-indigo-600/10 px-4 py-2 w-[340px] md:w-[88%] justify-between">
+                <p className="text-xs text-[#B4BCD0] md:min-w-[332px] truncate">{item.value}</p>
                 <button
                   type="button"
                   onClick={() => onCopy(item.value)}
-                  className="hidden text-white transition hover:opacity-70 md:block"
+                  className="text-white transition hover:opacity-70"
                 >
                   <Copy className="size-4" />
                 </button>

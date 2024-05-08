@@ -7,6 +7,7 @@ import { RU } from 'config/localization/languages'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog'
 import WalletDetails from './wallet-details'
 import WalletList from './wallet-list'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip'
 
 const WalletModal: React.FC<{ navigation?: boolean }> = ({ navigation }) => {
   const { account } = useWeb3React()
@@ -17,12 +18,21 @@ const WalletModal: React.FC<{ navigation?: boolean }> = ({ navigation }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger
-        className={cn(navigation && 'mx-auto max-w-40', currentLanguage === RU && navigation && 'max-w-44')}
+        className={cn('w-full', navigation && 'mx-auto max-w-40', currentLanguage === RU && navigation && 'max-w-44')}
       >
         {account ? (
           <>
-            <Wallet className="hidden size-7 transition-transform hover:scale-110 md:block md:size-5 lg:size-6" />
-            <span className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-white/20 px-4 py-2 text-xl text-white transition-colors duration-300 hover:bg-white/40 md:hidden">
+            <TooltipProvider delayDuration={0}>
+              <Tooltip>
+                <TooltipTrigger className="hidden transition-transform size-7 hover:scale-110 md:block md:size-5 lg:size-6">
+                  <Wallet />
+                </TooltipTrigger>
+                <TooltipContent className="text-white border-none bg-white/10">
+                  <p>{t('Wallet')}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <span className="inline-flex items-center justify-center px-4 py-2 text-xl text-white transition-colors duration-300 whitespace-nowrap rounded-xl bg-white/20 hover:bg-white/40 md:hidden">
               {t('Wallet')}
             </span>
           </>

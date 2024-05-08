@@ -47,7 +47,7 @@ const WalletDetails: React.FC<Props> = ({ onDismiss }) => {
 
   return (
     <Tabs defaultValue="wallet">
-      <TabsList className="grid w-full grid-cols-2 gap-x-2 bg-transparent">
+      <TabsList className="grid w-full grid-cols-2 bg-transparent gap-x-2">
         <TabsTrigger value="wallet" className="rounded-3xl border border-white/10 bg-white/[.02] text-base text-white">
           {t('Wallet')}
         </TabsTrigger>
@@ -58,23 +58,23 @@ const WalletDetails: React.FC<Props> = ({ onDismiss }) => {
           {t('Transactions')}
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="wallet" className="mt-8 space-y-8 pb-4 text-white">
+      <TabsContent value="wallet" className="pb-4 mt-8 space-y-8 text-white">
         <div className="space-y-4">
           <p className="font-semibold">{t('Your address')}</p>
-          <div className="flex items-center justify-between rounded-3xl bg-indigo-600/10 px-4">
-            <span>{t(account)}</span>
+          <div className="flex items-center justify-between px-4 rounded-3xl bg-indigo-600/10 max-w-[280px] md:max-w-none">
+            <span className="text-sm truncate">{t(account)}</span>
             <Button
               size="icon"
-              className="bg-transparent transition hover:bg-transparent hover:opacity-70"
+              className="transition bg-transparent hover:bg-transparent hover:opacity-70"
               onClick={() => onCopy(account)}
               variant="ghost"
             >
-              <Copy className="h-4 w-4 text-white" />
+              <Copy className="w-4 h-4 text-white" />
             </Button>
           </div>
         </div>
         {hasLowBnbBalance && (
-          <div className="flex flex-row justify-center items-center">
+          <div className="flex flex-row items-center justify-center">
             <WarningIcon marginRight="5px" />
             <span>{t('BNB Balance Low')}</span>
             <span>{t('You need BNB for transaction fees.')}</span>
@@ -107,12 +107,12 @@ const WalletDetails: React.FC<Props> = ({ onDismiss }) => {
           {t('View on BscScan')} <ExternalLink />
         </a>
       </TabsContent>
-      <TabsContent value="transactions" className="space-y-4 py-4 text-white">
+      <TabsContent value="transactions" className="py-4 space-y-4 text-white">
         <p className="font-semibold">{t('Recent transactions')}</p>
         {sortedTransactions.length > 0 ? (
           sortedTransactions.map((txn) => <TransactionRow key={txn.hash} txn={txn} />)
         ) : (
-          <div className="flex h-48 items-center justify-center">
+          <div className="flex items-center justify-center h-48">
             <p>{t('No recent transactions...')}</p>
           </div>
         )}
@@ -121,7 +121,7 @@ const WalletDetails: React.FC<Props> = ({ onDismiss }) => {
         <Button
           onClick={handleLogout}
           variant="ghost"
-          className="w-full rounded-3xl bg-white/10 text-base text-white hover:bg-white/20 hover:text-white"
+          className="w-full text-base text-white rounded-3xl bg-white/10 hover:bg-white/20 hover:text-white"
         >
           {t('Disconnect wallet')}
         </Button>

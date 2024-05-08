@@ -23,7 +23,7 @@ const LanguageDropdown = () => {
                 <Globe className="md:size-5 lg:size-6" />
               </TooltipTrigger>
               <TooltipContent className="text-sm text-white border-none bg-white/10 backdrop-blur-xl">
-                <p>Languages</p>
+                <p>{t('Languages')}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

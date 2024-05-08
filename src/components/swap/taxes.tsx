@@ -7,7 +7,7 @@ const Taxes = () => {
   const { t } = useTranslation()
 
   return (
-    <div className="flex justify-between text-sm text-white">
+    <div className="flex justify-between text-xs text-white md:text-sm">
       {taxItems.map((item) => (
         <div className="inline-flex gap-x-1" key={item.name}>
           <p>
