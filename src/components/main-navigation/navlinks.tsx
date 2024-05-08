@@ -21,9 +21,6 @@ const NavLinks = () => {
     <NavigationMenu>
       <NavigationMenuList className="hidden items-center gap-x-4 rounded-3xl border border-white/10 bg-white/[.02] px-6 text-sm text-white backdrop-blur-2xl md:flex">
         <NavigationMenuItem>
-          <SwapModal navigation />
-        </NavigationMenuItem>
-        <NavigationMenuItem>
           <Link href="/faq" className="transition hover:text-[#B4BCD0]">
             {t('FAQ')}
           </Link>

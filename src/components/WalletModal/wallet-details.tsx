@@ -16,6 +16,7 @@ import TransactionRow from 'components/WalletModal/TransactionRow'
 import { Skeleton } from 'components/Skeleton'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
 import { Button } from '../ui/button'
+import { IoWarning } from 'react-icons/io5'
 
 export const LOW_BNB_BALANCE = parseUnits('2', 'gwei')
 
@@ -74,9 +75,11 @@ const WalletDetails: React.FC<Props> = ({ onDismiss }) => {
           </div>
         </div>
         {hasLowBnbBalance && (
-          <div className="flex flex-row items-center justify-center">
-            <WarningIcon marginRight="5px" />
-            <span>{t('BNB Balance Low')}</span>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-1 text-sm">
+            <span className="flex gap-x-1 items-center">
+              <IoWarning className="text-red-500 size-4" />
+              {t('BNB Balance Low')}!
+            </span>
             <span>{t('You need BNB for transaction fees.')}</span>
           </div>
         )}

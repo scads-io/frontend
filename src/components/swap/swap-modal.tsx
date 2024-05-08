@@ -11,20 +11,23 @@ import ScadsForm from './scads-form'
 import TwineForm from './twine-form'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
 import { Button } from '../ui/button'
+import { useTranslation } from 'contexts/Localization'
 
 const SwapModal = ({ navigation }: { navigation?: boolean }) => {
+  const { t } = useTranslation()
+
   return (
     <Dialog>
       <DialogTrigger asChild>
         {navigation ? (
-          <span className="button-primary relative cursor-pointer rounded-lg border border-[#8a6cff] px-6 py-1 text-sm font-semibold transition hover:bg-transparent hover:bg-none hover:text-[#B4BCD0] md:border-none md:bg-none md:px-0 md:py-0 md:font-normal md:shadow-none">
-            Invest
+          <span className="button-primary relative cursor-pointer rounded-lg border border-[#8a6cff] px-6 py-2 text-sm font-semibold transition">
+            {t('Invest')}
           </span>
         ) : (
           <Button className="px-10">Start</Button>
         )}
       </DialogTrigger>
-      <DialogContent className="max-w-[360px] rounded-3xl border-none bg-dark-blue md:max-w-lg">
+      <DialogContent className="max-w-[340px] rounded-3xl border-none bg-dark-blue md:max-w-lg">
         <DialogHeader className="space-y-2">
           <DialogTitle className="text-2xl font-semibold text-white">Swap</DialogTitle>
           <DialogDescription>

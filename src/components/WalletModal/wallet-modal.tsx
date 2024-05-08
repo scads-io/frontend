@@ -18,7 +18,7 @@ const WalletModal: React.FC<{ navigation?: boolean }> = ({ navigation }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger
-        className={cn('w-full', navigation && 'mx-auto max-w-40', currentLanguage === RU && navigation && 'max-w-44')}
+        className={cn('w-full', navigation && 'mx-auto max-w-24', currentLanguage === RU && navigation && 'max-w-44')}
       >
         {account ? (
           <>
@@ -41,7 +41,7 @@ const WalletModal: React.FC<{ navigation?: boolean }> = ({ navigation }) => {
             className={cn(
               'inline-flex w-full items-center justify-center whitespace-nowrap rounded-xl px-4 py-2 text-white transition-colors duration-300',
               navigation
-                ? 'button-primary border border-[#8a6cff] text-xs font-bold md:text-sm'
+                ? 'text-xs font-semibold md:text-sm hover:text-neutral-400'
                 : 'bg-white/10 text-xl font-medium hover:bg-white/20 md:text-base',
             )}
           >

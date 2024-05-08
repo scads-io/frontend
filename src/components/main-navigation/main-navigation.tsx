@@ -63,6 +63,7 @@ const MainNavigation = () => {
           <AddressDropdown />
           <LanguageDropdown />
           <WalletModal navigation />
+          <SwapModal navigation />
         </div>
         <AnimatePresence mode="wait">
           {isOpen && (

@@ -23,10 +23,9 @@ const Outro = () => {
           minSize={0.4}
           maxSize={1}
           particleDensity={1200}
-          className="size-full"
+          className="h-full w-1/2 mx-auto"
           particleColor="#FFFFFF"
         />
-        <div className="absolute inset-0 h-full w-full bg-dark-blue [mask-image:radial-gradient(200px_200px_at_top,transparent_20%,white)]" />
       </div>
       <div className="mt-12">
         <SwapModal />
