@@ -8,7 +8,7 @@ import { useThemeManager } from 'state/user/hooks'
 import { LanguageProvider } from 'contexts/Localization'
 import { RefreshContextProvider } from 'contexts/RefreshContext'
 import { ToastsProvider } from 'contexts/ToastsContext'
-import CopyToasterProvider from 'contexts/CopyToasterProvider'
+import ToasterProvider from 'contexts/ToasterProvider'
 import { Store } from '@reduxjs/toolkit'
 
 const ThemeProviderWrapper = (props) => {
@@ -26,7 +26,7 @@ const Providers: React.FC<React.PropsWithChildren<{ store: Store; children: Reac
         <ToastsProvider>
           <ThemeProviderWrapper>
             <LanguageProvider>
-              <CopyToasterProvider />
+              <ToasterProvider />
               <RefreshContextProvider>
                 {children}
               </RefreshContextProvider>

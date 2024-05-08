@@ -6,7 +6,7 @@ import { bsc, bscTestnet } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [bsc, bscTestnet],
+  [bsc, /* bscTestnet */ ],
   [
     publicProvider(),
   ],

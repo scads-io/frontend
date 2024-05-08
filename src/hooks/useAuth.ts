@@ -1,5 +1,6 @@
-import { useWeb3React } from '@scads-io/wagmi'
 import { useCallback } from 'react'
+import { useWeb3React } from '@scads-io/wagmi'
+import toast from 'react-hot-toast'
 import { useAppDispatch } from 'state'
 import { useConnect, useDisconnect, useNetwork, ConnectorNotFoundError, UserRejectedRequestError } from 'wagmi'
 import { useTranslation } from 'contexts/Localization'
@@ -15,7 +16,6 @@ const useAuth = () => {
   const { connectAsync, connectors } = useConnect()
   const { chain } = useNetwork()
   const { disconnect } = useDisconnect()
-  const { toastError } = useToast()
 
   const login = useCallback(
     async (connectorID: ConnectorNames) => {
@@ -26,20 +26,18 @@ const useAuth = () => {
         console.error(error)
         window?.localStorage?.removeItem(connectorLocalStorageKey)
         if (error instanceof ConnectorNotFoundError) {
-          toastError(
-            t('Provider Error')
-          )
+          toast.error(t('Provider Error'))
           return
         }
         if (error instanceof UserRejectedRequestError) {
           return
         }
         if (error instanceof Error) {
-          toastError(error.message, t('Please authorize to access your account'))
+          toast.error(error.message, t('Please authorize to access your account'))
         }
       }
     },
-    [connectors, connectAsync, chainId, toastError, t],
+    [connectors, connectAsync, chainId, toast, t],
   )
 
   const logout = useCallback(() => {

@@ -1,9 +1,9 @@
+import { useCallback, useMemo } from 'react'
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
+import toast from 'react-hot-toast'
 import { Trade, TokenAmount, CurrencyAmount, ETHER } from '@scads/sdk'
-import { useCallback, useMemo } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import useToast from 'hooks/useToast'
 import { logError } from 'utils/sentry'
 import { ROUTER_ADDRESS } from '../config/constants'
 import useTokenAllowance from './useTokenAllowance'
@@ -44,8 +44,6 @@ export function useApproveCallback(
         : ApprovalState.NOT_APPROVED
       : ApprovalState.APPROVED
   }, [amountToApprove, currentAllowance, pendingApproval, spender])
-
-  const { toastError } = useToast()
 
   const tokenContract = useTokenContract(token?.address)
   const addTransaction = useTransactionAdder()
@@ -101,10 +99,10 @@ export function useApproveCallback(
       .catch((error: Error) => {
         logError(error)
         console.error('Failed to approve token', error)
-        toastError('Transaction rejected')
+        toast.error('Transaction rejected')
         // throw error
       })
-  }, [approvalState, token, tokenContract, amountToApprove, spender, addTransaction, callWithGasPrice, toastError])
+  }, [approvalState, token, tokenContract, amountToApprove, spender, addTransaction, callWithGasPrice, toast])
 
   return [approvalState, approve]
 }
