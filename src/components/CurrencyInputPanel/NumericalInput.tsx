@@ -1,40 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { escapeRegExp } from '../../utils'
-
-const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: string }>`
-  color: ${({ error, theme }) => (error ? theme.colors.failure : theme.isDark ? '#FFFFFF' : '#000000')};
-  position: relative;
-  outline: none;
-  border: none;
-  flex: 1 1 auto;
-  background-color: transparent;
-  text-align: ${({ align }) => align && align};
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-right: 4px;
-  text-align: right;
-  -webkit-appearance: textfield;
-
-  ::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-
-  [type='number'] {
-    -moz-appearance: textfield;
-  }
-
-  ::-webkit-outer-spin-button,
-  ::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-
-  ::placeholder {
-    color: ${({ theme }) => theme.colors.textSubtle};
-  }
-`
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped '.' characters via in a non-capturing group
 const integerinputRegex = RegExp(`^\\d*(?:\\\\[])?\\d*$`) // match escaped '.' characters via in a non-capturing group
@@ -63,7 +29,7 @@ export const Input = React.memo(function InnerInput({
   const { t } = useTranslation()
 
   return (
-    <StyledInput
+    <input
       {...rest}
       value={value}
       onChange={(event) => {

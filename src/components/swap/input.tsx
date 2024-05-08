@@ -1,33 +1,40 @@
-import Image from "next/image";
-import TokenSelect from "./token-select";
+import React from "react";
+import { Currency } from '@scads/sdk'
 import { cn } from "lib/utils";
+import Image from "next/image";
+import { useTranslation } from 'contexts/Localization'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useCurrencyBalance } from 'state/wallet/hooks'
+import { Input as NumericalInput } from 'components/CurrencyInputPanel/NumericalInput'
+import { CurrencyLogo } from '../Logo'
+import TokenSelect from "./token-select";
 
 interface InputProps {
   className: string;
   balanceClassName: string;
   tokenClassName: string;
-  setToken?: (token: string) => void;
-  token: string;
-  setValue: (value: number) => void;
-  value: number;
-  panel: string;
+  value: string
+  onUserInput: (value: string) => void
+  currency: Currency | null
+  otherCurrency?: Currency | null
+  disableCurrencySelect?: boolean
 }
 
 const Input: React.FC<InputProps> = ({
   className,
   balanceClassName,
   tokenClassName,
-  setToken,
-  token,
-  setValue,
   value,
-  panel,
+  onUserInput,
+  currency,
+  otherCurrency,
+  disableCurrencySelect = false,
 }) => {
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = event.target.value;
-    setValue(inputValue === "" ? 0 : Number(inputValue));
-  };
+  const { account } = useActiveWeb3React()
+  const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
+  const { t } = useTranslation()
 
+  const balance = selectedCurrencyBalance?.toExact().toString() !== '0' ? parseFloat(selectedCurrencyBalance?.toExact()).toFixed(3) : 0
   return (
     <div
       className={cn(
@@ -36,36 +43,35 @@ const Input: React.FC<InputProps> = ({
       )}
     >
       <div className="flex flex-col gap-y-1">
-        {panel === "scads" ? (
-          <TokenSelect setToken={setToken} token={token} />
+        {!disableCurrencySelect ? (
+          <></>
+          /* <TokenSelect setToken={setToken} token={token} /> */
         ) : (
           <div className="flex w-fit flex-row items-center justify-between rounded-3xl border border-white/10 px-4 py-2 text-white">
             <div className="flex items-center gap-x-2">
               <div className="relative h-4 w-[10px]">
-                <Image
-                  src={`/images/currency/${token}.svg`}
-                  alt="currency placeholder"
-                  fill
-                />
+                <CurrencyLogo currency={currency} />
               </div>
-              <span className={tokenClassName}>{token}</span>
+              <span className={tokenClassName}>{currency?.symbol}</span>
             </div>
           </div>
         )}
         <div className={cn("flex gap-x-1 text-sm", balanceClassName)}>
           <p className="opacity-70">Balance:</p>
-          <span>0.00</span>
+          <span>{balance ?? t('Loading')}</span>
         </div>
       </div>
-      <input
+      <NumericalInput
         type="number"
         className={cn(
           "w-11/12 bg-transparent text-2xl font-bold focus:outline-none",
           className,
         )}
-        placeholder="0.00"
-        value={value === 0 ? "" : value}
-        onChange={handleInputChange}
+        placeholder="0.0"
+        value={value}
+        onUserInput={(val) => {
+          onUserInput(val)
+        }}
       />
     </div>
   );

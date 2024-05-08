@@ -23,7 +23,12 @@ const ScadsForm: React.FC<{ panel: string }> = ({ panel }) => {
   }, [inputValue])
 
   return (
-    <form className="mt-2 flex flex-col gap-y-6">
+    <form
+      className="mt-2 flex flex-col gap-y-6"
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <FormInputs
         inputValue={inputValue}
         setInputValue={setInputValue}

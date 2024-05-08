@@ -11,7 +11,7 @@ import { ConnectWalletButtonInvest } from '../../components/ConnectWalletButton'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 import { Field } from '../../state/swap/actions'
 import { useCaratBuyBackInfo, useScadsBuyBackInfo } from '../../state/swap/hooks'
-import useCaratMint from './hooks/useCaratMint'
+import useCaratMint from '../../hooks/useCaratMint'
 
 const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};

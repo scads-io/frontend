@@ -1,7 +1,8 @@
-import Input from "./input";
+import React from "react";
 import { AiOutlineSwap } from "react-icons/ai";
-import { Separator } from "../ui/separator";
 import { cn } from "lib/utils";
+import Input from "./input";
+import { Separator } from "../ui/separator";
 
 interface FormInputsProps {
   inputValue: number;
@@ -42,7 +43,7 @@ const FormInputs: React.FC<FormInputsProps> = ({
         orientation="vertical"
         className="absolute left-1/2 -translate-x-1/2 bg-white/10"
       />
-      {panel === "SCADS" && (
+      {panel === "scads" && (
         <button
           type="button"
           className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[#0c0e22] p-1 text-white transition hover:text-indigo-600"

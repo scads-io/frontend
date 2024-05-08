@@ -9,11 +9,11 @@ export default function ErrorBoundary({ children }) {
     <Sentry.ErrorBoundary
       fallback={() => {
         return (
-            <Flex flexDirection="column" justifyContent="center" alignItems="center">
-                <InfoIcon width="64px" mb="8px" />
-                <Text mb="16px">{t('Oops, something wrong.')}</Text>
-                <Button onClick={() => window.location.reload()}>{t('Click here to reset!')}</Button>
-            </Flex>
+          <Flex flexDirection="column" justifyContent="center" alignItems="center">
+              <InfoIcon width="64px" mb="8px" />
+              <Text mb="16px">{t('Oops, something wrong.')}</Text>
+              <Button onClick={() => window.location.reload()}>{t('Click here to reset!')}</Button>
+          </Flex>
         )
       }}
     >

@@ -4,14 +4,12 @@ import { useWeb3React } from '@scads-io/wagmi'
 import { cn } from 'lib/utils'
 import { useTranslation } from 'contexts/Localization'
 import { RU } from 'config/localization/languages'
-import { useWalletModal } from 'hooks/use-wallet-modal'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog'
 import WalletDetails from './wallet-details'
 import WalletList from './wallet-list'
 
 const WalletModal: React.FC<{ navigation?: boolean }> = ({ navigation }) => {
   const { account } = useWeb3React()
-  const walletModal = useWalletModal()
   const { t, currentLanguage } = useTranslation()
 
   const [open, setOpen] = useState(false)

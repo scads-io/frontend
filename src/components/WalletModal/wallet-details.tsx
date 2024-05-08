@@ -19,7 +19,11 @@ import { Button } from '../ui/button'
 
 export const LOW_BNB_BALANCE = parseUnits('2', 'gwei')
 
-const WalletDetails: React.FC = ({ onDismiss }) => {
+interface Props {
+  onDismiss: () => void
+}
+
+const WalletDetails: React.FC<Props> = ({ onDismiss }) => {
   const { account } = useWeb3React()
   const { balance, fetchStatus } = useGetBnbBalance()
   const hasLowBnbBalance = fetchStatus === FetchStatus.SUCCESS && balance.lte(LOW_BNB_BALANCE)

@@ -13,7 +13,7 @@ import {
   useUserCompoundExist,
 } from '../../state/swap/hooks'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
-import useCaratMint from './hooks/useCaratMint'
+import useCaratMint from '../../hooks/useCaratMint'
 
 const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.isDark ? "white" : "black"};
