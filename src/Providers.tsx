@@ -8,7 +8,7 @@ import { useThemeManager } from 'state/user/hooks'
 import { LanguageProvider } from 'contexts/Localization'
 import { RefreshContextProvider } from 'contexts/RefreshContext'
 import { ToastsProvider } from 'contexts/ToastsContext'
-import { ModalProvider } from 'components/Modal'
+import CopyToasterProvider from 'contexts/CopyToasterProvider'
 import { Store } from '@reduxjs/toolkit'
 
 const ThemeProviderWrapper = (props) => {
@@ -23,8 +23,9 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
         <ToastsProvider>
           <ThemeProviderWrapper>
             <LanguageProvider>
+              <CopyToasterProvider />
               <RefreshContextProvider>
-                <ModalProvider>{children}</ModalProvider>
+                {children}
               </RefreshContextProvider>
             </LanguageProvider>
           </ThemeProviderWrapper>

@@ -2,7 +2,6 @@ import React from "react"
 import styled, { DefaultTheme } from "styled-components"
 import { CheckmarkCircleIcon, ErrorIcon, BlockIcon, InfoIcon, Text, IconButton, CloseIcon, Heading } from "@scads-io/uikit"
 import { useThemeManager } from 'state/user/hooks'
-import { NewCard } from "components/Card"
 import { AlertProps, variants } from "./types"
 
 interface ThemedIconLabel {
@@ -54,30 +53,20 @@ const Details = styled.div<{ hasHandler: boolean }>`
   padding-top: 12px;
 `
 
-const StyledHeading= styled(Heading)`
-  color: ${({ theme }) => theme.isDark ? "white" : "black"};
-`
-
-const StyledText= styled(Text)`
-  color: ${({ theme }) => theme.isDark ? "white" : "black"};
-`
-
 const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
-  const [isDark] = useThemeManager()
   const Icon = getIcon(variant)
 
   return (
-    <NewCard
-      className="flex lg:!px-0"
-      theme={isDark}>
+    <div
+      className="flex lg:!px-0">
       <IconLabel variant={variant} hasDescription={!!children}>
         <Icon color="currentColor" width="24px" />
       </IconLabel>
       <Details hasHandler={!!onClick}>
-        <StyledHeading as="h2" scale="md" mb="5px">
+        <Heading as="h2" scale="md" mb="5px" color="white">
           {title}
-        </StyledHeading>
-        {typeof children === "string" ? <StyledText bold color="overlay" as="p">{children}</StyledText> : children}
+        </Heading>
+        {typeof children === "string" ? <Text bold color="white" as="p">{children}</Text> : children}
       </Details>
       {onClick && (
         <div className="absolute top-2 right-2 rounded-r-2xl">
@@ -86,7 +75,7 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
           </IconButton>
         </div>
       )}
-    </NewCard>
+    </div>
   )
 }
 

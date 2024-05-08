@@ -5,7 +5,7 @@ import { cn } from "lib/utils";
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCurrencyBalance } from 'state/wallet/hooks'
-import { Input as NumericalInput } from 'components/CurrencyInputPanel/NumericalInput'
+import { Input as NumericalInput } from './NumericalInput'
 import TokenSelect from "./token-select";
 
 interface InputProps {
