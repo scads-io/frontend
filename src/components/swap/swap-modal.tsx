@@ -37,10 +37,16 @@ const SwapModal = ({ navigation }: { navigation?: boolean }) => {
                   Twine
                 </TabsTrigger>
               </TabsList>
-              <TabsContent value="scads">
+              <TabsContent
+                value="scads"
+                className="focus:border-none active:border-none focus:outline-none active:outline-none focus-visble:ring-0 focus-visible:outline-none focus-visible:border-none"
+              >
                 <ScadsForm />
               </TabsContent>
-              <TabsContent value="twine">
+              <TabsContent
+                value="twine"
+                className="focus:border-none active:border-none focus:outline-none active:outline-none focus-visble:ring-0 focus-visible:outline-none focus-visible:border-none"
+              >
                 <TwineForm />
               </TabsContent>
             </Tabs>
