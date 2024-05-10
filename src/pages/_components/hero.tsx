@@ -27,7 +27,7 @@ const Hero = () => {
             className="max-w-[340px] text-center text-[#B4BCD0] md:max-w-[550px] xl:max-w-[740px] mt-2 md:text-lg"
           >
             {t(
-              "The World's First Non-PEGGED self-sustained Stablecoin Powered by Proof of Holding. FREEWILL is the chain, Proof of Hold drives the protocol, SCADS & TWINE pioneer the technology.",
+              "The World's First Non-PEGGED self-sustained Stablecoin Powered by Proof of Holding. FREEWILL is the chain, Proof of Hold (POH) is the protocol, SCADS & TWINE pioneer the technology.",
             )}
           </motion.p>
         </div>
