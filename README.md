@@ -1,6 +1,4 @@
-<img src="public/logo.webp" alt="Scads" height="100px">
-
-# Scads Frontend
+Scads Frontend
 
 This project contains the main features of the Scads application.
 
