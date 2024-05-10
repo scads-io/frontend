@@ -3,27 +3,21 @@ import { motion } from 'framer-motion'
 import { IoEllipse } from 'react-icons/io5'
 import FaqAccordion from './_components/faq-accordion'
 import SearchBar from './_components/search-bar'
+import { useTranslation } from 'contexts/Localization'
 
 const FaqPage = () => {
   const [searchValue, setSearchValue] = useState('')
+  const { t } = useTranslation()
 
   return (
     <>
-      <motion.p
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="mt-32 text-center text-lg text-[#B4BCD0]"
-      >
-        FAQ
-      </motion.p>
       <motion.h1
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-center text-5xl font-medium leading-tight text-transparent"
+        className="bg-gradient-to-r mt-32 from-white to-neutral-400 bg-clip-text text-center text-5xl font-medium leading-tight text-transparent"
       >
-        Ask us anything
+        {t('Frequently asked questions')}
       </motion.h1>
       <motion.div
         initial={{ y: -20, opacity: 0 }}

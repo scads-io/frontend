@@ -1,13 +1,25 @@
 import { tokenomicsContent } from 'constants/content'
 import SideNavigation from './_components/side-navigation'
 import TokenomicsContent from './_components/tokenomics-content'
-import CustomHero from 'components/ui/custom-hero'
 import { IoEllipse } from 'react-icons/io5'
+import { motion } from 'framer-motion'
+import { useTranslation } from 'contexts/Localization'
 
 const TokenomicsPage = () => {
+  const { t } = useTranslation()
+
   return (
     <>
-      <CustomHero title="Tokenomics" />
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.5,
+        }}
+        className="mb-24 mt-32 bg-gradient-to-br from-white to-neutral-500 bg-clip-text py-4 text-center text-3xl font-medium tracking-tight text-transparent md:text-5xl"
+      >
+        {t('Tokenomics')}
+      </motion.h1>
       <div className="relative z-10">
         <div className="relative mx-auto flex scroll-smooth pt-12 md:gap-x-10 lg:max-w-[1024px] lg:gap-x-20 xl:max-w-[1240px] 2xl:max-w-[1340px]">
           <SideNavigation />

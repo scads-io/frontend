@@ -231,5 +231,8 @@
   "Blockchain transaction fee, refers to the charge users must pay for executing transactions and smart contracts on a blockchain network.": "Комиссия за транзакцию в сети блокчейн.",
   "Difference between the expected price of a trade and the actual price at which the trade is executed.": "Разница между ожидаемой ценой сделки и фактической ценой исполнения сделки на рынке.",
   "Freewill defines the chain, Proof of Hold drives the protocol, SCADS & TWINE pioneer the technology.": "Встречайте новый стейблкоин, который так независим, что даже отказался от традиционных валют в пользу своей автономии!",
-  "Token addresses": "Адреса токенов"
+  "Token addresses": "Адреса токенов",
+  "Frequently asked questions": "Часто задаваемые вопросы",
+  "Coming soon...": "В процессе...",
+  "Home": "Домашняя страница"
 }

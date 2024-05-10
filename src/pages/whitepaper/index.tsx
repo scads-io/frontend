@@ -33,7 +33,7 @@ const WhitepaperPage = () => {
           {t('Coming soon...')}
         </motion.h1>
         <Link href="/">
-          <Button className="px-8 mt-4">Home</Button>
+          <Button className="px-8 mt-4">{t('Home')}</Button>
         </Link>
       </div>
       {/* <Pioneering />
