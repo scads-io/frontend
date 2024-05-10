@@ -1,10 +1,9 @@
 import React from 'react'
-import { IoEllipse } from 'react-icons/io5'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'contexts/Localization'
 
 const Hero = () => {
-  const { t, currentLanguage } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <section className="relative">
