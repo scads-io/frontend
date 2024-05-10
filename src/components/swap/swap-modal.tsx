@@ -21,7 +21,7 @@ const SwapModal = ({ navigation }: { navigation?: boolean }) => {
       <DialogTrigger asChild>
         {navigation ? (
           <span className="button-primary relative cursor-pointer rounded-lg border border-[#8a6cff] px-6 py-2 text-sm font-semibold transition">
-            {t('Invest')}
+            {t('Swap')}
           </span>
         ) : (
           <Button className="px-10">Start</Button>
