@@ -1,8 +1,8 @@
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { IoEllipse } from 'react-icons/io5'
 import FaqAccordion from './_components/faq-accordion'
 import SearchBar from './_components/search-bar'
-import { useState } from 'react'
-import { IoEllipse } from 'react-icons/io5'
 
 const FaqPage = () => {
   const [searchValue, setSearchValue] = useState('')
