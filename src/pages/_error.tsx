@@ -12,7 +12,7 @@ const MyError = ({ hasGetInitialPropsRun, err }) => {
     // Flushing is not required in this case as it only happens on the client
   }
 
-  return <NotFound value={{theme: true}}/>
+  return <NotFound />
 }
 
 MyError.getInitialProps = async (context) => {

@@ -171,7 +171,6 @@ const ScadsForm: React.FC = () => {
           currency={currencies[Field.INPUT]}
           onUserInput={handleTypeInput}
           onCurrencySelect={handleInputSelect}
-          otherCurrency={currencies[Field.OUTPUT]}
           disableCurrencySelect={false}
         />
         <Separator orientation="vertical" className="absolute -translate-x-1/2 left-1/2 bg-white/10" />
@@ -194,7 +193,6 @@ const ScadsForm: React.FC = () => {
           onUserInput={handleTypeOutput}
           currency={currencies[Field.OUTPUT]}
           onCurrencySelect={handleOutputSelect}
-          otherCurrency={currencies[Field.INPUT]}
           disableCurrencySelect={false}
         />
       </div>

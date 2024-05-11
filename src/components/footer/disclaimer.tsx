@@ -1,9 +1,9 @@
+import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
-import { Button } from '../ui/button'
 import { ChevronUp } from 'lucide-react'
 import { cn } from 'lib/utils'
 import { useTranslation } from 'contexts/Localization'
+import { Button } from '../ui/button'
 
 const Disclaimer = () => {
   const [isVisible, setIsVisible] = useState(false)

@@ -1,35 +1,42 @@
 import React from 'react'
-import { NextLinkFromReactRouter } from 'components/NextLink'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { useTranslation } from 'contexts/Localization'
-import { PageMeta } from 'components/Layout/PageMeta'
+import { Button } from './ui/button'
 
-const NotFound = ({ value }) => {
-  const { theme } = value
+const NotFound = () => {
   const { t } = useTranslation()
 
   return (
-    <div className="relative bg-gradient-to-b from-transparent to-[#FF006820]">
-      <PageMeta />
-      <div
-        className="flex items-center flex-col justify-center"
-        style={{ height: "calc(100vh - 64px)" }}
-      >
-        <h1 className="text-[80px] font-black bg-gradient-to-r  from-[#655780] via-[#BF205D] to-[#BF205D] text-transparent bg-clip-text">
-          {404}
-        </h1>
-        <h1 className={`text-[26px] text-center 2xl:text-5xl font-black max-w-[329px] lg:max-w-[350px] 2xl:max-w-[600px] mb-6 ${
-            theme ? "text-[#B6B6B6]" : "text-black"
-          }`}>
-          {t('Oops, page not found')}
-        </h1>
-        <button
-          type='button'
-          className="bg-[#B52761] py-[14px] px-9 rounded-[30px] font-semibold text-white text-xl hover:bg-[#655780] transition-all duration-300 focus:ring-0 focus:outline-none"
-        >
-          <NextLinkFromReactRouter to='/'>{t('Back Home')}</NextLinkFromReactRouter>
-        </button>
+    <section className="mt-32 flex flex-col items-center">
+      <div className="relative z-10 mx-auto flex justify-center pt-40 md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1240px] 2xl:max-w-[1340px]">
+        <div className="flex flex-col items-center text-white lg:max-w-none">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mx-auto bg-gradient-to-br from-white to-neutral-500 bg-clip-text py-4 text-center text-4xl font-medium tracking-tight leading-none text-transparent lg:text-[80px]"
+          >
+            {404}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-[340px] text-center text-[#B4BCD0] md:max-w-[550px] xl:max-w-[740px] mt-2 md:text-lg"
+          >
+            Oops, page not found
+          </motion.p>
+          <div className="mt-12">
+            <Link href="/">
+              <Button className="px-8 mt-4">{t('Home')}</Button>
+            </Link>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

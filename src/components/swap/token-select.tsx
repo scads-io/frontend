@@ -19,7 +19,6 @@ import {
 interface TokenSelectProps {
   selectedCurrency?: Currency | null
   onCurrencySelect: (currency: Currency) => void
-  otherSelectedCurrency?: Currency | null
 }
 
 const TokenSelect: React.FC<TokenSelectProps> = ({ onCurrencySelect, selectedCurrency }) => {

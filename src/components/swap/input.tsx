@@ -16,7 +16,6 @@ interface InputProps {
   onUserInput: (value: string) => void
   onCurrencySelect: (currency: Currency) => void
   currency: Currency | null
-  otherCurrency?: Currency | null
   disableCurrencySelect?: boolean
 }
 
@@ -28,7 +27,6 @@ const Input: React.FC<InputProps> = ({
   onUserInput,
   onCurrencySelect,
   currency,
-  otherCurrency,
   disableCurrencySelect = false,
 }) => {
   const { account } = useActiveWeb3React()
@@ -47,7 +45,6 @@ const Input: React.FC<InputProps> = ({
           <TokenSelect
             onCurrencySelect={onCurrencySelect}
             selectedCurrency={currency}
-            otherSelectedCurrency={otherCurrency}
           />
         ) : (
           <div className="flex w-fit flex-row items-center justify-between rounded-3xl border border-white/10 px-4 py-2 text-white">

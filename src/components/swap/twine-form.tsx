@@ -138,7 +138,6 @@ const TwineForm: React.FC = () => {
         onCurrencySelect={() => console.error('input currency select')}
         currency={tokens.carat}
         onUserInput={handleAmountInput}
-        otherCurrency={tokens.cake}
         disableCurrencySelect
       />
       <Separator
@@ -153,7 +152,6 @@ const TwineForm: React.FC = () => {
         onUserInput={handleAmountOutput}
         onCurrencySelect={() => console.error('input currency select')}
         currency={tokens.cake}
-        otherCurrency={tokens.carat}
         disableCurrencySelect
       />
     </div>

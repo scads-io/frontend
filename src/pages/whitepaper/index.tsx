@@ -12,6 +12,7 @@
 // import Technological from "./_components/technological";
 // import Technology from "./_components/technology";
 // import Understanding from "./_components/understanding";
+import React from 'react'
 import { Button } from 'components/ui/button'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from 'framer-motion'

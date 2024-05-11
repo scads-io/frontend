@@ -4,7 +4,7 @@ import { Copy, ExternalLink } from 'lucide-react'
 import { orderBy } from 'lodash'
 import { parseUnits } from 'ethers/lib/utils'
 import { useWeb3React } from '@scads-io/wagmi'
-import { WarningIcon } from '@scads-io/uikit'
+import { IoWarning } from 'react-icons/io5'
 import tokens from 'config/constants/tokens'
 import useTokenBalance, { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
 import useAuth from 'hooks/useAuth'
@@ -16,7 +16,6 @@ import TransactionRow from 'components/WalletModal/TransactionRow'
 import { Skeleton } from 'components/Skeleton'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
 import { Button } from '../ui/button'
-import { IoWarning } from 'react-icons/io5'
 
 export const LOW_BNB_BALANCE = parseUnits('2', 'gwei')
 

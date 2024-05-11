@@ -1,8 +1,8 @@
 import React from 'react'
+import Image from 'next/image'
 import SwapModal from 'components/swap/swap-modal'
 import { SparklesCore } from 'components/ui/sparkles'
 import { useTranslation } from 'contexts/Localization'
-import Image from 'next/image'
 
 const Outro = () => {
   const { t } = useTranslation()

@@ -1,6 +1,6 @@
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { Button } from 'components/ui/button'
 import { Search, X } from 'lucide-react'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 interface SearchBarProps {
   searchValue: string

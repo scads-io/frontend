@@ -1,3 +1,4 @@
+import React from 'react'
 import { Button } from 'components/ui/button'
 import { useTranslation } from 'contexts/Localization'
 import { motion } from 'framer-motion'
