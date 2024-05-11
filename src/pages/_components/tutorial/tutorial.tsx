@@ -1,10 +1,10 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs";
-import DesktopInfo from "./_components/desktop-info";
-import { LampContainer } from "components/ui/lamp-effect";
-import SectionHeader from "components/ui/section-header";
-import AnimatedBackground from "components/ui/animated-background";
-import MobileInfo from "./_components/mobile-info";
-import { Monitor, TabletSmartphone } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/tabs'
+import DesktopInfo from './_components/desktop-info'
+import { LampContainer } from 'components/ui/lamp-effect'
+import SectionHeader from 'components/ui/section-header'
+import AnimatedBackground from 'components/ui/animated-background'
+import MobileInfo from './_components/mobile-info'
+import { Monitor, TabletSmartphone } from 'lucide-react'
 
 const Tutorial = () => {
   return (
@@ -18,7 +18,7 @@ const Tutorial = () => {
       <SectionHeader title="Getting started" y={50} />
       <Tabs
         defaultValue="desktop"
-        className="relative z-10 mx-auto mt-4 flex w-[340px] flex-col gap-x-12 rounded-2xl bg-gradient-to-b from-white/15 to-transparent py-10 backdrop-blur-xl md:w-[720px] md:flex-row md:px-10 lg:w-fit lg:px-20"
+        className="relative z-10 mx-auto mt-4 flex w-11/12 flex-col gap-x-12 rounded-2xl bg-gradient-to-b from-white/15 to-transparent py-10 backdrop-blur-xl md:w-[720px] md:flex-row md:px-10 lg:w-fit lg:px-20"
       >
         <TabsList className="relative z-10 flex h-fit gap-y-4 bg-transparent px-6 md:flex-col">
           <TabsTrigger
@@ -43,7 +43,7 @@ const Tutorial = () => {
       </Tabs>
       <AnimatedBackground color="bg-purple-500" />
     </section>
-  );
-};
+  )
+}
 
-export default Tutorial;
+export default Tutorial

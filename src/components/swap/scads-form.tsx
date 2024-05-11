@@ -162,10 +162,10 @@ const ScadsForm: React.FC = () => {
         e.preventDefault()
       }}
     >
-      <div className="relative flex h-full justify-between rounded-3xl border border-black border-white/10 bg-transparent px-4 lg:w-[460px]">
+      <div className="relative flex h-full justify-between rounded-3xl border border-white/10 bg-transparent px-2 md:px-4 w-full lg:w-[460px]">
         <Input
           className={cn('items-start pb-1 pt-4 text-white placeholder:text-white')}
-          balanceClassName={cn('justify-start text-white')}
+          balanceClassName={cn('items-start text-white')}
           tokenClassName="text-white"
           value={formattedAmounts[Field.INPUT]}
           currency={currencies[Field.INPUT]}
@@ -187,7 +187,7 @@ const ScadsForm: React.FC = () => {
         </button>
         <Input
           className="items-end pt-4 pb-1 text-white text-end placeholder:text-white"
-          balanceClassName="justify-end text-white"
+          balanceClassName="items-end text-white"
           tokenClassName="text-white"
           value={formattedAmounts[Field.INPUT]}
           onUserInput={handleTypeOutput}
@@ -196,10 +196,10 @@ const ScadsForm: React.FC = () => {
           disableCurrencySelect={false}
         />
       </div>
-      <div className="flex justify-between w-full text-sm text-white">
-        <p className="text-[#B4BCD0]">1 SCADS = 1 USDT</p>
+      <div className="flex justify-center md:justify-between w-full text-sm text-white">
+        <p className="text-[#B4BCD0] hidden md:block">1 SCADS = 1 USDT</p>
         <p>
-          <span className="pr-1 text-[#B4BCD0]">You receive:</span>
+          <span className="pr-1 text-[#B4BCD0]">{t('You receive')}:</span>
           {amountToDisplay} {currencies[Field.OUTPUT]?.symbol}
         </p>
       </div>
@@ -214,7 +214,7 @@ const ScadsForm: React.FC = () => {
               variant="ghost"
               onClick={approveCallback}
               disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
-              className="rounded-3xl bg-white/20 text-base text-white hover:bg-white/40 hover:text-white w-[48%]"
+              className="rounded-xl bg-white/20 text-base text-white hover:bg-white/40 hover:text-white w-[48%]"
             >
               {approval === ApprovalState.PENDING ? (
                 <AutoRow gap="6px" justify="center">
@@ -233,7 +233,7 @@ const ScadsForm: React.FC = () => {
               }}
               id="swap-button"
               disabled={!isValid || approval !== ApprovalState.APPROVED}
-              className="rounded-3xl bg-white/20 text-base text-white hover:bg-white/40 hover:text-white w-[48%]"
+              className="rounded-xl bg-white/20 text-base text-white hover:bg-white/40 hover:text-white w-[48%]"
             >
               {t('Buy')}
             </Button>
@@ -248,9 +248,9 @@ const ScadsForm: React.FC = () => {
             }}
             id="swap-button"
             disabled={!isValid}
-            className="w-full text-base text-white rounded-3xl bg-white/20 hover:bg-white/40 hover:text-white"
+            className="w-full text-base text-white rounded-xl bg-white/20 hover:bg-white/40 hover:text-white"
           >
-            {t('Swap')}
+            {t('Buy')}
           </Button>
         </div>
       )}

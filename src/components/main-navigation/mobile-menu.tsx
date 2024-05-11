@@ -31,10 +31,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ close }) => {
           <LanguageDropdown />
         </div>
         <div className={cn('flex flex-col gap-y-4')}>
-          <Link href="/use-cases" onClick={close} className="">
+          <Link href="/use-cases" onClick={close}>
             {t('Use cases')}
           </Link>
-          <Link href="/whitepaper" onClick={close}>
+          <Link href="/whitepaper" onClick={close} className="whitespace-nowrap">
             {t('Whitepaper')}
           </Link>
           <Link href="/faq" onClick={close}>

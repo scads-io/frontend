@@ -39,26 +39,23 @@ const Input: React.FC<InputProps> = ({
       : 0
 
   return (
-    <div className={cn('flex flex-col justify-between h-[160px] 2xl:h-[200px]', className)}>
-      <div className="flex flex-col gap-y-1">
+    <div className={cn('flex flex-col justify-between h-[140px] md:h-[160px] 2xl:h-[200px]', className)}>
+      <div className={cn('flex flex-col gap-y-1', balanceClassName)}>
         {!disableCurrencySelect ? (
-          <TokenSelect
-            onCurrencySelect={onCurrencySelect}
-            selectedCurrency={currency}
-          />
+          <TokenSelect onCurrencySelect={onCurrencySelect} selectedCurrency={currency} />
         ) : (
           <div className="flex w-fit flex-row items-center justify-between rounded-3xl border border-white/10 px-4 py-2 text-white">
             <div className="flex items-center gap-x-2">
               <div className="relative h-4 w-[10px]">
                 <Image src={`/images/currency/${currency?.symbol}.svg`} alt="currency placeholder" fill />
               </div>
-              <span className={tokenClassName}>{currency?.symbol}</span>
+              <span className={cn('uppercase text-xs md:text-base', tokenClassName)}>{currency?.symbol}</span>
             </div>
           </div>
         )}
         {account && (
           <div className={cn('flex gap-x-1 text-sm', balanceClassName)}>
-            <p className="opacity-70">Balance:</p>
+            <p className="opacity-70">{t('Balance')}:</p>
             <span>{balance ?? t('Loading')}</span>
           </div>
         )}

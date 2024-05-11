@@ -13,9 +13,9 @@ const TextBlock = () => {
   return (
     <section className="relative flex flex-col items-center px-4 mt-32 text-white gap-y-4 md:px-0">
       <SectionHeader title="Introducing Scads" y={-50} />
-      <div className="max-w-[340px] text-[#B4BCD0] md:max-w-[720px] lg:max-w-[1024px] text-center md:text-start">
+      <div className="max-w-[91%] text-[#B4BCD0] md:max-w-[720px] lg:max-w-[1024px] text-center md:text-start">
         <p className="z-10">
-          <span className="inline-flex items-center text-white gap-x-1">
+          <span className="text-white">
             {t('The evolution of Decentralized Finance (DeFi) from a nascent niche market to a formidable player')}
           </span>{' '}
           {t(

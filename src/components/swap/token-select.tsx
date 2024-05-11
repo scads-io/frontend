@@ -67,14 +67,14 @@ const TokenSelect: React.FC<TokenSelectProps> = ({ onCurrencySelect, selectedCur
     <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
-          'group flex w-[110px] items-center justify-between rounded-3xl border border-white/10 bg-white/[.02] px-3 py-1.5 md:py-2 lg:w-[140px]',
+          'group flex w-[100px] items-center justify-between rounded-3xl border border-white/10 bg-white/[.02] px-3 py-1.5 md:py-2 lg:w-[120px]',
         )}
       >
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-1 md:gap-x-2">
           <div className={cn('relative', tokenIconClassNames)}>
             <Image src={`/images/currency/${selectedCurrency?.symbol}.svg`} alt="currency placeholder" fill />
           </div>
-          <span className="text-white">{selectedCurrency?.symbol}</span>
+          <span className="text-white uppercase text-xs md:text-base">{selectedCurrency?.symbol}</span>
         </div>
         <ChevronRight size={16} className="text-white transition-transform group-hover:rotate-90" />
       </DropdownMenuTrigger>
@@ -88,7 +88,7 @@ const TokenSelect: React.FC<TokenSelectProps> = ({ onCurrencySelect, selectedCur
             onClick={() => handleCurrencySelect(token)}
           >
             <Image src={`/images/currency/${token.symbol}.svg`} alt={token.symbol} width={16} height={16} />
-            <span>{token.symbol}</span>
+            <span className="uppercase">{token.symbol}</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

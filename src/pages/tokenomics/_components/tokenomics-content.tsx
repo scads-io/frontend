@@ -22,7 +22,7 @@ const TokenomicsContent: React.FC<TokenomicsContentProps> = ({ id, title, paragr
 
   return (
     <section
-      className="flex scroll-mt-64 flex-col items-center gap-y-4 px-2 text-sm text-[#B4BCD0] md:px-0 md:text-base lg:items-start"
+      className="flex scroll-mt-64 flex-col gap-y-4 px-2 text-sm text-[#B4BCD0] md:px-0 md:text-base max-w-[91%] mx-auto md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1031px]"
       id={id}
     >
       <div className="flex items-center gap-x-2">
@@ -31,7 +31,7 @@ const TokenomicsContent: React.FC<TokenomicsContentProps> = ({ id, title, paragr
         </span>
         <h2 className="w-fit text-2xl text-white">{title}</h2>
       </div>
-      <p className="max-w-[340px] md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1031px]">{t(paragraph)}</p>
+      <p>{t(paragraph)}</p>
       {list && (
         <ul className="flex max-w-[340px] list-disc flex-col gap-y-2 pl-4 md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1031px]">
           {list.map((item, index) => (

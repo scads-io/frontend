@@ -1,17 +1,20 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip'
+import { RU } from 'config/localization/languages'
 import { taxItems } from 'constants/content'
 import { useTranslation } from 'contexts/Localization'
+import { cn } from 'lib/utils'
 import { Info } from 'lucide-react'
 
 const Taxes = () => {
-  const { t } = useTranslation()
+  const { t, currentLanguage } = useTranslation()
 
   return (
     <div className="flex justify-between text-xs text-white md:text-sm">
       {taxItems.map((item) => (
         <div className="inline-flex gap-x-1" key={item.name}>
           <p>
-            <span className="text-[#B4BCD0]">{t(item.name)}:</span> {item.value}
+            <span className={cn('text-[#B4BCD0]', currentLanguage === RU && 'flex flex-col')}>{t(item.name)}:</span>{' '}
+            {item.value}
           </p>
           {item.info && (
             <TooltipProvider delayDuration={0}>

@@ -234,5 +234,15 @@
   "Token addresses": "Адреса токенов",
   "Frequently asked questions": "Часто задаваемые вопросы",
   "Coming soon...": "В процессе...",
-  "Home": "Домашняя страница"
+  "Home": "Домашняя страница",
+  "Buy": "Купить",
+  "Claim": "Забрать",
+  "Gas": "Газ",
+  "Slippage": "Проскальзывание",
+  "Days": "Дней",
+  "Hours": "Часов",
+  "Minutes": "Минут",
+  "Balance": "Баланс",
+  "You receive": "Вы получаете",
+  "Time invested": "Время вложено"
 }

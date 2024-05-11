@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer
       className={cn(
-        'relative z-50 mx-auto mt-32 flex max-w-[340px] flex-col items-center justify-between border-t border-white/10 py-8 md:max-w-[720px] md:flex-row md:items-end lg:max-w-[1060px] xl:max-w-[1240px] 2xl:max-w-[1340px]',
+        'relative z-50 mx-auto mt-32 flex max-w-[91%] flex-col items-center justify-between border-t border-white/10 py-8 md:max-w-[720px] md:flex-row md:items-end lg:max-w-[1060px] xl:max-w-[1240px] 2xl:max-w-[1340px]',
         pathName === '/whitepaper' && 'hidden',
       )}
     >
@@ -20,7 +20,7 @@ const Footer = () => {
           <Image src="/images/logo.svg" alt="logo" width={32} height={32} />
           SCADS
         </div>
-        <p className="text-center text-sm text-[#B4BCD0] md:text-start md:text-base">
+        <p className="text-center text-sm text-[#B4BCD0] md:text-start md:text-base whitespace-nowrap">
           SCADS © Copyright {currentYear}. All rights reserved. ™
         </p>
       </div>
