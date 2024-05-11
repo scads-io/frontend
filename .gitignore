@@ -41,3 +41,5 @@ public/output.css
 
 # Sentry
 .sentryclirc
+/packages/uikit/dist
+/packages/uikit/node_modules

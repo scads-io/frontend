@@ -1,0 +1,57 @@
+{
+  "name": "@scads-io/uikit",
+  "version": "0.4.3",
+  "description": "Set of UI components for scads projects",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/scads-io/toolkit/tree/main/packages/scads-uikit",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm storybook",
+    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:check": "prettier --check --loglevel error 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.5",
+    "@types/react-dom": "^17.0.5",
+    "jest-styled-components": "^7.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^6.0.7"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^6.0.7"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "@types/lodash": "^4.14.168",
+    "@types/styled-system": "^5.1.10",
+    "lodash": "^4.17.20",
+    "prettier": "^3.2.5",
+    "react-popper": "^2.2.5",
+    "styled-system": "^5.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

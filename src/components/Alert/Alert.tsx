@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { DefaultTheme } from "styled-components"
 import { CheckmarkCircleIcon, ErrorIcon, BlockIcon, InfoIcon, Text, IconButton, CloseIcon, Heading } from "@scads-io/uikit"
-import { useThemeManager } from 'state/user/hooks'
 import { AlertProps, variants } from "./types"
 
 interface ThemedIconLabel {
