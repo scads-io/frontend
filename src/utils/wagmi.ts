@@ -23,7 +23,7 @@ export const walletConnectConnector = new WalletConnectConnector({
   chains,
   options: {
     projectId: process.env.NODE_ENV !== 'production' ?
-      '74251247fff43babdb46edbab5b2a868' : '0eb93e1311bacfc188ea2df6c42d02fe' ,
+      '0eb93e1311bacfc188ea2df6c42d02fe' : '74251247fff43babdb46edbab5b2a868' ,
     showQrModal: true,
     qrModalOptions: {
       themeMode: 'dark',
