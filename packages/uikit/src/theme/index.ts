@@ -1,10 +1,8 @@
-import { ToggleTheme } from "../components/Toggle/theme";
 import { Colors, MediaQueries, Radii, Shadows, Spacing, ZIndices } from "./types";
 
 export interface ScadsTheme {
   isDark: boolean;
   colors: Colors;
-  toggle: ToggleTheme;
   mediaQueries: MediaQueries;
   spacing: Spacing;
   shadows: Shadows;

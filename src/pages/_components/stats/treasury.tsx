@@ -71,7 +71,7 @@ const Treasury = () => {
                 {item.id === 'ti2' && <Image src="/images/currency/Scads.svg" alt="Scads" width={7} height={16} />}
                 {item.id === 'ti3' && <Image src="/images/currency/TWINE.svg" alt="Scads" width={7} height={16} />}
                 <p className="text-white lg:text-sm xl:text-base">
-                  {item.id === 'ti1' && lockedBalance.toFixed(2)}
+                  {item.id === 'ti1' && `$${lockedBalance.toFixed(2)}`}
                   {item.id === 'ti2' && scadsBalance}
                   {item.id === 'ti3' && twineBalance}
                   {item.id === 'ti4' && `$${usdtBalance}`}
