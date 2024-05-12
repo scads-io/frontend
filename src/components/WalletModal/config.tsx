@@ -8,6 +8,7 @@ const connectors: Config[] = [
     icon: MetamaskIcon,
     connectorId: ConnectorNames.MetaMask,
     priority: 1,
+    href: "https://metamask.app.link/dapp/scads.io/"
   },
   {
     title: "WalletConnect",
@@ -33,5 +34,3 @@ const connectors: Config[] = [
 export default connectors
 export const connectorLocalStorageKey = "connectorIdv2"
 export const walletLocalStorageKey = "wallet"
-
-export const walletConnectConfig = connectors.find((c) => c.title === "WalletConnect");

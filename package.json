@@ -73,7 +73,6 @@
     "postcss": "^8.4.38",
     "qs": "^6.9.4",
     "react": "^18.3.1",
-    "react-device-detect": "^2.1.2",
     "react-dom": "^18.2.0",
     "react-error-overlay": "^6.0.11",
     "react-hot-toast": "^2.4.1",

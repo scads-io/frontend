@@ -1,6 +1,5 @@
 import React from "react"
-import { isDesktop } from "react-device-detect";
-import { connectorLocalStorageKey, walletLocalStorageKey, walletConnectConfig } from "./config"
+import { connectorLocalStorageKey, walletLocalStorageKey } from "./config"
 import { Login, Config } from "./types"
 
 interface Props {
@@ -21,13 +20,6 @@ const WalletCard: React.FC<Props> = ({ walletConfig, login, onDismiss }) => {
         type="button"
         className="group flex flex-col items-center"
         onClick={() => {
-          if (title === "Trust Wallet" && walletConnectConfig && isDesktop) {
-            login(walletConnectConfig.connectorId);
-            localStorage?.setItem(walletLocalStorageKey, walletConnectConfig.title);
-            localStorage?.setItem(connectorLocalStorageKey, walletConnectConfig.connectorId);
-            onDismiss();
-            return;
-          }
           if (!window.ethereum && walletConfig.href) {
             window.open(walletConfig.href, "_blank", "noopener noreferrer");
           } else {
@@ -35,6 +27,7 @@ const WalletCard: React.FC<Props> = ({ walletConfig, login, onDismiss }) => {
             localStorage?.setItem(walletLocalStorageKey, walletConfig.title);
             localStorage?.setItem(connectorLocalStorageKey, walletConfig.connectorId);
           }
+          onDismiss();
         }}
          >
         <Icon
