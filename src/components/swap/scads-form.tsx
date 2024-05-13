@@ -153,7 +153,7 @@ const ScadsForm: React.FC = () => {
     [onCurrencySelection],
   )
 
-  const amountToDisplay = parseFloat(formattedAmounts[Field.INPUT]) * 0.7 || '0.0'
+  const amountToDisplay = parseFloat(formattedAmounts[Field.INPUT]) * 0.97 || '0.0'
 
   return (
     <form
