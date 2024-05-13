@@ -1,5 +1,5 @@
 {
-  "short_name": "ScadsSwap",
+  "short_name": "Scads",
   "name": "ScadsSwap",
   "description": "Discover SCADS: The New Secured, Self-Sustained Algorithm!",
   "homepage_url": "https://scads.io/",
@@ -13,6 +13,11 @@
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "256x256"
     }
   ]
 }
