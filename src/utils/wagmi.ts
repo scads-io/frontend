@@ -22,8 +22,7 @@ export const injectedConnector = new InjectedConnector({
 export const walletConnectConnector = new WalletConnectConnector({
   chains,
   options: {
-    projectId: process.env.NODE_ENV !== 'production' ?
-      '0eb93e1311bacfc188ea2df6c42d02fe' : '74251247fff43babdb46edbab5b2a868' ,
+    projectId: '0eb93e1311bacfc188ea2df6c42d02fe',
     showQrModal: true,
     qrModalOptions: {
       themeMode: 'dark',

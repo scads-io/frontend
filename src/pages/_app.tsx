@@ -70,8 +70,8 @@ function MyApp(props) {
         />
         <title>Scads</title>
         <meta
-        name="description"
-        content="Discover SCADS: The New Secured, Self-Sustained Algorithm!"
+          name="description"
+          content="Discover SCADS: The New Secured, Self-Sustained Algorithm!"
         />
       </Head>
       <Providers store={store}>
