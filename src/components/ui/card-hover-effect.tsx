@@ -1,8 +1,9 @@
-import { useTranslation } from 'contexts/Localization'
-import { cn } from 'lib/utils'
+import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useTranslation } from 'contexts/Localization'
+import { cn } from 'lib/utils'
+
 
 export const HoverEffect = ({
   items,
@@ -15,7 +16,7 @@ export const HoverEffect = ({
   }[]
   className?: string
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   const { t } = useTranslation()
 

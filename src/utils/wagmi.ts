@@ -2,11 +2,11 @@ import { configureChains, createClient } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
-import { bsc, bscTestnet } from 'wagmi/chains'
+import { bsc } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [bsc, /* bscTestnet */ ],
+  [bsc],
   [
     publicProvider(),
   ],

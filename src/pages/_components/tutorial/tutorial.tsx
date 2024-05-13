@@ -1,10 +1,11 @@
+import React from 'react'
+import { Monitor, TabletSmartphone } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/tabs'
-import DesktopInfo from './_components/desktop-info'
 import { LampContainer } from 'components/ui/lamp-effect'
 import SectionHeader from 'components/ui/section-header'
 import AnimatedBackground from 'components/ui/animated-background'
 import MobileInfo from './_components/mobile-info'
-import { Monitor, TabletSmartphone } from 'lucide-react'
+import DesktopInfo from './_components/desktop-info'
 
 const Tutorial = () => {
   return (

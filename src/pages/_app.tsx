@@ -3,7 +3,7 @@ import './globals.css'
 import BigNumber from 'bignumber.js'
 import axios from 'axios'
 import { useIsomorphicLayoutEffect } from 'react-use'
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/google"
 import { ToastListener } from 'contexts/ToastsContext'
 import useEagerConnect from 'hooks/useEagerConnect'
 import { useAccountEventListener } from 'hooks/useAccountEventListener'
@@ -23,7 +23,7 @@ import { Blocklist, Updaters } from '..'
 import ErrorBoundary from '../components/ErrorBoundary'
 import Providers from '../Providers'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 // This config is required for number formatting
 BigNumber.config({
@@ -58,8 +58,8 @@ function MyApp(props) {
   const store = useStore(pageProps.initialReduxState)
 
   useIsomorphicLayoutEffect(() => {
-    document.body.style.setProperty('font-family', inter.style.fontFamily);
-  }, []);
+    document.body.style.setProperty('font-family', inter.style.fontFamily)
+  }, [])
 
   return (
     <>
@@ -68,7 +68,7 @@ function MyApp(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-        <title>ScadsSwap</title>
+        <title>Scads</title>
         <meta
         name="description"
         content="Discover SCADS: The New Secured, Self-Sustained Algorithm!"

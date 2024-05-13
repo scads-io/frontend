@@ -1,6 +1,8 @@
+import React from 'react'
+import { Separator } from 'components/ui/separator'
 import Treasury from './treasury'
 import GeneralStats from './general-stats'
-import { Separator } from 'components/ui/separator'
+
 
 const Stats = () => {
   return (

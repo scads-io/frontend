@@ -1,6 +1,7 @@
+import React from 'react'
+import Link from 'next/link'
 import { tokenomicsLinks } from 'constants/content'
 import { useTranslation } from 'contexts/Localization'
-import Link from 'next/link'
 
 const SideNavigation = () => {
   const { t } = useTranslation()
@@ -25,7 +26,7 @@ const SideNavigation = () => {
                   className="-translate-x-[3px] transition-transform group-hover:translate-x-0"
                   d="M8 15L14 8.5L8 2"
                   stroke="currentColor"
-                  stroke-width="3"
+                  strokeWidth="3"
                 />
                 <line
                   className="opacity-0 transition-opacity group-hover:opacity-100"
@@ -33,7 +34,7 @@ const SideNavigation = () => {
                   y1="8.5"
                   y2="8.5"
                   stroke="currentColor"
-                  stroke-width="3"
+                  strokeWidth="3"
                 />
               </svg>
             </Link>

@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 import useAuth from 'hooks/useAuth'
 import config, { walletLocalStorageKey } from "./config"
 import { Config } from "./types"
-import WalletCard from "./WalletCard";
+import WalletCard from "./WalletCard"
 
 interface Props {
   onDismiss: () => void
@@ -38,7 +38,7 @@ const WalletList: React.FC<Props> = ({ onDismiss }) => {
         <WalletCard walletConfig={wallet} login={login} onDismiss={onDismiss} />
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default WalletList;
+export default WalletList

@@ -1,3 +1,8 @@
+import React from 'react'
+import toast from 'react-hot-toast'
+import { Copy, NotebookTabs } from 'lucide-react'
+import { addresses } from 'constants/content'
+import { useTranslation } from 'contexts/Localization'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -5,10 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from 'components/ui/dropdown-menu'
-import { addresses } from 'constants/content'
-import toast from 'react-hot-toast'
-import { Copy, NotebookTabs } from 'lucide-react'
-import { useTranslation } from 'contexts/Localization'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
 
 const AddressDropdown = () => {
@@ -46,6 +47,7 @@ const AddressDropdown = () => {
                 <p className="text-xs text-[#B4BCD0] md:min-w-[332px] truncate">{item.value}</p>
                 <button
                   type="button"
+                  aria-label="Copy"
                   onClick={() => onCopy(item.value)}
                   className="text-white transition hover:opacity-70"
                 >

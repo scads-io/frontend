@@ -1,5 +1,9 @@
+import React from 'react'
 import Link from 'next/link'
-
+import { documents, tokenomicsLinks } from 'constants/content'
+import { useTranslation } from 'contexts/Localization'
+import { cn } from 'lib/utils'
+import { RU } from 'config/localization/languages'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,11 +12,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '../ui/navigation-menu'
-import SwapModal from '../swap/swap-modal'
-import { documents, tokenomicsLinks } from 'constants/content'
-import { useTranslation } from 'contexts/Localization'
-import { cn } from 'lib/utils'
-import { RU } from 'config/localization/languages'
 
 const NavLinks = () => {
   const { t, currentLanguage } = useTranslation()

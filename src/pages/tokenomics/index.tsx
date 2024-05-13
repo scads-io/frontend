@@ -1,9 +1,10 @@
-import { tokenomicsContent } from 'constants/content'
-import SideNavigation from './_components/side-navigation'
-import TokenomicsContent from './_components/tokenomics-content'
+import React from 'react'
 import { IoEllipse } from 'react-icons/io5'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'contexts/Localization'
+import { tokenomicsContent } from 'constants/content'
+import SideNavigation from './_components/side-navigation'
+import TokenomicsContent from './_components/tokenomics-content'
 
 const TokenomicsPage = () => {
   const { t } = useTranslation()
@@ -31,7 +32,7 @@ const TokenomicsPage = () => {
                 index={index + 1}
                 title={item.title}
                 paragraph={item.paragraph}
-                paragraph_two={item.paragraph_two}
+                paragraphTwo={item.paragraphTwo}
                 list={item.list}
               />
             ))}

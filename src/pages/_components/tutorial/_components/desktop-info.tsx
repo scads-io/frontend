@@ -1,9 +1,10 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/tabs'
-import { useState } from 'react'
-import { tutorialDesktop } from 'constants/content'
+
+import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { useTranslation } from 'contexts/Localization'
+import { tutorialDesktop } from 'constants/content'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/tabs'
 
 type TabValue = 'metamask' | 'binance'
 
@@ -60,19 +61,19 @@ const DesktopInfo = () => {
         className="z-20 mt-4 space-y-12 overflow-x-hidden overflow-y-scroll overscroll-y-none"
       >
         <AnimatePresence mode="wait">
-          {tutorialDesktop[currentTab].map((step: Step, index) => (
+          {tutorialDesktop[currentTab].map((step: Step) => (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              key={index}
+              key={step.label}
               className="w-11/12"
             >
               <div className="space-y-2">
                 <p className="text-xl font-medium text-white">{t(step.label)}</p>
                 <ol className="space-y-1 text-[#B4BCD0]">
-                  {Object.values(step.list).map((value, i) => value && <li key={i}>{t(value)}</li>)}
+                  {Object.values(step.list).map((value) => value && <li key={value}>{t(value)}</li>)}
                 </ol>
               </div>
             </motion.div>

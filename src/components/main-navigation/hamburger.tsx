@@ -1,17 +1,18 @@
-import { cn } from "lib/utils";
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react"
+import { cn } from "lib/utils"
 
 interface HamburgerProps {
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean
+  setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
 const Hamburger: React.FC<HamburgerProps> = ({ isOpen, setIsOpen }) => {
-  const hamburgerLine =
-    "h-0.5 w-6 my-1 transition ease transform duration-300 bg-white";
+  const hamburgerLine = "h-0.5 w-6 my-1 transition ease transform duration-300 bg-white"
 
   return (
     <button
+      type="button"
+      aria-label="Hamburger"
       className="group relative z-50 flex h-12 w-12 flex-col items-center justify-center md:hidden"
       onClick={() => setIsOpen(!isOpen)}
     >
@@ -23,7 +24,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ isOpen, setIsOpen }) => {
         )}
       />
     </button>
-  );
-};
+  )
+}
 
-export default Hamburger;
+export default Hamburger

@@ -1,23 +1,23 @@
-import { Separator } from 'components/ui/separator'
+import React, { Fragment } from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { EN, RU } from 'config/localization/languages'
-import { Fragment } from 'react'
+import { Separator } from 'components/ui/separator'
 
 interface TokenomicsContentProps {
   id: string
   title: string
   paragraph: string
-  paragraph_two?: string
+  paragraphTwo?: string
   index: number
   list?: {
-    list_one?: string
-    list_two?: string
-    list_three?: string
-    list_four?: string
+    listOne?: string
+    listTwo?: string
+    listThree?: string
+    listFour?: string
   }[]
 }
 
-const TokenomicsContent: React.FC<TokenomicsContentProps> = ({ id, title, paragraph, paragraph_two, index, list }) => {
+const TokenomicsContent: React.FC<TokenomicsContentProps> = ({ id, title, paragraph, paragraphTwo, index, list }) => {
   const { t, currentLanguage } = useTranslation()
 
   return (
@@ -34,28 +34,28 @@ const TokenomicsContent: React.FC<TokenomicsContentProps> = ({ id, title, paragr
       <p>{t(paragraph)}</p>
       {list && (
         <ul className="flex max-w-[340px] list-disc flex-col gap-y-2 pl-4 md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1031px]">
-          {list.map((item, index) => (
-            <Fragment key={index}>
-              {item.list_one && <li>{t(item.list_one)}</li>}
+          {list.map((item) => (
+            <Fragment key={item.listOne}>
+              {item.listOne && <li>{t(item.listOne)}</li>}
               {currentLanguage === EN && (
                 <>
-                  {item.list_two && <li>{t(item.list_two)}</li>}
-                  {item.list_three && <li>{t(item.list_three)}</li>}
-                  {item.list_four && <li>{t(item.list_four)}</li>}
+                  {item.listTwo && <li>{t(item.listTwo)}</li>}
+                  {item.listThree && <li>{t(item.listThree)}</li>}
+                  {item.listFour && <li>{t(item.listFour)}</li>}
                 </>
               )}
               {currentLanguage === RU && id !== 'minting-speed' && (
                 <>
-                  {item.list_two && <li>{t(item.list_two)}</li>}
-                  {item.list_three && <li>{t(item.list_three)}</li>}
-                  {item.list_four && <li>{t(item.list_four)}</li>}
+                  {item.listTwo && <li>{t(item.listTwo)}</li>}
+                  {item.listThree && <li>{t(item.listThree)}</li>}
+                  {item.listFour && <li>{t(item.listFour)}</li>}
                 </>
               )}
             </Fragment>
           ))}
         </ul>
       )}
-      {paragraph_two && <p className="max-w-[1031px]">{t(paragraph_two)}</p>}
+      {paragraphTwo && <p className="max-w-[1031px]">{t(paragraphTwo)}</p>}
       <Separator className="mt-12 bg-white/10" />
     </section>
   )

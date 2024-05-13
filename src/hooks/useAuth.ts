@@ -1,17 +1,15 @@
 import { useCallback } from 'react'
-import { useWeb3React } from '@scads-io/wagmi'
 import toast from 'react-hot-toast'
 import { useAppDispatch } from 'state'
 import { useConnect, useDisconnect, useNetwork, ConnectorNotFoundError, UserRejectedRequestError } from 'wagmi'
 import { useTranslation } from 'contexts/Localization'
 import { connectorLocalStorageKey, ConnectorNames } from 'components/WalletModal'
 import { clearUserStates } from '../utils/clearUserStates'
-import useToast from './useToast'
+import useActiveWeb3React from './useActiveWeb3React'
 
 const useAuth = () => {
   const { t } = useTranslation()
-  const web3React = useWeb3React()
-  const { chainId } = web3React
+  const { chainId } = useActiveWeb3React()
   const dispatch = useAppDispatch()
   const { connectAsync, connectors } = useConnect()
   const { chain } = useNetwork()
@@ -37,7 +35,7 @@ const useAuth = () => {
         }
       }
     },
-    [connectors, connectAsync, chainId, toast, t],
+    [connectors, connectAsync, chainId, t],
   )
 
   const logout = useCallback(() => {

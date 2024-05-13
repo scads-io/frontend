@@ -1,12 +1,13 @@
+import React from 'react'
 import Link from 'next/link'
-import AddressDropdown from './address-dropdown'
-import WalletModal from '../WalletModal/wallet-modal'
-import Socials from '../socials'
 import { motion } from 'framer-motion'
-import LanguageDropdown from './language-dropdown'
 import { useTranslation } from 'contexts/Localization'
 import { cn } from 'lib/utils'
 import { RU } from 'config/localization/languages'
+import AddressDropdown from './address-dropdown'
+import WalletModal from '../WalletModal/wallet-modal'
+import Socials from '../socials'
+import LanguageDropdown from './language-dropdown'
 
 interface MobileMenuProps {
   close: () => void

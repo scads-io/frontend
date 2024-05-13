@@ -14,12 +14,12 @@ import useScadsMint from 'hooks/useScadsMint'
 import { Field } from 'state/swap/actions'
 import { useDerivedSwapInfo, useSwapActionHandlers, useSwapState, useCaratSellPermission } from 'state/swap/hooks'
 import CircleLoader from 'components/Loader/CircleLoader'
+import { Button } from 'components/ui/button'
 import ProgressSteps from './ProgressStep'
 import Taxes from './taxes'
 import WalletModal from '../WalletModal/wallet-modal'
 import Input from './input'
 import { Separator } from '../ui/separator'
-import { Button } from 'components/ui/button'
 
 const ScadsForm: React.FC = () => {
   const { t } = useTranslation()

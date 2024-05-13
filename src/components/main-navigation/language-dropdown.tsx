@@ -1,4 +1,7 @@
+import React from 'react'
 import { Globe } from 'lucide-react'
+import { useTranslation } from 'contexts/Localization'
+import { languageList } from 'config/localization/languages'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,8 +9,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
-import { useTranslation } from 'contexts/Localization'
-import { languageList } from 'config/localization/languages'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
 
 const LanguageDropdown = () => {

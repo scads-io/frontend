@@ -3,6 +3,7 @@ import { JSBI, TokenAmount } from '@scads/sdk'
 import toast from 'react-hot-toast'
 import { utils } from 'ethers'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
+import { RU } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useCaratMint from 'hooks/useCaratMint'
@@ -24,7 +25,6 @@ import Taxes from './taxes'
 import WalletModal from '../WalletModal/wallet-modal'
 import { Button } from '../ui/button'
 import Input from './input'
-import { RU } from 'config/localization/languages'
 
 const TwineForm: React.FC = () => {
   const { t, currentLanguage } = useTranslation()

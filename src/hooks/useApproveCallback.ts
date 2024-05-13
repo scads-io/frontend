@@ -102,7 +102,7 @@ export function useApproveCallback(
         toast.error('Transaction rejected')
         // throw error
       })
-  }, [approvalState, token, tokenContract, amountToApprove, spender, addTransaction, callWithGasPrice, toast])
+  }, [approvalState, token, tokenContract, amountToApprove, spender, addTransaction, callWithGasPrice])
 
   return [approvalState, approve]
 }

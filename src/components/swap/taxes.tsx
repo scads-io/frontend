@@ -1,9 +1,10 @@
+import React from 'react'
+import { Info } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip'
 import { RU } from 'config/localization/languages'
 import { taxItems } from 'constants/content'
 import { useTranslation } from 'contexts/Localization'
 import { cn } from 'lib/utils'
-import { Info } from 'lucide-react'
 
 const Taxes = () => {
   const { t, currentLanguage } = useTranslation()

@@ -1,8 +1,9 @@
+import React from 'react'
 import Image from 'next/image'
-import Socials from '../socials'
-import Disclaimer from './disclaimer'
 import { usePathname } from 'next/navigation'
 import { cn } from 'lib/utils'
+import Socials from '../socials'
+import Disclaimer from './disclaimer'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -21,7 +22,7 @@ const Footer = () => {
           SCADS
         </div>
         <p className="text-center text-sm text-[#B4BCD0] md:text-start md:text-base whitespace-nowrap">
-          SCADS © Copyright {currentYear}. All rights reserved. ™
+          SCADS © Copyright {currentYear}. All rights reserved. ™
         </p>
       </div>
       <Socials />

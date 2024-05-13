@@ -1,6 +1,6 @@
-import React from "react";
-import { FaMediumM } from "react-icons/fa";
-import { FaXTwitter, FaTelegram, FaGithub, FaDiscord } from "react-icons/fa6";
+import React from "react"
+import { FaMediumM } from "react-icons/fa"
+import { FaXTwitter, FaTelegram, FaGithub, FaDiscord } from "react-icons/fa6"
 
 const socialLinks = [
   {
@@ -26,7 +26,7 @@ const socialLinks = [
   //   id: "Medium",
   //   icon: <FaMediumM size={28} />,
   // },
-];
+]
 
 const Socials = ({ navigation }: { navigation?: boolean }) => {
   return (
@@ -47,7 +47,7 @@ const Socials = ({ navigation }: { navigation?: boolean }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Socials;
+export default Socials

@@ -1,4 +1,4 @@
-import { MetamaskIcon, WalletConnect, TrustWallet, BinanceChain } from "@scads-io/uikit"
+import { MetamaskIcon, WalletConnect, TrustWallet } from "@scads-io/uikit"
 
 import { Config, ConnectorNames } from "./types"
 
@@ -23,12 +23,6 @@ const connectors: Config[] = [
     priority: 3,
     href: "https://link.trustwallet.com/open_url?coin_id=20000714&url=https://scads.io/",
   },
-  /* {
-    title: "Binance Chain",
-    icon: BinanceChain,
-    connectorId: ConnectorNames.BSC,
-    priority: 4,
-  } */
 ]
 
 export default connectors

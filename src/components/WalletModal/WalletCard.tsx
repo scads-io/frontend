@@ -21,13 +21,13 @@ const WalletCard: React.FC<Props> = ({ walletConfig, login, onDismiss }) => {
         className="group flex flex-col items-center"
         onClick={() => {
           if (!window.ethereum && walletConfig.href) {
-            window.open(walletConfig.href, "_blank", "noopener noreferrer");
+            window.open(walletConfig.href, "_blank", "noopener noreferrer")
           } else {
             login(walletConfig.connectorId);
-            localStorage?.setItem(walletLocalStorageKey, walletConfig.title);
-            localStorage?.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+            localStorage?.setItem(walletLocalStorageKey, walletConfig.title)
+            localStorage?.setItem(connectorLocalStorageKey, walletConfig.connectorId)
           }
-          onDismiss();
+          onDismiss()
         }}
          >
         <Icon

@@ -1,12 +1,14 @@
-import { useTranslation } from 'contexts/Localization'
+import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'contexts/Localization'
+
 
 const SectionHeader = ({ title, y }: { title: string; y: number }) => {
   const { t } = useTranslation()
 
   return (
     <motion.h2
-      initial={{ opacity: 0.5, y: y }}
+      initial={{ opacity: 0.5, y }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{
         delay: 0.3,

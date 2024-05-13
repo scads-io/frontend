@@ -25,6 +25,28 @@ const config = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  async headers() {
+    return [
+      {
+        source: '/images/:all*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, immutable, max-age=31536000',
+          },
+        ],
+      },
+      {
+        source: '/images/currency/:all*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, immutable, max-age=604800',
+          },
+        ],
+      },
+    ]
+  },
 }
 
 module.exports = withBundleAnalyzer(withSentryConfig(config, sentryWebpackPluginOptions))

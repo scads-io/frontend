@@ -1,4 +1,6 @@
 import React from 'react'
+import { cn } from 'lib/utils'
+import { RU } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import {
   Dialog,
@@ -12,8 +14,6 @@ import ScadsForm from './scads-form'
 import TwineForm from './twine-form'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
 import { Button } from '../ui/button'
-import { cn } from 'lib/utils'
-import { RU } from 'config/localization/languages'
 
 const SwapModal = ({ navigation }: { navigation?: boolean }) => {
   const { t, currentLanguage } = useTranslation()

@@ -22,11 +22,11 @@ export const tokenomicsContent = [
       'TWINE is a speculative token with linear characteristics, designed to support gradual price increases and provide privileged access to mint SCADS exclusively.',
     list: [
       {
-        list_one:
+        listOne:
           'Exclusivity: Once the circulating supply of TWINE reaches 5.5 million, it acquires exclusive rights to purchase SCADS. This exclusivity, which lasts for five years, potentially leads to significant price appreciation and makes TWINE an attractive investment for those seeking higher returns.',
       },
       {
-        list_two:
+        listTwo:
           'Curved Linear Growth: The value of TWINE is linked to its minting volume. For each new TWINE token minted, its price rises consistently by 0.0000001. This mechanism ensures a steady upward trajectory in the token’s value, aligning with the increase in supply',
       },
     ],
@@ -44,23 +44,23 @@ export const tokenomicsContent = [
       'As a fair algorithm, the minting speed is dynamically adjusted in response to the market capitalization of SCADS and the allocated time frame to reach the 21 million market cap. This adaptive approach ensures a balanced and equitable minting process within the ecosystem.',
     list: [
       {
-        list_one:
+        listOne:
           'Minting Speed = (TWINE < 21,000,000 TWINE - TWINE ALREADY MINTED>) / (SCADS <TOTAL SCADS IN THE MARKET>  TIME <IN MINUTES, 15 YEARS IN MINUTES - TIME ELAPSED SINCE THE BEGINNING>)*',
       },
       {
-        list_two: `TWINE < 21,000,000 TWINE - TWINE ALREADY MINTED>:
+        listTwo: `TWINE < 21,000,000 TWINE - TWINE ALREADY MINTED>:
 This part of the formula calculates the remaining amount of TWINE that can be minted. It subtracts the amount of TWINE already minted from the total cap of 21,000,000 TWINE. This gives the number of TWINE tokens left to be issued.`,
       },
       {
-        list_three: `SCADS <TOTAL SCADS IN THE MARKET>:
+        listThree: `SCADS <TOTAL SCADS IN THE MARKET>:
 This refers to the total number of SCADS currently in circulation within the market.`,
       },
       {
-        list_four: `TIME <IN MINUTES, 15 YEARS IN MINUTES - TIME ELAPSED SINCE THE BEGINNING>:
+        listFour: `TIME <IN MINUTES, 15 YEARS IN MINUTES - TIME ELAPSED SINCE THE BEGINNING>:
 This calculates the total time left for minting. It subtracts the time already elapsed since the beginning of the minting process from the total minting period set for 15 years, expressed in minutes.`,
       },
     ],
-    paragraph_two:
+    paragraphTwo:
       'The formula for Minting Speed essentially calculates the rate at which new TWINE tokens will be minted. This rate is determined by the number of TWINE tokens left to be minted, divided by the product of the total SCADS in circulation and the remaining time in minutes for the minting process. This provides a dynamic adjustment mechanism, where the minting speed can increase or decrease based on how many SCADS tokens are in the market and how much time is left until the end of the 15-year period.',
   },
   {
@@ -82,15 +82,15 @@ This calculates the total time left for minting. It subtracts the time already e
       'Fundamental Elements: SCADS prioritizes the principles of reserve and collateral, treating them as fundamental to its operational integrity. Enforcing Transparency with Contracts: SCADS enhances transparency with specific contracts like the Proof of Reserve and Proof of Collateral, providing clear, verifiable mechanisms for for all to see.',
     list: [
       {
-        list_one:
+        listOne:
           'Mandatory Collateral for Minting SCADS: SCADS adopts strict minting rules, requiring sufficient collateral for every token minted to mitigate risks and ensure each SCADS token is backed by tangible assets, preventing the issuance of unsupported tokens.',
       },
       {
-        list_two:
+        listTwo:
           'Interconnected Collateral System: The SCADS ecosystem creates a seamless link between the minting of SCADS, the collateral backing it, and the subsequent minting of TWINE, offering a stronger and more reliable financial structure compared to other stablecoins like USDT or USDC.',
       },
       {
-        list_three:
+        listThree:
           'Assurance through Collateralization: By implementing the Proof of Reserve and Proof of Collateral contracts, SCADS commits to a transparent and robust financial model, ensuring every SCADS token is minted with proper collateral, and the minting of TWINE is directly linked to the collateralized SCADS, establishing a truly secure system that distinguishes SCADS from other stablecoins in the digital finance arena.',
       },
     ],
@@ -108,17 +108,17 @@ This calculates the total time left for minting. It subtracts the time already e
       'With a primary focus on the security and well-being of all users, SCADS, functioning as a stable coin, is inherently resistant to price manipulation. Additionally, the SCADS ecosystem has implemented a limited set of rules designed to ensure the safety of both the system and its participants:',
     list: [
       {
-        list_one: 'A 25% penalty for withdrawals made within a 24-hour period.',
+        listOne: 'A 25% penalty for withdrawals made within a 24-hour period.',
       },
       {
-        list_two: 'A cap of 50,000 SCADS on withdrawals per day.',
+        listTwo: 'A cap of 50,000 SCADS on withdrawals per day.',
       },
       {
-        list_three:
+        listThree:
           'Should a user require immediate access to their full capital, SCADS, being a stable asset, can be employed as a high-quality collateral for obtaining loans or bridge funding from various platforms.',
       },
     ],
-    paragraph_two:
+    paragraphTwo:
       'These rules act as safeguards, fortifying the algorithm against sudden fund withdrawals or potential manipulation. They are structured to maintain the stability and integrity of the system for all participants.',
   },
   {
@@ -692,19 +692,19 @@ export const accordionItems = [
     content: 'SCADS safeguards capital investments through its unique structure and features:',
     list: [
       {
-        list_one:
+        listOne:
           "Proof of Hold (POH): SCADS utilizes the POH algorithm, which confirms the reserve capital on-chain. This ensures transparency and security, protecting investors' capital.",
       },
       {
-        list_two:
+        listTwo:
           'Autonomous Operation: SCADS operates autonomously without human interference or ownership, reducing the risk of manipulation and fraud.',
       },
       {
-        list_three:
+        listThree:
           "Reserve-backed Stability: The minting of TWINE, triggered by POH, ensures exponential growth of capital. TWINE's scarcity and use case create demand pressure, protecting capital against inflation and failures.",
       },
       {
-        list_four:
+        listFour:
           "Financial Credibility: POH enhances SCADS' financial credibility, making it a secure investment option even for funding reserves.",
       },
     ],
@@ -715,20 +715,20 @@ export const accordionItems = [
     content: 'SCADS protects its users by eliminating risks rather than managing them.',
     list: [
       {
-        list_one:
+        listOne:
           'A - Risk of Ponzi schemes and pyramid plays is removed by setting the algorithm to operate autonomously without owners or human interference.',
       },
       {
-        list_two: 'B - Governance, voting, and validation are eliminated:',
+        listTwo: 'B - Governance, voting, and validation are eliminated:',
       },
       {
-        list_three: 'Governance is eliminated to prevent large holders from monopolizing decision-making.',
+        listThree: 'Governance is eliminated to prevent large holders from monopolizing decision-making.',
       },
       {
-        list_four: 'Voting is unnecessary as the algorithm runs autonomously without changes in policies.',
+        listFour: 'Voting is unnecessary as the algorithm runs autonomously without changes in policies.',
       },
       {
-        list_five: 'Validation by nodes is unnecessary; each wallet pre-validates all transactions based on POH.',
+        listFive: 'Validation by nodes is unnecessary; each wallet pre-validates all transactions based on POH.',
       },
     ],
     value: 'item-3',

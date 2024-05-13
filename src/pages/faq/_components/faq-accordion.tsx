@@ -1,16 +1,17 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from 'components/ui/accordion'
-import { accordionItems } from 'constants/content'
+import React from 'react'
 import { useTranslation } from 'contexts/Localization'
+import { accordionItems } from 'constants/content'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from 'components/ui/accordion'
 
 interface AccordionItem {
   trigger: string
   content: string
   list?: {
-    list_one?: string
-    list_two?: string
-    list_three?: string
-    list_four?: string
-    list_five?: string
+    listOne?: string
+    listTwo?: string
+    listThree?: string
+    listFour?: string
+    listFive?: string
   }[]
   paragpraph?: string
   value: string
@@ -34,13 +35,13 @@ const FaqAccordion = ({ searchValue }: { searchValue: string }) => {
             <p>{t(item.content)}</p>
             {item.list && (
               <ul>
-                {item.list.map((item, index) => (
-                  <li key={index}>
-                    {item.list_one && t(item.list_one)}
-                    {item.list_two && t(item.list_two)}
-                    {item.list_three && t(item.list_three)}
-                    {item.list_four && t(item.list_four)}
-                    {item.list_five && t(item.list_five)}
+                {item.list.map((filteredItem) => (
+                  <li key={filteredItem.listOne}>
+                    {filteredItem.listOne && t(filteredItem.listOne)}
+                    {filteredItem.listTwo && t(filteredItem.listTwo)}
+                    {filteredItem.listThree && t(filteredItem.listThree)}
+                    {filteredItem.listFour && t(filteredItem.listFour)}
+                    {filteredItem.listFive && t(filteredItem.listFive)}
                   </li>
                 ))}
               </ul>
