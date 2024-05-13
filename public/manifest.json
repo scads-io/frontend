@@ -15,9 +15,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo.png",
+      "src": "logo.webp",
       "type": "image/png",
-      "sizes": "256x256"
+      "sizes": "192x192"
     }
   ]
 }

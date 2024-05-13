@@ -43,7 +43,7 @@ class MyDocument extends Document {
           )}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="shortcut icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/logo.png" />
+          <link rel="apple-touch-icon" href="/logo.webp" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body className="overflow-x-hidden bg-dark-blue">
