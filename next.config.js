@@ -25,6 +25,9 @@ const config = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  sentry: {
+    hideSourceMaps: process.env.NODE_ENV === 'production'
+  },
   async headers() {
     return [
       {
