@@ -35,15 +35,15 @@ const AddressDropdown = () => {
         </TooltipProvider>
         <span className="md:hidden">{t('Addresses')}</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mt-2 mr-20 border-none max-w-fit rounded-xl bg-dark-blue md:mr-0 md:max-w-none">
+      <DropdownMenuContent className="mt-2 ml-2.5 border-none max-w-[320px] rounded-xl bg-dark-blue md:ml-0 md:max-w-none">
         <DropdownMenuGroup className="flex flex-col px-4 py-3 space-y-2">
           {addresses.map((item) => (
             <DropdownMenuItem
               key={item.address}
               className="flex flex-col items-start w-full text-sm md:flex-row md:items-center"
             >
-              <p className="text-white w-[12%]">{item.address}</p>
-              <div className="flex items-center rounded-3xl bg-indigo-600/10 px-4 py-2 w-[340px] md:w-[88%] justify-between">
+              <p className="text-white md:w-[12%]">{item.address}</p>
+              <div className="flex items-center rounded-3xl bg-indigo-600/10 px-4 py-2 w-full md:w-[88%] justify-between">
                 <p className="text-xs text-[#B4BCD0] md:min-w-[332px] truncate">{item.value}</p>
                 <button
                   type="button"
