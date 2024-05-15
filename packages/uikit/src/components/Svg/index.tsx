@@ -8,7 +8,6 @@ export { default as OpenNewIcon } from "./Icons/OpenNew";
 export { default as RefreshIcon } from "./Icons/Refresh";
 export { default as WalletConnect } from "./Icons/WalletConnect";
 export { default as TrustWallet } from "./Icons/TrustWallet";
-export { default as BinanceChain } from "./Icons/BinanceChain";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
