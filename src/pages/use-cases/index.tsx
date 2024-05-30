@@ -1,3 +1,4 @@
+import { Separator } from 'components/ui/separator'
 import Image from 'next/image'
 
 const UseCasesPage = () => {
@@ -22,30 +23,49 @@ const UseCasesPage = () => {
         <p>
           These 3 pillars have multi use cases that categorically fix most flaws within the current financial system.
         </p>
-        <span className="text-white font-semibold my-4 text-lg">Who benefits:</span>
-        <p>Governments:</p>
-        <ul className="space-y-1">
-          <li>Can either use SCADS or get a license for the Algorithm and use it to fund themselves. </li>
-          <li>Add SCADS to the treasury</li>
-          <li>Hold SCADS mint TWINE</li>
-          <li>
-            This guarantees growth in value within the treasury, not only guaranteeing the amount (currently all
-            governments can guarantee the funds . but all fail guaranteeing the value)
-          </li>
-        </ul>
-        <p>
-          Formula SCADS HELD = POH trigger + TWINE mint + base price growth + demand pressure = SCADS total stable +
-          added value from TWINE = purchase power to value maintained without losses.
-        </p>
-        <div className="relative w-[91%] lg:w-[512px] h-80 mx-auto my-12">
-          <Image src="/images/formula.png" alt="formula depiction" fill className="rounded-2xl" />
+        <span className="text-white font-semibold text-xl mt-12">Who benefits:</span>
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <div className="lg:w-[60%]">
+            <p className="text-white font-semibold">Governments:</p>
+            <ul className="space-y-1 mt-2 list-disc pl-4">
+              <li>Can either use SCADS or get a license for the Algorithm and use it to fund themselves. </li>
+              <li>Add SCADS to the treasury</li>
+              <li>Hold SCADS mint TWINE</li>
+            </ul>
+            <p className="mt-1">
+              This guarantees growth in value within the treasury, not only guaranteeing the amount (currently all
+              governments can guarantee the funds . but all fail guaranteeing the value)
+            </p>
+            <p className="mt-1">
+              <span className="text-white">Formula SCADS HELD</span> = POH trigger + TWINE mint + base price growth +
+              demand pressure = SCADS total stable + added value from TWINE = purchase power to value maintained without
+              losses.
+            </p>
+            <p>The same principle applies to any institutions or fund or company and individuals.</p>
+          </div>
+          <div className="relative w-full md:w-9/12 lg:w-1/3 h-56 md:h-96 lg:h-80 mx-auto my-12">
+            <Image src="/images/formula.png" alt="formula depiction" fill className="rounded-2xl" />
+          </div>
         </div>
-        <p>The same principle applies to any institutions or fund or company and individuals.</p>
-        <span className="my-4 text-white font-semibold">Transactions & Settlement</span>
-        <p>
-          Based on POH every user can send payments P2P around the world paying only the GAS fees. In case user's opt to
-          use and exchange . the exchange fees apply.
-        </p>
+        <Separator className="my-12 bg-white/10" />
+        <div className="flex flex-col md:flex-row-reverse justify-between bg-gradient-to-b from-white/10 to-transparent px-4 pt-6 rounded-xl">
+          <div className="md:w-[45%] space-y-1">
+            <span className="text-white font-semibold">Transactions & Settlement:</span>
+            <p>
+              Based on POH every user can send payments P2P around the world paying only the GAS fees. In case users opt
+              to use an exchange, then exchange fees apply.
+            </p>
+          </div>
+          <div className="md:w-[45%] space-y-1 mt-1 sm:mt-0">
+            <span className="text-white font-semibold">Transparancy & privacy:</span>
+            <p>
+              Since the SCADS algorithm is totally independent and each user is responsible for his wallet, SCADS do not
+              require user's data, so it cannot be bought or transacted. It is up to each user to abide with his local
+              laws and regulations, declare or not his assets, all SCADS transactions are public and on the chain. The
+              algorithm has no owner's or a CEO.
+            </p>
+          </div>
+        </div>
       </article>
     </main>
   )
