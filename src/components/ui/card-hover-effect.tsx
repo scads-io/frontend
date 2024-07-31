@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useTranslation } from 'contexts/Localization'
 import { cn } from 'lib/utils'
 
-
 export const HoverEffect = ({
   items,
   className,
@@ -23,9 +22,8 @@ export const HoverEffect = ({
   return (
     <div className={cn('grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3', className)}>
       {items.map((item, idx) => (
-        <Link
+        <div
           key={item?.title}
-          href={item.path}
           className="group relative block h-full w-full p-2"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -59,7 +57,7 @@ export const HoverEffect = ({
               <CardDescription>{t(item.description)}</CardDescription>
             </Card>
           </motion.div>
-        </Link>
+        </div>
       ))}
     </div>
   )
