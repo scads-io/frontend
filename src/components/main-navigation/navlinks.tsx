@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { documents, tokenomicsLinks } from 'constants/content'
+import { documents } from 'constants/content'
 import { useTranslation } from 'contexts/Localization'
 import { cn } from 'lib/utils'
 import { RU } from 'config/localization/languages'
