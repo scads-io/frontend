@@ -38,31 +38,31 @@ const CardDetails = ({
       <AnimatePresence>
         {active && typeof active === 'object' ? (
           <div className="fixed inset-0 z-[100] grid place-items-center">
-            <motion.button
-              key={`button-${active.title}-${id}`}
-              layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
-              }}
-              className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white lg:hidden"
-              onClick={setActive}
-            >
-              <CloseIcon />
-            </motion.button>
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="flex h-fit max-h-[90%] w-11/12 max-w-[600px] flex-col overflow-hidden rounded-xl bg-white/5 backdrop-blur-xl md:w-full lg:w-fit lg:max-w-4xl"
+              className="flex h-fit max-h-[80%] w-11/12 max-w-[600px] flex-col overflow-hidden rounded-xl bg-white/5 backdrop-blur-xl md:w-full lg:w-fit lg:max-w-4xl"
             >
+              <motion.button
+                key={`button-${active.title}-${id}`}
+                layout
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                  transition: {
+                    duration: 0.05,
+                  },
+                }}
+                className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white lg:hidden"
+                onClick={setActive}
+              >
+                <CloseIcon />
+              </motion.button>
               <div className="overflow-y-scroll md:overflow-y-hidden">
                 <div className="flex items-start justify-between p-4">
                   <div className="">
@@ -84,11 +84,7 @@ const CardDetails = ({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className={cn(
-                      'flex flex-col items-start gap-4 overflow-auto pb-4 text-xs text-[#B4BCD0] md:h-fit md:text-sm lg:text-base',
-                      !active.paragraph_two &&
-                        '[mask:linear-gradient(to_bottom,white,white,transparent)] md:[mask:linear-gradient(to_bottom,white,white,white)]',
-                    )}
+                    className="flex flex-col items-start gap-4 overflow-auto pb-4 text-xs text-[#B4BCD0] md:h-fit md:text-sm lg:text-base"
                   >
                     <ul className="flex max-w-[340px] list-disc flex-col gap-y-2 px-8 text-sm md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1031px]">
                       {active.list.map((item, index) => (
