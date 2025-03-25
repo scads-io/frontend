@@ -16,6 +16,9 @@ const getNodeUrl = () => {
   if (process.env.NEXT_PUBLIC_NODE_PRODUCTION) {
     return process.env.NEXT_PUBLIC_NODE_PRODUCTION
   }
+
+  console.log(sample(nodes));
+  
   return sample(nodes)
 }
 

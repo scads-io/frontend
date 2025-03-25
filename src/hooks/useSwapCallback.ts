@@ -133,7 +133,7 @@ export function useSwapCallback(
                 }
               })
               .catch((gasError) => {
-                console.error('Gas estimate failed, trying eth_call to extract error', call)
+                console.error('Gas estimate failed, trying  to extract error', call)
 
                 return contract.callStatic[methodName](...args, options)
                   .then((result) => {

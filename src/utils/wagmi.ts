@@ -4,11 +4,18 @@ import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { bsc } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
+import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 
 const { chains, provider, webSocketProvider } = configureChains(
   [bsc],
   [
-    publicProvider(),
+    // publicProvider(),
+    jsonRpcProvider({
+      rpc: (chain) => ({
+        http: process.env.NEXT_PUBLIC_NODE_1,
+        // webSocket: 'wss://your-custom-ws-rpc-url.com' 
+      })
+    })
   ],
 )
 
