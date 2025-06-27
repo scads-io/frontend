@@ -1,6 +1,5 @@
-import React from 'react'
-import { MdOutlineDataObject } from 'react-icons/md'
 import { Clock, Database, Gauge, Grid, HeartPulse, Paperclip, TrendingUp } from 'lucide-react'
+import { MdOutlineDataObject } from 'react-icons/md'
 
 export const tokenomicsContent = [
   {
@@ -233,11 +232,11 @@ export const treasuryItems = [
 export const addresses = [
   {
     address: 'Scads: ',
-    value: '0x6D036B813C63c2c2D84De16369F2b532a37A5E97',
+    value: '0x7397679042e332247cd9b9BA8d345073c4bb2850',
   },
   {
     address: 'Twine: ',
-    value: '0xa86C718a38515699773a1FEB9c3A891A2BE982A1',
+    value: '0x68D0dc551F413BA9217AEddF50Fa9Ed56A18876D',
   },
   {
     address: 'USDT: ',
